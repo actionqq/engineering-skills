@@ -5,6 +5,11 @@
     "output": "Skill is valid!"
   },
   {
+    "skill": "doc-archive",
+    "exit_code": 0,
+    "output": "Skill is valid!"
+  },
+  {
     "skill": "handover",
     "exit_code": 0,
     "output": "Skill is valid!"

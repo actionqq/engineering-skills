@@ -1,0 +1,23 @@
+{
+  "date": "2026-09-21",
+  "kind": "executed-authoring-checks",
+  "official_format_checks": 10,
+  "official_format_passed": true,
+  "isolated_skill_resource_closure": true,
+  "reachable_instruction_files": 4,
+  "pinned_downloads_hash_checked": 13,
+  "retained_license_texts_checked": 5,
+  "validator_regression_tests": {
+    "passed": 4,
+    "command": "python -B -m unittest discover -s tooling -p test_validate.py -v"
+  },
+  "skill_sha256": {
+    "skills/doc-archive/SKILL.md": "e970275a2d7db3f50764ae3bea3b874a4fb3c93beabafde063f24073486120dc",
+    "skills/doc-archive/THIRD_PARTY_NOTICES.md": "1457131fc09c89242356214d1c043a7fe28036e567d7b0b8a35d730069eb4a45",
+    "skills/doc-archive/agents/openai.yaml": "05c35f3f1a7dbdb2030d088b1cd327bfb16cff9a0781d0c359968c84c32e087d",
+    "skills/doc-archive/references/assessment.md": "f6f2e63b18269e4f1347867cebbb8eb3834013d11f53b4a9b0e85febe71763c2",
+    "skills/doc-archive/references/operations.md": "611f632adc15524984ef286613ad4b2b27171b1c4850be23c929183d3034456b",
+    "skills/doc-archive/references/retrieval.md": "60a39441a376bcf4db6cb2a47b49eb71b110b796d3cc9b6dd9ad98d444a517da"
+  },
+  "limits": "Static structure, standalone resource closure, source preservation and validator regression checks only. No archive workflow/model behavior, upstream script execution, installation or host discovery validation."
+}

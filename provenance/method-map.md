@@ -201,3 +201,27 @@
 - 落点：[skills/implement/references/evolution.md](../skills/implement/references/evolution.md)
 - 来源：[citypaul/.dotfiles:claude/.claude/skills/structure-codebase/references/enforcement-and-migration.md](https://raw.githubusercontent.com/citypaul/.dotfiles/a109f9972bb46671c624fc05752031523e1cf6fc/claude/.claude/skills/structure-codebase/references/enforcement-and-migration.md), [mattpocock/skills:skills/engineering/prototype/LOGIC.md](https://raw.githubusercontent.com/mattpocock/skills/c55ee46073ed923f86ce59a5eb3b6d895095d1b7/skills/engineering/prototype/LOGIC.md), [citypaul/.dotfiles:claude/.claude/skills/api-design/resources/api-evolution.md](https://raw.githubusercontent.com/citypaul/.dotfiles/a109f9972bb46671c624fc05752031523e1cf6fc/claude/.claude/skills/api-design/resources/api-evolution.md)
 - 判别用例：`implement-backfill-restart`
+
+## archive-disposition
+
+- 保留：检查资料承接、真实工作结果与归档归属；完成、取消和历史资料分别处理，滚动资料可保存阶段快照。
+- 调整或拒绝：综合设计将工作结果、文档权威和归档状态分开；不以阶段结束、年龄、新版本或实现代码自动判定退休，不统一强制验收标记、版本体系或新主规范。局部失效不导致整篇归档，未决义务保留活跃去向。
+- 落点：[skills/doc-archive/SKILL.md](../skills/doc-archive/SKILL.md), [skills/doc-archive/references/assessment.md](../skills/doc-archive/references/assessment.md)
+- 来源：[Fission-AI/OpenSpec:skills/openspec-archive-change/SKILL.md](https://raw.githubusercontent.com/Fission-AI/OpenSpec/bae58cf61479986431bb798acbe5a688a591c18c/skills/openspec-archive-change/SKILL.md), [paceaitian/paceflow:plugin/agent-references/instructions/archive-chg.md](https://raw.githubusercontent.com/paceaitian/paceflow/07e8a4f626a14b656dfb21e56a759f3129295ff3/plugin/agent-references/instructions/archive-chg.md), [gsd-build/get-shit-done:get-shit-done/workflows/complete-milestone.md](https://raw.githubusercontent.com/gsd-build/get-shit-done/bdcaab2c752d9a33a1a1ca9acf3a3c81fb991815/get-shit-done/workflows/complete-milestone.md)
+- 行为评估：本次未准备或执行；无执行器时不制造待运行题库。
+
+## archive-execution
+
+- 保留：批次清单、冲突预检、文件原位索引归档、链接重定位、重复执行去重与部分失败恢复；原始路径和新路径可追溯。
+- 调整或拒绝：选择移动、原位归档或快照，不引入上游 CLI 和表结构；不以时间顺序覆盖冲突规范，不自动提交、打标签或删除附件；既有授权不重复确认。单文件写入不宣称全批事务，未提交和未跟踪内容也须可恢复。
+- 落点：[skills/doc-archive/references/operations.md](../skills/doc-archive/references/operations.md)
+- 来源：[Fission-AI/OpenSpec:skills/openspec-bulk-archive-change/SKILL.md](https://raw.githubusercontent.com/Fission-AI/OpenSpec/bae58cf61479986431bb798acbe5a688a591c18c/skills/openspec-bulk-archive-change/SKILL.md), [gsd-build/get-shit-done:get-shit-done/workflows/cleanup.md](https://raw.githubusercontent.com/gsd-build/get-shit-done/bdcaab2c752d9a33a1a1ca9acf3a3c81fb991815/get-shit-done/workflows/cleanup.md), [DarrenBenson/sdlc-studio:.claude/skills/sdlc-studio/reference-outputs.md](https://raw.githubusercontent.com/DarrenBenson/sdlc-studio/e8146c63d2c9997e4d1a5d3c8de0e6a35f201122/.claude/skills/sdlc-studio/reference-outputs.md), [DarrenBenson/sdlc-studio:.claude/skills/sdlc-studio/scripts/archive.py](https://raw.githubusercontent.com/DarrenBenson/sdlc-studio/e8146c63d2c9997e4d1a5d3c8de0e6a35f201122/.claude/skills/sdlc-studio/scripts/archive.py)
+- 行为评估：本次未准备或执行；无执行器时不制造待运行题库。
+
+## archive-retrieval-restore
+
+- 保留：活跃与历史入口、按需读取历史、恢复前冲突与时效检查、归档记录保留和索引修复。
+- 调整或拒绝：不要求整主题 wiki 或注册表；允许带历史标识的证据引用。恢复位置不恢复权威或验证，普通目录与说明不能保证所有宿主搜索排除归档；不擅自修改全局策略。
+- 落点：[skills/doc-archive/references/retrieval.md](../skills/doc-archive/references/retrieval.md)
+- 来源：[nvk/llm-wiki:claude-plugin/skills/wiki-manager/references/archive.md](https://raw.githubusercontent.com/nvk/llm-wiki/1224fbcdf3827f4ba56d225a9e359f5e8a5594e5/claude-plugin/skills/wiki-manager/references/archive.md), [paceaitian/paceflow:plugin/agent-references/instructions/archive-chg.md](https://raw.githubusercontent.com/paceaitian/paceflow/07e8a4f626a14b656dfb21e56a759f3129295ff3/plugin/agent-references/instructions/archive-chg.md)
+- 行为评估：本次未准备或执行；无执行器时不制造待运行题库。

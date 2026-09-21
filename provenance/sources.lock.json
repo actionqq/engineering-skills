@@ -833,6 +833,166 @@
       "bytes": 1385,
       "id": "citypaul/.dotfiles:claude/.claude/skills/api-design/LICENSE",
       "review_scope": "license-notice-retained"
+    },
+    {
+      "id": "Fission-AI/OpenSpec:skills/openspec-archive-change/SKILL.md",
+      "repo": "Fission-AI/OpenSpec",
+      "commit": "bae58cf61479986431bb798acbe5a688a591c18c",
+      "path": "skills/openspec-archive-change/SKILL.md",
+      "url": "https://raw.githubusercontent.com/Fission-AI/OpenSpec/bae58cf61479986431bb798acbe5a688a591c18c/skills/openspec-archive-change/SKILL.md",
+      "sha256": "a2d9c762a8a4398fbea6fec3a9addf0bd11df1f6efe66e66a9d8cf22581dde07",
+      "bytes": 14835,
+      "review_scope": "selected-lines",
+      "reviewed_lines": [
+        [
+          66,
+          202
+        ]
+      ],
+      "observed_date": "2026-09-21"
+    },
+    {
+      "id": "Fission-AI/OpenSpec:skills/openspec-bulk-archive-change/SKILL.md",
+      "repo": "Fission-AI/OpenSpec",
+      "commit": "bae58cf61479986431bb798acbe5a688a591c18c",
+      "path": "skills/openspec-bulk-archive-change/SKILL.md",
+      "url": "https://raw.githubusercontent.com/Fission-AI/OpenSpec/bae58cf61479986431bb798acbe5a688a591c18c/skills/openspec-bulk-archive-change/SKILL.md",
+      "sha256": "4e81622bf760c8256cbf9b6965dce2eb3bd8675cbc525ffba857be698709601f",
+      "bytes": 21327,
+      "review_scope": "selected-lines",
+      "reviewed_lines": [
+        [
+          75,
+          145
+        ]
+      ],
+      "observed_date": "2026-09-21"
+    },
+    {
+      "id": "gsd-build/get-shit-done:get-shit-done/workflows/cleanup.md",
+      "repo": "gsd-build/get-shit-done",
+      "commit": "bdcaab2c752d9a33a1a1ca9acf3a3c81fb991815",
+      "path": "get-shit-done/workflows/cleanup.md",
+      "url": "https://raw.githubusercontent.com/gsd-build/get-shit-done/bdcaab2c752d9a33a1a1ca9acf3a3c81fb991815/get-shit-done/workflows/cleanup.md",
+      "sha256": "e4b60b8cba8d24cc8afdaa3f6fe9f2db25c25708c0b52d7f87b2943464225692",
+      "bytes": 3814,
+      "review_scope": "full-text",
+      "observed_date": "2026-09-21"
+    },
+    {
+      "id": "gsd-build/get-shit-done:get-shit-done/workflows/complete-milestone.md",
+      "repo": "gsd-build/get-shit-done",
+      "commit": "bdcaab2c752d9a33a1a1ca9acf3a3c81fb991815",
+      "path": "get-shit-done/workflows/complete-milestone.md",
+      "url": "https://raw.githubusercontent.com/gsd-build/get-shit-done/bdcaab2c752d9a33a1a1ca9acf3a3c81fb991815/get-shit-done/workflows/complete-milestone.md",
+      "sha256": "5c8654ee7e2435808e1851e8784c56896c9585af459e560752ebc1d4b9e47b47",
+      "bytes": 25381,
+      "review_scope": "selected-lines",
+      "reviewed_lines": [
+        [
+          17,
+          36
+        ],
+        [
+          410,
+          450
+        ]
+      ],
+      "observed_date": "2026-09-21"
+    },
+    {
+      "id": "gsd-build/get-shit-done:LICENSE",
+      "repo": "gsd-build/get-shit-done",
+      "commit": "bdcaab2c752d9a33a1a1ca9acf3a3c81fb991815",
+      "path": "LICENSE",
+      "url": "https://raw.githubusercontent.com/gsd-build/get-shit-done/bdcaab2c752d9a33a1a1ca9acf3a3c81fb991815/LICENSE",
+      "sha256": "af0d31f2550b534c14251e14020f3378cf17bd21af7660e7d7b1a2ead4fcdfb4",
+      "bytes": 1075,
+      "review_scope": "license-retained",
+      "observed_date": "2026-09-21"
+    },
+    {
+      "id": "nvk/llm-wiki:claude-plugin/skills/wiki-manager/references/archive.md",
+      "repo": "nvk/llm-wiki",
+      "commit": "1224fbcdf3827f4ba56d225a9e359f5e8a5594e5",
+      "path": "claude-plugin/skills/wiki-manager/references/archive.md",
+      "url": "https://raw.githubusercontent.com/nvk/llm-wiki/1224fbcdf3827f4ba56d225a9e359f5e8a5594e5/claude-plugin/skills/wiki-manager/references/archive.md",
+      "sha256": "e11e5ae14ab2c1a2cca800cc480caa26d180a75f51c0b14977220a65c7645d9f",
+      "bytes": 6770,
+      "review_scope": "full-text",
+      "observed_date": "2026-09-21"
+    },
+    {
+      "id": "nvk/llm-wiki:LICENSE",
+      "repo": "nvk/llm-wiki",
+      "commit": "1224fbcdf3827f4ba56d225a9e359f5e8a5594e5",
+      "path": "LICENSE",
+      "url": "https://raw.githubusercontent.com/nvk/llm-wiki/1224fbcdf3827f4ba56d225a9e359f5e8a5594e5/LICENSE",
+      "sha256": "e598f82ef0457e69317f0e7fcaee27016886a058742f8e01b1ff4ac36eb93914",
+      "bytes": 1060,
+      "review_scope": "license-retained",
+      "observed_date": "2026-09-21"
+    },
+    {
+      "id": "DarrenBenson/sdlc-studio:.claude/skills/sdlc-studio/reference-outputs.md",
+      "repo": "DarrenBenson/sdlc-studio",
+      "commit": "e8146c63d2c9997e4d1a5d3c8de0e6a35f201122",
+      "path": ".claude/skills/sdlc-studio/reference-outputs.md",
+      "url": "https://raw.githubusercontent.com/DarrenBenson/sdlc-studio/e8146c63d2c9997e4d1a5d3c8de0e6a35f201122/.claude/skills/sdlc-studio/reference-outputs.md",
+      "sha256": "9b99f33cf3e965fc021f6d9e87a94610361ac884edc96693ac7e3ca7c1b203ef",
+      "bytes": 42812,
+      "review_scope": "selected-lines",
+      "reviewed_lines": [
+        [
+          416,
+          445
+        ]
+      ],
+      "observed_date": "2026-09-21"
+    },
+    {
+      "id": "DarrenBenson/sdlc-studio:.claude/skills/sdlc-studio/scripts/archive.py",
+      "repo": "DarrenBenson/sdlc-studio",
+      "commit": "e8146c63d2c9997e4d1a5d3c8de0e6a35f201122",
+      "path": ".claude/skills/sdlc-studio/scripts/archive.py",
+      "url": "https://raw.githubusercontent.com/DarrenBenson/sdlc-studio/e8146c63d2c9997e4d1a5d3c8de0e6a35f201122/.claude/skills/sdlc-studio/scripts/archive.py",
+      "sha256": "cc7d511a9ecac61002d480acf11b245806475322c01643c9c92fa7468035a4a0",
+      "bytes": 8850,
+      "review_scope": "full-text",
+      "observed_date": "2026-09-21"
+    },
+    {
+      "id": "DarrenBenson/sdlc-studio:LICENSE",
+      "repo": "DarrenBenson/sdlc-studio",
+      "commit": "e8146c63d2c9997e4d1a5d3c8de0e6a35f201122",
+      "path": "LICENSE",
+      "url": "https://raw.githubusercontent.com/DarrenBenson/sdlc-studio/e8146c63d2c9997e4d1a5d3c8de0e6a35f201122/LICENSE",
+      "sha256": "b8c4333d82bfe5738ea6310b0471b5dfb8bbad10fa66d3123667ff45447a3b02",
+      "bytes": 1084,
+      "review_scope": "license-retained",
+      "observed_date": "2026-09-21"
+    },
+    {
+      "id": "paceaitian/paceflow:plugin/agent-references/instructions/archive-chg.md",
+      "repo": "paceaitian/paceflow",
+      "commit": "07e8a4f626a14b656dfb21e56a759f3129295ff3",
+      "path": "plugin/agent-references/instructions/archive-chg.md",
+      "url": "https://raw.githubusercontent.com/paceaitian/paceflow/07e8a4f626a14b656dfb21e56a759f3129295ff3/plugin/agent-references/instructions/archive-chg.md",
+      "sha256": "cd19449de4e883ea9ad466dcb735edaac9d01c17333b4b32b65ba35802d6fad4",
+      "bytes": 9651,
+      "review_scope": "full-text",
+      "observed_date": "2026-09-21"
+    },
+    {
+      "id": "paceaitian/paceflow:LICENSE",
+      "repo": "paceaitian/paceflow",
+      "commit": "07e8a4f626a14b656dfb21e56a759f3129295ff3",
+      "path": "LICENSE",
+      "url": "https://raw.githubusercontent.com/paceaitian/paceflow/07e8a4f626a14b656dfb21e56a759f3129295ff3/LICENSE",
+      "sha256": "63ccc46aa002e496ddcd5b94d9c2b4adb59414515284b95640941d092f73cdf6",
+      "bytes": 1067,
+      "review_scope": "license-retained",
+      "observed_date": "2026-09-21"
     }
   ]
 }

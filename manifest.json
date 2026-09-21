@@ -36,6 +36,9 @@
     ],
     "skill-dev": [
       "skill-development"
+    ],
+    "doc-archive": [
+      "document-archival"
     ]
   },
   "installed": false,
