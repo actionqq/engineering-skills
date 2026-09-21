@@ -1,0 +1,12 @@
+$ python3 -B -m unittest discover -s tooling -p test_*.py -v
+test_grading_answers_are_not_exported (test_materialize.MaterializerTests.test_grading_answers_are_not_exported) ... ok
+test_refuses_overwriting_user_state (test_materialize.MaterializerTests.test_refuses_overwriting_user_state) ... ok
+test_refuses_path_escape_before_writing (test_materialize.MaterializerTests.test_refuses_path_escape_before_writing) ... ok
+test_wip_contains_index_worktree_and_untracked (test_materialize.MaterializerTests.test_wip_contains_index_worktree_and_untracked) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.023s
+
+OK
+
+exit_code=0

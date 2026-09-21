@@ -1,0 +1,9 @@
+$ python3 -B -m unittest -v test_price
+test_worked_examples (test_price.PriceTests.test_worked_examples) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+OK
+
+exit_code=0

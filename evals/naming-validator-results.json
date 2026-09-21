@@ -1,0 +1,10 @@
+{
+  "kind": "validator-negative-checks",
+  "passed": true,
+  "checks": [
+    "rejects retired entry in discovery labels",
+    "rejects retired entry in host-name scenarios",
+    "rejects missing resolved-source evidence"
+  ],
+  "limits": "Tests the local validator, not any actual harness dispatch."
+}

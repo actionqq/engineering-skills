@@ -1,0 +1,47 @@
+[
+  {
+    "skill": "diagnose",
+    "exit_code": 0,
+    "output": "Skill is valid!"
+  },
+  {
+    "skill": "handover",
+    "exit_code": 0,
+    "output": "Skill is valid!"
+  },
+  {
+    "skill": "implement",
+    "exit_code": 0,
+    "output": "Skill is valid!"
+  },
+  {
+    "skill": "prototype",
+    "exit_code": 0,
+    "output": "Skill is valid!"
+  },
+  {
+    "skill": "research",
+    "exit_code": 0,
+    "output": "Skill is valid!"
+  },
+  {
+    "skill": "skill-dev",
+    "exit_code": 0,
+    "output": "Skill is valid!"
+  },
+  {
+    "skill": "tech-design",
+    "exit_code": 0,
+    "output": "Skill is valid!"
+  },
+  {
+    "skill": "tech-review",
+    "exit_code": 0,
+    "output": "Skill is valid!"
+  },
+  {
+    "skill": "work-plan",
+    "exit_code": 0,
+    "output": "Skill is valid!"
+  }
+]

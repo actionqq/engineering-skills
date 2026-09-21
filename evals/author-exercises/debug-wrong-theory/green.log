@@ -1,0 +1,11 @@
+$ python3 -B -m unittest -v test_cart
+test_explicit_cart_is_preserved (test_cart.CartTests.test_explicit_cart_is_preserved) ... ok
+test_explicit_empty_cart_is_preserved (test_cart.CartTests.test_explicit_empty_cart_is_preserved) ... ok
+test_independent_users (test_cart.CartTests.test_independent_users) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.000s
+
+OK
+
+exit_code=0

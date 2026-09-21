@@ -1,0 +1,145 @@
+# Engineering Skills v0.1
+
+一套根据上游英文原文重新研究、融合和改写的工程 Skills。保留 9 个不带统一品牌前缀的入口，覆盖 15 项能力。指令与方法参考使用英文，交流和交付语言跟随用户；不再从旧版中文压缩稿反向翻译。
+
+这是可检查、可单独取用的源码版本，尚未安装到任何宿主。当前完成了格式、资源完整性、工具检查和有限作者演练；**尚未证明与上游效果等价或优于默认模型能力**。
+
+## 入口如何划分
+
+按用户要完成的工作划分入口，而不是把每项内部能力都变成一个命令。一个任务可以用到多个方法，但不要求依次走完九个入口。
+
+| 入口 | 负责的能力 | 适用请求与边界 |
+|---|---|---|
+| [tech-design](skills/tech-design/SKILL.md) | requirements-design、domain-modeling、solution-evaluation、architecture-design | 定义行为、概念、选型或职责边界；按问题选模式，不把四项当作固定阶段 |
+| [research](skills/research/SKILL.md) | research | 解决事实不确定性、证据冲突和版本问题；不强行替用户重做选型 |
+| [work-plan](skills/work-plan/SKILL.md) | planning | 整理待决问题或可验收任务、依赖和迁移顺序；不推翻已定设计 |
+| [prototype](skills/prototype/SKILL.md) | prototype | 用可运行实验回答具体问题，保留决定结论的真实边界 |
+| [implement](skills/implement/SKILL.md) | implementation、test-design | 实现、重构、测试设计或补测；测试方案可以独立交付 |
+| [diagnose](skills/diagnose/SKILL.md) | debugging | 原因不明的故障调查与已授权修复，形成症状到原因的证据链 |
+| [tech-review](skills/tech-review/SKILL.md) | architecture-review、design-review、code-review | 架构、设计、代码评审；不同对象采用不同检查方法，默认只读 |
+| [handover](skills/handover/SKILL.md) | handoff | 为继续任务整理必要上下文，或核实交接后恢复工作 |
+| [skill-dev](skills/skill-dev/SKILL.md) | skill-development | 新建和修改可复用 Skills，完成实际文件与可执行检查；来源融合及模型评估按需开展 |
+
+`tech-design` 负责形成决策，`research` 负责事实证据，`work-plan` 负责工作安排，`prototype` 负责实验取证。实现阶段也可以使用必要的设计或调试方法，不需要为每次方法切换重开流程。`tech-review` 内保留架构、设计和代码三种模式，因此不使用只代表代码评审的名称。
+
+名称采用短词或必要的语义限定，不使用统一品牌前缀。此前已调整入口名称；本轮补强内部方法，9 个入口与 15 项能力的边界不变。
+
+## 名称调整与安装约束
+
+| 原名 | 当前名 | 原因 |
+|---|---|---|
+| `design` | `tech-design` | 区分软件工程设计与宿主视觉设计功能，避免替换同名捆绑 Skill |
+| `plan` | `work-plan` | 避开宿主计划模式入口，同时覆盖待决问题与实施任务安排 |
+| `debug` | `diagnose` | 区分代码故障诊断与宿主日志、报告上传功能 |
+| `review` | `tech-review` | 避开内置评审命令及别名，保留架构、设计、代码三种模式 |
+| `handoff` | `handover` | 区分工程上下文交接与宿主会话迁移 |
+
+不注册旧名别名，避免重新引入冲突。若已经安装过旧草稿，先确认旧目录的来源和用户修改，再用完整的新目录替换对应的旧入口，并按宿主要求刷新；不要只改 frontmatter，也不要把新旧两套同时放入发现范围。`manifest.json` 的 `renamed_entries` 是迁移记录，不是运行时别名。
+
+**不要将本集合与上游同名 Skill 未经消歧地混装。**检查范围应包括宿主实际发现的用户目录、项目目录、父目录、插件及捆绑资源，而不只是一个安装文件夹。原版与本集合曾重叠的名字是 `implement`、`prototype`、`research`、`handoff`；本轮改名后，前三个仍需重点检查，`handoff` 作为旧安装残留检查。发现同名时，明确选择来源，或使用经验证可区分的命名空间；禁止静默覆盖、拼接正文、合并资源目录或猜测优先级。
+
+下面是 2026-09-20 对关键规则的文档核查，**不是八宿主运行验收**。不同类型的占用不应统一计作“无法调用”。
+
+| 宿主 | 已知机制及占用 | 本集合的处理 |
+|---|---|---|
+| Claude Code | 内置 `/plan`；`/review` 是 `/code-review` 的别名；自定义同名 Skill 可以替换捆绑 Skill，`/design` 和 `/debug` 属于捆绑能力 | 使用新名，避免覆盖与别名歧义；目录名、frontmatter 和 UI 名称同步更新。[命令](https://code.claude.com/docs/en/commands)、[同名解析](https://code.claude.com/docs/en/skills#resolve-skills-that-share-a-name) |
+| Codex CLI / IDE | `/plan`、`/review` 是宿主命令，Skill 可通过 `$name` 或 `/skills` 选择；不是同一个调用空间。相同 `name` 的多个 Skill 可能同时出现在选择器中 | 例如 `$work-plan`、`$tech-review`；检查实际 Skill 来源，不把 `/plan` 误记为拦截 `$plan`。[Skill 调用](https://learn.chatgpt.com/docs/build-skills)、[宿主命令](https://learn.chatgpt.com/docs/developer-commands?surface=cli) |
+| Hermes | 内置命令及别名优先；同名 Skill 可用 `/skill <name>`。`/plan`、`/review` 已占用；`/debug` 上传报告，`/handoff` 迁移会话 | 使用新名；显式解析测试不得为了试旧名而上传日志或迁移真实会话。[命令与冲突规则](https://hermes-agent.nousresearch.com/docs/reference/slash-commands) |
+| Kimi Code | 外部 Skill 使用 `/skill:<name>`；只有未被系统命令占用时才支持 `/<name>` 简写。`/plan` 为系统入口 | 如 `/skill:work-plan`；显式区分系统命令、简写与完整 Skill 入口。[官方命令说明](https://www.kimi.com/code/docs/en/kimi-code-cli/reference/slash-commands.html) |
+| agy | 官方执行模式页记载 `1.1.0` 移除旧 `/planning`，改用模式切换或 `/plan`；需按实际版本核对 | 不把旧矩阵中的“只有 `/planning`”作为长期无冲突保证。[执行模式](https://www.antigravity.google/docs/cli/modes/) |
+| ZCode / Pi / DSH | 收到过占用矩阵，但本轮未完成这三者的逐版本独立核验 | 保持待验证，不将“未发现”写成“已兼容”，也不提供未经验证的调用语法 |
+
+安装验收应确认新入口实际加载了本集合对应的 `SKILL.md`，并且宿主原有命令行为未被改变。候选名未出现在命令表中，只能作为检查线索，不能替代安装后的实际解析证据。当前版本仍仅生成源码，没有安装或修改宿主配置。
+
+## 方法深度放在哪里
+
+每个入口包含 `SKILL.md`、`agents/openai.yaml`、本地 `references/` 和第三方来源声明。入口负责选路、共通约束与完成标准；28 份参考文件保留分支方法，当前篇幅见结构检查记录。读取条件直接写在入口中，每个 Skill 的运行说明不依赖同级其他 Skill 或作者机器上的路径。
+
+保留的具体方法包括：完整调用方负担与模块深度、同题不同接口设计、指定技术尽调、前后端目录边界、决策依赖与渐进迁移、真实依赖保真度、独立测试预期、复现与逆向追踪、失败语义回归、WIP 全范围评审、交接状态核实、隔离评估与公平基线。
+
+上游规则不是照单全收。例如：固定两个评审代理、固定假设数量、无法复现便禁止继续分析、三次修复失败便认定架构错误、自动提交、强制 tracker，都被改为有条件的方法或明确拒绝。精确取舍见 [方法融合记录](provenance/method-map.md)。本轮整体核对结果及取舍见 [来源复核与改进记录](provenance/source-audit.md)。
+
+## 设计组织与实施拆解
+
+设计文档是否拆分，与实施任务是否拆分分别判断。现有单篇设计默认保留；确有独立维护收益时先提出具体组织方案，取得同意后拆分，已有授权不重复确认。用户要求保持完整时，使用章节定位和按需阅读。
+
+`work-plan` 根据结果边界、依赖、上下文负担、验证及独立接续需要选择执行方式：简单修改直接做，相关多步骤使用简短清单，需要独立执行的单元准备 task spec。它是任务执行说明，可放在计划章节、已有 issue 或独立文件中；不要求每个编码步骤再建文件。高风险任务补充必要的兼容、恢复和集成条件。
+
+`implement` 在入口应用这一判断，复杂工作先完成必要的局部规划，不依赖另一个 Skill 的安装。执行当前单元时读取其说明与必要来源，发现设计或前置成果变化就修正受影响说明。单元完成后继续已授权的后续任务；整体完成仍需整体验收。`handover` 保留当前单元与接续依据，不复制所有任务或重新拆票。
+
+设计描述行为与决策，计划安排结果和依赖，task spec 给出任务边界、依据和验收；共享事实引用其维护位置。仅在消除关键歧义时保留简短接口或数据示例，不在三层材料中重复预写完整实现与测试。执行材料按需要逐步细化，关键约束不能因追求简短而遗漏。
+
+## 项目文档如何维护
+
+维护职责纳入现有九个入口，不另设文档 Skill。开始时读取相关材料，事实或决策确定时及时记录，完成前检查本次工作是否使维护中的文档失真；文档仍准确就不修改。
+
+| 入口 | 维护责任 |
+|---|---|
+| `tech-design` | 修订当前设计；及时记录已确定术语；按需创建、更新或替代 ADR |
+| `research` / `prototype` | 保留可追溯证据，指出对设计的影响；实验结论不自动成为已接受决策 |
+| `work-plan` | 将必要文档同步纳入受影响任务的验收，计划阶段不提前宣称实施完成 |
+| `implement` | 实施中处理设计偏差，完成前同步授权范围内失真的文档并记录实际验证证据 |
+| `diagnose` | 依据文档判断预期行为；授权修复时维护受影响资料，纯调查保持只读 |
+| `tech-review` | 检查代码与当前设计、决策和上下文的一致性；未经修订授权不修改 |
+| `handover` | 链接正式资料，明确待同步位置与后续动作，不替代正式文档 |
+| `skill-dev` | 交付实际 Skill 修改，按需同步既有来源、许可和受影响的验证记录；不把单项目约定推广成通用规则 |
+
+设计承载行为与方案，ADR 保留重要取舍及历史理由，计划和交接承载临时进度。`CONTEXT.md` 的职责以项目约定为准，不默认等于术语表或任意内容的记录本。沿用现有位置，有实质内容和读者才创建新材料。
+
+ADR 可以维护状态、追加注明日期的结果和证据；推翻核心决策时创建替代记录并双向关联。轻量 ADR 优先链接计划和验证材料。既有模板若混淆状态或缺少关键依据，应在授权范围内改进。方案接受、实现完成、验证通过分别记录。
+
+本集合采用以下默认状态规范。这是结合上游方法形成的综合设计，不是所有上游共同规定的状态机，也不是必须逐级推进的审批流程。
+
+| 维度 | 默认状态 | 维护位置 |
+|---|---|---|
+| 决策 | `draft`、`proposed`、`accepted`、`rejected`、`deprecated`、`superseded` | 设计文档或 ADR，记录状态变更日期与决策依据 |
+| 实施 | `not-started`、`in-progress`、`blocked`、`implemented` | 优先由计划维护，设计链接；部分完成注明已完成和剩余范围 |
+| 验证 | 按验收项记录 `not-run`、`passed`、`failed`、`blocked`、`stale` | 验证记录，标明范围或版本、检查、日期和证据 |
+
+`deprecated` 表示曾生效但已不再指导新工作的决策，没有直接替代；`superseded` 必须链接替代记录。评审通过不自动接受决策，实现完成不自动验证通过。没有独立计划或验证记录的小任务可在原文简短记录，不为填字段创建空文件。
+
+实际决策、实施进展、检查结果或证据适用范围变化时更新相应状态。设计、代码或环境发生实质变化时，仅重新评估受影响的旧结论并标记 `stale`，保留历史证据。不要把局部测试通过写成整体运行验收，也不要因实现失败自动否定已接受决策。
+
+旧约定不自动等于合理规范。可保留语义明确的中文或自定义标签；如果只有含义混杂的“完成”“通过”，则依据实际证据在本次授权文档范围内拆分。无法确认的状态明确标注未知并保留旧记录，不虚构审批人、历史日期或验证。调整时保护历史理由、稳定引用和工具兼容，不借机批量迁移无关文档。
+
+已授权任务内的必要同步不重复请求批准；明确的只读、指定文件范围仍然有效。无法在范围内修正的矛盾应指出具体位置与所需变更。相关行为用例已准备，尚未完成独立模型执行验证。
+
+## 来源与可追溯性
+
+主要研究了 Matt Pocock、citypaul、Anthropic、obra/superpowers、arjunprabhulal、klittle32 的相关 Skills，以及 Vercel ADR、Warp review-spec、OpenSpec、Spec Kit 的相关材料。
+
+- [来源锁定文件](provenance/sources.lock.json)：80 个文件的仓库、固定 commit、原始链接、SHA-256 和阅读范围。其中 52 个全文阅读、2 个选段阅读、13 个仅抓取未用作方法依据、13 个许可文件保留。本轮重新核对原有 75 个文件的哈希，并沿 `codebase-design` 的引用补入同一固定版本的 `api-design` 及必要资源、来源说明和许可。
+- [方法映射](provenance/method-map.json)：25 组方法的原始材料、保留内容、调整理由、最终文件与判别用例，包括文档归属、维护生命周期、对外接口、跨进程运行和迁移恢复。
+- 各 Skill 的 `THIRD_PARTY_NOTICES.md`：独立复制时保留的来源、修改声明和适用许可文本。没有为整个新集合擅自选定统一发布许可证。
+
+来源锁定表示研究时的固定版本，不声称是各项目当前最新版；选段阅读也不代表完整评估整个框架。宿主自带的 `skill-creator` 用作本次创建流程和格式校验，不是运行这些 Skills 的前提。
+
+## 验证到什么程度
+
+详细状态和日志见 [evals/status.md](evals/status.md)。当前已有：
+
+- 9 个入口的官方格式校验，以及集合的引用闭包、名称、15 项能力覆盖和来源映射校验。
+- 57 个行为用例；前 24 个复用旧草稿自行编写的题材，8 个用于检验方法深度，14 个检验文档维护，5 个检验接口、运行恢复、迁移和回归定位，本轮新增 6 个轻量规划、独立执行说明与接续用例。没有搬用旧运行结果，也不把用例准备视为执行通过。
+- 82 个触发候选请求，包括 41 个正例和 41 个相邻请求；只完成用例准备，尚未运行宿主自动触发评估。
+- [8 个宿主名称解析场景](evals/host-names.json)：覆盖内置命令、别名、捆绑覆盖、独立命名空间、跨目录同名与旧名残留；已准备，未执行宿主测试。
+- 4 项作者演练：购物车缺陷 red/green、价格补测、SQLite 真实并发插入实验、重构失败语义静态评审。作者知道方法和答案，不能作为独立效果评分。
+- 用例导出工具的泄漏、覆盖保护、路径和真实 Git WIP 准备检查。
+
+尚未完成默认宿主基线、相关上游原版与 v0.1 的隔离执行和盲评，也未完成跨宿主验收。后续比较应按 [评估协议](evals/protocol.md) 使用新上下文和公平环境，不能把结构通过当成效果通过。
+
+## 本地复核
+
+以下命令在本目录执行。Skills 本身没有 Python 运行依赖；PyYAML 仅用于维护校验。
+
+```bash
+python3 -m venv /tmp/engineering-skills-check
+/tmp/engineering-skills-check/bin/pip install -r tooling/requirements.txt
+/tmp/engineering-skills-check/bin/python tooling/validate.py
+python3 -B -m unittest discover -s tooling -p 'test_*.py' -v
+python3 -B tooling/materialize.py debug-wrong-theory /tmp/cart-case
+python3 -B tooling/run_author_exercises.py /tmp/engineering-author-run
+```
+
+导出和演练目标必须是新目录，已有目录会被拒绝。导出工具只产生请求和原始工作文件，不附评分标准；真正的模型隔离还要由评估环境限制可读目录和上下文，临时目录本身不是安全沙箱。
+
+源码入口位于 `skills/`。如需单独取用某项，保留对应目录的完整内容，包括参考文件与第三方声明。当前目录下的评估材料、工具和来源总表用于维护，不应一起作为执行模型的额外提示。

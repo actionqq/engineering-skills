@@ -1,0 +1,12 @@
+{
+  "kind": "post-rename-integrity-check",
+  "local_markdown_links": "passed",
+  "protected_files_unchanged": 68,
+  "official_result_names_match": true,
+  "retired_entry_directories_absent": true,
+  "prepared_trigger_requests": 64,
+  "prepared_host_name_scenarios": 8,
+  "host_installation_executed": false,
+  "author_exercises_rerun": false,
+  "note": "Protected hashes cover the earlier collection, design plan, source lock, original notices and historical exercise artifacts. Capability and case IDs intentionally remain stable."
+}

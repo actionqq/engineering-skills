@@ -1,0 +1,109 @@
+{
+  "schema_version": 1,
+  "status": "prepared-not-run",
+  "note": "Evaluator-side installation and dispatch scenarios, separate from natural-language discovery and engineering behavior. Requires a supported isolated host configuration; no live global installation is authorized by this file. Passing requires resolved-source evidence, not a plausible answer.",
+  "required_evidence": [
+    "host_name",
+    "host_version",
+    "interface",
+    "feature_flags",
+    "installation_layout",
+    "competing_sources",
+    "exact_invocation",
+    "expected_source",
+    "resolved_source",
+    "content_sha256",
+    "dispatch_or_load_evidence",
+    "native_behavior_preserved"
+  ],
+  "cases": [
+    {
+      "id": "native-command-name",
+      "dimension": "native-command",
+      "hosts": ["Claude Code", "Hermes", "Kimi Code"],
+      "skills": ["work-plan"],
+      "setup": "In an isolated configuration, preserve the native plan command and install this collection's work-plan folder. Determine the exact Skill invocation syntax for the tested version.",
+      "actions": ["Inspect native plan resolution", "Explicitly invoke work-plan with a bounded local planning request and capture its loaded source"],
+      "expect": ["The Skill resolves to skills/work-plan/SKILL.md from this collection", "The native plan command retains its original target", "Record whether a short Skill form and a qualified Skill form are both supported"],
+      "reject": ["Treating native plan-mode activation as successful Skill loading", "Registering plan as a compatibility alias", "Reporting success solely from a generated plan"],
+      "status": "not-run"
+    },
+    {
+      "id": "native-review-alias",
+      "dimension": "native-alias",
+      "hosts": ["Claude Code"],
+      "skills": ["tech-review"],
+      "setup": "Retain the bundled code-review command and its review alias in a supported isolated version; install tech-review without replacing either.",
+      "actions": ["Inspect both the canonical command and alias dispatch", "Invoke tech-review on a static fixture and capture the loaded source"],
+      "expect": ["tech-review loads this collection's Skill", "The native command and its alias keep their original targets", "Record alias handling separately from canonical-name handling"],
+      "reject": ["Assuming replacing a canonical name also replaces its aliases", "Claiming all same-named Skills are permanently unreachable without checking invocation form"],
+      "status": "not-run"
+    },
+    {
+      "id": "bundled-skill-preservation",
+      "dimension": "bundled-skill",
+      "hosts": ["Claude Code"],
+      "skills": ["tech-design", "diagnose"],
+      "setup": "Record availability of bundled design and debug in the tested version and session before installing the renamed Skills. If a bundled feature is unavailable, mark that branch blocked rather than claiming preservation.",
+      "actions": ["Compare the catalog before and after installation", "Load each new entry and inspect its source", "Inspect bundled-entry resolution without executing external actions"],
+      "expect": ["Each new entry resolves to the matching collection folder", "Bundled entries remain associated with their original sources", "Differentiate custom replacement from native-command interception"],
+      "reject": ["Replacing bundled content while describing the installation as coexistence", "Inferring feature availability from a documentation table alone"],
+      "status": "not-run"
+    },
+    {
+      "id": "separate-invocation-spaces",
+      "dimension": "separate-namespaces",
+      "hosts": ["Codex CLI", "Codex IDE"],
+      "skills": ["work-plan", "tech-review", "diagnose"],
+      "setup": "Use the tested interface's real Skill selector and explicit mention mechanism. Preserve native slash commands and CLI subcommands.",
+      "actions": ["Select or mention each installed Skill and capture the source identity", "Inspect the native slash-command and CLI-command registries separately"],
+      "expect": ["Explicit Skill selection loads the intended collection files", "Report dollar mentions, slash commands and shell subcommands as distinct invocation mechanisms"],
+      "reject": ["Classifying codex debug as proof that a diagnose or debug Skill cannot be explicitly selected", "Using native /review output as evidence that tech-review loaded"],
+      "status": "not-run"
+    },
+    {
+      "id": "duplicate-skill-sources",
+      "dimension": "duplicate-sources",
+      "hosts": ["each claimed target host"],
+      "skills": ["implement", "prototype", "research"],
+      "setup": "In a disposable profile, introduce distinguishable same-named fixture Skills in supported user, project, parent or plugin locations. Include a same-directory copy attempt to check overwrite handling. Do not use or modify real personal Skills.",
+      "actions": ["Inventory every effective discovery source", "Observe selector and dispatch behavior for the competing names", "Test the supported disambiguation route or document a required source choice"],
+      "expect": ["Installation does not silently overwrite or merge content", "Any supported invocation resolves to an identified source and fingerprint", "Ambiguous or unsupported coexistence is recorded explicitly"],
+      "reject": ["Checking only one installation directory", "Assuming different paths guarantee unique identities", "Claiming both source bodies were merged by the harness without evidence"],
+      "status": "not-run"
+    },
+    {
+      "id": "retired-name-upgrade",
+      "dimension": "retired-names",
+      "hosts": ["each claimed target host"],
+      "skills": ["tech-design", "work-plan", "diagnose", "tech-review", "handover"],
+      "setup": "Prepare a disposable old installation with design, plan, debug, review and handoff. Upgrade according to the documented mapping, preserving a fixture representing a user modification for reconciliation.",
+      "actions": ["Verify the source and modifications of old folders before replacement", "Refresh discovery using the host's supported mechanism", "Inspect active directories, names, UI labels and resolved sources"],
+      "expect": ["Only the new collection entry identities remain active", "Directory, frontmatter and UI metadata agree", "User modifications are identified rather than silently discarded", "Historical case IDs are not mistaken for installed aliases"],
+      "reject": ["Keeping old aliases that recreate the collision", "Renaming only frontmatter", "Deleting an unrelated same-named Skill"],
+      "status": "not-run"
+    },
+    {
+      "id": "similar-name-routing",
+      "dimension": "similar-names",
+      "hosts": ["Claude Code", "each claimed target host with a similar research entry"],
+      "skills": ["research"],
+      "setup": "Where supported, keep a deep-research workflow and the collection's research Skill available together. Record both exact identities.",
+      "actions": ["Explicitly select research and capture the loaded file", "Run a separate natural-language selection case with labels withheld"],
+      "expect": ["Distinguish an exact identity collision from overlapping descriptions", "Record explicit invocation separately from automatic selection quality"],
+      "reject": ["Renaming solely because another name contains the word research", "Inferring correct natural selection from a successful explicit invocation"],
+      "status": "not-run"
+    },
+    {
+      "id": "different-action-same-name",
+      "dimension": "side-effecting-native-command",
+      "hosts": ["Hermes"],
+      "skills": ["diagnose", "handover"],
+      "setup": "Preserve native debug-report and handoff-session commands. Use registry inspection or side-effect-free dispatch stubs to inspect them; do not upload reports, send messages or transfer a real session.",
+      "actions": ["Inspect the old native names without activating their external effects", "Invoke diagnose on a local code fixture", "Invoke handover to create a local handoff artifact"],
+      "expect": ["Both new names load the corresponding collection Skill", "The native names still resolve to the host's original actions", "The evaluation causes no diagnostic upload or live session transfer"],
+      "reject": ["Actually invoking a native upload or transfer merely to test a collision", "Treating a host diagnostic report as code-fault diagnosis evidence", "Treating native session migration as successful handover-Skill loading"],
+      "status": "not-run"
+    }
+  ]
+}

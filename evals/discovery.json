@@ -1,0 +1,621 @@
+{
+  "status": "prepared-not-run",
+  "note": "Expected primary is a collection routing target, not a ban on normal host capabilities. Null means no collection workflow is required. Supply raw context from the linked case but do not reveal labels. Evaluate actual host selection separately from execution quality.",
+  "queries": [
+    {
+      "id": "design-requirements-positive",
+      "request": "完善订单取消设计，重点补行为和验收，可以直接修订现有文件。",
+      "context_case": "design-requirements",
+      "expected_primary": "tech-design",
+      "kind": "positive"
+    },
+    {
+      "id": "design-requirements-neighbor",
+      "request": "只把 design.md 的错别字改掉，不调整含义。",
+      "context_case": "design-requirements",
+      "expected_primary": null,
+      "kind": "neighbor",
+      "avoid_forcing": "tech-design"
+    },
+    {
+      "id": "design-domain-positive",
+      "request": "梳理设计里 model 的含义，只改 design.md。",
+      "context_case": "design-domain",
+      "expected_primary": "tech-design",
+      "kind": "positive"
+    },
+    {
+      "id": "design-domain-neighbor",
+      "request": "读取已有词汇表，解释 modelArtifact 的意思即可。",
+      "context_case": "design-domain",
+      "expected_primary": null,
+      "kind": "neighbor",
+      "avoid_forcing": "tech-design"
+    },
+    {
+      "id": "design-options-positive",
+      "request": "根据材料决定选哪种任务执行方案，不需要再问我。",
+      "context_case": "design-options",
+      "expected_primary": "tech-design",
+      "kind": "positive"
+    },
+    {
+      "id": "design-options-neighbor",
+      "request": "只查清候选 A 支不支持离线，不做选型。",
+      "context_case": "design-options",
+      "expected_primary": "research",
+      "kind": "neighbor",
+      "avoid_forcing": "tech-design"
+    },
+    {
+      "id": "design-architecture-positive",
+      "request": "完善这个协议迁移设计，要支持滚动发布。",
+      "context_case": "design-architecture",
+      "expected_primary": "tech-design",
+      "kind": "positive"
+    },
+    {
+      "id": "design-architecture-neighbor",
+      "request": "按已批准的迁移设计拆出实施任务。",
+      "context_case": "design-architecture",
+      "expected_primary": "work-plan",
+      "kind": "neighbor",
+      "avoid_forcing": "tech-design"
+    },
+    {
+      "id": "research-conflict-positive",
+      "request": "仅根据本地材料判断离线批处理是否并发安全，解释资料为何矛盾。",
+      "context_case": "research-conflict",
+      "expected_primary": "research",
+      "kind": "positive"
+    },
+    {
+      "id": "research-conflict-neighbor",
+      "request": "把这三份材料按原意整理成一段摘要。",
+      "context_case": "research-conflict",
+      "expected_primary": null,
+      "kind": "neighbor",
+      "avoid_forcing": "research"
+    },
+    {
+      "id": "research-unavailable-positive",
+      "request": "判断我们手里的兼容表能否证明当前运行版本支持热更新。",
+      "context_case": "research-unavailable",
+      "expected_primary": "research",
+      "kind": "positive"
+    },
+    {
+      "id": "research-unavailable-neighbor",
+      "request": "把 compatibility.md 中的日期统一成 ISO 格式。",
+      "context_case": "research-unavailable",
+      "expected_primary": null,
+      "kind": "neighbor",
+      "avoid_forcing": "research"
+    },
+    {
+      "id": "plan-decisions-positive",
+      "request": "给这项升级安排可推进的工作，先不要实现。",
+      "context_case": "plan-decisions",
+      "expected_primary": "work-plan",
+      "kind": "positive"
+    },
+    {
+      "id": "plan-decisions-neighbor",
+      "request": "决定导出格式用 CSV 还是 JSON，并修改设计。",
+      "context_case": "plan-decisions",
+      "expected_primary": "tech-design",
+      "kind": "neighbor",
+      "avoid_forcing": "work-plan"
+    },
+    {
+      "id": "plan-migration-positive",
+      "request": "把既定的字段迁移分成可验证任务。",
+      "context_case": "plan-migration",
+      "expected_primary": "work-plan",
+      "kind": "positive"
+    },
+    {
+      "id": "plan-migration-neighbor",
+      "request": "只把计划文档里一处日期改为明天。",
+      "context_case": "plan-migration",
+      "expected_primary": null,
+      "kind": "neighbor",
+      "avoid_forcing": "work-plan"
+    },
+    {
+      "id": "prototype-state-positive",
+      "request": "做个本地可操作实验，验证取消发生在成功之后时状态如何表现。",
+      "context_case": "prototype-state",
+      "expected_primary": "prototype",
+      "kind": "positive"
+    },
+    {
+      "id": "prototype-state-neighbor",
+      "request": "按已确定的行为约定实现正式取消接口。",
+      "context_case": "prototype-state",
+      "expected_primary": "implement",
+      "kind": "neighbor",
+      "avoid_forcing": "prototype"
+    },
+    {
+      "id": "prototype-boundary-positive",
+      "request": "设计并尽可能执行一个实验，验证生产用数据库的唯一约束在并发插入时生效。",
+      "context_case": "prototype-boundary",
+      "expected_primary": "prototype",
+      "kind": "positive"
+    },
+    {
+      "id": "prototype-boundary-neighbor",
+      "request": "仅调研唯一约束的一般语义。",
+      "context_case": "prototype-boundary",
+      "expected_primary": "research",
+      "kind": "neighbor",
+      "avoid_forcing": "prototype"
+    },
+    {
+      "id": "implement-feature-positive",
+      "request": "让 parse_limit 支持闭区间 1 到 100，区间外抛 ValueError，补必要验证。",
+      "context_case": "implement-feature",
+      "expected_primary": "implement",
+      "kind": "positive"
+    },
+    {
+      "id": "implement-feature-neighbor",
+      "request": "仅审查 parse_limit 是否满足 1 到 100 的要求。",
+      "context_case": "implement-feature",
+      "expected_primary": "tech-review",
+      "kind": "neighbor",
+      "avoid_forcing": "implement"
+    },
+    {
+      "id": "implement-test-plan-positive",
+      "request": "只设计支付回调补测方案，不改产品代码。",
+      "context_case": "implement-test-plan",
+      "expected_primary": "implement",
+      "kind": "positive"
+    },
+    {
+      "id": "implement-test-plan-neighbor",
+      "request": "审查已有支付测试是否能发现重复入账。",
+      "context_case": "implement-test-plan",
+      "expected_primary": "tech-review",
+      "kind": "neighbor",
+      "avoid_forcing": "implement"
+    },
+    {
+      "id": "implement-test-code-positive",
+      "request": "给价格计算函数补测试，暂不修改产品代码。",
+      "context_case": "implement-test-code",
+      "expected_primary": "implement",
+      "kind": "positive"
+    },
+    {
+      "id": "implement-test-code-neighbor",
+      "request": "重新设计价格领域模型与折扣规则。",
+      "context_case": "implement-test-code",
+      "expected_primary": "tech-design",
+      "kind": "neighbor",
+      "avoid_forcing": "implement"
+    },
+    {
+      "id": "implement-baseline-positive",
+      "request": "修复零值不被接受的问题，并区分已有测试失败与本次改动的结果。",
+      "context_case": "implement-baseline",
+      "expected_primary": "implement",
+      "kind": "positive"
+    },
+    {
+      "id": "implement-baseline-neighbor",
+      "request": "只审查 number.py 的边界处理，不修复。",
+      "context_case": "implement-baseline",
+      "expected_primary": "tech-review",
+      "kind": "neighbor",
+      "avoid_forcing": "implement"
+    },
+    {
+      "id": "debug-wrong-theory-positive",
+      "request": "第二个用户的购物车偶尔出现第一个用户的商品，我猜是编码问题，帮我修复。",
+      "context_case": "debug-wrong-theory",
+      "expected_primary": "diagnose",
+      "kind": "positive"
+    },
+    {
+      "id": "debug-wrong-theory-neighbor",
+      "request": "新增购物车优惠券功能，规则已经明确。",
+      "context_case": "debug-wrong-theory",
+      "expected_primary": "implement",
+      "kind": "neighbor",
+      "avoid_forcing": "diagnose"
+    },
+    {
+      "id": "debug-intermittent-positive",
+      "request": "根据现有资料定位超时，只要调查结论，不能访问生产。",
+      "context_case": "debug-intermittent",
+      "expected_primary": "diagnose",
+      "kind": "positive"
+    },
+    {
+      "id": "debug-intermittent-neighbor",
+      "request": "没有性能故障，帮我规划下一季度容量升级。",
+      "context_case": "debug-intermittent",
+      "expected_primary": "work-plan",
+      "kind": "neighbor",
+      "avoid_forcing": "diagnose"
+    },
+    {
+      "id": "review-architecture-positive",
+      "request": "只读审核这个两层结构是否值得简化。",
+      "context_case": "review-architecture",
+      "expected_primary": "tech-review",
+      "kind": "positive"
+    },
+    {
+      "id": "review-architecture-neighbor",
+      "request": "创建一个新的厂商适配层并实现上述契约。",
+      "context_case": "review-architecture",
+      "expected_primary": "implement",
+      "kind": "neighbor",
+      "avoid_forcing": "tech-review"
+    },
+    {
+      "id": "review-design-full-positive",
+      "request": "旧问题我改了，重新完整审核 design.md，不改任何文件。",
+      "context_case": "review-design-full",
+      "expected_primary": "tech-review",
+      "kind": "positive"
+    },
+    {
+      "id": "review-design-full-neighbor",
+      "request": "设计新的发布版本模型，可以直接修改 design.md。",
+      "context_case": "review-design-full",
+      "expected_primary": "tech-design",
+      "kind": "neighbor",
+      "avoid_forcing": "tech-review"
+    },
+    {
+      "id": "review-code-regression-positive",
+      "request": "对比 old.py 和 new.py，审核这次重构，不运行测试。",
+      "context_case": "review-code-regression",
+      "expected_primary": "tech-review",
+      "kind": "positive"
+    },
+    {
+      "id": "review-code-regression-neighbor",
+      "request": "按行为约定直接修复 new.py。",
+      "context_case": "review-code-regression",
+      "expected_primary": "implement",
+      "kind": "neighbor",
+      "avoid_forcing": "tech-review"
+    },
+    {
+      "id": "review-mixed-wip-positive",
+      "request": "审核全部未提交变更，不要修改或运行测试。",
+      "context_case": "review-mixed-wip",
+      "expected_primary": "tech-review",
+      "kind": "positive"
+    },
+    {
+      "id": "review-mixed-wip-neighbor",
+      "request": "实现新的授权函数并补测试。",
+      "context_case": "review-mixed-wip",
+      "expected_primary": "implement",
+      "kind": "neighbor",
+      "avoid_forcing": "tech-review"
+    },
+    {
+      "id": "handoff-write-positive",
+      "request": "生成交接记录，下一会话继续修复解析器。",
+      "context_case": "handoff-write",
+      "expected_primary": "handover",
+      "kind": "positive"
+    },
+    {
+      "id": "handoff-write-neighbor",
+      "request": "把今天讨论的内容概括成三句话，不需要继续工作。",
+      "context_case": "handoff-write",
+      "expected_primary": null,
+      "kind": "neighbor",
+      "avoid_forcing": "handover"
+    },
+    {
+      "id": "handoff-resume-positive",
+      "request": "根据 handoff.md 接着工作，但先只核对现场差异，不修改代码。",
+      "context_case": "handoff-resume",
+      "expected_primary": "handover",
+      "kind": "positive"
+    },
+    {
+      "id": "handoff-resume-neighbor",
+      "request": "将这个编码习惯写入长期个人记忆。",
+      "context_case": "handoff-resume",
+      "expected_primary": null,
+      "kind": "neighbor",
+      "avoid_forcing": "handover"
+    },
+    {
+      "id": "skill-dev-create-positive",
+      "request": "在当前目录生成一个 db-check Skill，帮助只读核对迁移脚本兼容性。不要安装。",
+      "context_case": "skill-dev-create",
+      "expected_primary": "skill-dev",
+      "kind": "positive"
+    },
+    {
+      "id": "skill-dev-create-neighbor",
+      "request": "安装现有 db-check Skill，不修改内容。",
+      "context_case": "skill-dev-create",
+      "expected_primary": null,
+      "kind": "neighbor",
+      "avoid_forcing": "skill-dev"
+    },
+    {
+      "id": "skill-dev-collision-positive",
+      "request": "先生成无前缀的 review Skill。名字我已经定了，暂时不要安装。",
+      "context_case": "skill-dev-collision",
+      "expected_primary": "skill-dev",
+      "kind": "positive"
+    },
+    {
+      "id": "skill-dev-collision-neighbor",
+      "request": "不创建 Skill，只润色这段普通提示词。",
+      "context_case": "skill-dev-collision",
+      "expected_primary": null,
+      "kind": "neighbor",
+      "avoid_forcing": "skill-dev"
+    },
+    {
+      "id": "design-prescribed-positive",
+      "request": "我们已经决定沿用 Queue X。只根据本地事实设计升级前的尽调，不重做市场选型。",
+      "context_case": "design-prescribed",
+      "expected_primary": "tech-design",
+      "kind": "positive"
+    },
+    {
+      "id": "design-prescribed-neighbor",
+      "request": "只给 facts.md 的英文标识符加反引号。",
+      "context_case": "design-prescribed",
+      "expected_primary": null,
+      "kind": "neighbor",
+      "avoid_forcing": "tech-design"
+    },
+    {
+      "id": "design-caller-burden-positive",
+      "request": "这个 Store.save(record) 接口只有一个方法，请评估是否足够简单，并给出更好的边界。",
+      "context_case": "design-caller-burden",
+      "expected_primary": "tech-design",
+      "kind": "positive"
+    },
+    {
+      "id": "design-caller-burden-neighbor",
+      "request": "只列出现有 Store.save 的所有调用位置。",
+      "context_case": "design-caller-burden",
+      "expected_primary": null,
+      "kind": "neighbor",
+      "avoid_forcing": "tech-design"
+    },
+    {
+      "id": "design-deep-path-positive",
+      "request": "评估现有 Java 目录能否迁到规范布局，给出分阶段方案，先不移动文件。",
+      "context_case": "design-deep-path",
+      "expected_primary": "tech-design",
+      "kind": "positive"
+    },
+    {
+      "id": "design-deep-path-neighbor",
+      "request": "统计项目里 Java 源文件数量。",
+      "context_case": "design-deep-path",
+      "expected_primary": null,
+      "kind": "neighbor",
+      "avoid_forcing": "tech-design"
+    },
+    {
+      "id": "design-frontend-positive",
+      "request": "我们想把这段代码放进 shared，请判断合理的职责和导入边界。",
+      "context_case": "design-frontend",
+      "expected_primary": "tech-design",
+      "kind": "positive"
+    },
+    {
+      "id": "design-frontend-neighbor",
+      "request": "只把 Card.ts 中变量 name 改名为 displayName。",
+      "context_case": "design-frontend",
+      "expected_primary": "implement",
+      "kind": "neighbor",
+      "avoid_forcing": "tech-design"
+    },
+    {
+      "id": "prototype-sqlite-positive",
+      "request": "用 Python 标准库对本机 SQLite 做可重复实验：两条独立连接同时插入相同 tenant_id/request_id，唯一约束应只留下一个记录；再确认不同租户可使用同一 request_id。保存实际结果。",
+      "context_case": "prototype-sqlite",
+      "expected_primary": "prototype",
+      "kind": "positive"
+    },
+    {
+      "id": "prototype-sqlite-neighbor",
+      "request": "解释 UNIQUE(tenant_id, request_id) 的语法。",
+      "context_case": "prototype-sqlite",
+      "expected_primary": null,
+      "kind": "neighbor",
+      "avoid_forcing": "prototype"
+    },
+    {
+      "id": "debug-no-repro-positive",
+      "request": "只有这些资料，先诊断可能的原因，给出证据和下一步。不改代码，也不要求我现在提供更多信息。",
+      "context_case": "debug-no-repro",
+      "expected_primary": "diagnose",
+      "kind": "positive"
+    },
+    {
+      "id": "debug-no-repro-neighbor",
+      "request": "把日志时间戳统一成北京时间。",
+      "context_case": "debug-no-repro",
+      "expected_primary": null,
+      "kind": "neighbor",
+      "avoid_forcing": "diagnose"
+    },
+    {
+      "id": "review-independence-positive",
+      "request": "审查这个修改，并说明你实际能做到什么程度的独立性。",
+      "context_case": "review-independence",
+      "expected_primary": "tech-review",
+      "kind": "positive"
+    },
+    {
+      "id": "review-independence-neighbor",
+      "request": "解释 Python 的 and 与 or 运算符。",
+      "context_case": "review-independence",
+      "expected_primary": null,
+      "kind": "neighbor",
+      "avoid_forcing": "tech-review"
+    },
+    {
+      "id": "skill-dev-eval-leak-positive",
+      "request": "审核这个 Skill 评估方案并修正它，只交付评估设计。",
+      "context_case": "skill-dev-eval-leak",
+      "expected_primary": "skill-dev",
+      "kind": "positive"
+    },
+    {
+      "id": "skill-dev-eval-leak-neighbor",
+      "request": "只把 evaluation.md 翻译成英文。",
+      "context_case": "skill-dev-eval-leak",
+      "expected_primary": null,
+      "kind": "neighbor",
+      "avoid_forcing": "skill-dev"
+    },
+    {
+      "id": "design-wire-compatibility-positive",
+      "request": "补完整接口升级设计，直接改 design.md。服务和两个客户端分开发版，现有客户端必须继续工作。",
+      "context_case": "design-wire-compatibility",
+      "expected_primary": "tech-design",
+      "kind": "positive"
+    },
+    {
+      "id": "design-wire-compatibility-neighbor",
+      "request": "只审查这份升级设计，列出会破坏旧客户端的点，不修改文件。",
+      "context_case": "design-wire-compatibility",
+      "expected_primary": "tech-review",
+      "kind": "neighbor",
+      "avoid_forcing": "tech-design"
+    },
+    {
+      "id": "design-authorized-break-positive",
+      "request": "所有调用方都由我们维护。已经决定在维护窗口里一次性把旧字段改掉，可以中断服务，不保留兼容层。请完善具体切换与恢复设计。",
+      "context_case": "design-authorized-break",
+      "expected_primary": "tech-design",
+      "kind": "positive"
+    },
+    {
+      "id": "design-authorized-break-neighbor",
+      "request": "已定这个切换设计，帮我把工作拆成执行任务，不重新设计协议。",
+      "context_case": "design-authorized-break",
+      "expected_primary": "work-plan",
+      "kind": "neighbor",
+      "avoid_forcing": "tech-design"
+    },
+    {
+      "id": "design-worker-crash-positive",
+      "request": "完善导入任务的运行设计：不能丢已接受任务，也不能重复扣处理额度。可以直接修改 design.md，不部署。",
+      "context_case": "design-worker-crash",
+      "expected_primary": "tech-design",
+      "kind": "positive"
+    },
+    {
+      "id": "design-worker-crash-neighbor",
+      "request": "只做一个可运行实验，确认额度服务同键并发调用时的实际行为，不修改设计。",
+      "context_case": "design-worker-crash",
+      "expected_primary": "prototype",
+      "kind": "neighbor",
+      "avoid_forcing": "tech-design"
+    },
+    {
+      "id": "implement-backfill-restart-positive",
+      "request": "修复这份 SQLite 回填，使中断后能够安全重跑，已有行及旧读法继续可用。补验证并写清恢复限制。本轮只用本地临时数据库。",
+      "context_case": "implement-backfill-restart",
+      "expected_primary": "implement",
+      "kind": "positive"
+    },
+    {
+      "id": "implement-backfill-restart-neighbor",
+      "request": "只解释这份迁移可能为什么漏数据，不修改或运行任何内容。",
+      "context_case": "implement-backfill-restart",
+      "expected_primary": "diagnose",
+      "kind": "neighbor",
+      "avoid_forcing": "implement"
+    },
+    {
+      "id": "debug-bisect-unknown-positive",
+      "request": "分析这次回归最早可能在哪个修订引入，给出结论和最小后续核实步骤，不改代码、不重置工作区。",
+      "context_case": "debug-bisect-unknown",
+      "expected_primary": "diagnose",
+      "kind": "positive"
+    },
+    {
+      "id": "debug-bisect-unknown-neighbor",
+      "request": "已定位并确认 r4 的校验错误，请按给定修复方案实现并补测试。",
+      "context_case": "debug-bisect-unknown",
+      "expected_primary": "implement",
+      "kind": "neighbor",
+      "avoid_forcing": "diagnose"
+    },
+    {
+      "id": "docs-legacy-status-audit-positive",
+      "request": "整理设计里的状态，别让通过评审、实现完成、运行验收混成一个 Done。允许调整这份文档的格式。",
+      "context_case": "docs-legacy-status",
+      "expected_primary": "tech-design",
+      "kind": "positive"
+    },
+    {
+      "id": "docs-legacy-status-audit-neighbor",
+      "request": "只解释这个 Done 能说明什么，不改文档。",
+      "context_case": "docs-legacy-status",
+      "expected_primary": null,
+      "kind": "neighbor",
+      "avoid_forcing": "tech-design"
+    },
+    {
+      "id": "docs-design-supersede-audit-positive",
+      "request": "旧方案已被新方案替代，更新 ADR 的状态和相互引用，保留当初的理由。",
+      "context_case": "docs-design-supersede",
+      "expected_primary": "tech-design",
+      "kind": "positive"
+    },
+    {
+      "id": "docs-design-supersede-audit-neighbor",
+      "request": "检查这些 ADR 是否互相矛盾，只报告问题。",
+      "context_case": "docs-design-supersede",
+      "expected_primary": "tech-review",
+      "kind": "neighbor",
+      "avoid_forcing": "tech-design"
+    },
+    {
+      "id": "docs-implement-sync-audit-positive",
+      "request": "实现这次行为变更，并同步已失真的设计、上下文和验证状态。",
+      "context_case": "docs-implement-sync",
+      "expected_primary": "implement",
+      "kind": "positive"
+    },
+    {
+      "id": "docs-implement-sync-audit-neighbor",
+      "request": "只整理实现任务，列出需要同步哪些文档，不改代码。",
+      "context_case": "docs-implement-sync",
+      "expected_primary": "work-plan",
+      "kind": "neighbor",
+      "avoid_forcing": "implement"
+    },
+    {
+      "id": "docs-review-consistency-audit-positive",
+      "request": "只读核对实现和 ADR 的结论，特别看测试证据是否还适用当前版本。",
+      "context_case": "docs-review-consistency",
+      "expected_primary": "tech-review",
+      "kind": "positive"
+    },
+    {
+      "id": "docs-review-consistency-audit-neighbor",
+      "request": "根据已经确认的决策修订设计和 ADR 状态，不做代码评审。",
+      "context_case": "docs-review-consistency",
+      "expected_primary": "tech-design",
+      "kind": "neighbor",
+      "avoid_forcing": "tech-review"
+    }
+  ]
+}

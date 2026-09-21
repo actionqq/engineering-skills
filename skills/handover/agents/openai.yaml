@@ -1,0 +1,3 @@
+interface:
+  display_name: "Handover"
+  short_description: "Prepare or resume engineering work with verified context"

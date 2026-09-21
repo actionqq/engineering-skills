@@ -1,0 +1,79 @@
+{
+  "sqlite_version": "3.53.1",
+  "journal_mode": "default DELETE",
+  "runs": [
+    {
+      "run": 1,
+      "outcomes": [
+        {
+          "worker": 1,
+          "outcome": "unique-rejected",
+          "error": "UNIQUE constraint failed: requests.tenant_id, requests.request_id"
+        },
+        {
+          "worker": 2,
+          "outcome": "inserted"
+        }
+      ],
+      "rows": [
+        [
+          "tenant-a",
+          "request-1"
+        ],
+        [
+          "tenant-b",
+          "request-1"
+        ]
+      ]
+    },
+    {
+      "run": 2,
+      "outcomes": [
+        {
+          "worker": 1,
+          "outcome": "unique-rejected",
+          "error": "UNIQUE constraint failed: requests.tenant_id, requests.request_id"
+        },
+        {
+          "worker": 2,
+          "outcome": "inserted"
+        }
+      ],
+      "rows": [
+        [
+          "tenant-a",
+          "request-1"
+        ],
+        [
+          "tenant-b",
+          "request-1"
+        ]
+      ]
+    },
+    {
+      "run": 3,
+      "outcomes": [
+        {
+          "worker": 1,
+          "outcome": "unique-rejected",
+          "error": "UNIQUE constraint failed: requests.tenant_id, requests.request_id"
+        },
+        {
+          "worker": 2,
+          "outcome": "inserted"
+        }
+      ],
+      "rows": [
+        [
+          "tenant-a",
+          "request-1"
+        ],
+        [
+          "tenant-b",
+          "request-1"
+        ]
+      ]
+    }
+  ],
+  "limit": "Local SQLite, three simultaneous-start schedules. No claim about all interleavings, process crashes, other database engines, or production settings."
+}

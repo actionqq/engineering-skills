@@ -1,0 +1,25 @@
+{
+  "kind": "structural-validation",
+  "passed": true,
+  "errors": [],
+  "skills": 9,
+  "capabilities": 15,
+  "references": 28,
+  "prepared_cases": 57,
+  "method_groups": 25,
+  "pinned_files": 80,
+  "prepared_trigger_requests": 82,
+  "prepared_host_name_scenarios": 8,
+  "entrypoint_words": {
+    "diagnose": 429,
+    "handover": 400,
+    "implement": 839,
+    "prototype": 363,
+    "research": 493,
+    "skill-dev": 583,
+    "tech-design": 759,
+    "tech-review": 506,
+    "work-plan": 648
+  },
+  "limits": "Syntax, local resource closure, declared coverage and source bookkeeping only; no model behavior or quality comparison."
+}

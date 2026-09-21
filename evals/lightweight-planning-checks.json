@@ -1,0 +1,89 @@
+{
+  "date": "2026-09-21",
+  "kind": "lightweight-planning-maintenance-checks",
+  "official_validation_passed": 9,
+  "case_exports": [
+    {
+      "case": "plan-lightweight-checklist",
+      "raw_export": "passed",
+      "model_execution": "not-run"
+    },
+    {
+      "case": "plan-independent-briefs",
+      "raw_export": "passed",
+      "model_execution": "not-run"
+    },
+    {
+      "case": "design-preserve-single-document",
+      "raw_export": "passed",
+      "model_execution": "not-run"
+    },
+    {
+      "case": "implement-small-without-spec",
+      "raw_export": "passed",
+      "model_execution": "not-run"
+    },
+    {
+      "case": "implement-stale-unit-brief",
+      "raw_export": "passed",
+      "model_execution": "not-run"
+    },
+    {
+      "case": "handover-current-unit",
+      "raw_export": "passed",
+      "model_execution": "not-run"
+    }
+  ],
+  "independent_model_execution": "not-run",
+  "comparison": "not-run",
+  "validation_environment": "Temporary venv with tooling/requirements.txt; system Python lacked PyYAML.",
+  "limits": "Structural and raw-input export checks only; no claim of behavioral improvement.",
+  "skill_content_sha256": {
+    "skills/diagnose/SKILL.md": "38c5a74b125197fcaebd0ee977b191f655a9feea220a5bfedf1c4ab7afcbb020",
+    "skills/diagnose/THIRD_PARTY_NOTICES.md": "b9fe112af472d24a80db786c43ef6da1e7176d54a7d0e9fef0584f3200391904",
+    "skills/diagnose/references/reproduction.md": "b028f5c0c5fbe28b1bc160bfb83426c8a542315cde57eb36d9cd7dc12eb0e026",
+    "skills/diagnose/references/tracing.md": "d10f346ddc279c17e4753b3146b40c1b6a2a60e56123ddae2974b2b952ed9109",
+    "skills/handover/SKILL.md": "b7ab356479b61045d65e9ef7c49a3aaa55e7f36050e4d1b401aab9775de2b896",
+    "skills/handover/THIRD_PARTY_NOTICES.md": "f4e7b559439f64bb02d334922ef2da66928e1ac9aa1005199062459a543b71e8",
+    "skills/handover/references/record.md": "c0ea355ea0cade3cadec687db1ed7a564bf9c2327984a2776bb375d4981c2589",
+    "skills/implement/SKILL.md": "048f8ffeb50d2a6982d21f1844ce8cfadd233c0f5d91b36ba328f8c4ec036158",
+    "skills/implement/THIRD_PARTY_NOTICES.md": "d10e0154c7562da1fe0e78e80f62956d3fce2858b6aec8f46a99b66c32ebe367",
+    "skills/implement/references/documents.md": "82abf5d08d3caa4d526e6da46944b2924d641310be86395c5974e571d7bbfa67",
+    "skills/implement/references/evolution.md": "e0ddead0515d26c23d2ac3b0f774f1a52f2c6b50e9ea48e9ce437360c5a7b084",
+    "skills/implement/references/fidelity.md": "929f25e27761d26450d1073da168ab50633414d19cd859eae3a0138bc8714c58",
+    "skills/implement/references/refactoring.md": "464df60920eebfc78524fc255ea0f5a6dd31b3055eae25dc58dd794fb34fd03c",
+    "skills/implement/references/testing.md": "f74b6846af27d47fca3cf2b6fc5e3f05ca1c41d5a2016c9d580d13ff6763ed9d",
+    "skills/prototype/SKILL.md": "3b303cd336fc4e20cc1f892df53d5419c35c4a247ff366f73229a704d71f17cc",
+    "skills/prototype/THIRD_PARTY_NOTICES.md": "232064d60772dd946563c1728ff85e211c3cc6df12c5e163ef9dba27c4958965",
+    "skills/prototype/references/experiments.md": "8a68b2e0fe2192eec8083af8aef9e793e1d1a58c770d262e353e5683edf52400",
+    "skills/prototype/references/interactive.md": "448696cceb67cced4566d8e89ad48f35d519bc0440bbc27535e4ee4630695242",
+    "skills/research/SKILL.md": "63b446086bb41a4ade887bed4a49b48c6279715a794e3a70d3979db9be28ceb4",
+    "skills/research/THIRD_PARTY_NOTICES.md": "446e0f034206fe384569caf0d06fc7bb3ac64fa6c577486bf4819e7aed9cabd5",
+    "skills/research/references/evidence.md": "ab6c712e2cc393814c00420419c55c31d5faa6771f00b9c3771a3df9e9a80f6b",
+    "skills/skill-dev/SKILL.md": "a9328421871ed2f2ff5824fd42bbe34e5511c3a845c582918c8032b46167ed98",
+    "skills/skill-dev/THIRD_PARTY_NOTICES.md": "27cba36340127e531dd3e295fb45348e0a9995c9cf4cc43f833f91c4736f8410",
+    "skills/skill-dev/references/authoring.md": "b3fdc5dc261484ec8ceb1d7d33e4ec4be4a20cb8184a63996cfd08262dfdc32a",
+    "skills/skill-dev/references/discovery.md": "21a6a00d21f560418d9ebf57b8c1d7e8b4e559a8598653fbac14dd923fe194ee",
+    "skills/skill-dev/references/evaluation.md": "e32b5ce5d063debcf7b4c65a39f03d5288c9af5c8d37621bf38dae5b5a2e9638",
+    "skills/tech-design/SKILL.md": "8f92e25d0d19ebfc260af349847bdb71095b00b63defb5078f5b38289e09f226",
+    "skills/tech-design/THIRD_PARTY_NOTICES.md": "a199aca5673851dd7f7365c8c125d6d0c35f55858143e9d0a5f9d908db23678c",
+    "skills/tech-design/references/alternatives.md": "4a5e4916db39597cf652564bde54f45b09eaf82aa601c644d01f763be0adb34f",
+    "skills/tech-design/references/architecture.md": "672f17780b2ac35f000fc1bdc71812a82a38b5ac74edc320b4d4b04b6dd4ee8f",
+    "skills/tech-design/references/contracts.md": "3f21b0b9026cb3a18685198093bed4b902000a94d0b4ceeea02f548a6360ce5b",
+    "skills/tech-design/references/domain.md": "d47380bdc6b81257454da70ea883096216b6ead9bace5795b219f10b901d83b7",
+    "skills/tech-design/references/frontend.md": "d63f24e1abf887638fb6890205dfe30c46523afc48aeae5fa7b9e1bd9bb1698f",
+    "skills/tech-design/references/requirements.md": "094734a6222d905016c99e13f7a42ff925c2e20a77cd0d6f0ebdf146fd3a0f9f",
+    "skills/tech-design/references/selection.md": "84f07ae3abb79c8a59fee496c19bc62d34f96787c93b9069e609e69ed5c42265",
+    "skills/tech-design/references/structure.md": "f5e4069ca7deb772492e6697a53e425a336cbd4d5c9f82d8c2531772a3e3a37f",
+    "skills/tech-design/references/systems.md": "60634d61f7a466acb9098ae2a09cdc2a96ddbe944e5fe4f63c0a47201f2d12c3",
+    "skills/tech-review/SKILL.md": "a28d4c84c1d8657e5864e1960e351bffd66401487dee31e3ac086a9ee5acd65b",
+    "skills/tech-review/THIRD_PARTY_NOTICES.md": "a0331fc1d620ddd8ebf5fb1ee52a247d71e77059ed2bfc1d5f8c17c4b7c2afd4",
+    "skills/tech-review/references/architecture.md": "5662459bf8338578160d62f1654ca4e2c4147f2f37d6190f57a45694867a6fa6",
+    "skills/tech-review/references/code.md": "0f1c0f87c2f3c0244ce1582a2ebcda89b9c908274a93b71a0b94e1965e9b8879",
+    "skills/tech-review/references/design.md": "d0496fb6358be902051a115635238066e9099b82ab6ba3b21a88b332610d9718",
+    "skills/tech-review/references/independence.md": "6104e0cfb23eab9655464eee23275622961c09c2ee42c6a4f0d215a2dd009cb3",
+    "skills/work-plan/SKILL.md": "58698a04f8adc8124ac620e351ebdfcd8610c900f722900a5e068b42bbdaa298",
+    "skills/work-plan/THIRD_PARTY_NOTICES.md": "52542a88ef537a8f855894f4a995e259e9ea7742e6796cefc2d046ef72f2e8aa",
+    "skills/work-plan/references/delivery.md": "50a356b9a681b5a9ceb42db4046342bb44049bc1a3f734bc18f7776badbddd47"
+  }
+}

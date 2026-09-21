@@ -1,0 +1,84 @@
+{
+  "kind": "author-exercises",
+  "independent": false,
+  "blind": false,
+  "baseline_comparison": false,
+  "time_utc": "2026-09-20T07:52:25.602345+00:00",
+  "python": "3.14.7",
+  "case_ids": [
+    "debug-wrong-theory",
+    "implement-test-code",
+    "prototype-sqlite",
+    "review-code-regression"
+  ],
+  "runs": [
+    {
+      "case": "debug-wrong-theory",
+      "command": [
+        "python3",
+        "-B",
+        "-m",
+        "unittest",
+        "-v",
+        "test_cart"
+      ],
+      "cwd": "debug-wrong-theory/workspace",
+      "exit_code": 1,
+      "log": "debug-wrong-theory/red.log"
+    },
+    {
+      "case": "debug-wrong-theory",
+      "command": [
+        "python3",
+        "-B",
+        "-m",
+        "unittest",
+        "-v",
+        "test_cart"
+      ],
+      "cwd": "debug-wrong-theory/workspace",
+      "exit_code": 0,
+      "log": "debug-wrong-theory/green.log"
+    },
+    {
+      "case": "implement-test-code",
+      "command": [
+        "python3",
+        "-B",
+        "-m",
+        "unittest",
+        "-v",
+        "test_price"
+      ],
+      "cwd": "implement-test-code/workspace",
+      "exit_code": 0,
+      "log": "implement-test-code/tests.log"
+    },
+    {
+      "case": "prototype-sqlite",
+      "command": [
+        "python3",
+        "-B",
+        "experiment.py"
+      ],
+      "cwd": "prototype-sqlite/workspace",
+      "exit_code": 0,
+      "log": "prototype-sqlite/experiment.log"
+    }
+  ],
+  "static_review": {
+    "subject_executed": false,
+    "before_hashes": {
+      "old.py": "768596931969501adb3799a901e96d5be1800c9e43ec3ab2ba1d68a7aca2264d",
+      "new.py": "6b4dc669dbc48d630e90c2792de88ca5480d85ea11fe421a88ffd03aaaf8ae48",
+      "contract.md": "f70ac5140c11e8c23d08ca4a96c3794d3d8e3e27396aa93288f3871ee67d8b09"
+    },
+    "after_hashes": {
+      "old.py": "768596931969501adb3799a901e96d5be1800c9e43ec3ab2ba1d68a7aca2264d",
+      "new.py": "6b4dc669dbc48d630e90c2792de88ca5480d85ea11fe421a88ffd03aaaf8ae48",
+      "contract.md": "f70ac5140c11e8c23d08ca4a96c3794d3d8e3e27396aa93288f3871ee67d8b09"
+    }
+  },
+  "price_product_unchanged": true,
+  "limits": "Author knows both methods and criteria. Mechanistic local observations only; not a measure of triggering, independent execution quality, or improvement over upstream/default harness."
+}

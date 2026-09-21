@@ -1,0 +1,137 @@
+{
+  "kind": "document-maintenance-revision-checks",
+  "date": "2026-09-20",
+  "passed": true,
+  "checks": [
+    {
+      "case": "docs-design-context",
+      "raw_export": "pass",
+      "model_execution": "not-run"
+    },
+    {
+      "case": "docs-design-supersede",
+      "raw_export": "pass",
+      "model_execution": "not-run"
+    },
+    {
+      "case": "docs-implement-sync",
+      "raw_export": "pass",
+      "model_execution": "not-run"
+    },
+    {
+      "case": "docs-implement-no-churn",
+      "raw_export": "pass",
+      "model_execution": "not-run"
+    },
+    {
+      "case": "docs-implement-file-limit",
+      "raw_export": "pass",
+      "model_execution": "not-run"
+    },
+    {
+      "case": "docs-research-evidence",
+      "raw_export": "pass",
+      "model_execution": "not-run"
+    },
+    {
+      "case": "docs-prototype-promotion",
+      "raw_export": "pass",
+      "model_execution": "not-run"
+    },
+    {
+      "case": "docs-plan-maintenance",
+      "raw_export": "pass",
+      "model_execution": "not-run"
+    },
+    {
+      "case": "docs-diagnose-readonly",
+      "raw_export": "pass",
+      "model_execution": "not-run"
+    },
+    {
+      "case": "docs-review-consistency",
+      "raw_export": "pass",
+      "model_execution": "not-run"
+    },
+    {
+      "case": "docs-handover-pending",
+      "raw_export": "pass",
+      "model_execution": "not-run"
+    },
+    {
+      "case": "docs-skill-dev-source-chain",
+      "raw_export": "pass",
+      "model_execution": "not-run"
+    },
+    {
+      "case": "docs-design-lazy-create",
+      "raw_export": "pass",
+      "model_execution": "not-run"
+    },
+    {
+      "case": "docs-legacy-status",
+      "raw_export": "pass",
+      "model_execution": "not-run"
+    }
+  ],
+  "unchanged_original_cases": 32,
+  "unchanged_manifest_discovery_and_host_cases": true,
+  "outside_bundle_changes": [],
+  "local_markdown_links": "pass",
+  "skill_content_sha256": {
+    "skills/handover/SKILL.md": "b7ab356479b61045d65e9ef7c49a3aaa55e7f36050e4d1b401aab9775de2b896",
+    "skills/handover/THIRD_PARTY_NOTICES.md": "f4e7b559439f64bb02d334922ef2da66928e1ac9aa1005199062459a543b71e8",
+    "skills/skill-dev/SKILL.md": "a9328421871ed2f2ff5824fd42bbe34e5511c3a845c582918c8032b46167ed98",
+    "skills/skill-dev/THIRD_PARTY_NOTICES.md": "27cba36340127e531dd3e295fb45348e0a9995c9cf4cc43f833f91c4736f8410",
+    "skills/diagnose/SKILL.md": "38c5a74b125197fcaebd0ee977b191f655a9feea220a5bfedf1c4ab7afcbb020",
+    "skills/diagnose/THIRD_PARTY_NOTICES.md": "b9fe112af472d24a80db786c43ef6da1e7176d54a7d0e9fef0584f3200391904",
+    "skills/implement/SKILL.md": "ea7545ba381d424b8338ea5f0d087fcaa2128761efb593bc09b4ccf1342faeb7",
+    "skills/implement/THIRD_PARTY_NOTICES.md": "98d2cf02b5a81b2be4b8910e18320ef8ac81a0f7309ac4dd1af4a1e1f3b17a76",
+    "skills/work-plan/SKILL.md": "690a0f5e5901f03c293d3ccc9302e8d972719b6a788f1a117f40fa7b7568e914",
+    "skills/work-plan/THIRD_PARTY_NOTICES.md": "52542a88ef537a8f855894f4a995e259e9ea7742e6796cefc2d046ef72f2e8aa",
+    "skills/tech-review/SKILL.md": "a28d4c84c1d8657e5864e1960e351bffd66401487dee31e3ac086a9ee5acd65b",
+    "skills/tech-review/THIRD_PARTY_NOTICES.md": "a0331fc1d620ddd8ebf5fb1ee52a247d71e77059ed2bfc1d5f8c17c4b7c2afd4",
+    "skills/tech-design/SKILL.md": "7e578a906784994ea63cba06c4e9770b53e1ac9e4136c0d88d4be9ff72920f89",
+    "skills/tech-design/THIRD_PARTY_NOTICES.md": "aebb4a74ea930a3681dc10787eb0e0223591e9cdbc0093bad47853706315a59a",
+    "skills/research/SKILL.md": "63b446086bb41a4ade887bed4a49b48c6279715a794e3a70d3979db9be28ceb4",
+    "skills/research/THIRD_PARTY_NOTICES.md": "446e0f034206fe384569caf0d06fc7bb3ac64fa6c577486bf4819e7aed9cabd5",
+    "skills/prototype/SKILL.md": "3b303cd336fc4e20cc1f892df53d5419c35c4a247ff366f73229a704d71f17cc",
+    "skills/prototype/THIRD_PARTY_NOTICES.md": "232064d60772dd946563c1728ff85e211c3cc6df12c5e163ef9dba27c4958965",
+    "skills/prototype/references/interactive.md": "448696cceb67cced4566d8e89ad48f35d519bc0440bbc27535e4ee4630695242",
+    "skills/prototype/references/experiments.md": "8a68b2e0fe2192eec8083af8aef9e793e1d1a58c770d262e353e5683edf52400",
+    "skills/prototype/agents/openai.yaml": "4d085abdbbcd5b0791695fb64a711e735357631ca8fdf6273001f52191d999a9",
+    "skills/research/references/evidence.md": "ab6c712e2cc393814c00420419c55c31d5faa6771f00b9c3771a3df9e9a80f6b",
+    "skills/research/agents/openai.yaml": "c06147ce0afffeae348b8a46f88efedc84c62469ebc6fc06b6b8d9ab9d4f5d22",
+    "skills/tech-design/references/alternatives.md": "4a5e4916db39597cf652564bde54f45b09eaf82aa601c644d01f763be0adb34f",
+    "skills/tech-design/references/requirements.md": "094734a6222d905016c99e13f7a42ff925c2e20a77cd0d6f0ebdf146fd3a0f9f",
+    "skills/tech-design/references/frontend.md": "d63f24e1abf887638fb6890205dfe30c46523afc48aeae5fa7b9e1bd9bb1698f",
+    "skills/tech-design/references/structure.md": "f5e4069ca7deb772492e6697a53e425a336cbd4d5c9f82d8c2531772a3e3a37f",
+    "skills/tech-design/references/selection.md": "84f07ae3abb79c8a59fee496c19bc62d34f96787c93b9069e609e69ed5c42265",
+    "skills/tech-design/references/domain.md": "d47380bdc6b81257454da70ea883096216b6ead9bace5795b219f10b901d83b7",
+    "skills/tech-design/references/architecture.md": "672f17780b2ac35f000fc1bdc71812a82a38b5ac74edc320b4d4b04b6dd4ee8f",
+    "skills/tech-design/agents/openai.yaml": "51a545b9139603a4bc60b85499903337affafd675a8eac11bc01550b076a51e6",
+    "skills/tech-review/references/code.md": "0f1c0f87c2f3c0244ce1582a2ebcda89b9c908274a93b71a0b94e1965e9b8879",
+    "skills/tech-review/references/independence.md": "6104e0cfb23eab9655464eee23275622961c09c2ee42c6a4f0d215a2dd009cb3",
+    "skills/tech-review/references/design.md": "d0496fb6358be902051a115635238066e9099b82ab6ba3b21a88b332610d9718",
+    "skills/tech-review/references/architecture.md": "5662459bf8338578160d62f1654ca4e2c4147f2f37d6190f57a45694867a6fa6",
+    "skills/tech-review/agents/openai.yaml": "77dfae13c9fa735a98c70d2ba7789f6648b2dea0234a0472ed1b6a7e25b0e318",
+    "skills/work-plan/references/delivery.md": "416868056586020576fe7cd1b22b769096034a249e040b0d62f78a17d03b3078",
+    "skills/work-plan/agents/openai.yaml": "568d1421f8f18e97776eb691324b17c064bcc7c42d174e9c644b154f63f3d217",
+    "skills/implement/references/fidelity.md": "929f25e27761d26450d1073da168ab50633414d19cd859eae3a0138bc8714c58",
+    "skills/implement/references/refactoring.md": "464df60920eebfc78524fc255ea0f5a6dd31b3055eae25dc58dd794fb34fd03c",
+    "skills/implement/references/documents.md": "82abf5d08d3caa4d526e6da46944b2924d641310be86395c5974e571d7bbfa67",
+    "skills/implement/references/testing.md": "f74b6846af27d47fca3cf2b6fc5e3f05ca1c41d5a2016c9d580d13ff6763ed9d",
+    "skills/implement/agents/openai.yaml": "183a5dca16e1bb13b717a148a9bd4935eb70be2bb42feb7ffcff03a6f45ff6b2",
+    "skills/diagnose/references/tracing.md": "d10f346ddc279c17e4753b3146b40c1b6a2a60e56123ddae2974b2b952ed9109",
+    "skills/diagnose/references/reproduction.md": "8111a0491e725df0d8be8483836560f1de7ff889811c92f765141320ec8b9d5d",
+    "skills/diagnose/agents/openai.yaml": "6caa8f748b3eb234b19d451a5df00b2fc1c96ff4257e34a7ce1012405b189785",
+    "skills/skill-dev/references/evaluation.md": "e32b5ce5d063debcf7b4c65a39f03d5288c9af5c8d37621bf38dae5b5a2e9638",
+    "skills/skill-dev/references/authoring.md": "b3fdc5dc261484ec8ceb1d7d33e4ec4be4a20cb8184a63996cfd08262dfdc32a",
+    "skills/skill-dev/references/discovery.md": "21a6a00d21f560418d9ebf57b8c1d7e8b4e559a8598653fbac14dd923fe194ee",
+    "skills/skill-dev/agents/openai.yaml": "cc5cde8c06c0f4846927a394520c11a9c249a08432870f2ac20718021d402539",
+    "skills/handover/references/record.md": "168bed8d307ef671f9ff89efec9358d52fce3fb3a8916ea3b1265aa3ac6ab873",
+    "skills/handover/agents/openai.yaml": "1a86e697a6ac48b74b47419b05f2ecbf0ae0bdfe78b4e5ad100684b26ffb5a8f"
+  },
+  "limits": "Static structure, raw fixture export, source bookkeeping and scope checks only. No isolated model behavior, triggering, host installation, or comparative quality run.",
+  "status_followup": "User accepted explicit default decision, delivery and per-criterion verification states. One legacy-status migration case added; all 14 document-maintenance raw exports checked. No model behavior execution."
+}

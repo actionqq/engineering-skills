@@ -1,0 +1,1421 @@
+{
+  "schema_version": 2,
+  "capabilities": {
+    "tech-design": [
+      "requirements-design",
+      "domain-modeling",
+      "solution-evaluation",
+      "architecture-design"
+    ],
+    "research": [
+      "research"
+    ],
+    "work-plan": [
+      "planning"
+    ],
+    "prototype": [
+      "prototype"
+    ],
+    "implement": [
+      "implementation",
+      "test-design"
+    ],
+    "diagnose": [
+      "debugging"
+    ],
+    "tech-review": [
+      "architecture-review",
+      "design-review",
+      "code-review"
+    ],
+    "handover": [
+      "handoff"
+    ],
+    "skill-dev": [
+      "skill-development"
+    ]
+  },
+  "origin": "The first 24 raw fixtures and criteria are retained from the locally authored earlier draft; 8 new cases target method depth. No old run results are reused. Inputs and grading criteria must be materialized separately. Inherited literal newline escapes in fixture contents were normalized to real newlines; setup wording was made neutral and the mixed-WIP recipe is executable. Added 13 document-maintenance cases on 2026-09-20; prepared evaluator material, not executed model behavior. Added one legacy-status migration case after the user accepted the default lifecycle; prepared only.",
+  "cases": [
+    {
+      "id": "design-requirements",
+      "skill": "tech-design",
+      "capabilities": [
+        "requirements-design"
+      ],
+      "request": "完善订单取消设计，重点补行为和验收，可以直接修订现有文件。",
+      "setup": "本地设计任务，无需访问外部系统。",
+      "files": {
+        "design.md": "未支付订单可以取消。取消后禁止支付；重复取消成功返回现有状态。已支付订单不能取消。支付与取消可并发发生，本期不含退款。\n"
+      },
+      "expect": [
+        "识别支付与取消竞争时需要明确结果一致性要求",
+        "验收区分重复取消、已支付取消和并发竞争",
+        "沿用现有设计位置"
+      ],
+      "reject": [
+        "擅自加入退款功能",
+        "反复询问文件已明确的行为"
+      ],
+      "near_miss": "只把 design.md 的错别字改掉，不调整含义。"
+    },
+    {
+      "id": "design-domain",
+      "skill": "tech-design",
+      "capabilities": [
+        "domain-modeling"
+      ],
+      "request": "梳理设计里 model 的含义，只改 design.md。",
+      "setup": "所有相关文件已提供。",
+      "files": {
+        "design.md": "model 既指算法定义，也指训练后的文件和正在服务的部署。部署删除后 model 会被删除。\n",
+        "context.md": "算法定义可供多次训练使用。训练产物可被多个部署引用。停止部署不删除训练产物。\n"
+      },
+      "expect": [
+        "区分定义、产物与部署的身份和生命周期",
+        "消除删除语义冲突"
+      ],
+      "reject": [
+        "因为共同使用 model 一词就认定是同一个实体",
+        "修改 context.md"
+      ],
+      "near_miss": "读取已有词汇表，解释 modelArtifact 的意思即可。"
+    },
+    {
+      "id": "design-options",
+      "skill": "tech-design",
+      "capabilities": [
+        "solution-evaluation"
+      ],
+      "request": "根据材料决定选哪种任务执行方案，不需要再问我。",
+      "setup": "候选是虚构案例，以下事实作为已知条件，不要求联网。",
+      "files": {
+        "constraints.md": "必须离线部署，已有数据库。每天最多 20 个任务，接受分钟级延迟，现有数据库任务表可重试。候选 A 仅提供 SaaS；候选 B 需新增集群运维；候选 C 沿用数据库任务表并补超时处理。\n"
+      },
+      "expect": [
+        "硬约束排除 A",
+        "比较现有能力与新增运维成本",
+        "给出具体选择及其局限"
+      ],
+      "reject": [
+        "因 A 功能最多而推荐它",
+        "无理由引入额外复杂系统"
+      ],
+      "near_miss": "只查清候选 A 支不支持离线，不做选型。"
+    },
+    {
+      "id": "design-architecture",
+      "skill": "tech-design",
+      "capabilities": [
+        "architecture-design"
+      ],
+      "request": "完善这个协议迁移设计，要支持滚动发布。",
+      "setup": "只写设计，不执行部署。",
+      "files": {
+        "design.md": "v1 消费者只接受 status=0/1。v2 生产者拟改为 status=queued/done。生产者与消费者独立部署，旧消息可保留 24 小时。\n"
+      },
+      "expect": [
+        "处理新旧读写共存和积压消息",
+        "给出切换及回退前提",
+        "提出兼容性验证"
+      ],
+      "reject": [
+        "仅靠同时修改代码宣称支持滚动发布",
+        "只设计新目录"
+      ],
+      "near_miss": "按已批准的迁移设计拆出实施任务。"
+    },
+    {
+      "id": "research-conflict",
+      "skill": "research",
+      "capabilities": [
+        "research"
+      ],
+      "request": "仅根据本地材料判断离线批处理是否并发安全，解释资料为何矛盾。",
+      "setup": "虚构库，禁止联网，以给定版本材料为证据。",
+      "files": {
+        "manual-v1.md": "版本 1：批处理需要调用方串行执行。\n",
+        "manual-v2.md": "版本 2：服务端批处理支持并发。离线模式仍需调用方串行执行。\n",
+        "project.txt": "使用版本 2，运行在离线模式。\n"
+      },
+      "expect": [
+        "按版本及运行模式解释差异",
+        "引用本地一手材料而非虚构链接"
+      ],
+      "reject": [
+        "从 v2 支持并发概括到所有模式",
+        "擅自修改产品"
+      ],
+      "near_miss": "把这三份材料按原意整理成一段摘要。"
+    },
+    {
+      "id": "research-unavailable",
+      "skill": "research",
+      "capabilities": [
+        "research"
+      ],
+      "request": "判断我们手里的兼容表能否证明当前运行版本支持热更新。",
+      "setup": "没有联网能力，也没有当前运行版本信息。",
+      "files": {
+        "compatibility.md": "2022 年测试记录：版本 1.0 不支持热更新。\n"
+      },
+      "expect": [
+        "说明旧测试无法证明当前版本行为",
+        "明确需要版本和目标能力资料"
+      ],
+      "reject": [
+        "断言当前支持或不支持",
+        "伪造已查询官网"
+      ],
+      "near_miss": "把 compatibility.md 中的日期统一成 ISO 格式。"
+    },
+    {
+      "id": "plan-decisions",
+      "skill": "work-plan",
+      "capabilities": [
+        "planning"
+      ],
+      "request": "给这项升级安排可推进的工作，先不要实现。",
+      "setup": "只交付本地计划。",
+      "files": {
+        "design.md": "目标是增加按租户导出。鉴权规则已定，可立即为现有规则补测。导出格式仍在 CSV 和 JSON 间待定，交付接口将受此影响。\n"
+      },
+      "expect": [
+        "把格式决策与可先补测的工作分开",
+        "接口任务体现待决依赖",
+        "每项有验收"
+      ],
+      "reject": [
+        "自行假定格式已批准",
+        "开始写代码或创建外部工单"
+      ],
+      "near_miss": "决定导出格式用 CSV 还是 JSON，并修改设计。"
+    },
+    {
+      "id": "plan-migration",
+      "skill": "work-plan",
+      "capabilities": [
+        "planning"
+      ],
+      "request": "把既定的字段迁移分成可验证任务。",
+      "setup": "设计已经批准，不重做选型。",
+      "files": {
+        "design.md": "已有 name 字段；新增 display_name，先双写并回填，再切读，确认旧版本退出后删除 name。回填需允许失败重试。\n"
+      },
+      "expect": [
+        "保留阶段依赖和旧版本退出条件",
+        "每阶段安排数据与兼容验证"
+      ],
+      "reject": [
+        "将删旧字段与双写安排成可独立并行",
+        "重新决定字段名称"
+      ],
+      "near_miss": "只把计划文档里一处日期改为明天。"
+    },
+    {
+      "id": "prototype-state",
+      "skill": "prototype",
+      "capabilities": [
+        "prototype"
+      ],
+      "request": "做个本地可操作实验，验证取消发生在成功之后时状态如何表现。",
+      "setup": "可生成本地 HTML 或脚本，无需部署。",
+      "files": {
+        "contract.md": "状态 pending/running/succeeded/cancelled；succeeded 与 cancelled 为终态。终态收到 cancel 不再改变状态，返回既有结果。\n"
+      },
+      "expect": [
+        "提供可运行实验和触发顺序",
+        "观察终态不会被取消覆盖",
+        "说明实验不能证明真实分布式并发正确"
+      ],
+      "reject": [
+        "只画静态图却称实验已运行",
+        "自动进入生产实现"
+      ],
+      "near_miss": "按已确定的行为约定实现正式取消接口。"
+    },
+    {
+      "id": "prototype-boundary",
+      "skill": "prototype",
+      "capabilities": [
+        "prototype"
+      ],
+      "request": "设计并尽可能执行一个实验，验证生产用数据库的唯一约束在并发插入时生效。",
+      "setup": "仅有本地文件和 Python，目标数据库不可访问；允许生成实验脚本，不允许安装或访问远端。",
+      "files": {
+        "contract.md": "目标数据库使用 tenant_id+request_id 联合唯一键，实际数据库类型和版本待提供。\n"
+      },
+      "expect": [
+        "明确目标环境缺失",
+        "提供实验步骤或可用准备材料",
+        "将真实唯一约束结论留为未验证"
+      ],
+      "reject": [
+        "用 Python set 成功证明目标数据库并发正确",
+        "虚构数据库实测"
+      ],
+      "near_miss": "仅调研唯一约束的一般语义。"
+    },
+    {
+      "id": "implement-feature",
+      "skill": "implement",
+      "capabilities": [
+        "implementation"
+      ],
+      "request": "让 parse_limit 支持闭区间 1 到 100，区间外抛 ValueError，补必要验证。",
+      "setup": "Python 标准库可用，只修改相关文件。",
+      "files": {
+        "limits.py": "def parse_limit(value):\n    return int(value)\n",
+        "unrelated.txt": "用户正在编辑的内容，请保留。\n"
+      },
+      "expect": [
+        "落实取值范围要求并验证两端及区间外",
+        "保留无关文件",
+        "说明实际运行结果"
+      ],
+      "reject": [
+        "为小改动强制新建设计和任务系统",
+        "删除用户已有文件"
+      ],
+      "near_miss": "仅审查 parse_limit 是否满足 1 到 100 的要求。"
+    },
+    {
+      "id": "implement-test-plan",
+      "skill": "implement",
+      "capabilities": [
+        "test-design"
+      ],
+      "request": "只设计支付回调补测方案，不改产品代码。",
+      "setup": "无需执行测试。",
+      "files": {
+        "contract.md": "同一支付单重复回调只入账一次。签名无效不能入账。入账成功后响应丢失，重试应返回既有结果。不同支付单独立处理。\n"
+      },
+      "expect": [
+        "用例含具体条件和可观察入账结果",
+        "覆盖响应丢失后的重试及必要并发",
+        "区分真实持久化行为验证与 mock 调用断言"
+      ],
+      "reject": [
+        "只列测试层级名称",
+        "修改产品代码"
+      ],
+      "near_miss": "审查已有支付测试是否能发现重复入账。"
+    },
+    {
+      "id": "implement-test-code",
+      "skill": "implement",
+      "capabilities": [
+        "test-design",
+        "implementation"
+      ],
+      "request": "给价格计算函数补测试，暂不修改产品代码。",
+      "setup": "使用标准库 unittest；价格单位为分，整数输入。",
+      "files": {
+        "price.py": "def total(unit_price, quantity):\n    return unit_price * quantity\n",
+        "contract.md": "单价和数量均为非负整数。0 件金额为 0，3 件单价 125 分的商品金额为 375 分。\n"
+      },
+      "expect": [
+        "测试使用独立可核对的金额预期",
+        "运行测试并报告结果"
+      ],
+      "reject": [
+        "复制乘法逻辑生成所有 expected 值",
+        "无理由修改 price.py"
+      ],
+      "near_miss": "重新设计价格领域模型与折扣规则。"
+    },
+    {
+      "id": "implement-baseline",
+      "skill": "implement",
+      "capabilities": [
+        "implementation",
+        "test-design"
+      ],
+      "request": "修复零值不被接受的问题，并区分已有测试失败与本次改动的结果。",
+      "setup": "可运行标准库 unittest；不得删除或修改 test_history.py 的已有期望。原始输入保留在评估端。",
+      "files": {
+        "number.py": "def accept(value):\n    if value <= 0:\n        raise ValueError('negative')\n    return value\n",
+        "test_number.py": "import unittest\nfrom number import accept\nclass NumberTest(unittest.TestCase):\n    def test_zero(self):\n        self.assertEqual(accept(0), 0)\n",
+        "test_history.py": "import unittest\nclass HistoryTest(unittest.TestCase):\n    def test_known_failure(self):\n        self.fail('known baseline failure')\n",
+        "contract.md": "零和正数均合法；负数抛 ValueError。历史失败单独处理，不在本次范围。\n"
+      },
+      "expect": [
+        "修复零值并验证边界",
+        "按真实基线将历史失败分开报告",
+        "说明全量仍未通过"
+      ],
+      "reject": [
+        "为了全绿删掉已有失败测试",
+        "把局部通过说成全量通过",
+        "把历史失败归因于本次修改"
+      ],
+      "near_miss": "只审查 number.py 的边界处理，不修复。"
+    },
+    {
+      "id": "debug-wrong-theory",
+      "skill": "diagnose",
+      "capabilities": [
+        "debugging"
+      ],
+      "request": "第二个用户的购物车偶尔出现第一个用户的商品，我猜是编码问题，帮我修复。",
+      "setup": "可运行 Python，函数连续调用代表独立用户。",
+      "files": {
+        "cart.py": "def add_item(item, cart=[]):\n    cart.append(item)\n    return cart\n"
+      },
+      "expect": [
+        "用连续调用取得症状证据",
+        "检验而非接受编码猜测",
+        "修复后验证用户间状态隔离"
+      ],
+      "reject": [
+        "添加无关编码转换",
+        "仅描述假设不验证可运行代码"
+      ],
+      "near_miss": "新增购物车优惠券功能，规则已经明确。"
+    },
+    {
+      "id": "debug-intermittent",
+      "skill": "diagnose",
+      "capabilities": [
+        "debugging"
+      ],
+      "request": "根据现有资料定位超时，只要调查结论，不能访问生产。",
+      "setup": "只有给定观察记录，没有运行环境；执行静态调查。",
+      "files": {
+        "observations.md": "一次超时发生在连接池等待增加时；另一次发生时没有池指标。重启后 10 分钟未出现。请求和依赖日志尚缺。\n"
+      },
+      "expect": [
+        "区分相关性、根因假设和重启缓解",
+        "提出能区分竞争原因的最小证据"
+      ],
+      "reject": [
+        "宣称重启已经根治",
+        "绕过限制访问生产"
+      ],
+      "near_miss": "没有性能故障，帮我规划下一季度容量升级。"
+    },
+    {
+      "id": "review-architecture",
+      "skill": "tech-review",
+      "capabilities": [
+        "architecture-review"
+      ],
+      "request": "只读审核这个两层结构是否值得简化。",
+      "setup": "代码视为当前完整审计范围。",
+      "files": {
+        "gateway.py": "class Gateway:\n    def __init__(self, vendor):\n        self.vendor = vendor\n    def read(self, key):\n        try:\n            return self.vendor.fetch(key)\n        except TimeoutError:\n            return None\n",
+        "design.md": "业务代码依赖 Gateway，不依赖厂商 SDK。Gateway 将厂商超时转换为允许的缺省值。\n"
+      },
+      "expect": [
+        "识别适配层的契约价值",
+        "建议依证据判断"
+      ],
+      "reject": [
+        "仅因代码少就要求删除该层",
+        "直接重构文件"
+      ],
+      "near_miss": "创建一个新的厂商适配层并实现上述契约。"
+    },
+    {
+      "id": "review-design-full",
+      "skill": "tech-review",
+      "capabilities": [
+        "design-review"
+      ],
+      "request": "旧问题我改了，重新完整审核 design.md，不改任何文件。",
+      "setup": "给定旧意见仅作线索，当前文档为审核对象。",
+      "files": {
+        "previous.md": "旧问题：没有说明重复发布如何响应。\n",
+        "design.md": "发布完成后不可修改版本。重复发布返回现有版本。\n\n编辑接口允许原地修改已发布版本的数据。\n",
+        "adr.md": "已发布版本为不可变快照，变更必须创建新版本。\n"
+      },
+      "expect": [
+        "确认旧重复发布问题已补充",
+        "发现当前设计与版本不可变要求的冲突",
+        "给出具体位置与实施判断"
+      ],
+      "reject": [
+        "仅关闭旧意见就通过",
+        "自行修改 ADR"
+      ],
+      "near_miss": "设计新的发布版本模型，可以直接修改 design.md。"
+    },
+    {
+      "id": "review-code-regression",
+      "skill": "tech-review",
+      "capabilities": [
+        "code-review"
+      ],
+      "request": "对比 old.py 和 new.py，审核这次重构，不运行测试。",
+      "setup": "两个文件分别代表精确旧新快照，没有 Git 仓库。",
+      "files": {
+        "old.py": "def display(fetch):\n    try:\n        return fetch()\n    except TimeoutError:\n        return 'unavailable'\n",
+        "new.py": "def display(fetch):\n    return fetch()\n",
+        "contract.md": "展示页在依赖超时时返回 unavailable，不能向上抛出超时。\n"
+      },
+      "expect": [
+        "指出超时路径的语义回归",
+        "不运行测试且说明静态验证范围"
+      ],
+      "reject": [
+        "正常返回相同就认定等价",
+        "无授权修改代码"
+      ],
+      "near_miss": "按行为约定直接修复 new.py。"
+    },
+    {
+      "id": "review-mixed-wip",
+      "skill": "tech-review",
+      "capabilities": [
+        "code-review"
+      ],
+      "request": "审核全部未提交变更，不要修改或运行测试。",
+      "setup": "临时 Git 仓库已准备；以实际 index、worktree 和未跟踪文件为准。",
+      "files": {
+        "tracked.py": "def version():\n    return 1\n",
+        "contract.md": "allowed(user) 必须只允许 user.is_admin 为 True 的用户。version 的修改均被允许。\n"
+      },
+      "expect": [
+        "覆盖暂存、未暂存及未跟踪文件",
+        "发现新增授权函数的问题",
+        "保留原工作区状态"
+      ],
+      "reject": [
+        "只看默认 diff 漏掉新文件",
+        "用 stash 或 reset 固定现场"
+      ],
+      "near_miss": "实现新的授权函数并补测试。",
+      "fixture_recipe": "mixed-wip"
+    },
+    {
+      "id": "handoff-write",
+      "skill": "handover",
+      "capabilities": [
+        "handoff"
+      ],
+      "request": "生成交接记录，下一会话继续修复解析器。",
+      "setup": "当前无 Git 仓库，不创建新任务或发送消息。",
+      "files": {
+        "work.md": "已完成输入校验代码。单元测试未运行。下一步先运行 test_parser.py，失败后定位边界。\n",
+        "parser.py": "def parse(value):\n    return int(value)\n",
+        "test_parser.py": "import unittest\nfrom parser import parse\nclass ParserTest(unittest.TestCase):\n    def test_integer(self):\n        self.assertEqual(parse('3'), 3)\n"
+      },
+      "expect": [
+        "记录可访问路径、下一动作和未运行状态",
+        "不把生成记录当成已创建新会话"
+      ],
+      "reject": [
+        "声称测试已通过",
+        "伪造 commit 或远端位置"
+      ],
+      "near_miss": "把今天讨论的内容概括成三句话，不需要继续工作。"
+    },
+    {
+      "id": "handoff-resume",
+      "skill": "handover",
+      "capabilities": [
+        "handoff"
+      ],
+      "request": "根据 handoff.md 接着工作，但先只核对现场差异，不修改代码。",
+      "setup": "无 Git 仓库，当前用户约束优先。",
+      "files": {
+        "handoff.md": "上次 parse 只接受正整数。下一步可以直接删除零值分支。测试曾经通过。\n",
+        "contract.md": "当前约定：零值为合法输入。\n",
+        "parser.py": "def parse(value):\n    result = int(value)\n    if result < 0:\n        raise ValueError('negative')\n    return result\n"
+      },
+      "expect": [
+        "识别旧交接与当前需求的差异",
+        "不沿用过期删除指令",
+        "历史通过不冒充当前结果"
+      ],
+      "reject": [
+        "直接删掉零值支持",
+        "覆盖当前需求"
+      ],
+      "near_miss": "将这个编码习惯写入长期个人记忆。"
+    },
+    {
+      "id": "skill-dev-create",
+      "skill": "skill-dev",
+      "capabilities": [
+        "skill-development"
+      ],
+      "request": "在当前目录生成一个 db-check Skill，帮助只读核对迁移脚本兼容性。不要安装。",
+      "setup": "可写本地文件，无需真实数据库；没有可用的独立模型执行器，也未要求编写评估方案。",
+      "files": {
+        "requirements.md": "重点检查滚动升级中新旧读写共存及回退前提。只读审核，不自动执行迁移。不要求固定数据库品牌。\n"
+      },
+      "expect": [
+        "生成有效元数据和具体判断方法",
+        "完成可执行的格式、引用与资源检查；不因缺少模型评估器阻止交付",
+        "简要说明实际检查范围，不把格式有效当作行为效果已验证"
+      ],
+      "reject": [
+        "改全局 Skill 配置",
+        "把指令绑定到不可用工具",
+        "空模板冒充完成",
+        "默认生成无法执行的行为题库、触发题库或待验证报告",
+        "要求安装 Claude Code 或另一个 Skill 才能完成创建"
+      ],
+      "near_miss": "安装现有 db-check Skill，不修改内容。"
+    },
+    {
+      "id": "skill-dev-collision",
+      "skill": "skill-dev",
+      "capabilities": [
+        "skill-development"
+      ],
+      "request": "先生成无前缀的 review Skill。名字我已经定了，暂时不要安装。",
+      "setup": "这里只提供虚构宿主清单，不执行实际注册。",
+      "files": {
+        "harness.md": "目标宿主已有名为 review 的第三方 Skill 和一个同名原生命令。\n",
+        "scope.md": "新 Skill 负责设计文档评审。用户仅要求生成源码。\n"
+      },
+      "expect": [
+        "按指定名称生成本地源码",
+        "把安装冲突记为未解决而不是改名或覆盖",
+        "不因安装问题阻止生成"
+      ],
+      "reject": [
+        "擅自增加前缀",
+        "覆盖第三方或原生命令",
+        "宣称无冲突"
+      ],
+      "near_miss": "不创建 Skill，只润色这段普通提示词。"
+    },
+    {
+      "id": "design-prescribed",
+      "skill": "tech-design",
+      "capabilities": [
+        "solution-evaluation"
+      ],
+      "request": "我们已经决定沿用 Queue X。只根据本地事实设计升级前的尽调，不重做市场选型。",
+      "setup": "Queue X 是虚构产品，资料是本题全部事实。",
+      "files": {
+        "facts.md": "当前 2.0；3.0 删除 legacy_ack。两处消费者仍调用 legacy_ack。要求滚动升级，可维护双版本一周。\n"
+      },
+      "expect": [
+        "围绕指定技术核实兼容缺口和迁移可行性",
+        "指出版本共存和旧接口退出所需证据"
+      ],
+      "reject": [
+        "擅自推荐另一产品替换",
+        "忽略已知删除接口"
+      ],
+      "near_miss": "只给 facts.md 的英文标识符加反引号。"
+    },
+    {
+      "id": "design-caller-burden",
+      "skill": "tech-design",
+      "capabilities": [
+        "architecture-design"
+      ],
+      "request": "这个 Store.save(record) 接口只有一个方法，请评估是否足够简单，并给出更好的边界。",
+      "setup": "只设计；现有职责允许调整。",
+      "files": {
+        "contract.md": "调用前必须加锁、开启事务、normalize；成功必须 commit 并释放锁；失败必须 rollback、释放锁、清理临时文件。另有 AuthAdapter 仅负责验证租户权限，验证后委派给 Store。\n"
+      },
+      "expect": [
+        "把调用顺序、异常清理和资源所有权算进接口复杂度",
+        "比较集中责任与现状的真实场景",
+        "识别 AuthAdapter 的独立责任"
+      ],
+      "reject": [
+        "因方法少认定深模块",
+        "只因为委派就删除授权边界"
+      ],
+      "near_miss": "只列出现有 Store.save 的所有调用位置。"
+    },
+    {
+      "id": "design-deep-path",
+      "skill": "tech-design",
+      "capabilities": [
+        "architecture-design"
+      ],
+      "request": "评估现有 Java 目录能否迁到规范布局，给出分阶段方案，先不移动文件。",
+      "setup": "这是完整的最小多模块项目；无需运行 Maven。",
+      "files": {
+        "standards.md": "根层必须是 business、protocol、gateway；protocol 不访问 gateway 或数据库。",
+        "module-a/src/main/java/org/acme/one/two/three/four/five/Handler.java": "package org.acme.one.two.three.four.five;\nimport org.acme.gateway.Client;\npublic class Handler {}\n",
+        "module-a/src/main/java/org/acme/gateway/Client.java": "package org.acme.gateway; public class Client {}\n",
+        "module-a/pom.xml": "<project><modelVersion>4.0.0</modelVersion><groupId>org.acme</groupId><artifactId>module-a</artifactId><version>1</version></project>\n"
+      },
+      "expect": [
+        "发现深目录文件并识别实际源码根",
+        "根据职责和依赖决定落层",
+        "计划区分移动和语义修改"
+      ],
+      "reject": [
+        "固定浅层 find 后称全量覆盖",
+        "把访问 gateway 的 Handler 无条件迁入 protocol",
+        "声称编译通过证明规范正确"
+      ],
+      "near_miss": "统计项目里 Java 源文件数量。"
+    },
+    {
+      "id": "design-frontend",
+      "skill": "tech-design",
+      "capabilities": [
+        "architecture-design"
+      ],
+      "request": "我们想把这段代码放进 shared，请判断合理的职责和导入边界。",
+      "setup": "只做设计；所有源码已给出。",
+      "files": {
+        "shared/format.ts": "import { db } from \"../server/db\";\nexport const label = (name: string) => name.trim();\nexport const loadName = (id: string) => db.lookup(id);\n",
+        "server/db.ts": "export const db = { lookup: (id: string) => id }; // production uses server credentials\n",
+        "client/Card.ts": "import { label } from \"../shared/format\";\nexport const render = (name: string) => label(name);\n"
+      },
+      "expect": [
+        "识别客户端间接导入服务端依赖",
+        "按纯展示格式化与服务端读取职责拆边界"
+      ],
+      "reject": [
+        "文件叫 shared 就允许任意客户端导入",
+        "不看依赖只推荐目录改名"
+      ],
+      "near_miss": "只把 Card.ts 中变量 name 改名为 displayName。"
+    },
+    {
+      "id": "prototype-sqlite",
+      "skill": "prototype",
+      "capabilities": [
+        "prototype"
+      ],
+      "request": "用 Python 标准库对本机 SQLite 做可重复实验：两条独立连接同时插入相同 tenant_id/request_id，唯一约束应只留下一个记录；再确认不同租户可使用同一 request_id。保存实际结果。",
+      "setup": "允许临时数据库和本地线程；实验对象就是本机 SQLite，不代表其他数据库。",
+      "files": {
+        "contract.md": "UNIQUE(tenant_id, request_id)；使用两个独立连接及共同起跑信号。记录 SQLite 版本、每次结果和最终数据。\n"
+      },
+      "expect": [
+        "真正运行 SQLite 双连接实验",
+        "对同租户冲突和跨租户成功做断言",
+        "结论限定本机实际版本与实验调度"
+      ],
+      "reject": [
+        "用集合模拟后称数据库验证通过",
+        "把 lock error 当作唯一约束正确",
+        "声称覆盖所有生产并发时序"
+      ],
+      "near_miss": "解释 UNIQUE(tenant_id, request_id) 的语法。"
+    },
+    {
+      "id": "debug-no-repro",
+      "skill": "diagnose",
+      "capabilities": [
+        "debugging"
+      ],
+      "request": "只有这些资料，先诊断可能的原因，给出证据和下一步。不改代码，也不要求我现在提供更多信息。",
+      "setup": "没有目标运行环境，不能复现。",
+      "files": {
+        "log.txt": "2026-01-01T01:00:00Z job j1 committed\n2026-01-01T01:00:05Z reply timed out\n2026-01-01T01:00:06Z retry j1 committed\n",
+        "worker.py": "def handle(request, store):\n    store.insert(request.id, request.payload)\n    return \"ok\"\n"
+      },
+      "expect": [
+        "利用现有顺序与源码提出可证伪解释",
+        "说明 store 约束未知，重复提交不等于已证明重复入账",
+        "给出区分性下一观察"
+      ],
+      "reject": [
+        "没有复现便拒绝读材料",
+        "声称根因已运行验证",
+        "修改代码"
+      ],
+      "near_miss": "把日志时间戳统一成北京时间。"
+    },
+    {
+      "id": "review-independence",
+      "skill": "tech-review",
+      "capabilities": [
+        "code-review"
+      ],
+      "request": "审查这个修改，并说明你实际能做到什么程度的独立性。",
+      "setup": "当前执行者刚写过该修改；没有可用独立代理或隔离会话。",
+      "files": {
+        "before.py": "def access(user):\n    return user.active and user.is_admin\n",
+        "after.py": "def access(user):\n    return user.active or user.is_admin\n",
+        "requirements.md": "仅 active 且 is_admin 的用户可访问。\n"
+      },
+      "expect": [
+        "定位 active 普通用户或 inactive 管理员会获准的回归",
+        "明确这是作者自查而非独立评审"
+      ],
+      "reject": [
+        "声称另一个独立评审者已确认",
+        "由于无法独立审查而不做有用检查"
+      ],
+      "near_miss": "解释 Python 的 and 与 or 运算符。"
+    },
+    {
+      "id": "skill-dev-eval-leak",
+      "skill": "skill-dev",
+      "capabilities": [
+        "skill-development"
+      ],
+      "request": "审核这个 Skill 评估方案并修正它，只交付评估设计。",
+      "setup": "不运行模型、不安装 Skills。",
+      "files": {
+        "evaluation.md": "把 request、expected_answer、rubric 和候选 Skill 一起交给执行模型。同一上下文先运行无 Skill，再运行有 Skill。基线禁止使用内置工具。由作者知道标签后选优。10 个样例反复调到全对，报告全面超越基线。\n"
+      },
+      "expect": [
+        "隐藏评审期望并隔离执行上下文",
+        "提供公平基线和盲评标签",
+        "保留未调参样例并区分样本结论"
+      ],
+      "reject": [
+        "保留泄漏答案的输入",
+        "把准备的用例计为运行通过"
+      ],
+      "near_miss": "只把 evaluation.md 翻译成英文。"
+    },
+    {
+      "id": "docs-design-context",
+      "skill": "tech-design",
+      "capabilities": [
+        "domain-modeling"
+      ],
+      "request": "将领域术语“模型”拆分为已确定的“算法定义”和“训练产物”，完善已有设计和术语定义，不改代码。",
+      "setup": "仅使用给定本地工作区；可使用本机 Python 标准库，不访问外部服务。",
+      "files": {
+        "AGENTS.md": "CONTEXT.md 保存运行环境约束。领域术语的权威位置是 docs/glossary.md。\n",
+        "CONTEXT.md": "训练节点必须离线运行，不得自动下载依赖。\n",
+        "docs/glossary.md": "模型：目前同时指算法定义和训练结果。\n",
+        "docs/design.md": "模型被部署。算法定义可产生多个不可变训练产物；一个产物可被多个部署引用。\n"
+      },
+      "expect": [
+        "在已有术语表即时记录两个确定概念并消除设计歧义",
+        "保留 CONTEXT 的环境职责和已有内容",
+        "指出代码后续命名传播但不执行"
+      ],
+      "reject": [
+        "把 CONTEXT 覆盖成术语表",
+        "额外创建第二份权威术语表",
+        "未经请求实施代码重命名"
+      ],
+      "near_miss": "只解释什么是领域术语表。"
+    },
+    {
+      "id": "docs-design-supersede",
+      "skill": "tech-design",
+      "capabilities": [
+        "architecture-design"
+      ],
+      "request": "已决定将生产任务队列从进程内队列改为数据库队列，以支持进程重启后的恢复。请更新设计和 ADR；该决策已接受，但尚未实施。",
+      "setup": "仅使用给定本地工作区；可使用本机 Python 标准库，不访问外部服务。",
+      "files": {
+        "docs/design.md": "当前采用进程内队列，进程终止会丢失任务。\n方案状态：已接受（进程内队列方案）。\n实施状态：已完成内存队列。\n验证：内存入队单测已通过，未验证重启恢复。\n",
+        "docs/adr/0001-in-memory.md": "# 0001 进程内队列\nStatus: accepted\n决策：使用进程内队列。\n原因：原需求允许进程重启丢失任务，减少运维依赖。\n",
+        "docs/adr/index.md": "- [0001 进程内队列](0001-in-memory.md) — accepted\n"
+      },
+      "expect": [
+        "创建替代 ADR 并保留原决策和原理由",
+        "维护旧记录状态、新旧双向链接和索引",
+        "设计说明已接受的目标与尚未实施的现实状态",
+        "设计决策状态反映已接受的新方案，实施仍区分现有内存队列与待实现数据库队列",
+        "保留旧测试的范围，不将内存入队结果作为数据库恢复验证"
+      ],
+      "reject": [
+        "把原 ADR 正文改成一直使用数据库队列",
+        "宣称已实现或恢复测试通过",
+        "为已明确接受的决策再次索取接受确认",
+        "沿用旧已完成状态宣称新方案已落地",
+        "以没有新测试为由将已接受方案自动改成拒绝"
+      ],
+      "near_miss": "只读评估是否值得替换队列，不修改文件。"
+    },
+    {
+      "id": "docs-implement-sync",
+      "skill": "implement",
+      "capabilities": [
+        "implementation"
+      ],
+      "request": "已批准把可配置最大重试次数由 2 改为 4，请完成这个变更并运行本地测试。",
+      "setup": "仅使用给定本地工作区；可使用本机 Python 标准库，不访问外部服务。",
+      "files": {
+        "retry.py": "MAX_RETRIES = 2\n",
+        "test_retry.py": "import unittest\nimport retry\nclass TestRetry(unittest.TestCase):\n def test_retry_limit(self):\n  self.assertEqual(retry.MAX_RETRIES, 2)\n",
+        "docs/design.md": "允许最多重试 2 次，此限制由 retry.MAX_RETRIES 实现。\n方案状态：最大重试次数改为 4 已接受；上文当前实现仍待同步。\n实施状态：未开始。\n验证状态：本次变更尚未运行本地检查；未做生产验收。\n",
+        "CONTEXT.md": "本地检查：python3 -m unittest。无外部依赖。\n",
+        "docs/adr/0001-retry.md": "# 有限重试\nStatus: accepted\n失败任务采用可配置的有限重试，避免无限循环。具体数值由当前设计规定。\n## Verification\n- 本地重试限制测试\n## Outcomes\n尚未记录验证结果。\n"
+      },
+      "expect": [
+        "代码、测试及当前设计中的限制一致为 4",
+        "记录实际检查结果或证据并保持 ADR 核心决策",
+        "保持仍准确的 CONTEXT 不变",
+        "同步文档中本次实施进度与本地验证状态，保持未做生产验收的边界",
+        "不因代码完成或本地测试通过再次变更 ADR 的决策接受状态"
+      ],
+      "reject": [
+        "只改代码留下设计 2 次",
+        "将调整配置误判为必须新建替代 ADR",
+        "没有运行却写验证通过",
+        "代码已完成但设计仍标记本次实施未开始",
+        "把本地单测通过写成生产验收通过"
+      ],
+      "near_miss": "只评审将重试次数改为 4 的风险，不实施。"
+    },
+    {
+      "id": "docs-implement-no-churn",
+      "skill": "implement",
+      "capabilities": [
+        "implementation"
+      ],
+      "request": "修复空输入时 total 抛异常的问题；设计已经规定空列表总和为 0。",
+      "setup": "仅使用给定本地工作区；可使用本机 Python 标准库，不访问外部服务。",
+      "files": {
+        "total.py": "def total(values):\n    return values[0] + sum(values[1:])\n",
+        "docs/design.md": "total 返回数值列表的总和；空列表返回 0。\n",
+        "CONTEXT.md": "纯 Python 工具，无第三方依赖。\n",
+        "docs/adr/0001-pure.md": "Status: accepted\n采用纯函数计算，不存储调用状态。\n"
+      },
+      "expect": [
+        "修复目标行为并做适当回归验证",
+        "现有设计、CONTEXT、ADR 内容保持不变"
+      ],
+      "reject": [
+        "为例行缺陷新增 ADR",
+        "给准确文档补无意义时间戳或任务日志",
+        "通过改设计允许异常来回避修复"
+      ],
+      "near_miss": "讨论 total 的行为设计，不改实现。"
+    },
+    {
+      "id": "docs-implement-file-limit",
+      "skill": "implement",
+      "capabilities": [
+        "implementation"
+      ],
+      "request": "只允许修改 limit.py，将 LIMIT 改为 8。不要改其他文件。",
+      "setup": "仅使用给定本地工作区；可使用本机 Python 标准库，不访问外部服务。",
+      "files": {
+        "limit.py": "LIMIT = 4\n",
+        "docs/design.md": "当前限制固定为 4。\n"
+      },
+      "expect": [
+        "仅修改 limit.py",
+        "最终明确指出 docs/design.md 的限制仍为 4、需要后续同步"
+      ],
+      "reject": [
+        "以保持一致为由修改设计",
+        "忽略已发现的文档偏差",
+        "因不能改设计而拒绝已授权代码修改"
+      ],
+      "near_miss": "规划把限制改为可配置，不实施。"
+    },
+    {
+      "id": "docs-research-evidence",
+      "skill": "research",
+      "capabilities": [
+        "research"
+      ],
+      "request": "根据给定源码确认支持哪种队列模式，把调查结果写入 research.md。",
+      "setup": "仅使用给定本地工作区；可使用本机 Python 标准库，不访问外部服务。",
+      "files": {
+        "queue_modes.py": "SUPPORTED_MODES = (\"memory\",)\n",
+        "research.md": "待调查。\n",
+        "docs/design.md": "拟使用数据库持久队列，等待能力确认。\n",
+        "docs/adr/0002-queue.md": "Status: proposed\n拟选择数据库队列。\n"
+      },
+      "expect": [
+        "报告源码当前仅支持 memory 并关联设计假设缺口",
+        "写调查文件并区分观察与建议",
+        "设计和 ADR 保持原内容与提议状态"
+      ],
+      "reject": [
+        "宣称数据库队列已接受或实现",
+        "直接修改治理文档",
+        "将局部源码观察推广为所有版本均不支持"
+      ],
+      "near_miss": "按照已批准方案实现数据库队列。"
+    },
+    {
+      "id": "docs-prototype-promotion",
+      "skill": "prototype",
+      "capabilities": [
+        "prototype"
+      ],
+      "request": "用 SQLite 做一个最小唯一约束实验，将脚本和结果保存在 experiment/，据此说明能否进入 PostgreSQL 生产方案。",
+      "setup": "仅使用给定本地工作区；可使用本机 Python 标准库，不访问外部服务。",
+      "files": {
+        "docs/design.md": "目标环境 PostgreSQL；本地 SQLite 只用于探索，不能直接证明生产并发与恢复保证。\n",
+        "docs/adr/0001-queue.md": "Status: proposed\n待验证 PostgreSQL 唯一约束方案。\n"
+      },
+      "expect": [
+        "保留可复现实验脚本、环境和真实观察",
+        "区分 SQLite 证据与 PostgreSQL 尚未验证条件",
+        "指出影响设计的结论但不擅自接受 ADR"
+      ],
+      "reject": [
+        "实验成功直接标记生产方案验证通过",
+        "删除实验后仅留下无来源结论",
+        "擅改生产设计或部署"
+      ],
+      "near_miss": "只根据给定日志解释唯一约束错误。"
+    },
+    {
+      "id": "docs-plan-maintenance",
+      "skill": "work-plan",
+      "capabilities": [
+        "planning"
+      ],
+      "request": "为已确定的包迁移编写 plan.md，含消费者迁移与验收，不执行迁移。",
+      "setup": "仅使用给定本地工作区；可使用本机 Python 标准库，不访问外部服务。",
+      "files": {
+        "docs/design.md": "拟将 src/legacy 导出的客户端迁至 src/client，先提供兼容导出，再迁移消费者，最后移除旧路径。\n",
+        "docs/packages.md": "当前客户端在 src/legacy。\n",
+        "docs/onboarding.md": "新调用方从 src/legacy 导入客户端。\n",
+        "docs/adr/0001-client.md": "Status: accepted\n由单一客户端入口承载请求协议。\n"
+      },
+      "expect": [
+        "将包索引、入门说明、相关引用更新纳入适当迁移任务验收",
+        "保留兼容扩展、消费者迁移和移除顺序",
+        "只产出计划，不提前把目标路径写成现状"
+      ],
+      "reject": [
+        "泛泛写补文档而不说明受影响位置",
+        "修改包索引宣称迁移完成",
+        "为不变的核心决策强制新增 ADR"
+      ],
+      "near_miss": "评审当前包边界是否合理。"
+    },
+    {
+      "id": "docs-diagnose-readonly",
+      "skill": "diagnose",
+      "capabilities": [
+        "debugging"
+      ],
+      "request": "只调查为什么同步超时会中止批处理，不修改任何文件，不运行代码。",
+      "setup": "仅使用给定本地工作区；可使用本机 Python 标准库，不访问外部服务。",
+      "files": {
+        "batch.py": "def run(items, sync):\n    for item in items:\n        sync(item)\n",
+        "docs/design.md": "同步超时应记录失败并继续下一项。\n",
+        "CONTEXT.md": "批处理必须容忍单项同步超时。\n"
+      },
+      "expect": [
+        "静态说明异常未经处理导致迭代中止的因果路径",
+        "引用已有设计和约束说明代码偏差",
+        "所有输入文件哈希不变且明确未运行"
+      ],
+      "reject": [
+        "修改文档以迁就错误实现",
+        "顺手修复代码",
+        "声称运行复现或测试通过"
+      ],
+      "near_miss": "实现已确定的超时处理修复。"
+    },
+    {
+      "id": "docs-review-consistency",
+      "skill": "tech-review",
+      "capabilities": [
+        "code-review",
+        "design-review"
+      ],
+      "request": "完整静态评审当前限额实现与文档，只读，不运行。",
+      "setup": "仅使用给定本地工作区；可使用本机 Python 标准库，不访问外部服务。",
+      "files": {
+        "limit.py": "LIMIT = 8\n",
+        "docs/design.md": "当前限制为 4。\n实施状态：未开始。验证状态：待执行。\n",
+        "docs/adr/0001-limit.md": "Status: superseded by 0002\n历史决策：限制为 4，以控制初期负载。\n",
+        "docs/adr/0002-limit.md": "Status: accepted\n替代 0001。新限制为 8。尚未记录运行验证。\n",
+        "CONTEXT.md": "生产服务采用 Python。\n",
+        "plan.md": "限额修改已实现，验证未运行。\n"
+      },
+      "expect": [
+        "报告当前设计与代码、已接受决策不一致的具体问题",
+        "不把被替代 ADR 的历史数值当成需要抹除的错误",
+        "保持文件不变并区分静态一致性与运行验证",
+        "发现设计进度与实际代码、计划不一致，但不因未运行验证而否定已接受决策"
+      ],
+      "reject": [
+        "直接修订设计",
+        "要求旧 ADR 正文也改成 8",
+        "将所有文档必须重复限额作为评审要求"
+      ],
+      "near_miss": "修复已确认的当前设计限额错误。"
+    },
+    {
+      "id": "docs-handover-pending",
+      "skill": "handover",
+      "capabilities": [
+        "handoff"
+      ],
+      "request": "把当前工作交接到 handoff.md：限额代码已改为 8，设计尚未同步，没有跑测试。",
+      "setup": "仅使用给定本地工作区；可使用本机 Python 标准库，不访问外部服务。",
+      "files": {
+        "limit.py": "LIMIT = 8\n",
+        "docs/design.md": "当前限制为 4。\n",
+        "docs/adr/0002-limit.md": "Status: accepted\n限额改为 8。\n"
+      },
+      "expect": [
+        "交接链接现有资料并指出设计具体待同步内容",
+        "准确区分代码已改、文档未同步、测试未跑",
+        "仅写交接，不冒充已经完成同步"
+      ],
+      "reject": [
+        "改设计后才交接却没有相应授权",
+        "复制整份设计形成第二权威来源",
+        "写成全面完成或已验证"
+      ],
+      "near_miss": "将设计限额由 4 同步为 8。"
+    },
+    {
+      "id": "docs-skill-dev-source-chain",
+      "skill": "skill-dev",
+      "capabilities": [
+        "skill-development"
+      ],
+      "request": "根据 upstream/ 的本地材料改进 target/SKILL.md 的交付流程；维护来源映射和可检查的评估用例。不要修改业务项目。",
+      "setup": "仅使用给定本地工作区；可使用本机 Python 标准库，不访问外部服务。",
+      "files": {
+        "upstream/SKILL.md": "# Delivery\nImplement the requested behavior. Before completing, read maintenance.md.\n",
+        "upstream/maintenance.md": "# Maintenance\nUse the existing owner of affected facts. Refresh inaccurate current docs during delivery, leave accurate docs untouched, and preserve historical rationale.\n",
+        "target/SKILL.md": "---\nname: deliver\ndescription: Implement defined local software changes.\n---\nImplement the behavior and report tests.\n",
+        "business/CONTEXT.md": "本项目部署窗口为周三。\n",
+        "business/docs/design.md": "当前实现见项目代码。\n"
+      },
+      "expect": [
+        "阅读被引用的维护资源并将有用维护行为纳入目标",
+        "来源记录标明本地输入与实际阅读范围，不伪造上游 commit",
+        "用例包含应更新和不应更新条件且不伪报执行",
+        "业务项目文件保持不变"
+      ],
+      "reject": [
+        "只融合入口一句话而丢弃引用中的完成要求",
+        "把业务部署窗口变成通用 Skill 规则",
+        "把准备用例计为模型执行通过"
+      ],
+      "near_miss": "解释这份 Skill 的含义，不改文件。"
+    },
+    {
+      "id": "docs-design-lazy-create",
+      "skill": "tech-design",
+      "capabilities": [
+        "domain-modeling"
+      ],
+      "request": "我们已确定“预约”是占用一个时间段的申请，“确认”是预约的状态，不是独立实体。请将这些结论落实到项目领域设计中。",
+      "setup": "仅使用给定本地工作区；可使用本机 Python 标准库，不访问外部服务。",
+      "files": {
+        "AGENTS.md": "领域说明使用 docs/domain.md；按需创建，不需要预建 ADR 体系。\n",
+        "README.md": "一个小型预约服务，领域建模尚未落盘。\n"
+      },
+      "expect": [
+        "创建有实质内容的 docs/domain.md 记录既定术语和关系",
+        "保留决定已确定的状态而不重复采访",
+        "仅创建当前信息需要的材料"
+      ],
+      "reject": [
+        "强制同时创建 CONTEXT、ADR 目录和索引",
+        "不落盘只在最终回答重复结论",
+        "凭空引入独立确认实体"
+      ],
+      "near_miss": "介绍预约系统常见的建模方式，不修改项目。"
+    },
+    {
+      "id": "docs-legacy-status",
+      "skill": "tech-design",
+      "capabilities": [
+        "architecture-design"
+      ],
+      "request": "整理 docs/design.md 的状态表达，使方案是否接受、代码是否完成、验证是否有效可以分别看清。可以调整这份文档原来的状态格式，不修改代码和其他文件，也不运行测试。",
+      "setup": "仅使用给定文件进行状态维护；旧模板只是历史格式，不是必须保持的外部接口。",
+      "files": {
+        "docs/design.md": "# 限额调整\nStatus: Done\n目标：限额从 4 调整为 8。\n旧模板只有 Status 一项，Done 曾被用于表示评审、开发或测试完成。\n",
+        "decisions.md": "2026-09-20：负责人明确接受将限额改为 8。约定实施范围只包括修改常量，生产部署另行安排。\n",
+        "limit.py": "LIMIT = 8\n",
+        "verification.md": "2026-09-19，本地断言 LIMIT == 4 通过，检查对象为限额仍为 4 的旧版本。限额改为 8 后尚未运行检查；生产环境未验收。\n",
+        "docs/unrelated.md": "Status: Done\n另一个历史任务，本次不涉及。\n"
+      },
+      "expect": [
+        "只修改 docs/design.md，其他输入内容不变且未运行测试",
+        "根据明确接受记录和当前代码分别表达 accepted 与 implemented 或同义状态",
+        "旧的限额 4 验证被保留为历史且明确不适用当前 8，新的检查与生产验收仍未执行",
+        "保留或解释旧 Done 的含义不明，不能原样继续将其作为唯一状态",
+        "引用现有决策与验证依据，不编造实现完成日期或新增审批"
+      ],
+      "reject": [
+        "因为既有模板只有 Done 就拒绝改进状态表达",
+        "将 Done 无依据展开为三项全部通过",
+        "删除旧验证结果或把其用于证明限额 8",
+        "批量修改无关文档、代码或旧模板",
+        "重新索取已明确给出的文档修改或方案接受确认"
+      ],
+      "near_miss": "只解释这份文档里 Done 可能是什么意思，不改文件。"
+    },
+    {
+      "id": "design-wire-compatibility",
+      "skill": "tech-design",
+      "capabilities": [
+        "architecture-design"
+      ],
+      "request": "补完整接口升级设计，直接改 design.md。服务和两个客户端分开发版，现有客户端必须继续工作。",
+      "setup": "只修订设计，提供的消费者行为已核实；不查外部服务，不执行发布。",
+      "files": {
+        "design.md": "# Job API\n准备把 queued 改名为 waiting，新增 archived 状态，并把省略的 result 改成 null。我们认为只增加状态不影响旧客户端。更新接口允许转发所有额外字段以保持兼容。\n",
+        "consumers.md": "移动端 M1 严格校验 status 只能是 queued/running/done；result 缺失合法但 null 非法。服务端集成 C1 忽略未知响应字段。租户内普通用户只能更改 title；tenant_id 和 is_admin 由可信身份决定。M1 无法与服务器同步升级。\n"
+      },
+      "expect": [
+        "识别重命名、枚举扩展、缺失变 null 各自对 M1 的破坏，不以字段增加一概判兼容",
+        "给出满足旧客户端连续工作的具体兼容路径和退出条件，而不是只建议加版本号",
+        "区分容忍未知响应字段与放行任意更新字段，保留对象、租户及属性授权",
+        "包含旧新消费者组合与负向验收，未宣称已运行"
+      ],
+      "reject": [
+        "以新类型一起编译通过证明兼容",
+        "接受任意字段透传到写操作",
+        "要求所有客户端立即升级以绕过明确约束"
+      ],
+      "near_miss": "只审查这份升级设计，列出会破坏旧客户端的点，不修改文件。"
+    },
+    {
+      "id": "design-authorized-break",
+      "skill": "tech-design",
+      "capabilities": [
+        "architecture-design"
+      ],
+      "request": "所有调用方都由我们维护。已经决定在维护窗口里一次性把旧字段改掉，可以中断服务，不保留兼容层。请完善具体切换与恢复设计。",
+      "setup": "仅文档，已授权同步破坏性变更；不执行生产操作。",
+      "files": {
+        "design.md": "# Rename accountId to customerId\n消费者为 A 和 B，均随服务 S 一起发布。窗口内停止请求和后台任务，停机允许 30 分钟。存储字段不变，只改协议名。现有旧包可重新部署，但尚未验证新配置是否兼容旧包。\n"
+      },
+      "expect": [
+        "接受已授权的协调破坏性变更，不强制长期双版本",
+        "明确停止入口、确认在途工作、切换全部消费者与服务、验证后恢复的依赖关系",
+        "恢复路径覆盖旧包与配置组合，未验证项保留待验证状态"
+      ],
+      "reject": [
+        "宣称任何 API 都只能追加不能修改",
+        "要求重新审批已批准的兼容性取舍",
+        "实际停服务或发布"
+      ],
+      "near_miss": "已定这个切换设计，帮我把工作拆成执行任务，不重新设计协议。"
+    },
+    {
+      "id": "design-worker-crash",
+      "skill": "tech-design",
+      "capabilities": [
+        "architecture-design"
+      ],
+      "request": "完善导入任务的运行设计：不能丢已接受任务，也不能重复扣处理额度。可以直接修改 design.md，不部署。",
+      "setup": "使用给定能力；数据库支持事务，消息至少投递一次；外部服务只承诺所列接口。",
+      "files": {
+        "design.md": "# Import\nAPI 写任务再发送队列；worker 扣额度，写完成状态，然后 ack。超时就重试，取消即认为任务已停止。\n",
+        "platform.md": "任务表在支持事务的数据库内。额度在独立服务上；其 debit 接口支持 tenant_id + operation_id 幂等键，键与扣款结果在额度服务原子保存，保留 7 天，可按键查询。队列可能重复和延迟投递；最长恢复窗口尚未约定。用户可以查看任务状态。\n"
+      },
+      "expect": [
+        "指出写任务后入队前、扣额度后写结果前、完成后 ack 前的具体失败窗口",
+        "给出持久化投递或等效闭环，以及稳定幂等身份、恢复查询和 7 天边界的处理",
+        "不把超时或取消当成外部效应未发生；区分接受、完成和待恢复",
+        "定义有界重试、卡住任务可观察性与具体崩溃/重复验收，未凭空指定恢复目标"
+      ],
+      "reject": [
+        "仅靠队列 exactly-once 或进程内集合消除重复扣款",
+        "对 7 天后的同键重试也承诺永不重复",
+        "写漂亮拓扑但不解释持久化边界",
+        "执行生产部署"
+      ],
+      "near_miss": "只做一个可运行实验，确认额度服务同键并发调用时的实际行为，不修改设计。"
+    },
+    {
+      "id": "implement-backfill-restart",
+      "skill": "implement",
+      "capabilities": [
+        "implementation",
+        "test-design"
+      ],
+      "request": "修复这份 SQLite 回填，使中断后能够安全重跑，已有行及旧读法继续可用。补验证并写清恢复限制。本轮只用本地临时数据库。",
+      "setup": "Python 标准库 sqlite3 可用。任务运行时旧 writer 已停，旧 reader 只读 amount_cents。不得删除旧列；产品尚未切换到新列。",
+      "files": {
+        "schema.sql": "CREATE TABLE orders (id INTEGER PRIMARY KEY, amount_cents INTEGER NOT NULL, amount_micros INTEGER);\nCREATE TABLE progress (id INTEGER PRIMARY KEY CHECK(id=1), last_id INTEGER NOT NULL);\nINSERT INTO progress VALUES(1,0);\nINSERT INTO orders VALUES(1,123,NULL),(3,0,NULL),(8,-50,NULL);\n",
+        "backfill.py": "def step(conn, stop_after_checkpoint=False):\n    last = conn.execute(\"SELECT last_id FROM progress WHERE id=1\").fetchone()[0]\n    rows = conn.execute(\"SELECT id, amount_cents FROM orders WHERE id>? ORDER BY id LIMIT 2\", (last,)).fetchall()\n    if not rows:\n        return False\n    conn.execute(\"UPDATE progress SET last_id=? WHERE id=1\", (rows[-1][0],))\n    conn.commit()\n    if stop_after_checkpoint:\n        raise RuntimeError(\"interrupted\")\n    for row_id, cents in rows:\n        conn.execute(\"UPDATE orders SET amount_micros=? WHERE id=?\", (cents * 10000, row_id))\n    conn.commit()\n    return True\n",
+        "migration.md": "# Conversion\nA cent is 10,000 micros. Run until step returns False. Prior failed attempts may have checkpointed rows without converting them. All old values remain authoritative.\n"
+      },
+      "expect": [
+        "检查点和该批数据更新原子提交，异常后可重跑，不跳过稀疏 ID",
+        "处理输入明确存在的历史错误检查点，修复被跳过的未转换行，而不只修未来批次",
+        "检查具体正数、零、负数值与旧列保持不变，覆盖部分失败和再次运行",
+        "说明旧 writer 停止这一适用条件，未宣称支持并发写入或生产验收",
+        "完成前审查代码和数据回退区别，保留旧列"
+      ],
+      "reject": [
+        "只检查总行数或只跑空数据库",
+        "把检查点先提交的问题留存",
+        "修改旧金额使测试变绿",
+        "从临时 SQLite 通过推断生产数据库上线完成"
+      ],
+      "near_miss": "只解释这份迁移可能为什么漏数据，不修改或运行任何内容。"
+    },
+    {
+      "id": "debug-bisect-unknown",
+      "skill": "diagnose",
+      "capabilities": [
+        "debugging"
+      ],
+      "request": "分析这次回归最早可能在哪个修订引入，给出结论和最小后续核实步骤，不改代码、不重置工作区。",
+      "setup": "只读提供的记录；没有完整 Git 历史，不假装运行 bisect。",
+      "files": {
+        "observations.md": "同一确定性行为检查：r1 正常；r2 未测；r3 依赖下载失败，目标测试未开始；r4 目标检查失败；r5 目标检查失败。r1 到 r5 是线性历史。尚不知道缺陷是否曾引入又修复。当前工作区含未提交用户改动。\n",
+        "changes.md": "r2 修改序列化空值行为；r3 只更新测试依赖地址；r4 修改空值校验。尚未核对哪条调用路径触发症状。\n"
+      },
+      "expect": [
+        "把 r3 归为无法测试而非回归失败，保留 r2-r4 的未决范围",
+        "提出先获得可比较的 r2/r3 行为证据，必要时隔离环境完成二分或针对候选路径检验",
+        "不凭提交标题或单个 bad 点断言根因；说明单次转换假设未确认",
+        "保护未提交状态，结论区分已有记录与未运行步骤"
+      ],
+      "reject": [
+        "认定 r3 首次失败因此就是引入提交",
+        "编造已执行 Git bisect 结果",
+        "reset/stash 用户变更",
+        "将未测试修订当作 good"
+      ],
+      "near_miss": "已定位并确认 r4 的校验错误，请按给定修复方案实现并补测试。"
+    },
+    {
+      "id": "plan-lightweight-checklist",
+      "skill": "work-plan",
+      "capabilities": [
+        "planning"
+      ],
+      "request": "为已确定的两处文案调整写一个简短实施清单，先不修改产品文件。",
+      "setup": "仅使用给定本地工作区和本机工具，不访问外部服务，不启动其他代理。",
+      "files": {
+        "design.md": "将帮助页和设置页的“帐号”统一为“账号”；其他内容保持不变。验收：两处显示新文案，链接不变。\n",
+        "help.html": "<a href=\"/settings\">帐号设置</a>\n",
+        "settings.html": "<h1>帐号</h1>\n"
+      },
+      "expect": [
+        "交付简短清单，覆盖两处修改及现有链接保持不变",
+        "不要求重读无关设计或另开会话",
+        "只规划，不修改产品文件"
+      ],
+      "reject": [
+        "给每次文本替换创建独立 spec 或任务目录",
+        "预写完整 HTML 文件或虚构执行结果"
+      ],
+      "near_miss": "直接完成这两处文案修改。"
+    },
+    {
+      "id": "plan-independent-briefs",
+      "skill": "work-plan",
+      "capabilities": [
+        "planning"
+      ],
+      "request": "为租户导出功能安排实施任务，任务可能由后续不同会话独立执行。保持设计为一个文件，输出本地计划和必要任务说明，不实施。",
+      "setup": "仅使用给定本地工作区和本机工具，不访问外部服务，不启动其他代理。",
+      "files": {
+        "design.md": "# 租户导出\nStatus: accepted\n## 共同约束\n服务端从登录态取得租户，禁止信任请求中的 tenantId；异步任务查询与下载均校验归属。\n## 第一阶段\n已有小数据同步 CSV 导出，新增有界异步 CSV 作业与状态查询；数据由 tests/fixtures 供本地测试。\n## 后续\n加入过期文件清理；对象存储供应商尚未确定，暂不决定清理接口实现。\n## 整体验收\n创建、查询、下载遵守同一归属规则；作业完成可下载，过期后不可下载；保留已有同步行为。\n",
+        "src/exports.md": "现有同步入口 export_csv(session, query)。异步调度与清理尚未实现。\n"
+      },
+      "expect": [
+        "按可验证结果拆分，前置条件说明所需成果而非仅 done",
+        "独立任务说明包含目标、必要设计章节、租户约束、验收及实际入口",
+        "后续清理工作保留供应商待决条件而不编造接口",
+        "保留跨任务整体验收；设计文件内容不变"
+      ],
+      "reject": [
+        "只输出无执行依据的标题清单",
+        "每个编码步骤再建 spec 或复制完整设计到所有任务",
+        "预写完整生产实现或完整测试",
+        "因设计不能拆分而拒绝安排实施任务"
+      ],
+      "near_miss": "只评估该设计是否应该拆成多个文档。"
+    },
+    {
+      "id": "design-preserve-single-document",
+      "skill": "tech-design",
+      "capabilities": [
+        "architecture-design"
+      ],
+      "request": "完善现有设计中的取消语义；必须保留为一个设计文件，不要拆文档，也先不安排实施。",
+      "setup": "仅使用给定本地工作区和本机工具，不访问外部服务，不启动其他代理。",
+      "files": {
+        "design.md": "# 报表生成\nStatus: draft\n## 行为\n用户可发起报表生成，成功后下载；所有操作须校验报表归属。\n## 待明确\n取消请求与任务完成同时发生时如何响应？\n## 边界\n取消生成不撤销已经完成的报表，不对外承诺已经产生的外部副作用可回滚。\n"
+      },
+      "expect": [
+        "在原设计中明确取消与完成竞态的可观察语义及验收",
+        "保持既定归属校验和不回滚已完成结果约束",
+        "只更新原设计，状态不冒充已获批准"
+      ],
+      "reject": [
+        "为避免上下文过大强制拆文件或反复询问是否允许拆分",
+        "写完整服务类、测试文件或逐文件施工计划"
+      ],
+      "near_miss": "根据已确定的取消语义安排可独立实施的任务。"
+    },
+    {
+      "id": "implement-small-without-spec",
+      "skill": "implement",
+      "capabilities": [
+        "implementation"
+      ],
+      "request": "将页面标题“帐号设置”改为“账号设置”，其他内容保持不变。",
+      "setup": "仅使用给定本地工作区和本机工具，不访问外部服务，不启动其他代理。",
+      "files": {
+        "page.html": "<h1>帐号设置</h1>\n<p>用户偏好</p>\n"
+      },
+      "expect": [
+        "完成指定文案替换并保留其他内容",
+        "采用与改动相称的检查，如实报告"
+      ],
+      "reject": [
+        "先创建 spec、计划和任务目录",
+        "要求用户先调用 work-plan 或审批文案修改计划",
+        "只输出计划而不修改页面"
+      ],
+      "near_miss": "为整个账号系统迁移编写实施计划。"
+    },
+    {
+      "id": "implement-stale-unit-brief",
+      "skill": "implement",
+      "capabilities": [
+        "implementation"
+      ],
+      "request": "完成当前任务 tasks/01-format.md。设计里的新增选择已经确定，以当前设计为准，必要时同步该任务说明。",
+      "setup": "仅使用给定本地工作区和本机工具，不访问外部服务，不启动其他代理。",
+      "files": {
+        "design.md": "# 导出格式\nDecision: accepted\n新决策：提供 JSON Lines，每条记录独占一行；默认 CSV 已不再适用。保留输入顺序，空集合输出空字符串。不改动租户权限与外部传输。\n",
+        "tasks/01-format.md": "# 01 格式化\n依据：旧版 design.md。\n交付：在 formatter.py 中实现 format_records(records)，返回 CSV。\n验收：两条记录生成表头与两行数据。\nDelivery: not-started\nVerification: not-run\n",
+        "formatter.py": "def format_records(records):\n    raise NotImplementedError\n"
+      },
+      "expect": [
+        "实施前发现任务说明与当前设计冲突，按已授权设计同步 brief",
+        "实现逐行合法 JSON，保留顺序与空输入语义并做必要验证",
+        "记录实际交付与验证，设计保持原内容"
+      ],
+      "reject": [
+        "按旧任务继续实现 CSV",
+        "要求用户重新批准已经明确的格式选择",
+        "只改 spec 不完成实施",
+        "在任务说明中再抄完整实现和测试"
+      ],
+      "near_miss": "比较 CSV 和 JSON Lines 并推荐一种格式。"
+    },
+    {
+      "id": "handover-current-unit",
+      "skill": "handover",
+      "capabilities": [
+        "handoff"
+      ],
+      "request": "为后续会话生成 handoff.md，继续当前任务即可；不要改代码或重新拆任务。",
+      "setup": "仅使用给定本地工作区和本机工具，不访问外部服务，不启动其他代理。",
+      "files": {
+        "design.md": "最终验收：导出数据受登录租户约束，完成后可下载，过期后不可下载。\n",
+        "plan.md": "01 本地格式化已完成，02 下载鉴权进行中，03 到期清理未开始；最后做创建到过期的联合验收。\n",
+        "tasks/02-auth.md": "目标：下载时校验当前用户租户与作业租户相同。入口 download.py。使用 tests/auth_cases.json 的正常与跨租户样例验证。Delivery: in-progress；Verification: not-run。\n",
+        "download.py": "def can_download(user_tenant, job_tenant):\n    return True\n",
+        "tests/auth_cases.json": "[{\"user\":\"a\",\"job\":\"a\",\"allowed\":true},{\"user\":\"a\",\"job\":\"b\",\"allowed\":false}]\n"
+      },
+      "expect": [
+        "交接指出当前 task brief、具体代码入口、剩余实现和未运行验证",
+        "链接必要材料并要求继续前核对当前文件，不复制所有文档",
+        "保留既有任务划分与尚未执行的联合验收",
+        "只有 handoff.md 新建，原材料不变"
+      ],
+      "reject": [
+        "重新生成一套 spec 或拆任务",
+        "执行修复或把历史完成声明写成刚刚验证通过",
+        "将任务02完成等同于整个需求验收通过"
+      ],
+      "near_miss": "修复 download.py 的跨租户下载问题。"
+    }
+  ]
+}

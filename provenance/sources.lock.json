@@ -1,0 +1,838 @@
+{
+  "schema_version": 1,
+  "note": "Pinned source observations for v0.1, not claims about current upstream HEAD or complete framework evaluation. Fetched-only resources were not used as method evidence.",
+  "sources": [
+    {
+      "repo": "mattpocock/skills",
+      "commit": "c55ee46073ed923f86ce59a5eb3b6d895095d1b7",
+      "path": "skills/engineering/setup-matt-pocock-skills/SKILL.md",
+      "url": "https://raw.githubusercontent.com/mattpocock/skills/c55ee46073ed923f86ce59a5eb3b6d895095d1b7/skills/engineering/setup-matt-pocock-skills/SKILL.md",
+      "sha256": "2bcd89e97777cdb705914424e39c97d5db524c8eb4eafac8120778a07774f0ec",
+      "bytes": 6841,
+      "id": "mattpocock/skills:skills/engineering/setup-matt-pocock-skills/SKILL.md",
+      "review_scope": "fetched-only; not a method evidence claim"
+    },
+    {
+      "repo": "mattpocock/skills",
+      "commit": "c55ee46073ed923f86ce59a5eb3b6d895095d1b7",
+      "path": "skills/engineering/grill-with-docs/SKILL.md",
+      "url": "https://raw.githubusercontent.com/mattpocock/skills/c55ee46073ed923f86ce59a5eb3b6d895095d1b7/skills/engineering/grill-with-docs/SKILL.md",
+      "sha256": "7de372c13488f1ee96cc11cd8907b56b6809cc93eef776eeddd37de6b6cbe3fe",
+      "bytes": 247,
+      "id": "mattpocock/skills:skills/engineering/grill-with-docs/SKILL.md",
+      "review_scope": "full-text"
+    },
+    {
+      "repo": "mattpocock/skills",
+      "commit": "c55ee46073ed923f86ce59a5eb3b6d895095d1b7",
+      "path": "skills/engineering/domain-modeling/SKILL.md",
+      "url": "https://raw.githubusercontent.com/mattpocock/skills/c55ee46073ed923f86ce59a5eb3b6d895095d1b7/skills/engineering/domain-modeling/SKILL.md",
+      "sha256": "327a2b50620e2fd70abc6893cd6965e76b20f8d0adb0dc2c8d5eb3845efb643e",
+      "bytes": 3331,
+      "id": "mattpocock/skills:skills/engineering/domain-modeling/SKILL.md",
+      "review_scope": "full-text"
+    },
+    {
+      "repo": "mattpocock/skills",
+      "commit": "c55ee46073ed923f86ce59a5eb3b6d895095d1b7",
+      "path": "skills/engineering/to-spec/SKILL.md",
+      "url": "https://raw.githubusercontent.com/mattpocock/skills/c55ee46073ed923f86ce59a5eb3b6d895095d1b7/skills/engineering/to-spec/SKILL.md",
+      "sha256": "43ad9cf318e5e7d3d1fa360253a37021796dc87a0c2e595ad262661a10f85088",
+      "bytes": 3043,
+      "id": "mattpocock/skills:skills/engineering/to-spec/SKILL.md",
+      "review_scope": "full-text"
+    },
+    {
+      "repo": "mattpocock/skills",
+      "commit": "c55ee46073ed923f86ce59a5eb3b6d895095d1b7",
+      "path": "skills/engineering/to-tickets/SKILL.md",
+      "url": "https://raw.githubusercontent.com/mattpocock/skills/c55ee46073ed923f86ce59a5eb3b6d895095d1b7/skills/engineering/to-tickets/SKILL.md",
+      "sha256": "5c9fba69845c2519b9b35b9af42ae5142c21f8ca15ac2123dc2722002c8058ae",
+      "bytes": 5671,
+      "id": "mattpocock/skills:skills/engineering/to-tickets/SKILL.md",
+      "review_scope": "full-text"
+    },
+    {
+      "repo": "mattpocock/skills",
+      "commit": "c55ee46073ed923f86ce59a5eb3b6d895095d1b7",
+      "path": "skills/engineering/wayfinder/SKILL.md",
+      "url": "https://raw.githubusercontent.com/mattpocock/skills/c55ee46073ed923f86ce59a5eb3b6d895095d1b7/skills/engineering/wayfinder/SKILL.md",
+      "sha256": "fee6e1d0c50f0e736b4ef8a599060c959afae904c9a97d82c97f049fcc3aa0f1",
+      "bytes": 11908,
+      "id": "mattpocock/skills:skills/engineering/wayfinder/SKILL.md",
+      "review_scope": "full-text"
+    },
+    {
+      "repo": "mattpocock/skills",
+      "commit": "c55ee46073ed923f86ce59a5eb3b6d895095d1b7",
+      "path": "skills/engineering/prototype/SKILL.md",
+      "url": "https://raw.githubusercontent.com/mattpocock/skills/c55ee46073ed923f86ce59a5eb3b6d895095d1b7/skills/engineering/prototype/SKILL.md",
+      "sha256": "714de632d116bb73f65cdb5a882db15b9369a6713b9a47c0fad827848f0bfbe3",
+      "bytes": 2931,
+      "id": "mattpocock/skills:skills/engineering/prototype/SKILL.md",
+      "review_scope": "full-text"
+    },
+    {
+      "repo": "mattpocock/skills",
+      "commit": "c55ee46073ed923f86ce59a5eb3b6d895095d1b7",
+      "path": "skills/engineering/diagnosing-bugs/SKILL.md",
+      "url": "https://raw.githubusercontent.com/mattpocock/skills/c55ee46073ed923f86ce59a5eb3b6d895095d1b7/skills/engineering/diagnosing-bugs/SKILL.md",
+      "sha256": "77f3cf31bc99b2f49af943222526531fcc9fc41d047626d3640e875e85af3e84",
+      "bytes": 8529,
+      "id": "mattpocock/skills:skills/engineering/diagnosing-bugs/SKILL.md",
+      "review_scope": "full-text"
+    },
+    {
+      "repo": "mattpocock/skills",
+      "commit": "c55ee46073ed923f86ce59a5eb3b6d895095d1b7",
+      "path": "skills/engineering/code-review/SKILL.md",
+      "url": "https://raw.githubusercontent.com/mattpocock/skills/c55ee46073ed923f86ce59a5eb3b6d895095d1b7/skills/engineering/code-review/SKILL.md",
+      "sha256": "47f4e52c21694def9c7c11cbfbf891ca35eac7a93e395797515be3c8a409ae50",
+      "bytes": 6589,
+      "id": "mattpocock/skills:skills/engineering/code-review/SKILL.md",
+      "review_scope": "full-text"
+    },
+    {
+      "repo": "mattpocock/skills",
+      "commit": "c55ee46073ed923f86ce59a5eb3b6d895095d1b7",
+      "path": "skills/engineering/research/SKILL.md",
+      "url": "https://raw.githubusercontent.com/mattpocock/skills/c55ee46073ed923f86ce59a5eb3b6d895095d1b7/skills/engineering/research/SKILL.md",
+      "sha256": "985569f15739c713d6784887c3d186d4ef9ac85bec5ad9c068d25bf0739928e4",
+      "bytes": 794,
+      "id": "mattpocock/skills:skills/engineering/research/SKILL.md",
+      "review_scope": "fetched-only; not a method evidence claim"
+    },
+    {
+      "repo": "mattpocock/skills",
+      "commit": "c55ee46073ed923f86ce59a5eb3b6d895095d1b7",
+      "path": "skills/engineering/README.md",
+      "url": "https://raw.githubusercontent.com/mattpocock/skills/c55ee46073ed923f86ce59a5eb3b6d895095d1b7/skills/engineering/README.md",
+      "sha256": "713826c94f7858c28067238ce6c7021783e4da0dc0beef58a2af72cf75268fda",
+      "bytes": 3840,
+      "id": "mattpocock/skills:skills/engineering/README.md",
+      "review_scope": "fetched-only; not a method evidence claim"
+    },
+    {
+      "repo": "mattpocock/skills",
+      "commit": "c55ee46073ed923f86ce59a5eb3b6d895095d1b7",
+      "path": "skills/engineering/implement/SKILL.md",
+      "url": "https://raw.githubusercontent.com/mattpocock/skills/c55ee46073ed923f86ce59a5eb3b6d895095d1b7/skills/engineering/implement/SKILL.md",
+      "sha256": "6d3fd9e83b8f36e5213854779db49b256a457a7ebb4a503e53fa7dcff696adc3",
+      "bytes": 433,
+      "id": "mattpocock/skills:skills/engineering/implement/SKILL.md",
+      "review_scope": "full-text"
+    },
+    {
+      "repo": "mattpocock/skills",
+      "commit": "c55ee46073ed923f86ce59a5eb3b6d895095d1b7",
+      "path": "skills/engineering/tdd/SKILL.md",
+      "url": "https://raw.githubusercontent.com/mattpocock/skills/c55ee46073ed923f86ce59a5eb3b6d895095d1b7/skills/engineering/tdd/SKILL.md",
+      "sha256": "cb01f66bebfaa25fa1f88e6b7e769cd9fd9f35b1120b8563749820738814c927",
+      "bytes": 3549,
+      "id": "mattpocock/skills:skills/engineering/tdd/SKILL.md",
+      "review_scope": "full-text"
+    },
+    {
+      "repo": "mattpocock/skills",
+      "commit": "c55ee46073ed923f86ce59a5eb3b6d895095d1b7",
+      "path": "skills/productivity/grilling/SKILL.md",
+      "url": "https://raw.githubusercontent.com/mattpocock/skills/c55ee46073ed923f86ce59a5eb3b6d895095d1b7/skills/productivity/grilling/SKILL.md",
+      "sha256": "10ff989e7498b23b5acb49d5048f11dcd906757d2f79c5cdf8a00001381296f2",
+      "bytes": 1987,
+      "id": "mattpocock/skills:skills/productivity/grilling/SKILL.md",
+      "review_scope": "full-text"
+    },
+    {
+      "repo": "mattpocock/skills",
+      "commit": "c55ee46073ed923f86ce59a5eb3b6d895095d1b7",
+      "path": "skills/productivity/writing-for-agents/SKILL.md",
+      "url": "https://raw.githubusercontent.com/mattpocock/skills/c55ee46073ed923f86ce59a5eb3b6d895095d1b7/skills/productivity/writing-for-agents/SKILL.md",
+      "sha256": "551adca942227b44192edba88acd4e8db911f0121ce58ad16944ccf6a896a74a",
+      "bytes": 10886,
+      "id": "mattpocock/skills:skills/productivity/writing-for-agents/SKILL.md",
+      "review_scope": "full-text"
+    },
+    {
+      "repo": "mattpocock/skills",
+      "commit": "c55ee46073ed923f86ce59a5eb3b6d895095d1b7",
+      "path": "LICENSE",
+      "url": "https://raw.githubusercontent.com/mattpocock/skills/c55ee46073ed923f86ce59a5eb3b6d895095d1b7/LICENSE",
+      "sha256": "0e7ac423bf2c6e223b7c5b156f8cf72da49d748e56a1641402c31f22ad07dbb5",
+      "bytes": 1068,
+      "id": "mattpocock/skills:LICENSE",
+      "review_scope": "license-notice-retained"
+    },
+    {
+      "repo": "citypaul/.dotfiles",
+      "commit": "a109f9972bb46671c624fc05752031523e1cf6fc",
+      "path": "claude/.claude/skills/codebase-design/SKILL.md",
+      "url": "https://raw.githubusercontent.com/citypaul/.dotfiles/a109f9972bb46671c624fc05752031523e1cf6fc/claude/.claude/skills/codebase-design/SKILL.md",
+      "sha256": "a166cba4f15d5efef01ec0667c560d1485d578e61ee41fbaaca61098cc1ee219",
+      "bytes": 12351,
+      "id": "citypaul/.dotfiles:claude/.claude/skills/codebase-design/SKILL.md",
+      "review_scope": "full-text"
+    },
+    {
+      "repo": "citypaul/.dotfiles",
+      "commit": "a109f9972bb46671c624fc05752031523e1cf6fc",
+      "path": "claude/.claude/skills/improve-codebase-architecture/SKILL.md",
+      "url": "https://raw.githubusercontent.com/citypaul/.dotfiles/a109f9972bb46671c624fc05752031523e1cf6fc/claude/.claude/skills/improve-codebase-architecture/SKILL.md",
+      "sha256": "d871906c5d7347feebd42fcf2d740b531bfc76e845737ae3941d1ae328911dbf",
+      "bytes": 13158,
+      "id": "citypaul/.dotfiles:claude/.claude/skills/improve-codebase-architecture/SKILL.md",
+      "review_scope": "full-text"
+    },
+    {
+      "repo": "citypaul/.dotfiles",
+      "commit": "a109f9972bb46671c624fc05752031523e1cf6fc",
+      "path": "claude/.claude/skills/structure-codebase/SKILL.md",
+      "url": "https://raw.githubusercontent.com/citypaul/.dotfiles/a109f9972bb46671c624fc05752031523e1cf6fc/claude/.claude/skills/structure-codebase/SKILL.md",
+      "sha256": "4c18739e7d2f46c6ff48fa4e8b8b06e445fe78c8f1720837594a36f930ccf75c",
+      "bytes": 17736,
+      "id": "citypaul/.dotfiles:claude/.claude/skills/structure-codebase/SKILL.md",
+      "review_scope": "full-text"
+    },
+    {
+      "repo": "citypaul/.dotfiles",
+      "commit": "a109f9972bb46671c624fc05752031523e1cf6fc",
+      "path": "claude/.claude/skills/evaluate-existing-solutions/SKILL.md",
+      "url": "https://raw.githubusercontent.com/citypaul/.dotfiles/a109f9972bb46671c624fc05752031523e1cf6fc/claude/.claude/skills/evaluate-existing-solutions/SKILL.md",
+      "sha256": "92ef1ffc20e02b7cc9c45c3228bb37c64c3c0eecb5e86ed5ac271bcf38268d38",
+      "bytes": 14291,
+      "id": "citypaul/.dotfiles:claude/.claude/skills/evaluate-existing-solutions/SKILL.md",
+      "review_scope": "full-text"
+    },
+    {
+      "repo": "citypaul/.dotfiles",
+      "commit": "a109f9972bb46671c624fc05752031523e1cf6fc",
+      "path": "LICENSE",
+      "url": "https://raw.githubusercontent.com/citypaul/.dotfiles/a109f9972bb46671c624fc05752031523e1cf6fc/LICENSE",
+      "sha256": "58dcc6879ff8eb10fc3f0d269c22ada0ac50d25be578f41a6dcbc6be4a31702a",
+      "bytes": 1401,
+      "id": "citypaul/.dotfiles:LICENSE",
+      "review_scope": "license-notice-retained"
+    },
+    {
+      "repo": "arjunprabhulal/agent-skills",
+      "commit": "42dd24080fce6d731d00e2a1134f398c3da4171b",
+      "path": "skills/research/deep-research/SKILL.md",
+      "url": "https://raw.githubusercontent.com/arjunprabhulal/agent-skills/42dd24080fce6d731d00e2a1134f398c3da4171b/skills/research/deep-research/SKILL.md",
+      "sha256": "2646cdf3942d918e84febf020b289fbfb7b5cf601e43ee7e7349e6c5105941c5",
+      "bytes": 5386,
+      "id": "arjunprabhulal/agent-skills:skills/research/deep-research/SKILL.md",
+      "review_scope": "full-text"
+    },
+    {
+      "repo": "arjunprabhulal/agent-skills",
+      "commit": "42dd24080fce6d731d00e2a1134f398c3da4171b",
+      "path": "LICENSE",
+      "url": "https://raw.githubusercontent.com/arjunprabhulal/agent-skills/42dd24080fce6d731d00e2a1134f398c3da4171b/LICENSE",
+      "sha256": "3a9cf254e155282014880e9569b9039bc17ce6a43919df23741cf14d24481244",
+      "bytes": 1072,
+      "id": "arjunprabhulal/agent-skills:LICENSE",
+      "review_scope": "license-notice-retained"
+    },
+    {
+      "repo": "anthropics/skills",
+      "commit": "34040c9c568585f6929bedeaad110ad08f079624",
+      "path": "skills/skill-creator/SKILL.md",
+      "url": "https://raw.githubusercontent.com/anthropics/skills/34040c9c568585f6929bedeaad110ad08f079624/skills/skill-creator/SKILL.md",
+      "sha256": "dcd4803e61e913e6fc27294184cd3a71f09f5e924ff20c8a9a20173e7b3c2bcf",
+      "bytes": 33168,
+      "id": "anthropics/skills:skills/skill-creator/SKILL.md",
+      "review_scope": "full-text"
+    },
+    {
+      "repo": "klittle32/handoff-skill",
+      "commit": "57089b6e1ce61498ec70852e46d41b2f8f12fa00",
+      "path": "SKILL.md",
+      "url": "https://raw.githubusercontent.com/klittle32/handoff-skill/57089b6e1ce61498ec70852e46d41b2f8f12fa00/SKILL.md",
+      "sha256": "964377ed6a2d4ba4ac329c5b51aa74c9ce70fbf089918af01a8a3fc19c7da84b",
+      "bytes": 5336,
+      "id": "klittle32/handoff-skill:SKILL.md",
+      "review_scope": "full-text"
+    },
+    {
+      "repo": "klittle32/handoff-skill",
+      "commit": "57089b6e1ce61498ec70852e46d41b2f8f12fa00",
+      "path": "references/codex.md",
+      "url": "https://raw.githubusercontent.com/klittle32/handoff-skill/57089b6e1ce61498ec70852e46d41b2f8f12fa00/references/codex.md",
+      "sha256": "8820d25b6e1529ef56f69319027096ed2ab2f1352cf88a24b513b96e2d553869",
+      "bytes": 2136,
+      "id": "klittle32/handoff-skill:references/codex.md",
+      "review_scope": "fetched-only; not a method evidence claim"
+    },
+    {
+      "repo": "klittle32/handoff-skill",
+      "commit": "57089b6e1ce61498ec70852e46d41b2f8f12fa00",
+      "path": "LICENSE",
+      "url": "https://raw.githubusercontent.com/klittle32/handoff-skill/57089b6e1ce61498ec70852e46d41b2f8f12fa00/LICENSE",
+      "sha256": "bed1779d08bd5401ef688e275eb46b28ca15c444d4371e30b51968ddc364e46e",
+      "bytes": 1068,
+      "id": "klittle32/handoff-skill:LICENSE",
+      "review_scope": "license-notice-retained"
+    },
+    {
+      "repo": "obra/superpowers",
+      "commit": "5bf4e78011075bcfc0dc295f0724994cd123ee71",
+      "path": "skills/systematic-debugging/SKILL.md",
+      "url": "https://raw.githubusercontent.com/obra/superpowers/5bf4e78011075bcfc0dc295f0724994cd123ee71/skills/systematic-debugging/SKILL.md",
+      "sha256": "808fc5717aa88ad65efff312b11c186294d3e6ee301afb584e2f86599b137787",
+      "bytes": 9465,
+      "id": "obra/superpowers:skills/systematic-debugging/SKILL.md",
+      "review_scope": "full-text"
+    },
+    {
+      "repo": "obra/superpowers",
+      "commit": "5bf4e78011075bcfc0dc295f0724994cd123ee71",
+      "path": "skills/brainstorming/SKILL.md",
+      "url": "https://raw.githubusercontent.com/obra/superpowers/5bf4e78011075bcfc0dc295f0724994cd123ee71/skills/brainstorming/SKILL.md",
+      "sha256": "a32d2255354775aa124855aa7100cf276bea096fff4ebb3a0edf57be216e6c72",
+      "bytes": 17548,
+      "id": "obra/superpowers:skills/brainstorming/SKILL.md",
+      "review_scope": "full-text"
+    },
+    {
+      "repo": "obra/superpowers",
+      "commit": "5bf4e78011075bcfc0dc295f0724994cd123ee71",
+      "path": "LICENSE",
+      "url": "https://raw.githubusercontent.com/obra/superpowers/5bf4e78011075bcfc0dc295f0724994cd123ee71/LICENSE",
+      "sha256": "a37e0e9697144819e1d965176ac4ae5bc3fa02d11e7812036bbcadf6dafe2400",
+      "bytes": 1070,
+      "id": "obra/superpowers:LICENSE",
+      "review_scope": "license-notice-retained"
+    },
+    {
+      "repo": "vercel/ai",
+      "commit": "20dd00abba618d5a516e0fee40ccd3e18a2bd1fb",
+      "path": "skills/adr-skill/SKILL.md",
+      "url": "https://raw.githubusercontent.com/vercel/ai/20dd00abba618d5a516e0fee40ccd3e18a2bd1fb/skills/adr-skill/SKILL.md",
+      "sha256": "98d3ebb3d8298650a647dbda600e4b1955e65d47a6f4e21da152ffa1b5adab99",
+      "bytes": 16491,
+      "id": "vercel/ai:skills/adr-skill/SKILL.md",
+      "review_scope": "full-text"
+    },
+    {
+      "repo": "vercel/ai",
+      "commit": "20dd00abba618d5a516e0fee40ccd3e18a2bd1fb",
+      "path": "LICENSE",
+      "url": "https://raw.githubusercontent.com/vercel/ai/20dd00abba618d5a516e0fee40ccd3e18a2bd1fb/LICENSE",
+      "sha256": "b4f9adb7c568904834d0dd6cc98d16c390d21ca32fc17ae7a267715269bd5529",
+      "bytes": 552,
+      "id": "vercel/ai:LICENSE",
+      "review_scope": "license-notice-retained"
+    },
+    {
+      "repo": "warpdotdev/oz-for-oss",
+      "commit": "a2bb45f231fd56ea28c1b381999d11b277a0b0e2",
+      "path": ".agents/skills/review-spec/SKILL.md",
+      "url": "https://raw.githubusercontent.com/warpdotdev/oz-for-oss/a2bb45f231fd56ea28c1b381999d11b277a0b0e2/.agents/skills/review-spec/SKILL.md",
+      "sha256": "216edc47672a6bc922d2c4dde3b4a53413da723aec4681401119648445487519",
+      "bytes": 7697,
+      "id": "warpdotdev/oz-for-oss:.agents/skills/review-spec/SKILL.md",
+      "review_scope": "full-text"
+    },
+    {
+      "repo": "warpdotdev/oz-for-oss",
+      "commit": "a2bb45f231fd56ea28c1b381999d11b277a0b0e2",
+      "path": "LICENSE",
+      "url": "https://raw.githubusercontent.com/warpdotdev/oz-for-oss/a2bb45f231fd56ea28c1b381999d11b277a0b0e2/LICENSE",
+      "sha256": "9a10f320256635c6a2b58f9894b1f453e404142d07a6125ad788a3afbd7a7379",
+      "bytes": 1082,
+      "id": "warpdotdev/oz-for-oss:LICENSE",
+      "review_scope": "license-notice-retained"
+    },
+    {
+      "repo": "Fission-AI/OpenSpec",
+      "commit": "bae58cf61479986431bb798acbe5a688a591c18c",
+      "path": "README.md",
+      "url": "https://raw.githubusercontent.com/Fission-AI/OpenSpec/bae58cf61479986431bb798acbe5a688a591c18c/README.md",
+      "sha256": "8dfb6463a17792ef80b574b46850ae7c30fc4bae81326ef0bc0506030eda5c15",
+      "bytes": 11520,
+      "id": "Fission-AI/OpenSpec:README.md",
+      "review_scope": "fetched-only; not a method evidence claim"
+    },
+    {
+      "repo": "Fission-AI/OpenSpec",
+      "commit": "bae58cf61479986431bb798acbe5a688a591c18c",
+      "path": "docs/concepts.md",
+      "url": "https://raw.githubusercontent.com/Fission-AI/OpenSpec/bae58cf61479986431bb798acbe5a688a591c18c/docs/concepts.md",
+      "sha256": "370f8ef1a1142cd1d250588f4a27f740e4fda66c6e4e15f68bbfcb86c47cf0b7",
+      "bytes": 25013,
+      "id": "Fission-AI/OpenSpec:docs/concepts.md",
+      "review_scope": "selected-lines",
+      "reviewed_lines": [
+        [
+          1,
+          135
+        ],
+        [
+          285,
+          408
+        ]
+      ]
+    },
+    {
+      "repo": "Fission-AI/OpenSpec",
+      "commit": "bae58cf61479986431bb798acbe5a688a591c18c",
+      "path": "LICENSE",
+      "url": "https://raw.githubusercontent.com/Fission-AI/OpenSpec/bae58cf61479986431bb798acbe5a688a591c18c/LICENSE",
+      "sha256": "c3c7235bea1214ab62df643473975c2e8b8848f528901a976693f7d069713e64",
+      "bytes": 1079,
+      "id": "Fission-AI/OpenSpec:LICENSE",
+      "review_scope": "license-notice-retained"
+    },
+    {
+      "repo": "github/spec-kit",
+      "commit": "d4229c071c7ea3885b43e8a7739847300f618f13",
+      "path": "README.md",
+      "url": "https://raw.githubusercontent.com/github/spec-kit/d4229c071c7ea3885b43e8a7739847300f618f13/README.md",
+      "sha256": "e00aa27eab1c43e6e43b957adc79d458c92604247a5e6116c1f58a4f736aa6c4",
+      "bytes": 8492,
+      "id": "github/spec-kit:README.md",
+      "review_scope": "fetched-only; not a method evidence claim"
+    },
+    {
+      "repo": "github/spec-kit",
+      "commit": "d4229c071c7ea3885b43e8a7739847300f618f13",
+      "path": "spec-driven.md",
+      "url": "https://raw.githubusercontent.com/github/spec-kit/d4229c071c7ea3885b43e8a7739847300f618f13/spec-driven.md",
+      "sha256": "1517eba9868e7066541ffa484009d5eb9c7d8d04bf740dbfd86e5e88c396f0c6",
+      "bytes": 26229,
+      "id": "github/spec-kit:spec-driven.md",
+      "review_scope": "selected-lines",
+      "reviewed_lines": [
+        [
+          1,
+          103
+        ],
+        [
+          165,
+          262
+        ]
+      ]
+    },
+    {
+      "repo": "github/spec-kit",
+      "commit": "d4229c071c7ea3885b43e8a7739847300f618f13",
+      "path": "LICENSE",
+      "url": "https://raw.githubusercontent.com/github/spec-kit/d4229c071c7ea3885b43e8a7739847300f618f13/LICENSE",
+      "sha256": "2510b446bc1f0cf9702453075d20cd88631e20e5642658edb7325d9c1eb534f7",
+      "bytes": 1060,
+      "id": "github/spec-kit:LICENSE",
+      "review_scope": "license-notice-retained"
+    },
+    {
+      "repo": "anthropics/skills",
+      "commit": "34040c9c568585f6929bedeaad110ad08f079624",
+      "path": "skills/skill-creator/LICENSE.txt",
+      "url": "https://raw.githubusercontent.com/anthropics/skills/34040c9c568585f6929bedeaad110ad08f079624/skills/skill-creator/LICENSE.txt",
+      "sha256": "bc6b3af2f331cbc7fb0da1344efb2cbe5877a31498b4d70dbc7000f3405a1362",
+      "bytes": 11345,
+      "id": "anthropics/skills:skills/skill-creator/LICENSE.txt",
+      "review_scope": "license-notice-retained"
+    },
+    {
+      "repo": "anthropics/skills",
+      "commit": "34040c9c568585f6929bedeaad110ad08f079624",
+      "path": "skills/skill-creator/agents/analyzer.md",
+      "url": "https://raw.githubusercontent.com/anthropics/skills/34040c9c568585f6929bedeaad110ad08f079624/skills/skill-creator/agents/analyzer.md",
+      "sha256": "bf68f4cac5a56c673a928c2e6d619586c5b93ea364026ab37547772cb45a663a",
+      "bytes": 10376,
+      "id": "anthropics/skills:skills/skill-creator/agents/analyzer.md",
+      "review_scope": "fetched-only; not a method evidence claim"
+    },
+    {
+      "repo": "anthropics/skills",
+      "commit": "34040c9c568585f6929bedeaad110ad08f079624",
+      "path": "skills/skill-creator/agents/comparator.md",
+      "url": "https://raw.githubusercontent.com/anthropics/skills/34040c9c568585f6929bedeaad110ad08f079624/skills/skill-creator/agents/comparator.md",
+      "sha256": "fe1fc9787c495d864c5d6eada47396478572325fde1b33a96d78bf4b849b7a3e",
+      "bytes": 7287,
+      "id": "anthropics/skills:skills/skill-creator/agents/comparator.md",
+      "review_scope": "full-text",
+      "reviewed_lines": [
+        [
+          1,
+          105
+        ]
+      ]
+    },
+    {
+      "repo": "anthropics/skills",
+      "commit": "34040c9c568585f6929bedeaad110ad08f079624",
+      "path": "skills/skill-creator/agents/grader.md",
+      "url": "https://raw.githubusercontent.com/anthropics/skills/34040c9c568585f6929bedeaad110ad08f079624/skills/skill-creator/agents/grader.md",
+      "sha256": "57134da0c1a4eea33fbd74a1c9c44aa814f07d6bc64de303edb586f941e5d21a",
+      "bytes": 9049,
+      "id": "anthropics/skills:skills/skill-creator/agents/grader.md",
+      "review_scope": "full-text",
+      "reviewed_lines": [
+        [
+          1,
+          105
+        ]
+      ]
+    },
+    {
+      "repo": "anthropics/skills",
+      "commit": "34040c9c568585f6929bedeaad110ad08f079624",
+      "path": "skills/skill-creator/references/schemas.md",
+      "url": "https://raw.githubusercontent.com/anthropics/skills/34040c9c568585f6929bedeaad110ad08f079624/skills/skill-creator/references/schemas.md",
+      "sha256": "8e8876180a8989b406a4d3edddf875b04cdfd5805cc8616686d552b11ce4455f",
+      "bytes": 12061,
+      "id": "anthropics/skills:skills/skill-creator/references/schemas.md",
+      "review_scope": "fetched-only; not a method evidence claim"
+    },
+    {
+      "repo": "citypaul/.dotfiles",
+      "commit": "a109f9972bb46671c624fc05752031523e1cf6fc",
+      "path": "claude/.claude/skills/codebase-design/LICENSE",
+      "url": "https://raw.githubusercontent.com/citypaul/.dotfiles/a109f9972bb46671c624fc05752031523e1cf6fc/claude/.claude/skills/codebase-design/LICENSE",
+      "sha256": "d9d9d588b8bf8867acb9f0a9f8f5058e00ee61544c95491466eac12e98b1fd9d",
+      "bytes": 1374,
+      "id": "citypaul/.dotfiles:claude/.claude/skills/codebase-design/LICENSE",
+      "review_scope": "license-notice-retained"
+    },
+    {
+      "repo": "citypaul/.dotfiles",
+      "commit": "a109f9972bb46671c624fc05752031523e1cf6fc",
+      "path": "claude/.claude/skills/codebase-design/references/deepening.md",
+      "url": "https://raw.githubusercontent.com/citypaul/.dotfiles/a109f9972bb46671c624fc05752031523e1cf6fc/claude/.claude/skills/codebase-design/references/deepening.md",
+      "sha256": "13f26fc3232187e7ffb2ef099c07591b8e94a93a4c32e5ccae96a58162e85f0f",
+      "bytes": 7210,
+      "id": "citypaul/.dotfiles:claude/.claude/skills/codebase-design/references/deepening.md",
+      "review_scope": "full-text"
+    },
+    {
+      "repo": "citypaul/.dotfiles",
+      "commit": "a109f9972bb46671c624fc05752031523e1cf6fc",
+      "path": "claude/.claude/skills/codebase-design/references/design-it-twice.md",
+      "url": "https://raw.githubusercontent.com/citypaul/.dotfiles/a109f9972bb46671c624fc05752031523e1cf6fc/claude/.claude/skills/codebase-design/references/design-it-twice.md",
+      "sha256": "c12c4af60f80b88c40194d731fb1d2d882331781335b7de9b2454c95e2983213",
+      "bytes": 4350,
+      "id": "citypaul/.dotfiles:claude/.claude/skills/codebase-design/references/design-it-twice.md",
+      "review_scope": "full-text"
+    },
+    {
+      "repo": "citypaul/.dotfiles",
+      "commit": "a109f9972bb46671c624fc05752031523e1cf6fc",
+      "path": "claude/.claude/skills/codebase-design/references/source-notes.md",
+      "url": "https://raw.githubusercontent.com/citypaul/.dotfiles/a109f9972bb46671c624fc05752031523e1cf6fc/claude/.claude/skills/codebase-design/references/source-notes.md",
+      "sha256": "98197cd65cc39849bac14fa0609b0fcc2697d15210fe90f0941cdbc2a61f556b",
+      "bytes": 4485,
+      "id": "citypaul/.dotfiles:claude/.claude/skills/codebase-design/references/source-notes.md",
+      "review_scope": "fetched-only; not a method evidence claim"
+    },
+    {
+      "repo": "citypaul/.dotfiles",
+      "commit": "a109f9972bb46671c624fc05752031523e1cf6fc",
+      "path": "claude/.claude/skills/evaluate-existing-solutions/assets/solution-decision-template.md",
+      "url": "https://raw.githubusercontent.com/citypaul/.dotfiles/a109f9972bb46671c624fc05752031523e1cf6fc/claude/.claude/skills/evaluate-existing-solutions/assets/solution-decision-template.md",
+      "sha256": "fdbc008f0554c47fd74377efc795517922b7e9e7485644d13de957c96c0d2a7c",
+      "bytes": 2598,
+      "id": "citypaul/.dotfiles:claude/.claude/skills/evaluate-existing-solutions/assets/solution-decision-template.md",
+      "review_scope": "fetched-only; not a method evidence claim"
+    },
+    {
+      "repo": "citypaul/.dotfiles",
+      "commit": "a109f9972bb46671c624fc05752031523e1cf6fc",
+      "path": "claude/.claude/skills/evaluate-existing-solutions/references/evaluation-dimensions.md",
+      "url": "https://raw.githubusercontent.com/citypaul/.dotfiles/a109f9972bb46671c624fc05752031523e1cf6fc/claude/.claude/skills/evaluate-existing-solutions/references/evaluation-dimensions.md",
+      "sha256": "dc38f8e935df376871ecffe821eea793093998ba1738af7c553f3f5aed01fea7",
+      "bytes": 3875,
+      "id": "citypaul/.dotfiles:claude/.claude/skills/evaluate-existing-solutions/references/evaluation-dimensions.md",
+      "review_scope": "full-text"
+    },
+    {
+      "repo": "citypaul/.dotfiles",
+      "commit": "a109f9972bb46671c624fc05752031523e1cf6fc",
+      "path": "claude/.claude/skills/evaluate-existing-solutions/references/evidence-and-currentness.md",
+      "url": "https://raw.githubusercontent.com/citypaul/.dotfiles/a109f9972bb46671c624fc05752031523e1cf6fc/claude/.claude/skills/evaluate-existing-solutions/references/evidence-and-currentness.md",
+      "sha256": "63cc8413bbb069e36abe6cd51f5f7fce58edececa49dbca4b6e174379b0e1f6c",
+      "bytes": 5096,
+      "id": "citypaul/.dotfiles:claude/.claude/skills/evaluate-existing-solutions/references/evidence-and-currentness.md",
+      "review_scope": "full-text"
+    },
+    {
+      "repo": "citypaul/.dotfiles",
+      "commit": "a109f9972bb46671c624fc05752031523e1cf6fc",
+      "path": "claude/.claude/skills/improve-codebase-architecture/LICENSE",
+      "url": "https://raw.githubusercontent.com/citypaul/.dotfiles/a109f9972bb46671c624fc05752031523e1cf6fc/claude/.claude/skills/improve-codebase-architecture/LICENSE",
+      "sha256": "dd3e645a830e28962f0fc7669fca8b7038fbe90ebf643104210e43ecd0e2b3e8",
+      "bytes": 1420,
+      "id": "citypaul/.dotfiles:claude/.claude/skills/improve-codebase-architecture/LICENSE",
+      "review_scope": "license-notice-retained"
+    },
+    {
+      "repo": "citypaul/.dotfiles",
+      "commit": "a109f9972bb46671c624fc05752031523e1cf6fc",
+      "path": "claude/.claude/skills/improve-codebase-architecture/references/html-report.md",
+      "url": "https://raw.githubusercontent.com/citypaul/.dotfiles/a109f9972bb46671c624fc05752031523e1cf6fc/claude/.claude/skills/improve-codebase-architecture/references/html-report.md",
+      "sha256": "fde516fdefb90808b49b54d15e75ec795aca398f253f061d55a0c129e83937ac",
+      "bytes": 13317,
+      "id": "citypaul/.dotfiles:claude/.claude/skills/improve-codebase-architecture/references/html-report.md",
+      "review_scope": "fetched-only; not a method evidence claim"
+    },
+    {
+      "repo": "citypaul/.dotfiles",
+      "commit": "a109f9972bb46671c624fc05752031523e1cf6fc",
+      "path": "claude/.claude/skills/improve-codebase-architecture/references/source-notes.md",
+      "url": "https://raw.githubusercontent.com/citypaul/.dotfiles/a109f9972bb46671c624fc05752031523e1cf6fc/claude/.claude/skills/improve-codebase-architecture/references/source-notes.md",
+      "sha256": "e64de92b0fb3d8cfede11a2bfd3e69b7aee2138b2921651bf3d2c834acbe973c",
+      "bytes": 3835,
+      "id": "citypaul/.dotfiles:claude/.claude/skills/improve-codebase-architecture/references/source-notes.md",
+      "review_scope": "fetched-only; not a method evidence claim"
+    },
+    {
+      "repo": "citypaul/.dotfiles",
+      "commit": "a109f9972bb46671c624fc05752031523e1cf6fc",
+      "path": "claude/.claude/skills/structure-codebase/references/backend-patterns.md",
+      "url": "https://raw.githubusercontent.com/citypaul/.dotfiles/a109f9972bb46671c624fc05752031523e1cf6fc/claude/.claude/skills/structure-codebase/references/backend-patterns.md",
+      "sha256": "e353119da4225f80d5bbc2d23d20f6748a43ccd1d2b7a958cd27e93363d27382",
+      "bytes": 8816,
+      "id": "citypaul/.dotfiles:claude/.claude/skills/structure-codebase/references/backend-patterns.md",
+      "review_scope": "full-text"
+    },
+    {
+      "repo": "citypaul/.dotfiles",
+      "commit": "a109f9972bb46671c624fc05752031523e1cf6fc",
+      "path": "claude/.claude/skills/structure-codebase/references/enforcement-and-migration.md",
+      "url": "https://raw.githubusercontent.com/citypaul/.dotfiles/a109f9972bb46671c624fc05752031523e1cf6fc/claude/.claude/skills/structure-codebase/references/enforcement-and-migration.md",
+      "sha256": "7f87f026d33e4c9f7336775c9d9750db34b07dbda00b75624e7e9bd22bc7a511",
+      "bytes": 7289,
+      "id": "citypaul/.dotfiles:claude/.claude/skills/structure-codebase/references/enforcement-and-migration.md",
+      "review_scope": "full-text"
+    },
+    {
+      "repo": "citypaul/.dotfiles",
+      "commit": "a109f9972bb46671c624fc05752031523e1cf6fc",
+      "path": "claude/.claude/skills/structure-codebase/references/frontend-patterns.md",
+      "url": "https://raw.githubusercontent.com/citypaul/.dotfiles/a109f9972bb46671c624fc05752031523e1cf6fc/claude/.claude/skills/structure-codebase/references/frontend-patterns.md",
+      "sha256": "d54b1e50e258e9cfe69d903369ab6794e7d29ed012f49ff8ec97c32ed469a3d7",
+      "bytes": 12146,
+      "id": "citypaul/.dotfiles:claude/.claude/skills/structure-codebase/references/frontend-patterns.md",
+      "review_scope": "full-text"
+    },
+    {
+      "repo": "citypaul/.dotfiles",
+      "commit": "a109f9972bb46671c624fc05752031523e1cf6fc",
+      "path": "claude/.claude/skills/structure-codebase/references/research-notes.md",
+      "url": "https://raw.githubusercontent.com/citypaul/.dotfiles/a109f9972bb46671c624fc05752031523e1cf6fc/claude/.claude/skills/structure-codebase/references/research-notes.md",
+      "sha256": "80fd63c41f78002238b489670133ac8a20147cb35dcb52e62a611efbf9300372",
+      "bytes": 5600,
+      "id": "citypaul/.dotfiles:claude/.claude/skills/structure-codebase/references/research-notes.md",
+      "review_scope": "fetched-only; not a method evidence claim"
+    },
+    {
+      "repo": "citypaul/.dotfiles",
+      "commit": "a109f9972bb46671c624fc05752031523e1cf6fc",
+      "path": "claude/.claude/skills/structure-codebase/references/visible-hexagon.md",
+      "url": "https://raw.githubusercontent.com/citypaul/.dotfiles/a109f9972bb46671c624fc05752031523e1cf6fc/claude/.claude/skills/structure-codebase/references/visible-hexagon.md",
+      "sha256": "12202079d1149fbfe8f0a14936a77171d801dc1d0080b1e6154b51d399018d20",
+      "bytes": 9970,
+      "id": "citypaul/.dotfiles:claude/.claude/skills/structure-codebase/references/visible-hexagon.md",
+      "review_scope": "full-text"
+    },
+    {
+      "repo": "klittle32/handoff-skill",
+      "commit": "57089b6e1ce61498ec70852e46d41b2f8f12fa00",
+      "path": "references/destinations.md",
+      "url": "https://raw.githubusercontent.com/klittle32/handoff-skill/57089b6e1ce61498ec70852e46d41b2f8f12fa00/references/destinations.md",
+      "sha256": "b3ad617976742ca9bd4cc2bdaa8dcd634d9af1ca33776cc7b6761cd6d078b703",
+      "bytes": 2124,
+      "id": "klittle32/handoff-skill:references/destinations.md",
+      "review_scope": "full-text"
+    },
+    {
+      "repo": "klittle32/handoff-skill",
+      "commit": "57089b6e1ce61498ec70852e46d41b2f8f12fa00",
+      "path": "references/template.md",
+      "url": "https://raw.githubusercontent.com/klittle32/handoff-skill/57089b6e1ce61498ec70852e46d41b2f8f12fa00/references/template.md",
+      "sha256": "d213991def304301da32e1ade6e63fe6e36055ea43fb82d72bd76b84238696d6",
+      "bytes": 2214,
+      "id": "klittle32/handoff-skill:references/template.md",
+      "review_scope": "full-text"
+    },
+    {
+      "repo": "klittle32/handoff-skill",
+      "commit": "57089b6e1ce61498ec70852e46d41b2f8f12fa00",
+      "path": "workflows/Handoff.md",
+      "url": "https://raw.githubusercontent.com/klittle32/handoff-skill/57089b6e1ce61498ec70852e46d41b2f8f12fa00/workflows/Handoff.md",
+      "sha256": "03fffdd44bf3b4ae22a2709b3511df3d4fabf869dcb1bf1fc6fb3908c4124c3f",
+      "bytes": 3017,
+      "id": "klittle32/handoff-skill:workflows/Handoff.md",
+      "review_scope": "full-text"
+    },
+    {
+      "repo": "mattpocock/skills",
+      "commit": "c55ee46073ed923f86ce59a5eb3b6d895095d1b7",
+      "path": "skills/engineering/domain-modeling/ADR-FORMAT.md",
+      "url": "https://raw.githubusercontent.com/mattpocock/skills/c55ee46073ed923f86ce59a5eb3b6d895095d1b7/skills/engineering/domain-modeling/ADR-FORMAT.md",
+      "sha256": "944c92aa790e8fbdc9199640b170979abb8a34ba8d0fe18c2a01a63bce140ca0",
+      "bytes": 2733,
+      "id": "mattpocock/skills:skills/engineering/domain-modeling/ADR-FORMAT.md",
+      "review_scope": "full-text"
+    },
+    {
+      "repo": "mattpocock/skills",
+      "commit": "c55ee46073ed923f86ce59a5eb3b6d895095d1b7",
+      "path": "skills/engineering/domain-modeling/CONTEXT-FORMAT.md",
+      "url": "https://raw.githubusercontent.com/mattpocock/skills/c55ee46073ed923f86ce59a5eb3b6d895095d1b7/skills/engineering/domain-modeling/CONTEXT-FORMAT.md",
+      "sha256": "17ab16ce783e4d2801ee52fd9acdf550cbf44de65ae76797a93943bbedf22a13",
+      "bytes": 2290,
+      "id": "mattpocock/skills:skills/engineering/domain-modeling/CONTEXT-FORMAT.md",
+      "review_scope": "full-text"
+    },
+    {
+      "repo": "mattpocock/skills",
+      "commit": "c55ee46073ed923f86ce59a5eb3b6d895095d1b7",
+      "path": "skills/engineering/prototype/LOGIC.md",
+      "url": "https://raw.githubusercontent.com/mattpocock/skills/c55ee46073ed923f86ce59a5eb3b6d895095d1b7/skills/engineering/prototype/LOGIC.md",
+      "sha256": "f61c7d249e786a79ef289018901c348271e1798dd0b0bc5607b5c6f4d4a01ab9",
+      "bytes": 6036,
+      "id": "mattpocock/skills:skills/engineering/prototype/LOGIC.md",
+      "review_scope": "full-text"
+    },
+    {
+      "repo": "mattpocock/skills",
+      "commit": "c55ee46073ed923f86ce59a5eb3b6d895095d1b7",
+      "path": "skills/engineering/prototype/UI.md",
+      "url": "https://raw.githubusercontent.com/mattpocock/skills/c55ee46073ed923f86ce59a5eb3b6d895095d1b7/skills/engineering/prototype/UI.md",
+      "sha256": "723211e878acbc7b6ff09755263f3295cde724ba902ff0064da41eed51d45ad3",
+      "bytes": 6913,
+      "id": "mattpocock/skills:skills/engineering/prototype/UI.md",
+      "review_scope": "full-text"
+    },
+    {
+      "repo": "mattpocock/skills",
+      "commit": "c55ee46073ed923f86ce59a5eb3b6d895095d1b7",
+      "path": "skills/engineering/tdd/mocking.md",
+      "url": "https://raw.githubusercontent.com/mattpocock/skills/c55ee46073ed923f86ce59a5eb3b6d895095d1b7/skills/engineering/tdd/mocking.md",
+      "sha256": "3ceb807fdf4a47d6a93d4d9a891e5ba6d362a6247bd08adc451feebfc17361ef",
+      "bytes": 1481,
+      "id": "mattpocock/skills:skills/engineering/tdd/mocking.md",
+      "review_scope": "full-text"
+    },
+    {
+      "repo": "mattpocock/skills",
+      "commit": "c55ee46073ed923f86ce59a5eb3b6d895095d1b7",
+      "path": "skills/engineering/tdd/tests.md",
+      "url": "https://raw.githubusercontent.com/mattpocock/skills/c55ee46073ed923f86ce59a5eb3b6d895095d1b7/skills/engineering/tdd/tests.md",
+      "sha256": "859f9e592c188fda4fc7277dd180e4ce9c7a2e13f6efe1f6f29eccc9d28c106a",
+      "bytes": 2214,
+      "id": "mattpocock/skills:skills/engineering/tdd/tests.md",
+      "review_scope": "full-text"
+    },
+    {
+      "repo": "mattpocock/skills",
+      "commit": "c55ee46073ed923f86ce59a5eb3b6d895095d1b7",
+      "path": "skills/productivity/writing-for-agents/SKILL-MECHANICS.md",
+      "url": "https://raw.githubusercontent.com/mattpocock/skills/c55ee46073ed923f86ce59a5eb3b6d895095d1b7/skills/productivity/writing-for-agents/SKILL-MECHANICS.md",
+      "sha256": "c768e6307c7c10728c401c213f2c4ba71c542127eeb7ad2956aabd15a0fa0059",
+      "bytes": 2629,
+      "id": "mattpocock/skills:skills/productivity/writing-for-agents/SKILL-MECHANICS.md",
+      "review_scope": "full-text"
+    },
+    {
+      "repo": "obra/superpowers",
+      "commit": "5bf4e78011075bcfc0dc295f0724994cd123ee71",
+      "path": "skills/systematic-debugging/condition-based-waiting.md",
+      "url": "https://raw.githubusercontent.com/obra/superpowers/5bf4e78011075bcfc0dc295f0724994cd123ee71/skills/systematic-debugging/condition-based-waiting.md",
+      "sha256": "e89fec8400d6cd50f43407cec9fab50976ba4d55d0ec2eb51c0bd68036b54c26",
+      "bytes": 3516,
+      "id": "obra/superpowers:skills/systematic-debugging/condition-based-waiting.md",
+      "review_scope": "full-text"
+    },
+    {
+      "repo": "obra/superpowers",
+      "commit": "5bf4e78011075bcfc0dc295f0724994cd123ee71",
+      "path": "skills/systematic-debugging/defense-in-depth.md",
+      "url": "https://raw.githubusercontent.com/obra/superpowers/5bf4e78011075bcfc0dc295f0724994cd123ee71/skills/systematic-debugging/defense-in-depth.md",
+      "sha256": "1e175fb86fc357e58c6aebf5441e481e1b7868b4380c0456b63a17eefbd18ba7",
+      "bytes": 3650,
+      "id": "obra/superpowers:skills/systematic-debugging/defense-in-depth.md",
+      "review_scope": "full-text"
+    },
+    {
+      "repo": "obra/superpowers",
+      "commit": "5bf4e78011075bcfc0dc295f0724994cd123ee71",
+      "path": "skills/systematic-debugging/root-cause-tracing.md",
+      "url": "https://raw.githubusercontent.com/obra/superpowers/5bf4e78011075bcfc0dc295f0724994cd123ee71/skills/systematic-debugging/root-cause-tracing.md",
+      "sha256": "75b933b6a8c40bdb2031b10f21654395b56ec6ab6bc7b018c18d3fe57aeb7fb8",
+      "bytes": 5321,
+      "id": "obra/superpowers:skills/systematic-debugging/root-cause-tracing.md",
+      "review_scope": "full-text"
+    },
+    {
+      "repo": "citypaul/.dotfiles",
+      "commit": "a109f9972bb46671c624fc05752031523e1cf6fc",
+      "path": "claude/.claude/skills/expectations/SKILL.md",
+      "url": "https://raw.githubusercontent.com/citypaul/.dotfiles/a109f9972bb46671c624fc05752031523e1cf6fc/claude/.claude/skills/expectations/SKILL.md",
+      "sha256": "cef87ff03be3937692db9d7f61051fcce15a6114853896a61d15290048e59e79",
+      "bytes": 4695,
+      "id": "citypaul/.dotfiles:claude/.claude/skills/expectations/SKILL.md",
+      "review_scope": "full-text"
+    },
+    {
+      "repo": "citypaul/.dotfiles",
+      "commit": "a109f9972bb46671c624fc05752031523e1cf6fc",
+      "path": "claude/.claude/skills/ubiquitous-language/SKILL.md",
+      "url": "https://raw.githubusercontent.com/citypaul/.dotfiles/a109f9972bb46671c624fc05752031523e1cf6fc/claude/.claude/skills/ubiquitous-language/SKILL.md",
+      "sha256": "264b373ebf579bbb8c881030c234fdf63e2bd67b56932b7e02970c691a73d241",
+      "bytes": 9573,
+      "id": "citypaul/.dotfiles:claude/.claude/skills/ubiquitous-language/SKILL.md",
+      "review_scope": "full-text"
+    },
+    {
+      "repo": "citypaul/.dotfiles",
+      "commit": "a109f9972bb46671c624fc05752031523e1cf6fc",
+      "path": "claude/.claude/skills/api-design/SKILL.md",
+      "url": "https://raw.githubusercontent.com/citypaul/.dotfiles/a109f9972bb46671c624fc05752031523e1cf6fc/claude/.claude/skills/api-design/SKILL.md",
+      "sha256": "edd44e35550b03b4c9c85814d51db5a86f27f39cab8ce0d6a6f13480b4857429",
+      "bytes": 24582,
+      "id": "citypaul/.dotfiles:claude/.claude/skills/api-design/SKILL.md",
+      "review_scope": "full-text"
+    },
+    {
+      "repo": "citypaul/.dotfiles",
+      "commit": "a109f9972bb46671c624fc05752031523e1cf6fc",
+      "path": "claude/.claude/skills/api-design/resources/api-evolution.md",
+      "url": "https://raw.githubusercontent.com/citypaul/.dotfiles/a109f9972bb46671c624fc05752031523e1cf6fc/claude/.claude/skills/api-design/resources/api-evolution.md",
+      "sha256": "02d8699f579280abd104d55b745627401328fc7e34ccf104120833fdf67ceb83",
+      "bytes": 6096,
+      "id": "citypaul/.dotfiles:claude/.claude/skills/api-design/resources/api-evolution.md",
+      "review_scope": "full-text"
+    },
+    {
+      "repo": "citypaul/.dotfiles",
+      "commit": "a109f9972bb46671c624fc05752031523e1cf6fc",
+      "path": "claude/.claude/skills/api-design/resources/api-security.md",
+      "url": "https://raw.githubusercontent.com/citypaul/.dotfiles/a109f9972bb46671c624fc05752031523e1cf6fc/claude/.claude/skills/api-design/resources/api-security.md",
+      "sha256": "e4dc8d1d02c3bc889470174a30bca078c5ea535b7883201d9551963d6b341509",
+      "bytes": 13933,
+      "id": "citypaul/.dotfiles:claude/.claude/skills/api-design/resources/api-security.md",
+      "review_scope": "full-text"
+    },
+    {
+      "repo": "citypaul/.dotfiles",
+      "commit": "a109f9972bb46671c624fc05752031523e1cf6fc",
+      "path": "claude/.claude/skills/api-design/resources/source-notes.md",
+      "url": "https://raw.githubusercontent.com/citypaul/.dotfiles/a109f9972bb46671c624fc05752031523e1cf6fc/claude/.claude/skills/api-design/resources/source-notes.md",
+      "sha256": "105ad55a5e409094c2fe40a9d0186b0b8cbf7c93682ccf20080734863517003d",
+      "bytes": 2465,
+      "id": "citypaul/.dotfiles:claude/.claude/skills/api-design/resources/source-notes.md",
+      "review_scope": "full-text"
+    },
+    {
+      "repo": "citypaul/.dotfiles",
+      "commit": "a109f9972bb46671c624fc05752031523e1cf6fc",
+      "path": "claude/.claude/skills/api-design/LICENSE",
+      "url": "https://raw.githubusercontent.com/citypaul/.dotfiles/a109f9972bb46671c624fc05752031523e1cf6fc/claude/.claude/skills/api-design/LICENSE",
+      "sha256": "a2dfc0a7fea3677d6100fcabffcf9a6e2d252eab47eaf7fadbf4432d56db411a",
+      "bytes": 1385,
+      "id": "citypaul/.dotfiles:claude/.claude/skills/api-design/LICENSE",
+      "review_scope": "license-notice-retained"
+    }
+  ]
+}
