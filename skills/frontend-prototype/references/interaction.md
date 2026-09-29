@@ -1,40 +1,19 @@
-# Interaction and UI States
+# Interaction Sketches
 
-Design the complete task, not only the happy screenshot.
+Implement the smallest sequence that lets the user judge the proposed interaction. The prototype need not reproduce the entire product flow.
 
-## Flows and controls
+## Keep the decisive interaction real
 
-Prefer familiar controls for familiar actions. Make the primary action obvious, destructive actions distinguishable, and secondary actions discoverable without competing with the main task.
+For a drawer comparison, make it open, close, and show enough surrounding content to judge the trade-off. For a multi-step form, make the relevant steps navigable. Prefer native buttons, links, and labeled inputs to custom control machinery.
 
-Choose modal, drawer, popover, inline disclosure, or dedicated route from task duration, context needed, amount of information, navigation expectations, and whether the user must compare with the underlying page. Do not choose an overlay solely because it looks compact.
+Use sample data and local variables for state. A save can update an in-memory list or show a simulated result; it does not need a service, durable storage, or production validation logic. Provide a simple way to return to the starting point when the comparison needs repetition.
 
-Forms need clear labels, useful defaults, validation close to the cause, preserved input after recoverable errors, and an obvious completion state. Error messages should explain what happened and what action is available.
+## Demonstrate only relevant states
 
-## Represent meaningful states
+Loading, empty, failure, disabled, and partial-progress views are optional scenarios, not a required checklist. Include a state only when it changes the interaction being judged. A preset or a small demo toggle can show an error without implementing the real failure path.
 
-Prototype states that can change the design:
+For example, judging whether inline errors are understandable needs an editable field and a representative error. Judging whether a drawer leaves enough space for the list usually does not need form validation at all.
 
-- initial and normal content;
-- loading or pending;
-- empty;
-- validation failure;
-- recoverable and blocking error;
-- disabled or unavailable action;
-- long names, long values, dense lists, and overflow;
-- partial completion or background progress when relevant.
+Keep controls needed for the question usable. Elaborate focus behavior, gesture alternatives, or animation timing belong here only when they affect the question. Avoid building a general interaction or accessibility framework for a disposable demo.
 
-Do not use only ideal data if real data density determines whether the layout works.
-
-## Keyboard, focus, and access
-
-Use semantic buttons, links, and labeled inputs. For web interfaces, support keyboard operation and visible focus. Modal interactions need sensible initial focus, focus containment, dismissal, and return to the trigger. Do not trap focus in non-modal content.
-
-Keep text and controls distinguishable from their backgrounds and communicate status beyond color. Respect reduced-motion preferences when adding animation. Announce asynchronous feedback where assistive technology would otherwise miss a state change.
-
-Targets should remain usable on touch screens when mobile or tablet is in scope. Do not hide essential information behind hover-only behavior.
-
-## Responsive behavior
-
-Responsive design is not "shrink the desktop". Decide what reflows, wraps, collapses, scrolls, becomes sequential, or remains fixed. Preserve task priority at narrower widths.
-
-Test actual representative widths rather than assuming a breakpoint solved the layout.
+Clearly distinguish simulated effects and unfinished areas so the user knows which actions are meaningful.

@@ -13,7 +13,7 @@
 | [tech-design](skills/tech-design/SKILL.md) | requirements-design、domain-modeling、solution-evaluation、architecture-design | 定义行为、概念、选型或职责边界；按问题选模式，不把四项当作固定阶段 |
 | [research](skills/research/SKILL.md) | research | 解决事实不确定性、证据冲突和版本问题；不强行替用户重做选型 |
 | [work-plan](skills/work-plan/SKILL.md) | planning | 整理待决问题或可验收任务、依赖和迁移顺序；不推翻已定设计 |
-| [frontend-prototype](skills/frontend-prototype/SKILL.md) | frontend-prototype | 用可运行前端原型验证信息层级、用户流程、交互方式、UI 状态、响应式与视觉方向；业务规则和技术设计作为输入 |
+| [frontend-prototype](skills/frontend-prototype/SKILL.md) | frontend-prototype | 用低成本、可操作的轻量原型回答具体布局或交互问题；只做影响判断的部分，不提前建设生产前端 |
 | [implement](skills/implement/SKILL.md) | implementation、test-design | 实现、重构、测试设计或补测；测试方案可以独立交付 |
 | [diagnose](skills/diagnose/SKILL.md) | debugging | 原因不明的故障调查与已授权修复，形成症状到原因的证据链 |
 | [tech-review](skills/tech-review/SKILL.md) | architecture-review、design-review、code-review | 架构、设计、代码评审；不同对象采用不同检查方法，默认只读 |
@@ -21,7 +21,7 @@
 | [doc-archive](skills/doc-archive/SKILL.md) | document-archival | 判断积累资料的去留，执行归档、查找历史或恢复；不绑定日常任务收尾 |
 | [skill-dev](skills/skill-dev/SKILL.md) | skill-development | 新建和修改可复用 Skills，完成实际文件与可执行检查；来源融合及模型评估按需开展 |
 
-`tech-design` 负责形成业务与技术决策，`research` 负责事实证据，`work-plan` 负责工作安排，`frontend-prototype` 负责把已理解的产品方向变成可运行界面并验证前端体验。技术 spike 不再由单独的通用 prototype 入口拥有；独立实验取证由 `research` 的实验参考承接，设计、实现与诊断中的局部实验留在原任务内。`implement` 与 `tech-review` 保持通用入口，只在前端任务中加载各自的 frontend lens。
+`tech-design` 负责形成业务与技术决策，`research` 负责事实证据，`work-plan` 负责工作安排，`frontend-prototype` 负责用最少实现让用户判断具体界面方案；独立原型优先 HTML/CSS/少量 JavaScript，复用项目以是否省事或影响判断为准。技术 spike 不再由单独的通用 prototype 入口拥有；独立实验取证由 `research` 的实验参考承接，设计、实现与诊断中的局部实验留在原任务内。`implement` 与 `tech-review` 保持通用入口，只在前端任务中加载各自的 frontend lens。
 
 名称采用短词或必要的语义限定，不使用统一品牌前缀。v0.2 将原 `prototype` 重构为 `frontend-prototype`，并把前端原型、生产实现、前端评审统一到同一套方法家族下，但保持不同的交付标准。
 

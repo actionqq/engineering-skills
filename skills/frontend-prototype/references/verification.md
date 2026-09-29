@@ -1,20 +1,13 @@
-# Prototype Verification
+# Prototype Walkthrough
 
-Verification should answer the design question, not imitate a full production QA program.
+Check that the demonstration is usable for the intended decision. Do not create automated tests, test fixtures, frameworks, coverage reports, or CI.
 
-Run the critical user flow from its real entry point. Reset to a known state and repeat any comparison consistently. Exercise every state that materially affects the chosen layout or interaction.
+Open the artifact and try the target operation from the demonstrated starting state. Browser-control tools can assist this walkthrough without creating a test suite. Look for broken controls, missing content, or layout problems that prevent judging the idea, and fix those blockers.
 
-Use an available browser or suitable UI runner to inspect the rendered result; source inspection and a successful build do not establish visual or interaction correctness. If execution is unavailable, deliver the runnable artifact and exact start instructions, run feasible static checks, and identify the unexercised flows without presenting them as validated.
+For alternatives, use the same task and sample content. Inspect additional states or viewport sizes only when they are part of the question. Do not expand the walkthrough into a complete product review or repeated cosmetic polishing.
 
-Check at minimum:
+If the environment cannot display the prototype, provide exact opening instructions and say it was not visually inspected. Do not claim an unobserved interaction works.
 
-- the main task can be completed without hidden knowledge;
-- the primary action and current state are clear;
-- focus is visible and overlays return focus sensibly where applicable;
-- representative loading, empty, error, validation, and long-content states do not break the design;
-- the layout works at the target desktop width and a meaningful narrower width when responsive behavior matters;
-- labels and messages use the product's established terminology.
+Deliver the artifact, what to try, and a short account of the observation and important limitations. Simulated saving is not persistence; author inspection is not user validation. Leave preference or usability conclusions open when they require user feedback.
 
-Record what was actually exercised. A visually convincing screen is not evidence that the flow works, and a clickable flow is not evidence of production quality.
-
-Fix observed defects and recheck affected states. Stop when the question is answered and relevant checks pass; do not keep generating alternatives or polishing without a remaining decision or defect.
+Once the user can assess the question and the relevant blockers are resolved, stop.

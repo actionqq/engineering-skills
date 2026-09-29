@@ -17,7 +17,7 @@ Method and source scope applicable to this folder:
 
 ## Adaptations
 
-Settled business and technical decisions remain inputs. Visual heuristics yield to the explicit brief and existing product language. Fixed aesthetic dials, framework defaults, universal color/font bans, and perpetual animation are not adopted. Prototype evidence does not establish production readiness. Source study covers the listed files, not entire upstream resource trees.
+Settled business and technical decisions remain inputs. Visual heuristics yield to the explicit brief and existing product language. Fixed aesthetic dials, framework defaults, universal color/font bans, and perpetual animation are not adopted. The current frontend scope selects low-cost sketches: standalone HTML/CSS/JavaScript when sufficient, conditional project reuse, only decisive states, and a brief browser walkthrough without automated tests or production QA. This is a local adaptation; upstream logic-demo and UI-variant prescriptions are not universal frontend requirements. Prototype evidence does not establish production readiness. Source study covers the listed files, not entire upstream resource trees.
 
 ## mattpocock/skills
 
