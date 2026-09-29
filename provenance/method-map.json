@@ -163,41 +163,6 @@
       ]
     },
     {
-      "id": "interactive-prototype",
-      "destinations": [
-        "skills/prototype/references/interactive.md"
-      ],
-      "sources": [
-        "mattpocock/skills:skills/engineering/prototype/SKILL.md",
-        "mattpocock/skills:skills/engineering/prototype/LOGIC.md",
-        "mattpocock/skills:skills/engineering/prototype/UI.md"
-      ],
-      "retained": "状态/实体实验提供可操纵输入和可观察状态；UI 方案用相同任务和数据比较。",
-      "adaptation_or_rejection": "形式由问题决定；原型允许必要断言，不自动提交或升级成生产功能。",
-      "eval_cases": [
-        "prototype-state"
-      ]
-    },
-    {
-      "id": "faithful-experiment",
-      "destinations": [
-        "skills/prototype/references/experiments.md",
-        "skills/implement/references/fidelity.md"
-      ],
-      "sources": [
-        "mattpocock/skills:skills/engineering/prototype/LOGIC.md",
-        "mattpocock/skills:skills/engineering/tdd/mocking.md",
-        "citypaul/.dotfiles:claude/.claude/skills/codebase-design/references/deepening.md"
-      ],
-      "retained": "依赖替身按行为保真度选择；明确观察与结论的适用边界。",
-      "adaptation_or_rejection": "补充数据库、并发、性能及迁移实验的真实关键边界；模拟器不能证明目标数据库保证。",
-      "eval_cases": [
-        "prototype-boundary",
-        "prototype-sqlite",
-        "implement-test-plan"
-      ]
-    },
-    {
       "id": "implementation",
       "destinations": [
         "skills/implement/SKILL.md",
@@ -365,7 +330,7 @@
         "skills/diagnose/SKILL.md",
         "skills/handover/SKILL.md",
         "skills/implement/SKILL.md",
-        "skills/prototype/SKILL.md",
+        "skills/frontend-prototype/SKILL.md",
         "skills/research/SKILL.md",
         "skills/skill-dev/SKILL.md",
         "skills/tech-design/SKILL.md",
@@ -384,7 +349,6 @@
         "docs-implement-no-churn",
         "docs-implement-file-limit",
         "docs-research-evidence",
-        "docs-prototype-promotion",
         "docs-plan-maintenance",
         "docs-diagnose-readonly",
         "docs-review-consistency",
@@ -511,6 +475,47 @@
       ],
       "retained": "活跃与历史入口、按需读取历史、恢复前冲突与时效检查、归档记录保留和索引修复。",
       "adaptation_or_rejection": "不要求整主题 wiki 或注册表；允许带历史标识的证据引用。恢复位置不恢复权威或验证，普通目录与说明不能保证所有宿主搜索排除归档；不擅自修改全局策略。",
+      "eval_cases": []
+    },
+    {
+      "id": "frontend-design-foundation",
+      "destinations": [
+        "skills/frontend-prototype/references/design-foundation.md",
+        "skills/implement/references/frontend.md",
+        "skills/tech-review/references/frontend.md"
+      ],
+      "sources": [
+        "citypaul/.dotfiles:claude/.claude/skills/structure-codebase/references/frontend-patterns.md",
+        "citypaul/.dotfiles:claude/.claude/skills/codebase-design/references/design-it-twice.md"
+      ],
+      "retained": "Keep frontend decisions grounded in product context, existing structure, and deliberate alternatives rather than generic templates.",
+      "adaptation_or_rejection": "v0.2 separates a shared frontend method from delivery profiles. Product UI consistency and hierarchy are shared; prototype, production implementation, and review keep different completion standards.",
+      "eval_cases": []
+    },
+    {
+      "id": "frontend-interaction-states",
+      "destinations": [
+        "skills/frontend-prototype/references/interaction.md"
+      ],
+      "sources": [
+        "mattpocock/skills:skills/engineering/prototype/UI.md",
+        "citypaul/.dotfiles:claude/.claude/skills/structure-codebase/references/frontend-patterns.md"
+      ],
+      "retained": "Use runnable interaction and representative states to expose frontend design consequences.",
+      "adaptation_or_rejection": "Business-state modeling is no longer owned by the prototype entry. Only UI-visible flows, states, responsive behavior, and accessibility-relevant interaction remain.",
+      "eval_cases": []
+    },
+    {
+      "id": "frontend-prototype-evidence",
+      "destinations": [
+        "skills/frontend-prototype/references/verification.md"
+      ],
+      "sources": [
+        "mattpocock/skills:skills/engineering/prototype/SKILL.md",
+        "mattpocock/skills:skills/engineering/prototype/LOGIC.md"
+      ],
+      "retained": "A prototype answers a bounded question through runnable evidence and records what was not tested.",
+      "adaptation_or_rejection": "Engineering spikes for database, concurrency, performance, compatibility, and migration are removed from the user-facing prototype entry and remain methods used by other work when needed.",
       "eval_cases": []
     }
   ]
