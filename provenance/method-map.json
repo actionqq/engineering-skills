@@ -485,11 +485,14 @@
         "skills/tech-review/references/frontend.md"
       ],
       "sources": [
-        "citypaul/.dotfiles:claude/.claude/skills/structure-codebase/references/frontend-patterns.md",
-        "citypaul/.dotfiles:claude/.claude/skills/codebase-design/references/design-it-twice.md"
+        "anthropics/claude-code:plugins/frontend-design/skills/frontend-design/SKILL.md",
+        "pbakaus/impeccable:skill/SKILL.src.md",
+        "nextlevelbuilder/ui-ux-pro-max-skill:.claude/skills/ui-ux-pro-max/SKILL.md",
+        "tasteskill/tasteskill:skills/taste-skill/SKILL.md",
+        "citypaul/.dotfiles:claude/.claude/skills/structure-codebase/references/frontend-patterns.md"
       ],
-      "retained": "Keep frontend decisions grounded in product context, existing structure, and deliberate alternatives rather than generic templates.",
-      "adaptation_or_rejection": "v0.2 separates a shared frontend method from delivery profiles. Product UI consistency and hierarchy are shared; prototype, production implementation, and review keep different completion standards.",
+      "retained": "Use one frontend design language across prototype, implementation, and review: product-vs-brand register, deliberate hierarchy, typography, spacing, color, design-system continuity, and resistance to generic template defaults.",
+      "adaptation_or_rejection": "Existing product conventions and explicit briefs outrank novelty. Taste-oriented bans, fixed dials, framework defaults, and decorative prescriptions are treated as heuristics rather than universal rules. The same principles are reused by three delivery profiles without copying a full design workflow into implement or tech-review.",
       "eval_cases": []
     },
     {
@@ -498,11 +501,13 @@
         "skills/frontend-prototype/references/interaction.md"
       ],
       "sources": [
-        "mattpocock/skills:skills/engineering/prototype/UI.md",
-        "citypaul/.dotfiles:claude/.claude/skills/structure-codebase/references/frontend-patterns.md"
+        "pbakaus/impeccable:skill/SKILL.src.md",
+        "nextlevelbuilder/ui-ux-pro-max-skill:.claude/skills/ui-ux-pro-max/SKILL.md",
+        "vercel-labs/web-interface-guidelines:README.md",
+        "mattpocock/skills:skills/engineering/prototype/UI.md"
       ],
-      "retained": "Use runnable interaction and representative states to expose frontend design consequences.",
-      "adaptation_or_rejection": "Business-state modeling is no longer owned by the prototype entry. Only UI-visible flows, states, responsive behavior, and accessibility-relevant interaction remain.",
+      "retained": "Design the complete user task rather than the happy screenshot: flows, forms, overlays, feedback, loading/empty/error/validation states, keyboard/focus behavior, and responsive adaptation.",
+      "adaptation_or_rejection": "Prototype fidelity is driven by the decision being tested. General guidelines do not override project conventions, supported devices, or explicit requirements; production-only performance and integration rules stay in implementation.",
       "eval_cases": []
     },
     {
@@ -512,10 +517,12 @@
       ],
       "sources": [
         "mattpocock/skills:skills/engineering/prototype/SKILL.md",
-        "mattpocock/skills:skills/engineering/prototype/LOGIC.md"
+        "mattpocock/skills:skills/engineering/prototype/LOGIC.md",
+        "pbakaus/impeccable:skill/SKILL.src.md",
+        "anthropics/claude-code:plugins/frontend-design/skills/frontend-design/SKILL.md"
       ],
-      "retained": "A prototype answers a bounded question through runnable evidence and records what was not tested.",
-      "adaptation_or_rejection": "Engineering spikes for database, concurrency, performance, compatibility, and migration are removed from the user-facing prototype entry and remain methods used by other work when needed.",
+      "retained": "A frontend prototype must answer a concrete experience question through a runnable artifact and bounded visual/interaction verification; prototype success is evidence, not production readiness.",
+      "adaptation_or_rejection": "The v0.1 generic prototype scope is narrowed. Business/domain feasibility belongs to tech-design, and compatibility/performance/persistence/concurrency/migration spikes are engineering methods invoked where needed rather than a user-facing prototype entry.",
       "eval_cases": []
     }
   ]
