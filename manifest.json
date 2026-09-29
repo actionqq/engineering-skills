@@ -42,7 +42,7 @@
     ]
   },
   "installed": false,
-  "status": "v0.2-branch-authored-and-structure-migrated; independent-behavior-evaluation-pending",
+  "status": "v0.2-authored; structural-validation-pending; independent-behavior-evaluation-pending",
   "renamed_entries": {
     "design": "tech-design",
     "plan": "work-plan",
