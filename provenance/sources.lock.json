@@ -993,6 +993,61 @@
       "bytes": 1067,
       "review_scope": "license-retained",
       "observed_date": "2026-09-21"
+    },
+    {
+      "id": "anthropics/claude-code:plugins/frontend-design/skills/frontend-design/SKILL.md",
+      "repo": "anthropics/claude-code",
+      "commit": "dec92bc87ab6fe9c7be0fcba1f97966f902dd243",
+      "path": "plugins/frontend-design/skills/frontend-design/SKILL.md",
+      "url": "https://raw.githubusercontent.com/anthropics/claude-code/dec92bc87ab6fe9c7be0fcba1f97966f902dd243/plugins/frontend-design/skills/frontend-design/SKILL.md",
+      "sha256": "d91970639e9f5c37682ac7ab60094d35f1c7c1f38d731bd56396563aee10c1d3",
+      "bytes": 9390,
+      "review_scope": "full-text",
+      "observed_date": "2026-09-29"
+    },
+    {
+      "id": "pbakaus/impeccable:skill/SKILL.src.md",
+      "repo": "pbakaus/impeccable",
+      "commit": "114ea1d3838fca73b253af45f873b9c4f5f213c8",
+      "path": "skill/SKILL.src.md",
+      "url": "https://raw.githubusercontent.com/pbakaus/impeccable/114ea1d3838fca73b253af45f873b9c4f5f213c8/skill/SKILL.src.md",
+      "sha256": "176b067cc0b760e8ac444158437135bb80b4e7a6ce8186deac5af54973aa37a7",
+      "bytes": 12532,
+      "review_scope": "full-text",
+      "observed_date": "2026-09-29"
+    },
+    {
+      "id": "nextlevelbuilder/ui-ux-pro-max-skill:.claude/skills/ui-ux-pro-max/SKILL.md",
+      "repo": "nextlevelbuilder/ui-ux-pro-max-skill",
+      "commit": "09170eec67eefd46a7ae85de61b40c194020f997",
+      "path": ".claude/skills/ui-ux-pro-max/SKILL.md",
+      "url": "https://raw.githubusercontent.com/nextlevelbuilder/ui-ux-pro-max-skill/09170eec67eefd46a7ae85de61b40c194020f997/.claude/skills/ui-ux-pro-max/SKILL.md",
+      "sha256": "f5cc255a73a9f13a0ce11288519f94f4d44293a5264b29080431b99ceab04bf8",
+      "bytes": 15969,
+      "review_scope": "full-text",
+      "observed_date": "2026-09-29"
+    },
+    {
+      "id": "tasteskill/tasteskill:skills/taste-skill/SKILL.md",
+      "repo": "tasteskill/tasteskill",
+      "commit": "37c8c376b92ebc02456f7c70776b514fddda88e1",
+      "path": "skills/taste-skill/SKILL.md",
+      "url": "https://raw.githubusercontent.com/tasteskill/tasteskill/37c8c376b92ebc02456f7c70776b514fddda88e1/skills/taste-skill/SKILL.md",
+      "sha256": "07aba21103983afbcac42bcf93e8b7577bf87e3dde31bb46d2cd7ee60359b614",
+      "bytes": 21140,
+      "review_scope": "full-text",
+      "observed_date": "2026-09-29"
+    },
+    {
+      "id": "vercel-labs/web-interface-guidelines:README.md",
+      "repo": "vercel-labs/web-interface-guidelines",
+      "commit": "e3d624baaf29dc1fc645aff3e38f03e564d2d6b1",
+      "path": "README.md",
+      "url": "https://raw.githubusercontent.com/vercel-labs/web-interface-guidelines/e3d624baaf29dc1fc645aff3e38f03e564d2d6b1/README.md",
+      "sha256": "9a17bdfe3705ecd2fad628933e754122e35a722f8f2a3b191494f56d7b294af8",
+      "bytes": 18673,
+      "review_scope": "full-text",
+      "observed_date": "2026-09-29"
     }
   ]
 }
