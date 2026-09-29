@@ -2,7 +2,7 @@
 
 一套根据上游原始材料研究、融合和改写的工程 Skills。包含 10 个不带统一品牌前缀的入口，覆盖 16 项能力。指令与方法参考使用英文，交流和交付语言跟随用户。
 
-这是可检查、可单独取用的源码版本，尚未安装到任何宿主。当前完成了格式、资源完整性、工具检查和有限作者演练；**尚未证明与上游效果等价或优于默认模型能力**。
+这是 v0.2 开发分支上的源码版本，尚未安装到任何宿主。v0.2 将通用 `prototype` 收窄为 `frontend-prototype`，并把前端设计能力拆成可按需复用的方法：原型负责探索与验证前端体验，`implement` 只加载生产实现所需的前端约束，`tech-review` 只加载前端评审 lens。当前已完成源码和来源账本更新；**尚未完成 v0.2 的独立模型行为评估或跨宿主验收**。
 
 ## 入口如何划分
 
@@ -34,6 +34,7 @@
 | `debug` | `diagnose` | 区分代码故障诊断与宿主日志、报告上传功能 |
 | `review` | `tech-review` | 避开内置评审命令及别名，保留架构、设计、代码三种模式 |
 | `handoff` | `handover` | 区分工程上下文交接与宿主会话迁移 |
+| `prototype` | `frontend-prototype` | v0.1 的通用原型同时覆盖业务状态、工程实验和 UI，职责与设计/研究重叠；v0.2 收窄为前端交互与视觉原型 |
 | `prototype` | `frontend-prototype` | v0.2 收窄为前端交互原型，避免继续承担业务建模和通用工程实验 |
 
 不注册旧名别名，避免重新引入冲突。若已经安装过旧草稿，先确认旧目录的来源和用户修改，再用完整的新目录替换对应的旧入口，并按宿主要求刷新；不要只改 frontmatter，也不要把新旧两套同时放入发现范围。`manifest.json` 的 `renamed_entries` 是迁移记录，不是运行时别名。
@@ -51,11 +52,11 @@
 | agy | 官方执行模式页记载 `1.1.0` 移除旧 `/planning`，改用模式切换或 `/plan`；需按实际版本核对 | 不把旧矩阵中的“只有 `/planning`”作为长期无冲突保证。[执行模式](https://www.antigravity.google/docs/cli/modes/) |
 | ZCode / Pi / DSH | 收到过占用矩阵，但本轮未完成这三者的逐版本独立核验 | 保持待验证，不将“未发现”写成“已兼容”，也不提供未经验证的调用语法 |
 
-安装验收应确认新入口实际加载了本集合对应的 `SKILL.md`，并且宿主原有命令行为未被改变。候选名未出现在命令表中，只能作为检查线索，不能替代安装后的实际解析证据。当前版本仍仅生成源码，没有安装或修改宿主配置。
+安装验收应确认新入口实际加载了本集合对应的 `SKILL.md`，并且宿主原有命令行为未被改变。候选名未出现在命令表中，只能作为检查线索，不能替代安装后的实际解析证据。当前 v0.2 分支仍仅生成源码，没有安装或修改宿主配置。
 
 ## 方法深度放在哪里
 
-每个入口包含 `SKILL.md`、`agents/openai.yaml`、本地 `references/` 和第三方来源声明。入口负责选路、共通约束与完成标准；31 份参考文件保留分支方法，当前篇幅见结构检查记录。读取条件直接写在入口中，每个 Skill 的运行说明不依赖同级其他 Skill 或作者机器上的路径。
+每个入口包含 `SKILL.md`、`agents/openai.yaml`、本地 `references/` 和第三方来源声明。入口负责选路、共通约束与完成标准；v0.2 当前 34 份参考文件保留分支方法，当前篇幅见结构检查记录。读取条件直接写在入口中，每个 Skill 的运行说明不依赖同级其他 Skill 或作者机器上的路径。
 
 保留的具体方法包括：完整调用方负担与模块深度、同题不同接口设计、指定技术尽调、前后端目录边界、决策依赖与渐进迁移、真实依赖保真度、独立测试预期、复现与逆向追踪、失败语义回归、WIP 全范围评审、交接状态核实、隔离评估与公平基线。
 
@@ -117,10 +118,10 @@ ADR 可以维护状态、追加注明日期的结果和证据；推翻核心决�
 
 ## 来源与可追溯性
 
-主要研究了 Matt Pocock、citypaul、Anthropic、obra/superpowers、arjunprabhulal、klittle32 的相关 Skills，以及 Vercel ADR、Warp review-spec、OpenSpec、Spec Kit 的相关材料。v0.2 前端方法家族另外对照了 Anthropic `frontend-design`、Impeccable、UI/UX Pro Max、Taste Skill 与 Vercel Web Interface Guidelines；当前整合说明见 [v0.2 frontend method family](provenance/v0.2-frontend-method-family.md)。
+主要研究了 Matt Pocock、citypaul、Anthropic、obra/superpowers、arjunprabhulal、klittle32 的相关 Skills，以及 Vercel ADR、Warp review-spec、OpenSpec、Spec Kit 的相关材料。v0.2 的前端方法族另外系统比较了 Anthropic `frontend-design`、Impeccable、UI/UX Pro Max、Taste Skill 与 Vercel Web Interface Guidelines。v0.2 前端方法家族另外对照了 Anthropic `frontend-design`、Impeccable、UI/UX Pro Max、Taste Skill 与 Vercel Web Interface Guidelines；当前整合说明见 [v0.2 frontend method family](provenance/v0.2-frontend-method-family.md)。
 
-- [来源锁定文件](provenance/sources.lock.json)：92 个文件的仓库、固定 commit、原始链接、SHA-256 和阅读范围。此前 80 份记录保留；归档入口补充 OpenSpec、GSD、PACEflow、SDLC Studio、llm-wiki 的方法与许可来源，选段阅读标明行号。只锁定实际使用的来源，不把整个检索范围写成全文评估。
-- [方法映射](provenance/method-map.json)：28 组方法的原始材料、保留内容、调整理由和最终文件。归档新增三组方法；此前判别用例保留，新增入口没有为缺少执行器的模型评估制造题库。
+- [来源锁定文件](provenance/sources.lock.json)：v0.2 当前 97 个文件的仓库、固定 commit、原始链接、SHA-256 和阅读范围。此前 80 份记录保留；归档入口补充 OpenSpec、GSD、PACEflow、SDLC Studio、llm-wiki 的方法与许可来源，选段阅读标明行号。只锁定实际使用的来源，不把整个检索范围写成全文评估。
+- [方法映射](provenance/method-map.json)：v0.2 当前 29 组方法的原始材料、保留内容、调整理由和最终文件。归档新增三组方法；此前判别用例保留，新增入口没有为缺少执行器的模型评估制造题库。
 - 各 Skill 的 `THIRD_PARTY_NOTICES.md`：独立复制时保留的来源、修改声明和适用许可文本。没有为整个新集合擅自选定统一发布许可证。
 
 来源锁定表示研究时的固定版本，不声称是各项目当前最新版；选段阅读也不代表完整评估整个框架。宿主自带的 `skill-creator` 用作本次创建流程和格式校验，不是运行这些 Skills 的前提。
