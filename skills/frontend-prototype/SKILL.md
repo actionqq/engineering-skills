@@ -1,19 +1,19 @@
 ---
 name: frontend-prototype
-description: Build a runnable frontend prototype to explore and validate user flows, information hierarchy, interaction patterns, UI states, responsive behavior, and visual direction before production implementation. Treat settled business behavior and technical decisions as inputs rather than redesigning them.
+description: Build a runnable frontend prototype to explore and validate user flows, information hierarchy, interaction patterns, UI states, responsive behavior, and visual direction. Use for interactive mockups, UI alternatives, and frontend experience experiments. Production feature delivery, backend experiments, and architecture decisions are different tasks; settled business and technical decisions remain inputs.
 ---
 
 # Frontend Prototype
 
-Turn an already-understood product or engineering direction into a runnable interface that can be judged by using it. The prototype is evidence about frontend experience, not a second requirements or domain-design phase and not production implementation.
+Turn a product or engineering direction into a runnable interface that can be judged by using it. Communicate in the user's language. The prototype is evidence about frontend experience, not a second requirements or domain-design phase and not production implementation.
 
 ## Establish the design basis
 
 Read the relevant requirements, accepted decisions, current product UI, design system, component library, and representative data. Reuse the product's vocabulary and visual language when they exist.
 
-Do not reopen settled business rules merely because the UI is awkward. If the interface exposes a genuine contradiction or missing product decision, identify it precisely and stop that branch at the decision boundary instead of silently inventing behavior.
+A clear conversational brief is sufficient; formal requirements, a prior prototype, and a design system are not prerequisites. Infer routine reversible choices from the task. Clarify only missing decisions that would materially change the experience being tested, and continue independent parts.
 
-Read [Frontend design foundation](references/design-foundation.md) for visual hierarchy, product-vs-brand register, typography, spacing, color, and anti-template guidance. Read [Interaction and states](references/interaction.md) for flows, forms, overlays, feedback, accessibility, responsive behavior, and representative states.
+Do not reopen settled business rules merely because the UI is awkward. If the interface exposes a genuine contradiction or missing product decision, identify it precisely and stop that branch at the decision boundary instead of silently inventing behavior.
 
 ## Define what the prototype must answer
 
@@ -28,17 +28,25 @@ State the concrete frontend uncertainty before building. Examples include:
 
 Prefer one coherent direction when the request is clear. Create alternatives only when a real design decision remains unresolved; variants that differ only by decoration are not useful evidence.
 
+## Select the needed methods
+
+| Work in scope | Read |
+|---|---|
+| Create or change visual direction, hierarchy, layout, typography, or content treatment | [Frontend design foundation](references/design-foundation.md) |
+| Create or change a flow, control, UI state, overlay, or responsive interaction | [Interaction and states](references/interaction.md) |
+| Exercise and deliver the prototype | [Prototype verification](references/verification.md) |
+
+A new end-to-end prototype normally needs all three. A targeted revision loads only the affected methods and checks that it preserves the rest. Do not redesign an accepted visual direction merely to demonstrate a method.
+
 ## Build at the right fidelity
 
-Use real interaction for the part being evaluated. Mock or stub backend behavior that is irrelevant to the frontend question, but use representative data and believable state transitions. Reuse the project's actual frontend stack and components when doing so materially improves fidelity; otherwise choose the smallest runnable form that preserves the interaction being tested.
+Use real interaction for the part being evaluated. Mock or stub backend behavior that is irrelevant to the frontend question, but use representative data and believable state transitions. Identify simulated effects and make important test states reproducible. Reuse the project's actual frontend stack and components when doing so materially improves fidelity; otherwise choose the smallest runnable form that preserves the interaction being tested. Keep experimental artifacts separate from production behavior unless integration is requested.
 
 Prototype code may be disposable. Do not use that as permission for incoherent structure, fake success paths, inaccessible controls, or impossible responsive behavior. A prototype should be cheap to change, not misleading.
 
-Keep the visual treatment intentional. Avoid generic AI defaults, ornamental card grids, arbitrary gradients, excessive rounding, decorative motion, or novelty that competes with a product task. Product UI normally favors clarity, density, consistency, and predictable controls over spectacle.
-
 ## Verify by using it
 
-Read [Prototype verification](references/verification.md). Exercise the critical flow and the states that can change the design decision. Check keyboard/focus behavior where relevant, at least one narrow viewport when the product is responsive, and representative overflow or long-content cases.
+Use the verification reference to exercise the critical flow and the states that can change the design decision. Check keyboard/focus behavior where relevant, at least one narrow viewport when the product is responsive, and representative overflow or long-content cases.
 
 Do not claim usability research, accessibility conformance, performance readiness, or production acceptance unless those were actually evaluated with appropriate evidence.
 

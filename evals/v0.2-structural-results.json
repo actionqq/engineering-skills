@@ -1,0 +1,31 @@
+{
+  "kind": "structural-validation",
+  "passed": true,
+  "errors": [],
+  "skills": 10,
+  "capabilities": 16,
+  "references": 35,
+  "capabilities_with_prepared_cases": 14,
+  "capabilities_without_prepared_cases": [
+    "document-archival",
+    "frontend-prototype"
+  ],
+  "prepared_cases": 53,
+  "method_groups": 30,
+  "pinned_files": 102,
+  "prepared_trigger_requests": 75,
+  "prepared_host_name_scenarios": 8,
+  "entrypoint_words": {
+    "diagnose": 429,
+    "doc-archive": 580,
+    "frontend-prototype": 603,
+    "handover": 400,
+    "implement": 556,
+    "research": 546,
+    "skill-dev": 583,
+    "tech-design": 759,
+    "tech-review": 473,
+    "work-plan": 648
+  },
+  "limits": "Syntax, local resource closure, declared coverage and source bookkeeping only; no model behavior or quality comparison."
+}

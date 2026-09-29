@@ -21,7 +21,7 @@
 | [doc-archive](skills/doc-archive/SKILL.md) | document-archival | 判断积累资料的去留，执行归档、查找历史或恢复；不绑定日常任务收尾 |
 | [skill-dev](skills/skill-dev/SKILL.md) | skill-development | 新建和修改可复用 Skills，完成实际文件与可执行检查；来源融合及模型评估按需开展 |
 
-`tech-design` 负责形成业务与技术决策，`research` 负责事实证据，`work-plan` 负责工作安排，`frontend-prototype` 负责把已理解的产品方向变成可运行界面并验证前端体验。技术 spike 不再由单独的通用 prototype 入口拥有，而是作为设计、实现、调研或诊断按需使用的方法。`implement` 与 `tech-review` 保持通用入口，只在前端任务中加载各自的 frontend lens。
+`tech-design` 负责形成业务与技术决策，`research` 负责事实证据，`work-plan` 负责工作安排，`frontend-prototype` 负责把已理解的产品方向变成可运行界面并验证前端体验。技术 spike 不再由单独的通用 prototype 入口拥有；独立实验取证由 `research` 的实验参考承接，设计、实现与诊断中的局部实验留在原任务内。`implement` 与 `tech-review` 保持通用入口，只在前端任务中加载各自的 frontend lens。
 
 名称采用短词或必要的语义限定，不使用统一品牌前缀。v0.2 将原 `prototype` 重构为 `frontend-prototype`，并把前端原型、生产实现、前端评审统一到同一套方法家族下，但保持不同的交付标准。
 
@@ -35,7 +35,6 @@
 | `review` | `tech-review` | 避开内置评审命令及别名，保留架构、设计、代码三种模式 |
 | `handoff` | `handover` | 区分工程上下文交接与宿主会话迁移 |
 | `prototype` | `frontend-prototype` | v0.1 的通用原型同时覆盖业务状态、工程实验和 UI，职责与设计/研究重叠；v0.2 收窄为前端交互与视觉原型 |
-| `prototype` | `frontend-prototype` | v0.2 收窄为前端交互原型，避免继续承担业务建模和通用工程实验 |
 
 不注册旧名别名，避免重新引入冲突。若已经安装过旧草稿，先确认旧目录的来源和用户修改，再用完整的新目录替换对应的旧入口，并按宿主要求刷新；不要只改 frontmatter，也不要把新旧两套同时放入发现范围。`manifest.json` 的 `renamed_entries` 是迁移记录，不是运行时别名。
 
@@ -56,11 +55,15 @@
 
 ## 方法深度放在哪里
 
-每个入口包含 `SKILL.md`、`agents/openai.yaml`、本地 `references/` 和第三方来源声明。入口负责选路、共通约束与完成标准；v0.2 当前 34 份参考文件保留分支方法，当前篇幅见结构检查记录。读取条件直接写在入口中，每个 Skill 的运行说明不依赖同级其他 Skill 或作者机器上的路径。
+每个入口包含 `SKILL.md`、`agents/openai.yaml`、本地 `references/` 和第三方来源声明。入口负责选路、共通约束与完成标准；v0.2 当前 35 份参考文件保留分支方法，当前篇幅见结构检查记录。读取条件直接写在入口中，每个 Skill 的运行说明不依赖同级其他 Skill 或作者机器上的路径。
+
+当前选择任务入口加条件加载的本地参考，保留足够的执行方法，不以“正文越短越好”为目标。参考文件按职责组织：不同 Skill 中同名的 `frontend.md` 可以分别讲架构、实现和评审；共同原则保持一致，但不要求整篇内容相同。暂不新增统一方法库、生成步骤或前端专用实现／评审入口，具体取舍见 [组织依据](provenance/v0.2-frontend-method-family.md#organization-chosen-for-this-revision)。
+
+清晰的实现请求可以直接落实，必要的局部设计属于任务本身，不要求先产出设计文档或原型。已有决策从项目材料读取并尊重；方法与验证范围按受影响行为和风险选择，小改不自动扩成完整产品审查。
 
 保留的具体方法包括：完整调用方负担与模块深度、同题不同接口设计、指定技术尽调、前后端目录边界、决策依赖与渐进迁移、真实依赖保真度、独立测试预期、复现与逆向追踪、失败语义回归、WIP 全范围评审、交接状态核实、隔离评估与公平基线。
 
-上游规则不是照单全收。例如：固定两个评审代理、固定假设数量、无法复现便禁止继续分析、三次修复失败便认定架构错误、自动提交、强制 tracker，都被改为有条件的方法或明确拒绝。精确取舍见 [方法融合记录](provenance/method-map.md)。本轮整体核对结果及取舍见 [来源复核与改进记录](provenance/source-audit.md)。
+上游规则不是照单全收。例如：固定两个评审代理、固定假设数量、无法复现便禁止继续分析、三次修复失败便认定架构错误、自动提交、强制 tracker，都被改为有条件的方法或明确拒绝。精确取舍见 [方法融合记录](provenance/method-map.md)。v0.1 来源核对及取舍见 [历史来源复核记录](provenance/source-audit.md)；v0.2 修正与实测结果见 [验证状态](evals/status.md)。
 
 ## 设计组织与实施拆解
 
@@ -118,19 +121,21 @@ ADR 可以维护状态、追加注明日期的结果和证据；推翻核心决�
 
 ## 来源与可追溯性
 
-主要研究了 Matt Pocock、citypaul、Anthropic、obra/superpowers、arjunprabhulal、klittle32 的相关 Skills，以及 Vercel ADR、Warp review-spec、OpenSpec、Spec Kit 的相关材料。v0.2 的前端方法族另外系统比较了 Anthropic `frontend-design`、Impeccable、UI/UX Pro Max、Taste Skill 与 Vercel Web Interface Guidelines。v0.2 前端方法家族另外对照了 Anthropic `frontend-design`、Impeccable、UI/UX Pro Max、Taste Skill 与 Vercel Web Interface Guidelines；当前整合说明见 [v0.2 frontend method family](provenance/v0.2-frontend-method-family.md)。
+主要研究了 Matt Pocock、citypaul、Anthropic、obra/superpowers、arjunprabhulal、klittle32 的相关 Skills，以及 Vercel ADR、Warp review-spec、OpenSpec、Spec Kit 的相关材料。v0.2 前端方法家族另外对照了 Anthropic `frontend-design`、Impeccable、UI/UX Pro Max、Taste Skill 与 Vercel Web Interface Guidelines；研究范围限于来源锁定中列出的文件，不代表完整评估各项目的子参考、脚本或知识库；当前整合说明见 [v0.2 frontend method family](provenance/v0.2-frontend-method-family.md)。
 
-- [来源锁定文件](provenance/sources.lock.json)：v0.2 当前 97 个文件的仓库、固定 commit、原始链接、SHA-256 和阅读范围。此前 80 份记录保留；归档入口补充 OpenSpec、GSD、PACEflow、SDLC Studio、llm-wiki 的方法与许可来源，选段阅读标明行号。只锁定实际使用的来源，不把整个检索范围写成全文评估。
-- [方法映射](provenance/method-map.json)：v0.2 当前 29 组方法的原始材料、保留内容、调整理由和最终文件。归档新增三组方法；此前判别用例保留，新增入口没有为缺少执行器的模型评估制造题库。
+- [来源锁定文件](provenance/sources.lock.json)：v0.2 当前 102 个文件的仓库、固定 commit、原始链接、SHA-256 和阅读范围。此前 80 份记录保留；归档入口补充 OpenSpec、GSD、PACEflow、SDLC Studio、llm-wiki 的方法与许可来源，选段阅读标明行号。只锁定实际使用的来源，不把整个检索范围写成全文评估。
+- [方法映射](provenance/method-map.json)：v0.2 当前 30 组方法的原始材料、保留内容、调整理由和最终文件。归档新增三组方法；此前判别用例保留，新增入口没有为缺少执行器的模型评估制造题库。
 - 各 Skill 的 `THIRD_PARTY_NOTICES.md`：独立复制时保留的来源、修改声明和适用许可文本。没有为整个新集合擅自选定统一发布许可证。
 
-来源锁定表示研究时的固定版本，不声称是各项目当前最新版；选段阅读也不代表完整评估整个框架。宿主自带的 `skill-creator` 用作本次创建流程和格式校验，不是运行这些 Skills 的前提。
+来源锁定表示研究时的固定版本，不声称是各项目当前最新版；选段阅读也不代表完整评估整个框架。本地格式复核使用宿主提供的 `skill-creator` 校验脚本，不是运行这些 Skills 的前提。
 
 ## 验证到什么程度
 
 v0.2 当前是分支开发版本。已完成入口、manifest、旧 prototype 评估引用和 provenance 目标的结构迁移；旧 generic prototype 的历史用例没有强行改写成前端用例，因此 **frontend-prototype 暂无独立行为基线**。`implement` 和 `tech-review` 的既有行为题仍保留，但新增 frontend lens 也尚未做独立模型执行验证。
 
-`tooling/validate.py` 仍是结构验收标准；它检查入口/manifest 一致性、引用闭包、历史用例声明、来源映射和宿主名称场景，但不证明方法效果。v0.2 合并前还需要运行本地 validator、工具单测和针对 frontend-prototype / frontend implementation / frontend review 的新行为评估。
+已通过本地结构校验和 9 项工具回归测试，结果见 [v0.2 验证状态](evals/status.md)。结构校验检查入口/manifest 一致性、引用闭包、用例声明、来源映射和宿主名称场景，不证明方法效果。独立模型评估在问题、执行机制与授权具备时开展，不作为本次源码修订的强制前置。
+
+原通用 prototype 的 4 个用例保留在 [历史用例](evals/retired-cases.json) 中，其中 SQLite 作者演练仍可复现；它们不计入 v0.2 的 53 个活动用例，也不证明新的前端能力。历史日志保持原样。
 
 ## 本地复核
 
@@ -140,7 +145,7 @@ v0.2 当前是分支开发版本。已完成入口、manifest、旧 prototype �
 python3 -m venv /tmp/engineering-skills-check
 /tmp/engineering-skills-check/bin/pip install -r tooling/requirements.txt
 /tmp/engineering-skills-check/bin/python tooling/validate.py
-python3 -B -m unittest discover -s tooling -p 'test_*.py' -v
+/tmp/engineering-skills-check/bin/python -B -m unittest discover -s tooling -p 'test_*.py' -v
 python3 -B tooling/materialize.py debug-wrong-theory /tmp/cart-case
 python3 -B tooling/run_author_exercises.py /tmp/engineering-author-run
 ```

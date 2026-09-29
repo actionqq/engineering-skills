@@ -100,8 +100,17 @@ def main():
     destination = args.destination.resolve()
     if destination.exists():
         parser.error('Destination exists; preserve old evidence and choose a new directory')
-    destination.mkdir(parents=True)
     cases = {c['id']:c for c in json.loads((ROOT/'evals/cases.json').read_text())['cases']}
+    historical = {c['id']:c for c in json.loads((ROOT/'evals/retired-cases.json').read_text())['cases']}
+    historical_ids = ['prototype-sqlite']
+    case_ids = ['debug-wrong-theory', 'implement-test-code', *historical_ids, 'review-code-regression']
+    for case_id in case_ids:
+        source = historical if case_id in historical_ids else cases
+        if case_id not in source:
+            parser.error('Missing author-exercise fixture: ' + case_id)
+    cases = {case_id:(historical if case_id in historical_ids else cases)[case_id]
+             for case_id in case_ids}
+    destination.mkdir(parents=True)
     def prepare(case_id):
         materialize(cases[case_id], destination/case_id)
         return destination/case_id/'workspace'
@@ -163,10 +172,10 @@ def main():
     evidence = {
         'kind':'author-exercises','independent':False,'blind':False,'baseline_comparison':False,
         'time_utc':datetime.now(timezone.utc).isoformat(),'python':platform.python_version(),
-        'case_ids':['debug-wrong-theory','implement-test-code','prototype-sqlite','review-code-regression'],
+        'case_ids':case_ids, 'historical_case_ids':historical_ids,
         'runs':runs, 'static_review':{'subject_executed':False,'before_hashes':before,'after_hashes':after},
         'price_product_unchanged':digest(price/'price.py')==price_before,
-        'limits':'Author knows both methods and criteria. Mechanistic local observations only; not a measure of triggering, independent execution quality, or improvement over upstream/default harness.'
+        'limits':'Author knows both methods and criteria. Historical cases do not cover current Skill entries. Mechanistic local observations only; not a measure of triggering, independent execution quality, or improvement over upstream/default harness.'
     }
     (destination/'results.json').write_text(json.dumps(evidence,ensure_ascii=False,indent=2)+'\n')
     print(json.dumps(evidence,ensure_ascii=False,indent=2))

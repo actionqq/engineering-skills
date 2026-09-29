@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "note": "Pinned source observations for v0.1, not claims about current upstream HEAD or complete framework evaluation. Fetched-only resources were not used as method evidence.",
+  "note": "Pinned source observations for v0.1 and v0.2, not claims about current upstream HEAD or complete framework evaluation. Fetched-only resources were not used as method evidence.",
   "sources": [
     {
       "repo": "mattpocock/skills",
@@ -1011,7 +1011,7 @@
       "commit": "114ea1d3838fca73b253af45f873b9c4f5f213c8",
       "path": "skill/SKILL.src.md",
       "url": "https://raw.githubusercontent.com/pbakaus/impeccable/114ea1d3838fca73b253af45f873b9c4f5f213c8/skill/SKILL.src.md",
-      "sha256": "176b067cc0b760e8ac444158437135bb80b4e7a6ce8186deac5af54973aa37a7",
+      "sha256": "0333d85ba408d29c7748838762b6d1e0a211dec22cd7e78ed6db987d983e91d4",
       "bytes": 12532,
       "review_scope": "full-text",
       "observed_date": "2026-09-29"
@@ -1022,7 +1022,7 @@
       "commit": "09170eec67eefd46a7ae85de61b40c194020f997",
       "path": ".claude/skills/ui-ux-pro-max/SKILL.md",
       "url": "https://raw.githubusercontent.com/nextlevelbuilder/ui-ux-pro-max-skill/09170eec67eefd46a7ae85de61b40c194020f997/.claude/skills/ui-ux-pro-max/SKILL.md",
-      "sha256": "f5cc255a73a9f13a0ce11288519f94f4d44293a5264b29080431b99ceab04bf8",
+      "sha256": "ea087c341bfb5b23195c7302027268ede86da802554c18a5c4896a6017b439f9",
       "bytes": 15969,
       "review_scope": "full-text",
       "observed_date": "2026-09-29"
@@ -1033,7 +1033,7 @@
       "commit": "37c8c376b92ebc02456f7c70776b514fddda88e1",
       "path": "skills/taste-skill/SKILL.md",
       "url": "https://raw.githubusercontent.com/tasteskill/tasteskill/37c8c376b92ebc02456f7c70776b514fddda88e1/skills/taste-skill/SKILL.md",
-      "sha256": "07aba21103983afbcac42bcf93e8b7577bf87e3dde31bb46d2cd7ee60359b614",
+      "sha256": "a23a9e4e74a87e3f458d53cbff60adbc666e7a1e8633d43f9e213111e48f69b0",
       "bytes": 21140,
       "review_scope": "full-text",
       "observed_date": "2026-09-29"
@@ -1044,9 +1044,64 @@
       "commit": "e3d624baaf29dc1fc645aff3e38f03e564d2d6b1",
       "path": "README.md",
       "url": "https://raw.githubusercontent.com/vercel-labs/web-interface-guidelines/e3d624baaf29dc1fc645aff3e38f03e564d2d6b1/README.md",
-      "sha256": "9a17bdfe3705ecd2fad628933e754122e35a722f8f2a3b191494f56d7b294af8",
+      "sha256": "4c46fee0b386f20e50d5e04fba2a9c5311133f430ade26309c8a2594c144cd3b",
       "bytes": 18673,
       "review_scope": "full-text",
+      "observed_date": "2026-09-29"
+    },
+    {
+      "id": "anthropics/claude-code:LICENSE.md",
+      "repo": "anthropics/claude-code",
+      "commit": "dec92bc87ab6fe9c7be0fcba1f97966f902dd243",
+      "path": "LICENSE.md",
+      "url": "https://raw.githubusercontent.com/anthropics/claude-code/dec92bc87ab6fe9c7be0fcba1f97966f902dd243/LICENSE.md",
+      "sha256": "728158fd1037143fad6907e8fa34804177e598b7326519503fe83cafdef849e6",
+      "bytes": 150,
+      "review_scope": "license-retained",
+      "observed_date": "2026-09-29"
+    },
+    {
+      "id": "pbakaus/impeccable:LICENSE",
+      "repo": "pbakaus/impeccable",
+      "commit": "114ea1d3838fca73b253af45f873b9c4f5f213c8",
+      "path": "LICENSE",
+      "url": "https://raw.githubusercontent.com/pbakaus/impeccable/114ea1d3838fca73b253af45f873b9c4f5f213c8/LICENSE",
+      "sha256": "02bb8c3b4e70190e3986c0404ad2fd8d639b4f534252d82379cc1b502b6d1812",
+      "bytes": 10766,
+      "review_scope": "license-retained",
+      "observed_date": "2026-09-29"
+    },
+    {
+      "id": "nextlevelbuilder/ui-ux-pro-max-skill:LICENSE",
+      "repo": "nextlevelbuilder/ui-ux-pro-max-skill",
+      "commit": "09170eec67eefd46a7ae85de61b40c194020f997",
+      "path": "LICENSE",
+      "url": "https://raw.githubusercontent.com/nextlevelbuilder/ui-ux-pro-max-skill/09170eec67eefd46a7ae85de61b40c194020f997/LICENSE",
+      "sha256": "738f69dfa83db5c347c678fb9d90e560877059f0de93a327c39001bff92dc014",
+      "bytes": 1075,
+      "review_scope": "license-retained",
+      "observed_date": "2026-09-29"
+    },
+    {
+      "id": "tasteskill/tasteskill:LICENSE",
+      "repo": "tasteskill/tasteskill",
+      "commit": "37c8c376b92ebc02456f7c70776b514fddda88e1",
+      "path": "LICENSE",
+      "url": "https://raw.githubusercontent.com/tasteskill/tasteskill/37c8c376b92ebc02456f7c70776b514fddda88e1/LICENSE",
+      "sha256": "71c2507540ad2f0ce0b14b4b9dd59d825139ecefafc9b9ab50fc3fa933cdf969",
+      "bytes": 1067,
+      "review_scope": "license-retained",
+      "observed_date": "2026-09-29"
+    },
+    {
+      "id": "vercel-labs/web-interface-guidelines:LICENSE",
+      "repo": "vercel-labs/web-interface-guidelines",
+      "commit": "e3d624baaf29dc1fc645aff3e38f03e564d2d6b1",
+      "path": "LICENSE",
+      "url": "https://raw.githubusercontent.com/vercel-labs/web-interface-guidelines/e3d624baaf29dc1fc645aff3e38f03e564d2d6b1/LICENSE",
+      "sha256": "6cd1609c9c12233507cdd2ce0d32e9a721e3c27494951be06b90090deeeb7af2",
+      "bytes": 1068,
+      "review_scope": "license-retained",
       "observed_date": "2026-09-29"
     }
   ]

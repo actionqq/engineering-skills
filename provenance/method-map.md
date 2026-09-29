@@ -1,6 +1,6 @@
 # 方法融合记录
 
-根据固定版本原文取舍；来源锁定与阅读范围见 [sources.lock.json](sources.lock.json)。判别用例是评估定义，不代表已执行通过。
+本文件是 [method-map.json](method-map.json) 的可读索引；修改映射时同步更新。来源锁定与阅读范围见 [sources.lock.json](sources.lock.json)。判别用例是评估定义，不代表已执行通过。
 
 ## requirements
 
@@ -66,6 +66,14 @@
 - 来源：[arjunprabhulal/agent-skills:skills/research/deep-research/SKILL.md](https://raw.githubusercontent.com/arjunprabhulal/agent-skills/42dd24080fce6d731d00e2a1134f398c3da4171b/skills/research/deep-research/SKILL.md), [citypaul/.dotfiles:claude/.claude/skills/evaluate-existing-solutions/references/evidence-and-currentness.md](https://raw.githubusercontent.com/citypaul/.dotfiles/a109f9972bb46671c624fc05752031523e1cf6fc/claude/.claude/skills/evaluate-existing-solutions/references/evidence-and-currentness.md)
 - 判别用例：`research-conflict`, `research-unavailable`
 
+## faithful-experiment
+
+- 保留：依赖替身按行为保真度选择；明确观察与结论的适用边界。
+- 调整或拒绝：补充数据库、并发、性能及迁移实验的真实关键边界；模拟器不能证明目标数据库保证。 v0.2 将通用工程实验方法保留在 research 的条件参考中；原 prototype 用例只留作历史材料，不声明为 research 或前端能力的行为验证。
+- 落点：[skills/research/references/experiments.md](../skills/research/references/experiments.md), [skills/implement/references/fidelity.md](../skills/implement/references/fidelity.md)
+- 来源：[mattpocock/skills:skills/engineering/prototype/LOGIC.md](https://raw.githubusercontent.com/mattpocock/skills/c55ee46073ed923f86ce59a5eb3b6d895095d1b7/skills/engineering/prototype/LOGIC.md), [mattpocock/skills:skills/engineering/tdd/mocking.md](https://raw.githubusercontent.com/mattpocock/skills/c55ee46073ed923f86ce59a5eb3b6d895095d1b7/skills/engineering/tdd/mocking.md), [citypaul/.dotfiles:claude/.claude/skills/codebase-design/references/deepening.md](https://raw.githubusercontent.com/citypaul/.dotfiles/a109f9972bb46671c624fc05752031523e1cf6fc/claude/.claude/skills/codebase-design/references/deepening.md)
+- 判别用例：`implement-test-plan`
+
 ## planning
 
 - 保留：先画决策依赖，决策具备后按可验证行为切片；意图、任务和验收保持关联；保留扩展、迁移、收缩顺序。 按结果、依赖、上下文负担、验证与接续需求选择清单或独立执行说明；任务引用设计，明确依赖解除条件和整体验收。
@@ -73,22 +81,6 @@
 - 落点：[skills/work-plan/references/delivery.md](../skills/work-plan/references/delivery.md), [skills/work-plan/SKILL.md](../skills/work-plan/SKILL.md), [skills/implement/SKILL.md](../skills/implement/SKILL.md)
 - 来源：[mattpocock/skills:skills/engineering/wayfinder/SKILL.md](https://raw.githubusercontent.com/mattpocock/skills/c55ee46073ed923f86ce59a5eb3b6d895095d1b7/skills/engineering/wayfinder/SKILL.md), [mattpocock/skills:skills/engineering/to-tickets/SKILL.md](https://raw.githubusercontent.com/mattpocock/skills/c55ee46073ed923f86ce59a5eb3b6d895095d1b7/skills/engineering/to-tickets/SKILL.md), [github/spec-kit:spec-driven.md](https://raw.githubusercontent.com/github/spec-kit/d4229c071c7ea3885b43e8a7739847300f618f13/spec-driven.md), [Fission-AI/OpenSpec:docs/concepts.md](https://raw.githubusercontent.com/Fission-AI/OpenSpec/bae58cf61479986431bb798acbe5a688a591c18c/docs/concepts.md)
 - 判别用例：`plan-decisions`, `plan-migration`, `plan-lightweight-checklist`, `plan-independent-briefs`, `implement-small-without-spec`, `implement-stale-unit-brief`
-
-## interactive-prototype
-
-- 保留：状态/实体实验提供可操纵输入和可观察状态；UI 方案用相同任务和数据比较。
-- 调整或拒绝：形式由问题决定；原型允许必要断言，不自动提交或升级成生产功能。
-- 落点：[skills/prototype/references/interactive.md](../skills/prototype/references/interactive.md)
-- 来源：[mattpocock/skills:skills/engineering/prototype/SKILL.md](https://raw.githubusercontent.com/mattpocock/skills/c55ee46073ed923f86ce59a5eb3b6d895095d1b7/skills/engineering/prototype/SKILL.md), [mattpocock/skills:skills/engineering/prototype/LOGIC.md](https://raw.githubusercontent.com/mattpocock/skills/c55ee46073ed923f86ce59a5eb3b6d895095d1b7/skills/engineering/prototype/LOGIC.md), [mattpocock/skills:skills/engineering/prototype/UI.md](https://raw.githubusercontent.com/mattpocock/skills/c55ee46073ed923f86ce59a5eb3b6d895095d1b7/skills/engineering/prototype/UI.md)
-- 判别用例：`prototype-state`
-
-## faithful-experiment
-
-- 保留：依赖替身按行为保真度选择；明确观察与结论的适用边界。
-- 调整或拒绝：补充数据库、并发、性能及迁移实验的真实关键边界；模拟器不能证明目标数据库保证。
-- 落点：[skills/prototype/references/experiments.md](../skills/prototype/references/experiments.md), [skills/implement/references/fidelity.md](../skills/implement/references/fidelity.md)
-- 来源：[mattpocock/skills:skills/engineering/prototype/LOGIC.md](https://raw.githubusercontent.com/mattpocock/skills/c55ee46073ed923f86ce59a5eb3b6d895095d1b7/skills/engineering/prototype/LOGIC.md), [mattpocock/skills:skills/engineering/tdd/mocking.md](https://raw.githubusercontent.com/mattpocock/skills/c55ee46073ed923f86ce59a5eb3b6d895095d1b7/skills/engineering/tdd/mocking.md), [citypaul/.dotfiles:claude/.claude/skills/codebase-design/references/deepening.md](https://raw.githubusercontent.com/citypaul/.dotfiles/a109f9972bb46671c624fc05752031523e1cf6fc/claude/.claude/skills/codebase-design/references/deepening.md)
-- 判别用例：`prototype-boundary`, `prototype-sqlite`, `implement-test-plan`
 
 ## implementation
 
@@ -166,9 +158,9 @@
 
 - 保留：重要变更中及时保留有效发现，按信息归属写入现有正式文档；临时进度与长期规则分开，避免重复记录。
 - 调整或拒绝：不新增文档入口，不强制每次修改全部文档；读取项目对 CONTEXT 的定义，遵守只读和指定文件边界。将检查落实到各入口职责，非依赖安装 expectations。
-- 落点：[skills/diagnose/SKILL.md](../skills/diagnose/SKILL.md), [skills/handover/SKILL.md](../skills/handover/SKILL.md), [skills/implement/SKILL.md](../skills/implement/SKILL.md), [skills/prototype/SKILL.md](../skills/prototype/SKILL.md), [skills/research/SKILL.md](../skills/research/SKILL.md), [skills/skill-dev/SKILL.md](../skills/skill-dev/SKILL.md), [skills/tech-design/SKILL.md](../skills/tech-design/SKILL.md), [skills/tech-review/SKILL.md](../skills/tech-review/SKILL.md), [skills/work-plan/SKILL.md](../skills/work-plan/SKILL.md)
+- 落点：[skills/diagnose/SKILL.md](../skills/diagnose/SKILL.md), [skills/handover/SKILL.md](../skills/handover/SKILL.md), [skills/implement/SKILL.md](../skills/implement/SKILL.md), [skills/frontend-prototype/SKILL.md](../skills/frontend-prototype/SKILL.md), [skills/research/SKILL.md](../skills/research/SKILL.md), [skills/skill-dev/SKILL.md](../skills/skill-dev/SKILL.md), [skills/tech-design/SKILL.md](../skills/tech-design/SKILL.md), [skills/tech-review/SKILL.md](../skills/tech-review/SKILL.md), [skills/work-plan/SKILL.md](../skills/work-plan/SKILL.md)
 - 来源：[citypaul/.dotfiles:claude/.claude/skills/expectations/SKILL.md](https://raw.githubusercontent.com/citypaul/.dotfiles/a109f9972bb46671c624fc05752031523e1cf6fc/claude/.claude/skills/expectations/SKILL.md)
-- 判别用例：`docs-design-context`, `docs-design-supersede`, `docs-implement-sync`, `docs-implement-no-churn`, `docs-implement-file-limit`, `docs-research-evidence`, `docs-prototype-promotion`, `docs-plan-maintenance`, `docs-diagnose-readonly`, `docs-review-consistency`, `docs-handover-pending`, `docs-skill-dev-source-chain`, `docs-design-lazy-create`
+- 判别用例：`docs-design-context`, `docs-design-supersede`, `docs-implement-sync`, `docs-implement-no-churn`, `docs-implement-file-limit`, `docs-research-evidence`, `docs-plan-maintenance`, `docs-diagnose-readonly`, `docs-review-consistency`, `docs-handover-pending`, `docs-skill-dev-source-chain`, `docs-design-lazy-create`
 
 ## document-lifecycle
 
@@ -208,7 +200,7 @@
 - 调整或拒绝：综合设计将工作结果、文档权威和归档状态分开；不以阶段结束、年龄、新版本或实现代码自动判定退休，不统一强制验收标记、版本体系或新主规范。局部失效不导致整篇归档，未决义务保留活跃去向。
 - 落点：[skills/doc-archive/SKILL.md](../skills/doc-archive/SKILL.md), [skills/doc-archive/references/assessment.md](../skills/doc-archive/references/assessment.md)
 - 来源：[Fission-AI/OpenSpec:skills/openspec-archive-change/SKILL.md](https://raw.githubusercontent.com/Fission-AI/OpenSpec/bae58cf61479986431bb798acbe5a688a591c18c/skills/openspec-archive-change/SKILL.md), [paceaitian/paceflow:plugin/agent-references/instructions/archive-chg.md](https://raw.githubusercontent.com/paceaitian/paceflow/07e8a4f626a14b656dfb21e56a759f3129295ff3/plugin/agent-references/instructions/archive-chg.md), [gsd-build/get-shit-done:get-shit-done/workflows/complete-milestone.md](https://raw.githubusercontent.com/gsd-build/get-shit-done/bdcaab2c752d9a33a1a1ca9acf3a3c81fb991815/get-shit-done/workflows/complete-milestone.md)
-- 行为评估：本次未准备或执行；无执行器时不制造待运行题库。
+- 行为评估：未准备或执行；不以结构检查代替模型行为证据。
 
 ## archive-execution
 
@@ -216,7 +208,7 @@
 - 调整或拒绝：选择移动、原位归档或快照，不引入上游 CLI 和表结构；不以时间顺序覆盖冲突规范，不自动提交、打标签或删除附件；既有授权不重复确认。单文件写入不宣称全批事务，未提交和未跟踪内容也须可恢复。
 - 落点：[skills/doc-archive/references/operations.md](../skills/doc-archive/references/operations.md)
 - 来源：[Fission-AI/OpenSpec:skills/openspec-bulk-archive-change/SKILL.md](https://raw.githubusercontent.com/Fission-AI/OpenSpec/bae58cf61479986431bb798acbe5a688a591c18c/skills/openspec-bulk-archive-change/SKILL.md), [gsd-build/get-shit-done:get-shit-done/workflows/cleanup.md](https://raw.githubusercontent.com/gsd-build/get-shit-done/bdcaab2c752d9a33a1a1ca9acf3a3c81fb991815/get-shit-done/workflows/cleanup.md), [DarrenBenson/sdlc-studio:.claude/skills/sdlc-studio/reference-outputs.md](https://raw.githubusercontent.com/DarrenBenson/sdlc-studio/e8146c63d2c9997e4d1a5d3c8de0e6a35f201122/.claude/skills/sdlc-studio/reference-outputs.md), [DarrenBenson/sdlc-studio:.claude/skills/sdlc-studio/scripts/archive.py](https://raw.githubusercontent.com/DarrenBenson/sdlc-studio/e8146c63d2c9997e4d1a5d3c8de0e6a35f201122/.claude/skills/sdlc-studio/scripts/archive.py)
-- 行为评估：本次未准备或执行；无执行器时不制造待运行题库。
+- 行为评估：未准备或执行；不以结构检查代替模型行为证据。
 
 ## archive-retrieval-restore
 
@@ -224,4 +216,28 @@
 - 调整或拒绝：不要求整主题 wiki 或注册表；允许带历史标识的证据引用。恢复位置不恢复权威或验证，普通目录与说明不能保证所有宿主搜索排除归档；不擅自修改全局策略。
 - 落点：[skills/doc-archive/references/retrieval.md](../skills/doc-archive/references/retrieval.md)
 - 来源：[nvk/llm-wiki:claude-plugin/skills/wiki-manager/references/archive.md](https://raw.githubusercontent.com/nvk/llm-wiki/1224fbcdf3827f4ba56d225a9e359f5e8a5594e5/claude-plugin/skills/wiki-manager/references/archive.md), [paceaitian/paceflow:plugin/agent-references/instructions/archive-chg.md](https://raw.githubusercontent.com/paceaitian/paceflow/07e8a4f626a14b656dfb21e56a759f3129295ff3/plugin/agent-references/instructions/archive-chg.md)
-- 行为评估：本次未准备或执行；无执行器时不制造待运行题库。
+- 行为评估：未准备或执行；不以结构检查代替模型行为证据。
+
+## frontend-design-foundation
+
+- 保留：Use one frontend design language across prototype, implementation, and review: product-vs-brand register, deliberate hierarchy, typography, spacing, color, design-system continuity, and resistance to generic template defaults.
+- 调整或拒绝：Existing product conventions and explicit briefs outrank novelty. Taste-oriented bans, fixed dials, framework defaults, and decorative prescriptions are treated as heuristics rather than universal rules. The same principles are reused by three delivery profiles without copying a full design workflow into implement or tech-review. Role-specific references remain local and conditionally loaded; shared principles do not require identical documents. Coherent local design choices are part of authorized implementation when no prior design exists. This packaging choice is an author synthesis, not an upstream mandate or measured model advantage.
+- 落点：[skills/frontend-prototype/references/design-foundation.md](../skills/frontend-prototype/references/design-foundation.md), [skills/implement/references/frontend.md](../skills/implement/references/frontend.md), [skills/tech-review/references/frontend.md](../skills/tech-review/references/frontend.md)
+- 来源：[anthropics/claude-code:plugins/frontend-design/skills/frontend-design/SKILL.md](https://raw.githubusercontent.com/anthropics/claude-code/dec92bc87ab6fe9c7be0fcba1f97966f902dd243/plugins/frontend-design/skills/frontend-design/SKILL.md), [pbakaus/impeccable:skill/SKILL.src.md](https://raw.githubusercontent.com/pbakaus/impeccable/114ea1d3838fca73b253af45f873b9c4f5f213c8/skill/SKILL.src.md), [nextlevelbuilder/ui-ux-pro-max-skill:.claude/skills/ui-ux-pro-max/SKILL.md](https://raw.githubusercontent.com/nextlevelbuilder/ui-ux-pro-max-skill/09170eec67eefd46a7ae85de61b40c194020f997/.claude/skills/ui-ux-pro-max/SKILL.md), [tasteskill/tasteskill:skills/taste-skill/SKILL.md](https://raw.githubusercontent.com/tasteskill/tasteskill/37c8c376b92ebc02456f7c70776b514fddda88e1/skills/taste-skill/SKILL.md), [citypaul/.dotfiles:claude/.claude/skills/structure-codebase/references/frontend-patterns.md](https://raw.githubusercontent.com/citypaul/.dotfiles/a109f9972bb46671c624fc05752031523e1cf6fc/claude/.claude/skills/structure-codebase/references/frontend-patterns.md)
+- 行为评估：未准备或执行；不以结构检查代替模型行为证据。
+
+## frontend-interaction-states
+
+- 保留：Design the complete user task rather than the happy screenshot: flows, forms, overlays, feedback, loading/empty/error/validation states, keyboard/focus behavior, and responsive adaptation.
+- 调整或拒绝：Prototype fidelity is driven by the decision being tested. General guidelines do not override project conventions, supported devices, or explicit requirements; production-only performance and integration rules stay in implementation.
+- 落点：[skills/frontend-prototype/references/interaction.md](../skills/frontend-prototype/references/interaction.md), [skills/implement/references/frontend.md](../skills/implement/references/frontend.md), [skills/tech-review/references/frontend.md](../skills/tech-review/references/frontend.md)
+- 来源：[pbakaus/impeccable:skill/SKILL.src.md](https://raw.githubusercontent.com/pbakaus/impeccable/114ea1d3838fca73b253af45f873b9c4f5f213c8/skill/SKILL.src.md), [nextlevelbuilder/ui-ux-pro-max-skill:.claude/skills/ui-ux-pro-max/SKILL.md](https://raw.githubusercontent.com/nextlevelbuilder/ui-ux-pro-max-skill/09170eec67eefd46a7ae85de61b40c194020f997/.claude/skills/ui-ux-pro-max/SKILL.md), [vercel-labs/web-interface-guidelines:README.md](https://raw.githubusercontent.com/vercel-labs/web-interface-guidelines/e3d624baaf29dc1fc645aff3e38f03e564d2d6b1/README.md), [mattpocock/skills:skills/engineering/prototype/UI.md](https://raw.githubusercontent.com/mattpocock/skills/c55ee46073ed923f86ce59a5eb3b6d895095d1b7/skills/engineering/prototype/UI.md)
+- 行为评估：未准备或执行；不以结构检查代替模型行为证据。
+
+## frontend-prototype-evidence
+
+- 保留：A frontend prototype must answer a concrete experience question through a runnable artifact and bounded visual/interaction verification; prototype success is evidence, not production readiness.
+- 调整或拒绝：The v0.1 generic prototype scope is narrowed. Business/domain feasibility belongs to tech-design, and compatibility/performance/persistence/concurrency/migration spikes are engineering methods invoked where needed rather than a user-facing prototype entry. Prototype methods load by the question being changed; full prototypes normally need visual, interaction, and verification methods, while focused revisions preserve the rest.
+- 落点：[skills/frontend-prototype/references/verification.md](../skills/frontend-prototype/references/verification.md)
+- 来源：[mattpocock/skills:skills/engineering/prototype/SKILL.md](https://raw.githubusercontent.com/mattpocock/skills/c55ee46073ed923f86ce59a5eb3b6d895095d1b7/skills/engineering/prototype/SKILL.md), [mattpocock/skills:skills/engineering/prototype/LOGIC.md](https://raw.githubusercontent.com/mattpocock/skills/c55ee46073ed923f86ce59a5eb3b6d895095d1b7/skills/engineering/prototype/LOGIC.md), [pbakaus/impeccable:skill/SKILL.src.md](https://raw.githubusercontent.com/pbakaus/impeccable/114ea1d3838fca73b253af45f873b9c4f5f213c8/skill/SKILL.src.md), [anthropics/claude-code:plugins/frontend-design/skills/frontend-design/SKILL.md](https://raw.githubusercontent.com/anthropics/claude-code/dec92bc87ab6fe9c7be0fcba1f97966f902dd243/plugins/frontend-design/skills/frontend-design/SKILL.md)
+- 行为评估：未准备或执行；不以结构检查代替模型行为证据。

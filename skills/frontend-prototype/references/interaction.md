@@ -27,7 +27,9 @@ Do not use only ideal data if real data density determines whether the layout wo
 
 ## Keyboard, focus, and access
 
-Interactive elements must be reachable and understandable with keyboard controls when keyboard use is relevant to the product. Keep focus visible. Manage focus when opening and closing modal interactions. Use semantic controls before recreating them with generic elements.
+Use semantic buttons, links, and labeled inputs. For web interfaces, support keyboard operation and visible focus. Modal interactions need sensible initial focus, focus containment, dismissal, and return to the trigger. Do not trap focus in non-modal content.
+
+Keep text and controls distinguishable from their backgrounds and communicate status beyond color. Respect reduced-motion preferences when adding animation. Announce asynchronous feedback where assistive technology would otherwise miss a state change.
 
 Targets should remain usable on touch screens when mobile or tablet is in scope. Do not hide essential information behind hover-only behavior.
 

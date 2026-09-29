@@ -139,6 +139,23 @@
       ]
     },
     {
+      "id": "faithful-experiment",
+      "destinations": [
+        "skills/research/references/experiments.md",
+        "skills/implement/references/fidelity.md"
+      ],
+      "sources": [
+        "mattpocock/skills:skills/engineering/prototype/LOGIC.md",
+        "mattpocock/skills:skills/engineering/tdd/mocking.md",
+        "citypaul/.dotfiles:claude/.claude/skills/codebase-design/references/deepening.md"
+      ],
+      "retained": "依赖替身按行为保真度选择；明确观察与结论的适用边界。",
+      "adaptation_or_rejection": "补充数据库、并发、性能及迁移实验的真实关键边界；模拟器不能证明目标数据库保证。 v0.2 将通用工程实验方法保留在 research 的条件参考中；原 prototype 用例只留作历史材料，不声明为 research 或前端能力的行为验证。",
+      "eval_cases": [
+        "implement-test-plan"
+      ]
+    },
+    {
       "id": "planning",
       "destinations": [
         "skills/work-plan/references/delivery.md",
@@ -492,13 +509,15 @@
         "citypaul/.dotfiles:claude/.claude/skills/structure-codebase/references/frontend-patterns.md"
       ],
       "retained": "Use one frontend design language across prototype, implementation, and review: product-vs-brand register, deliberate hierarchy, typography, spacing, color, design-system continuity, and resistance to generic template defaults.",
-      "adaptation_or_rejection": "Existing product conventions and explicit briefs outrank novelty. Taste-oriented bans, fixed dials, framework defaults, and decorative prescriptions are treated as heuristics rather than universal rules. The same principles are reused by three delivery profiles without copying a full design workflow into implement or tech-review.",
+      "adaptation_or_rejection": "Existing product conventions and explicit briefs outrank novelty. Taste-oriented bans, fixed dials, framework defaults, and decorative prescriptions are treated as heuristics rather than universal rules. The same principles are reused by three delivery profiles without copying a full design workflow into implement or tech-review. Role-specific references remain local and conditionally loaded; shared principles do not require identical documents. Coherent local design choices are part of authorized implementation when no prior design exists. This packaging choice is an author synthesis, not an upstream mandate or measured model advantage.",
       "eval_cases": []
     },
     {
       "id": "frontend-interaction-states",
       "destinations": [
-        "skills/frontend-prototype/references/interaction.md"
+        "skills/frontend-prototype/references/interaction.md",
+        "skills/implement/references/frontend.md",
+        "skills/tech-review/references/frontend.md"
       ],
       "sources": [
         "pbakaus/impeccable:skill/SKILL.src.md",
@@ -522,7 +541,7 @@
         "anthropics/claude-code:plugins/frontend-design/skills/frontend-design/SKILL.md"
       ],
       "retained": "A frontend prototype must answer a concrete experience question through a runnable artifact and bounded visual/interaction verification; prototype success is evidence, not production readiness.",
-      "adaptation_or_rejection": "The v0.1 generic prototype scope is narrowed. Business/domain feasibility belongs to tech-design, and compatibility/performance/persistence/concurrency/migration spikes are engineering methods invoked where needed rather than a user-facing prototype entry.",
+      "adaptation_or_rejection": "The v0.1 generic prototype scope is narrowed. Business/domain feasibility belongs to tech-design, and compatibility/performance/persistence/concurrency/migration spikes are engineering methods invoked where needed rather than a user-facing prototype entry. Prototype methods load by the question being changed; full prototypes normally need visual, interaction, and verification methods, while focused revisions preserve the rest.",
       "eval_cases": []
     }
   ]

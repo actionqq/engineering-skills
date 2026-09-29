@@ -1,6 +1,6 @@
 # Third-party notices
 
-This Skill is an English synthesis, rewritten and adapted for engineering-skills v0.1. It is not an unmodified upstream Skill. Changes include conditional workflows, tool-neutral execution, scope controls, and explicit evidence limits. No upstream endorsement is implied.
+This Skill is an English synthesis, rewritten and adapted for engineering-skills v0.1, updated for v0.2. It is not an unmodified upstream Skill. Changes include conditional workflows, tool-neutral execution, scope controls, and explicit evidence limits. No upstream endorsement is implied.
 
 Method and source scope applicable to this standalone folder:
 
@@ -135,4 +135,40 @@ This license applies to the adapted portions of this directory
 (`claude/.claude/skills/improve-codebase-architecture/`) derived from Matt
 Pocock's `improve-codebase-architecture` skill and HTML report resource at:
 https://github.com/mattpocock/skills/tree/66898f60e8c744e269f8ce06c2b2b99ce7660d5f/skills/engineering/improve-codebase-architecture
+```
+
+## v0.2 engineering experiment methods
+
+The former prototype experiment reference is retained here for bounded research probes. Experiments preserve real decisive boundaries and do not establish production acceptance beyond the observed conditions.
+
+- [mattpocock/skills:skills/engineering/prototype/LOGIC.md](https://raw.githubusercontent.com/mattpocock/skills/c55ee46073ed923f86ce59a5eb3b6d895095d1b7/skills/engineering/prototype/LOGIC.md) — full-text
+- [mattpocock/skills:skills/engineering/tdd/mocking.md](https://raw.githubusercontent.com/mattpocock/skills/c55ee46073ed923f86ce59a5eb3b6d895095d1b7/skills/engineering/tdd/mocking.md) — full-text
+- [citypaul/.dotfiles:claude/.claude/skills/codebase-design/references/deepening.md](https://raw.githubusercontent.com/citypaul/.dotfiles/a109f9972bb46671c624fc05752031523e1cf6fc/claude/.claude/skills/codebase-design/references/deepening.md) — full-text
+
+## mattpocock/skills
+
+Pinned revision: `c55ee46073ed923f86ce59a5eb3b6d895095d1b7`.
+
+```text
+MIT License
+
+Copyright (c) 2026 Matt Pocock
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
 ```

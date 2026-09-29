@@ -1,12 +1,18 @@
 # Frontend Design Foundation
 
-Use these rules for both prototypes and production frontend work; the delivery profile changes, not the underlying design judgment.
+Use when the prototype creates or changes visual direction or information hierarchy. Start from the brief and existing product evidence rather than a fixed aesthetic recipe.
 
 ## Start from the product register
 
 Distinguish product UI from brand or campaign UI. Product interfaces such as admin tools, workflow builders, settings, dashboards, and developer tools should optimize for comprehension, task completion, consistency, and appropriate information density. Brand surfaces may justify more expressive composition and motion.
 
 Existing product conventions outrank novelty unless the task is explicitly a redesign. Inspect the current navigation, spacing, typography, components, tokens, density, icon language, and recurring interaction patterns before inventing a new visual grammar.
+
+## Establish a coherent direction
+
+Identify the intended audience, primary task, most important content, and target device context. For an unresolved direction, choose a small set of compatible decisions: page composition, information density, type roles, spacing rhythm, semantic colors, and any meaningful imagery or motion. Tie those choices to the task and use them consistently across the prototype. A short working note is enough; do not require a separate design document or generate alternatives when the brief already settles the direction.
+
+Use representative copy, names, numbers, and assets early enough to expose layout constraints. Reuse appropriate project assets; do not invent factual claims or leave required visuals as broken placeholders. When a needed asset is unavailable, use a clearly bounded substitute and identify what remains unresolved.
 
 ## Make hierarchy intentional
 
