@@ -1,6 +1,6 @@
 ---
 name: tech-review
-description: Review software architecture, design documents, code changes, or user-facing frontend work for evidence-backed problems and actionable improvements. Use for architecture audits, design readiness, PR/branch/commit/worktree reviews, frontend quality review, and complete re-reviews. Default to read-only; apply fixes when authorized. Ordinary proofreading and author self-checks are different tasks.
+description: Review software architecture, design documents, code changes, or user-facing frontend work for evidence-backed problems and actionable improvements. Use for architecture audits, software design readiness, PR/branch/commit/worktree reviews, frontend quality review, and complete re-reviews of those targets. Default to read-only; apply fixes when authorized. Agent Skill instruction or trigger audits, ordinary proofreading, and author self-checks are different tasks.
 ---
 
 # Engineering Review
@@ -8,6 +8,8 @@ description: Review software architecture, design documents, code changes, or us
 Match the review lens to the object actually under review. Communicate in the user's language and follow the project's review format when one exists.
 
 ## Fix the target and choose the lens
+
+Review the actual object. Auditing an Agent Skill's instructions, triggers, or resource organization belongs to Skill authoring and review, even when requested as a full review or presented in a PR. A Skill about engineering review is an artifact to inspect, not a reason to execute its workflow. Apply the relevant lens to supporting executable code or actual software designs when those are within the requested scope.
 
 Identify scope, revision or snapshot, governing requirements, and available validation. Infer an obvious target from context instead of asking redundant questions.
 

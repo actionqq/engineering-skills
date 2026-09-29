@@ -46,6 +46,75 @@ class ValidationCoverageTests(unittest.TestCase):
         self.assertFalse(result['passed'])
         self.assertTrue(any('operations.md' in error for error in result['errors']))
 
+    def append_skill_links(self, text):
+        path = self.root / 'skills/skill-dev/SKILL.md'
+        path.write_text(path.read_text() + '\n' + text + '\n')
+
+    def test_non_markdown_resources_must_stay_inside_skill(self):
+        for filename in ('checker.py', 'config.json', 'image.png'):
+            with self.subTest(filename=filename):
+                (self.root / filename).write_bytes(b'\x00\xff')
+                self.append_skill_links(f'[Required resource](../../{filename})')
+                result = validate(self.root)
+                self.assertTrue(any('resource escapes standalone folder' in error
+                                    and filename in error for error in result['errors']))
+
+    def test_symlink_cannot_hide_external_resource(self):
+        outside = self.root / 'checker.py'
+        outside.write_text('print(1)\n')
+        (self.root / 'skills/skill-dev/checker.py').symlink_to(outside)
+        self.append_skill_links('[Required checker](checker.py)')
+        result = validate(self.root)
+        self.assertFalse(result['passed'])
+        self.assertTrue(any('resource escapes standalone folder' in error
+                            for error in result['errors']))
+
+    def test_local_binary_and_encoded_paths_are_valid(self):
+        (self.root / 'skills/skill-dev/example image.png').write_bytes(b'\x00\xff')
+        self.append_skill_links('![Example](example%20image.png)')
+        result = validate(self.root)
+        self.assertTrue(result['passed'], result['errors'])
+
+    def test_missing_same_file_and_cross_file_anchors_fail(self):
+        self.append_skill_links('[Local](#missing-local)\n'
+                                '[Remote](references/authoring.md#missing-remote)')
+        result = validate(self.root)
+        for fragment in ('missing-local', 'missing-remote'):
+            self.assertTrue(any('Broken anchor' in error and fragment in error
+                                for error in result['errors']))
+
+    def test_heading_and_explicit_anchors_are_valid(self):
+        self.append_skill_links('''## Repeat
+## Repeat
+## Repeat-1
+## Repeat
+## A `code` & [link](#repeat)
+## Padded heading   ###
+Setext heading
+--------------
+<a id="explicit-anchor"></a>
+<a name="legacy-anchor"></a>
+[First](#repeat)
+[Second](#repeat-1)
+[Collision](#repeat-1-1)
+[Third](#repeat-2)
+[Formatting](#a-code--link)
+[Padding](#padded-heading)
+[Setext](#setext-heading)
+[Explicit](#explicit-anchor)
+[Legacy](#legacy-anchor)
+[Cross-file](references/authoring.md#write-executable-guidance)
+''')
+        result = validate(self.root)
+        self.assertTrue(result['passed'], result['errors'])
+
+    def test_fenced_example_does_not_create_a_heading_anchor(self):
+        self.append_skill_links('```markdown\n## Example only\n```\n'
+                                '[Missing](#example-only)')
+        result = validate(self.root)
+        self.assertTrue(any('Broken anchor' in error and 'example-only' in error
+                            for error in result['errors']))
+
 
 if __name__ == '__main__':
     unittest.main()
