@@ -123,36 +123,6 @@
       "avoid_forcing": "work-plan"
     },
     {
-      "id": "prototype-state-positive",
-      "request": "做个本地可操作实验，验证取消发生在成功之后时状态如何表现。",
-      "context_case": "prototype-state",
-      "expected_primary": "prototype",
-      "kind": "positive"
-    },
-    {
-      "id": "prototype-state-neighbor",
-      "request": "按已确定的行为约定实现正式取消接口。",
-      "context_case": "prototype-state",
-      "expected_primary": "implement",
-      "kind": "neighbor",
-      "avoid_forcing": "prototype"
-    },
-    {
-      "id": "prototype-boundary-positive",
-      "request": "设计并尽可能执行一个实验，验证生产用数据库的唯一约束在并发插入时生效。",
-      "context_case": "prototype-boundary",
-      "expected_primary": "prototype",
-      "kind": "positive"
-    },
-    {
-      "id": "prototype-boundary-neighbor",
-      "request": "仅调研唯一约束的一般语义。",
-      "context_case": "prototype-boundary",
-      "expected_primary": "research",
-      "kind": "neighbor",
-      "avoid_forcing": "prototype"
-    },
-    {
       "id": "implement-feature-positive",
       "request": "让 parse_limit 支持闭区间 1 到 100，区间外抛 ValueError，补必要验证。",
       "context_case": "implement-feature",
@@ -423,21 +393,6 @@
       "avoid_forcing": "tech-design"
     },
     {
-      "id": "prototype-sqlite-positive",
-      "request": "用 Python 标准库对本机 SQLite 做可重复实验：两条独立连接同时插入相同 tenant_id/request_id，唯一约束应只留下一个记录；再确认不同租户可使用同一 request_id。保存实际结果。",
-      "context_case": "prototype-sqlite",
-      "expected_primary": "prototype",
-      "kind": "positive"
-    },
-    {
-      "id": "prototype-sqlite-neighbor",
-      "request": "解释 UNIQUE(tenant_id, request_id) 的语法。",
-      "context_case": "prototype-sqlite",
-      "expected_primary": null,
-      "kind": "neighbor",
-      "avoid_forcing": "prototype"
-    },
-    {
       "id": "debug-no-repro-positive",
       "request": "只有这些资料，先诊断可能的原因，给出证据和下一步。不改代码，也不要求我现在提供更多信息。",
       "context_case": "debug-no-repro",
@@ -518,14 +473,6 @@
       "context_case": "design-worker-crash",
       "expected_primary": "tech-design",
       "kind": "positive"
-    },
-    {
-      "id": "design-worker-crash-neighbor",
-      "request": "只做一个可运行实验，确认额度服务同键并发调用时的实际行为，不修改设计。",
-      "context_case": "design-worker-crash",
-      "expected_primary": "prototype",
-      "kind": "neighbor",
-      "avoid_forcing": "tech-design"
     },
     {
       "id": "implement-backfill-restart-positive",
