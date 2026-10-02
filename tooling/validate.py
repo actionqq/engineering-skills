@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate bundle structure and traceability; does not score model behavior."""
+"""Validate Skill structure; optionally check evaluation and provenance records."""
 import argparse
 import ast
 import html
@@ -65,7 +65,7 @@ def markdown_anchors(content):
     return anchors
 
 
-def validate(root):
+def validate(root, *, full=False):
     errors = []
     def check(condition, message):
         if not condition:
@@ -138,6 +138,12 @@ def validate(root):
         for document in [skill, *(folder / 'references').glob('*.md')]:
             check('/home/seven/' not in document.read_text(), f'{document}: private absolute path')
             check('[TODO:' not in document.read_text(), f'{document}: unfinished placeholder')
+    result = {'kind':'structural-validation','passed':not errors,'errors':errors,
+              'skills':len(expected),'capabilities':len(all_capabilities),'references':references,
+              'entrypoint_words':instruction_words,
+              'limits':'Skill metadata and local resource closure only; no model behavior or quality comparison.'}
+    if not full:
+        return result
     cases_doc = json.loads((root / 'evals/cases.json').read_text())
     # The historical case bank is optional coverage, not an authoring prerequisite.
     # Check every coverage claim it makes without manufacturing cases for new Skills.
@@ -205,22 +211,23 @@ def validate(root):
             check(case_id in ids, 'Unknown method case '+case_id)
     all_refs = {str(p.relative_to(root)) for p in (root / 'skills').glob('*/references/*.md')}
     check(all_refs <= mapped_resources, 'Some references have no method provenance')
-    return {'kind':'structural-validation','passed':not errors,'errors':errors,
-            'skills':len(expected),'capabilities':len(all_capabilities),'references':references,
-            'capabilities_with_prepared_cases':len(covered),
-            'capabilities_without_prepared_cases':sorted(all_capabilities - covered),
-            'prepared_cases':len(cases),'method_groups':len(methods),'pinned_files':len(sources),
-            'prepared_trigger_requests':len(queries),'prepared_host_name_scenarios':len(host_cases),
-            'entrypoint_words':instruction_words,
-            'limits':'Syntax, local resource closure, declared coverage and source bookkeeping only; no model behavior or quality comparison.'}
+    result.update(passed=not errors,
+                  capabilities_with_prepared_cases=len(covered),
+                  capabilities_without_prepared_cases=sorted(all_capabilities - covered),
+                  prepared_cases=len(cases),method_groups=len(methods),pinned_files=len(sources),
+                  prepared_trigger_requests=len(queries),prepared_host_name_scenarios=len(host_cases),
+                  limits='Syntax, local resource closure, declared coverage and source bookkeeping only; no model behavior or quality comparison.')
+    return result
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--root', type=Path, default=ROOT)
     parser.add_argument('--output', type=Path)
+    parser.add_argument('--full', action='store_true',
+                        help='Also check evaluation fixtures and provenance records')
     args = parser.parse_args()
-    result = validate(args.root.resolve())
+    result = validate(args.root.resolve(), full=args.full)
     text = json.dumps(result, ensure_ascii=False, indent=2) + '\n'
     if args.output:
         args.output.write_text(text, encoding='utf-8')

@@ -24,19 +24,29 @@ class ValidationCoverageTests(unittest.TestCase):
         path.write_text(json.dumps(data))
 
     def test_new_skill_does_not_require_preparing_model_evaluations(self):
-        result = validate(self.root)
+        result = validate(self.root, full=True)
         self.assertTrue(result['passed'], result['errors'])
         self.assertIn('document-archival', result['capabilities_without_prepared_cases'])
 
+    def test_default_validation_does_not_require_evaluation_or_provenance(self):
+        shutil.rmtree(self.root / 'evals')
+        shutil.rmtree(self.root / 'provenance')
+        result = validate(self.root)
+        self.assertTrue(result['passed'], result['errors'])
+        self.assertNotIn('prepared_cases', result)
+        self.assertNotIn('pinned_files', result)
+
     def test_claimed_coverage_still_requires_actual_cases(self):
         self.update_case_map('doc-archive', ['document-archival'])
-        result = validate(self.root)
+        result = validate(self.root, full=True)
         self.assertFalse(result['passed'])
         self.assertIn('Declared case coverage differs from prepared cases', result['errors'])
 
     def test_unknown_capability_is_not_accepted_as_optional_coverage(self):
         self.update_case_map('research', ['nonexistent-capability'])
         result = validate(self.root)
+        self.assertTrue(result['passed'], result['errors'])
+        result = validate(self.root, full=True)
         self.assertFalse(result['passed'])
         self.assertIn('Case capability map has unknown entry or capability: research', result['errors'])
 

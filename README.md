@@ -133,25 +133,33 @@ ADR 可以维护状态、追加注明日期的结果和证据；推翻核心决�
 
 ## 验证到什么程度
 
-v0.2 当前是分支开发版本。已完成入口、manifest、旧 prototype 评估引用和 provenance 目标的结构迁移；旧 generic prototype 的历史用例没有强行改写成前端用例，因此 **frontend-prototype 暂无独立行为基线**。`implement` 和 `tech-review` 的既有行为题仍保留，但新增 frontend lens 也尚未做独立模型执行验证。
+v0.2 当前是分支开发版本。已完成入口、manifest、旧 prototype 评估引用和 provenance 目标的结构迁移；退役的通用原型用例和本地作者演练产物已删除。**frontend-prototype 暂无独立行为基线**。`implement` 和 `tech-review` 的既有行为题仍保留，但新增 frontend lens 也尚未做独立模型执行验证。
 
-已通过本地结构校验和 9 项工具回归测试，结果见 [v0.2 验证状态](evals/status.md)。结构校验检查入口/manifest 一致性、引用闭包、用例声明、来源映射和宿主名称场景，不证明方法效果。独立模型评估在问题、执行机制与授权具备时开展，不作为本次源码修订的强制前置。
-
-原通用 prototype 的 4 个用例保留在 [历史用例](evals/retired-cases.json) 中，其中 SQLite 作者演练仍可复现；它们不计入 v0.2 的 53 个活动用例，也不证明新的前端能力。历史日志保持原样。
+当前检查范围和结果见 [验证状态](evals/status.md)。日常结构校验检查入口/manifest 一致性、元数据和引用闭包；用例声明、来源映射和宿主名称场景通过 `--full` 按需检查。这些检查不证明方法效果。独立模型评估在问题、执行机制与授权具备时开展，不作为源码修订的强制前置。
 
 ## 本地复核
 
-以下命令在本目录执行。Skills 本身没有 Python 运行依赖；PyYAML 仅用于维护校验。
+以下命令在本目录执行。Skills 本身没有 Python 运行依赖；PyYAML 仅用于维护校验。日常修改 Skill 时运行结构检查，不需要评估题库和来源总表。
 
 ```bash
 python3 -m venv /tmp/engineering-skills-check
 /tmp/engineering-skills-check/bin/pip install -r tooling/requirements.txt
 /tmp/engineering-skills-check/bin/python tooling/validate.py
-/tmp/engineering-skills-check/bin/python -B -m unittest discover -s tooling -p 'test_*.py' -v
-python3 -B tooling/materialize.py debug-wrong-theory /tmp/cart-case
-python3 -B tooling/run_author_exercises.py /tmp/engineering-author-run
 ```
 
-导出和演练目标必须是新目录，已有目录会被拒绝。导出工具只产生请求和原始工作文件，不附评分标准；真正的模型隔离还要由评估环境限制可读目录和上下文，临时目录本身不是安全沙箱。
+修改题库或来源记录时，按需检查其一致性；实际开展行为评估时，可导出单个用例：
+
+```bash
+/tmp/engineering-skills-check/bin/python tooling/validate.py --full
+python3 -B tooling/materialize.py debug-wrong-theory /tmp/cart-case
+```
+
+导出目标必须是新目录，已有目录会被拒绝。导出工具只产生请求和原始工作文件，不附评分标准；真正的模型隔离还要由评估环境限制可读目录和上下文，临时目录本身不是安全沙箱。
+
+修改维护脚本时运行相关工具回归；检查全部工具可使用：
+
+```bash
+/tmp/engineering-skills-check/bin/python -B -m unittest discover -s tooling -p 'test_*.py' -v
+```
 
 源码入口位于 `skills/`。如需单独取用某项，保留对应目录的完整内容，包括参考文件与第三方声明。当前目录下的评估材料、工具和来源总表用于维护，不应一起作为执行模型的额外提示。

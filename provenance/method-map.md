@@ -69,7 +69,7 @@
 ## faithful-experiment
 
 - 保留：依赖替身按行为保真度选择；明确观察与结论的适用边界。
-- 调整或拒绝：补充数据库、并发、性能及迁移实验的真实关键边界；模拟器不能证明目标数据库保证。 v0.2 将通用工程实验方法保留在 research 的条件参考中；原 prototype 用例只留作历史材料，不声明为 research 或前端能力的行为验证。
+- 调整或拒绝：补充数据库、并发、性能及迁移实验的真实关键边界；模拟器不能证明目标数据库保证。 v0.2 将通用工程实验方法保留在 research 的条件参考中；原 prototype 用例已移除，不声明为 research 或前端能力的行为验证。
 - 落点：[skills/research/references/experiments.md](../skills/research/references/experiments.md), [skills/implement/references/fidelity.md](../skills/implement/references/fidelity.md)
 - 来源：[mattpocock/skills:skills/engineering/prototype/LOGIC.md](https://raw.githubusercontent.com/mattpocock/skills/c55ee46073ed923f86ce59a5eb3b6d895095d1b7/skills/engineering/prototype/LOGIC.md), [mattpocock/skills:skills/engineering/tdd/mocking.md](https://raw.githubusercontent.com/mattpocock/skills/c55ee46073ed923f86ce59a5eb3b6d895095d1b7/skills/engineering/tdd/mocking.md), [citypaul/.dotfiles:claude/.claude/skills/codebase-design/references/deepening.md](https://raw.githubusercontent.com/citypaul/.dotfiles/a109f9972bb46671c624fc05752031523e1cf6fc/claude/.claude/skills/codebase-design/references/deepening.md)
 - 判别用例：`implement-test-plan`
