@@ -145,13 +145,21 @@ def validate(root, *, full=False):
     if not full:
         return result
     cases_doc = json.loads((root / 'evals/cases.json').read_text())
+    case_capability_map = {name: list(values) for name, values in cases_doc['capabilities'].items()}
+    cases = list(cases_doc['cases'])
+    for fragment_path in sorted((root / 'evals').glob('cases.*.json')):
+        fragment = json.loads(fragment_path.read_text())
+        for name, values in fragment.get('capabilities', {}).items():
+            merged = case_capability_map.setdefault(name, [])
+            for value in values:
+                if value not in merged:
+                    merged.append(value)
+        cases.extend(fragment.get('cases', []))
     # The historical case bank is optional coverage, not an authoring prerequisite.
     # Check every coverage claim it makes without manufacturing cases for new Skills.
-    case_capability_map = cases_doc['capabilities']
     for name, capabilities in case_capability_map.items():
         check(name in expected and set(capabilities) <= set(capability_map.get(name, [])),
               'Case capability map has unknown entry or capability: '+name)
-    cases = cases_doc['cases']
     ids = [case['id'] for case in cases]
     check(len(ids) == len(set(ids)), 'Duplicate case IDs')
     covered = set()
@@ -172,7 +180,9 @@ def validate(root, *, full=False):
                     errors.append(f"Fixture syntax: {case['id']}/{name}: {error}")
     check(covered == {x for v in case_capability_map.values() for x in v},
           'Declared case coverage differs from prepared cases')
-    queries = json.loads((root / 'evals/discovery.json').read_text())['queries']
+    queries = list(json.loads((root / 'evals/discovery.json').read_text())['queries'])
+    for fragment_path in sorted((root / 'evals').glob('discovery.*.json')):
+        queries.extend(json.loads(fragment_path.read_text()).get('queries', []))
     check(len({q['id'] for q in queries}) == len(queries), 'Duplicate discovery query IDs')
     for query in queries:
         check(query['context_case'] in ids, 'Unknown discovery context '+query['id'])
@@ -192,12 +202,20 @@ def validate(root, *, full=False):
     for case in host_cases:
         check(set(case['skills']) <= expected, 'Unknown host-name entry '+case['id'])
         check(bool(case['expect']) and bool(case['reject']), 'Missing host-name discriminators '+case['id'])
-    sources = json.loads((root / 'provenance/sources.lock.json').read_text())['sources']
+    sources = list(json.loads((root / 'provenance/sources.lock.json').read_text())['sources'])
+    for fragment_path in sorted((root / 'provenance').glob('sources.lock.*.json')):
+        sources.extend(json.loads(fragment_path.read_text()).get('sources', []))
+    source_ids = [source['id'] for source in sources]
+    check(len(source_ids) == len(set(source_ids)), 'Duplicate source IDs')
     by_id = {source['id']: source for source in sources}
     for source in sources:
         check(bool(re.fullmatch('[0-9a-f]{40}', source['commit'])), 'Unpinned source '+source['id'])
         check(bool(re.fullmatch('[0-9a-f]{64}', source['sha256'])), 'Missing source hash '+source['id'])
-    methods = json.loads((root / 'provenance/method-map.json').read_text())['methods']
+    methods = list(json.loads((root / 'provenance/method-map.json').read_text())['methods'])
+    for fragment_path in sorted((root / 'provenance').glob('method-map.*.json')):
+        methods.extend(json.loads(fragment_path.read_text()).get('methods', []))
+    method_ids = [method['id'] for method in methods]
+    check(len(method_ids) == len(set(method_ids)), 'Duplicate method IDs')
     mapped_resources = set()
     for method in methods:
         for source_id in method['sources']:

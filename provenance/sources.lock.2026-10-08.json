@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "note": "Canonical promoted source additions for the 2026-10-08 pstack sync. Read together with sources.lock.json.",
+  "sources": [
+    {
+      "id": "cursor/plugins:pstack/skills/technical-writing/SKILL.md",
+      "repo": "cursor/plugins",
+      "commit": "ccb5507cec1546dc88135c1139c811e6c59115ba",
+      "path": "pstack/skills/technical-writing/SKILL.md",
+      "url": "https://raw.githubusercontent.com/cursor/plugins/ccb5507cec1546dc88135c1139c811e6c59115ba/pstack/skills/technical-writing/SKILL.md",
+      "sha256": "f5c512ffeec70bc4e0dee50f7bb4c26742e1be77967a6e8b15d1921e1c209ceb",
+      "bytes": 9792,
+      "review_scope": "full-text",
+      "observed_date": "2026-10-08"
+    },
+    {
+      "id": "cursor/plugins:pstack/skills/blast-radius/SKILL.md",
+      "repo": "cursor/plugins",
+      "commit": "ccb5507cec1546dc88135c1139c811e6c59115ba",
+      "path": "pstack/skills/blast-radius/SKILL.md",
+      "url": "https://raw.githubusercontent.com/cursor/plugins/ccb5507cec1546dc88135c1139c811e6c59115ba/pstack/skills/blast-radius/SKILL.md",
+      "sha256": "2e10745b97f5862323dcda3b29ca60d56b5c3c98e37020085d26b48efbe0a436",
+      "bytes": 3856,
+      "review_scope": "full-text",
+      "observed_date": "2026-10-08"
+    },
+    {
+      "id": "cursor/plugins:pstack/skills/benchmark-checklist/SKILL.md",
+      "repo": "cursor/plugins",
+      "commit": "ccb5507cec1546dc88135c1139c811e6c59115ba",
+      "path": "pstack/skills/benchmark-checklist/SKILL.md",
+      "url": "https://raw.githubusercontent.com/cursor/plugins/ccb5507cec1546dc88135c1139c811e6c59115ba/pstack/skills/benchmark-checklist/SKILL.md",
+      "sha256": "6a767e788a60428fa14e645ee10fe2e49896e514ff654f668b1d824deb9038e8",
+      "bytes": 5409,
+      "review_scope": "full-text",
+      "observed_date": "2026-10-08"
+    },
+    {
+      "id": "cursor/plugins:pstack/LICENSE",
+      "repo": "cursor/plugins",
+      "commit": "ccb5507cec1546dc88135c1139c811e6c59115ba",
+      "path": "pstack/LICENSE",
+      "url": "https://raw.githubusercontent.com/cursor/plugins/ccb5507cec1546dc88135c1139c811e6c59115ba/pstack/LICENSE",
+      "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+      "bytes": 1067,
+      "review_scope": "license-retained",
+      "observed_date": "2026-10-08"
+    }
+  ]
+}

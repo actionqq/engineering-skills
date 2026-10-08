@@ -1,0 +1,101 @@
+{
+  "schema_version": 1,
+  "note": "Canonical promoted method additions for the 2026-10-08 technical-writing and pstack sync. Read together with method-map.json.",
+  "methods": [
+    {
+      "id": "technical-writing-style",
+      "destinations": [
+        "skills/tech-writing/SKILL.md",
+        "skills/tech-writing/references/style.md"
+      ],
+      "sources": [
+        "cursor/plugins:pstack/skills/technical-writing/SKILL.md",
+        "mattpocock/skills:skills/productivity/writing-for-agents/SKILL.md"
+      ],
+      "retained": "Write for the actual reader, keep project terminology exact, cut filler, prefer direct concrete language, and choose structure by the document's purpose rather than one universal template.",
+      "adaptation_or_rejection": "The collection does not require pstack's unslop dependency, a single Diataxis mode for every mixed engineering artifact, Cursor-specific invocation, or fixed sentence-length rules. Existing project style and explicit user format take precedence.",
+      "eval_cases": [
+        "writing-existing-readme"
+      ]
+    },
+    {
+      "id": "technical-document-format",
+      "destinations": [
+        "skills/tech-writing/references/design-doc.md",
+        "skills/tech-design/references/documentation.md"
+      ],
+      "sources": [
+        "cursor/plugins:pstack/skills/technical-writing/SKILL.md",
+        "mattpocock/skills:skills/engineering/to-spec/SKILL.md"
+      ],
+      "retained": "Use the repository's maintained format first. Without one, keep a stable design core around context, scope, the chosen approach, consequential contracts and failure semantics, verification path, risks, and unresolved blockers; load specialized sections only when the design needs them.",
+      "adaptation_or_rejection": "Do not force a large RFC/TDD template, duplicate detailed work-plan tasks inside design documents, or treat document length as a reason to split. Settled design writing must not silently reopen approved choices.",
+      "eval_cases": [
+        "writing-settled-design"
+      ]
+    },
+    {
+      "id": "adr-context-writing",
+      "destinations": [
+        "skills/tech-writing/references/adr.md",
+        "skills/tech-writing/references/context.md"
+      ],
+      "sources": [
+        "mattpocock/skills:skills/engineering/domain-modeling/ADR-FORMAT.md",
+        "mattpocock/skills:skills/engineering/domain-modeling/CONTEXT-FORMAT.md",
+        "mattpocock/skills:skills/productivity/writing-for-agents/SKILL.md"
+      ],
+      "retained": "Default ADRs to a lean context/decision/consequences record unless the repository has a stronger convention or the trade-off history needs more structure. Treat context and glossary files by their repository-defined role, preserve canonical terms, and keep current truth distinct from history.",
+      "adaptation_or_rejection": "Do not impose one filename such as CONTEXT.md or GLOSSARY.md across repositories. Implementation plans, test matrices, approval metadata, and delivery status are not mandatory ADR content, and an accepted decision is not downgraded merely because implementation or verification is still pending.",
+      "eval_cases": [
+        "writing-adr-status"
+      ]
+    },
+    {
+      "id": "review-report-writing",
+      "destinations": [
+        "skills/tech-writing/references/review-report.md",
+        "skills/tech-review/references/reporting.md"
+      ],
+      "sources": [
+        "cursor/plugins:pstack/skills/technical-writing/SKILL.md",
+        "mattpocock/skills:skills/engineering/code-review/SKILL.md"
+      ],
+      "retained": "A review report preserves a precise target, trigger or scenario, evidence or violated requirement, impact, correction direction, reviewed scope, and actual validation limits. Findings remain evidence-backed and distinguish defects from questions or optional improvements.",
+      "adaptation_or_rejection": "These are information requirements, not mandatory visible subheadings or a machine JSON schema. Formatting existing findings does not authorize a new review, and unavailable evidence remains an explicit limitation rather than a pass.",
+      "eval_cases": [
+        "writing-review-report"
+      ]
+    },
+    {
+      "id": "blast-radius-proof",
+      "destinations": [
+        "skills/tech-review/references/code.md"
+      ],
+      "sources": [
+        "cursor/plugins:pstack/skills/blast-radius/SKILL.md",
+        "citypaul/.dotfiles:claude/.claude/skills/codebase-design/references/deepening.md"
+      ],
+      "retained": "Small diffs can cross serialization, persistence, process, language, lifecycle, feature-flag, and timing boundaries that symbol search cannot see. Identify the facts a safety argument depends on and push important ones to the strongest proportionate evidence available.",
+      "adaptation_or_rejection": "No separate blast-radius workflow or multi-model arena is required. Proof strength follows the actual risk and authorization; an important fact that cannot be established is reported as not verified rather than converted into a speculative defect.",
+      "eval_cases": [
+        "review-blast-radius-boundary"
+      ]
+    },
+    {
+      "id": "benchmark-validity",
+      "destinations": [
+        "skills/research/references/experiments.md"
+      ],
+      "sources": [
+        "cursor/plugins:pstack/skills/benchmark-checklist/SKILL.md",
+        "mattpocock/skills:skills/engineering/prototype/LOGIC.md"
+      ],
+      "retained": "Before acting on a performance result, verify that the measured work happened and produced correct output, count failures and retries, compare equivalent configurations, interleave sides when drift matters, show relevant variability, identify the limiter, and sanity-check physical or algorithmic bounds.",
+      "adaptation_or_rejection": "No universal five-run minimum or fixed operating-system commands are imposed. A user-requested ballpark can remain lightweight when labelled; adoption or design decisions require proportionate repeatability and relevance. Untuned or unexplained comparisons produce a narrowed or inconclusive conclusion, not an automatic winner.",
+      "eval_cases": [
+        "research-benchmark-validity"
+      ]
+    }
+  ]
+}

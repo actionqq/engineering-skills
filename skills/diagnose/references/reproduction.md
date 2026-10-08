@@ -12,6 +12,8 @@ Keep the original scenario while reducing inputs or dependencies one at a time. 
 
 Separate a behavioral failure from setup failures. Missing credentials, unavailable services, or a broken test runner can block an experiment without supporting any causal explanation of the original bug.
 
+If you deliberately force a red result by mutating code, a fixture, configuration, or injected fault, prove that the mutation actually took effect before trusting the failure. Use a diff against a pristine copy or an equivalent direct check. Otherwise a no-op edit, stale artifact, baseline failure, or setup error can masquerade as evidence that the feedback loop detects the target bug.
+
 ## Intermittent and order-dependent failures
 
 Record sample count, failure frequency, seeds, concurrency, and environment. Use explicit barriers or controlled event ordering to force the suspected race when possible. Repeated random stress can support a hypothesis but does not explain which interleaving caused it.

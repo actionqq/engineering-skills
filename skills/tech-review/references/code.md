@@ -24,6 +24,10 @@ Start with the diff, then inspect relevant callers, dependencies, configuration,
 
 Compare failure paths in refactors. A removed catch, fallback, cleanup, or best-effort reconciliation can be a regression even if happy-path output is unchanged. Check how a changed signature affects callers and how a changed stored representation affects readers.
 
+Do not stop where symbol search stops. A small code change can cross a persistence schema, serialized payload, another language or process, feature flag, lifecycle hook, or timing boundary without sharing the edited symbol. Follow those boundaries when the change's safety depends on them.
+
+For a deceptively small but risky change, identify the one or few facts the safety argument depends on. Push each important fact to the strongest cheap evidence available: source-level invariant, unreachable failure path, focused execution of the real code, or the running system when proportionate. If the central safety fact cannot be established, report it as unverified rather than replacing proof with a persuasive write-up.
+
 Use the provided requirement and existing project standards. Without a formal spec, review explicit user intent and actual interface obligations, stating the missing coverage. Do not invent a specification and then use it to prove conformance.
 
 ## Keep findings discriminating

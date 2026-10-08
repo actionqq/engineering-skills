@@ -20,6 +20,7 @@ Identify scope, revision or snapshot, governing requirements, and available vali
 | A PR, branch, commit, exact snapshots, or uncommitted code | [Code review](references/code.md) |
 | User-facing frontend behavior, interaction, responsive behavior, or UI quality | [Frontend review](references/frontend.md) |
 | Independent review, separate review axes, or several reviewers | [Independence and synthesis](references/independence.md) |
+| How should the final findings, validation, and evidence limits be written? | [Review reporting](references/reporting.md) |
 
 Mixed work may combine lenses without running several unrelated full audits. A frontend PR can use the code lens plus the frontend lens; a design document does not need code checks unless implementation is actually part of the target.
 
@@ -41,8 +42,16 @@ Order findings by consequence and conditions. Remove duplicates and unsupported 
 
 The subject is read-only unless fixes are part of the request. Existing authorization to correct issues remains valid: verify, repair within scope, and check the result without asking again. Protect unrelated work and do not silently rewrite governing requirements to remove a conflict.
 
+Classify material review checks by their actual evidence state:
+
+- **Verified**: the applicable check was performed with evidence strong enough to support the stated conclusion.
+- **Not verified**: the check applies, but required evidence is missing, blocked, stale, or unusable. State the reason and do not count it as passing.
+- **Not applicable**: the check genuinely does not apply to the review target or agreed scope. Do not use this label merely because evidence was unavailable.
+
+A partial check does not become fully verified. Continue with the evidence that exists, but name material `Not verified` areas in the conclusion. Do not claim that all checks passed, that runtime behavior is established, or that a target is ready solely because applicable checks were skipped or blocked.
+
 Passing tests do not replace review; static review does not establish runtime acceptance. A readiness conclusion is not stakeholder acceptance, and later changes can invalidate it.
 
 A complete re-review rereads the current full target and relevant governing material, reconciles prior findings, and looks for new problems rather than checking only the repair diff.
 
-Deliver actionable findings, reviewed scope, actual validation, and the appropriate readiness conclusion. Do not claim independent review when the context was not independent.
+Deliver actionable findings, reviewed scope, actual validation, evidence-state limits, and the appropriate readiness conclusion. Use [Review reporting](references/reporting.md) when the repository does not already define the report shape. Do not claim independent review when the context was not independent.

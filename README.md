@@ -1,8 +1,8 @@
 # Engineering Skills v0.2
 
-一套根据上游原始材料研究、融合和改写的工程 Skills。包含 10 个不带统一品牌前缀的入口，覆盖 16 项能力。指令与方法参考使用英文，交流和交付语言跟随用户。
+一套根据上游原始材料研究、融合和改写的工程 Skills。包含 11 个不带统一品牌前缀的入口，覆盖 17 项能力。指令与方法参考使用英文，交流和交付语言跟随用户。
 
-这是 v0.2 开发分支上的源码版本，尚未完成整套安装验收。2026-09-29 的 Skill 审查边界修订已定向同步到本机现有的 `skill-dev`、`tech-design`、`tech-review` 安装目录，不代表整套 v0.2 已部署。v0.2 将通用 `prototype` 收窄为 `frontend-prototype`，并把前端设计能力拆成可按需复用的方法：原型负责探索与验证前端体验，`implement` 只加载生产实现所需的前端约束，`tech-review` 只加载前端评审 lens。当前已完成源码和来源账本更新；**尚未完成 v0.2 的独立模型行为评估或跨宿主验收**。
+这是 v0.2 的合并候选源码，尚未部署为整套本地安装。v0.2 将通用 `prototype` 收窄为 `frontend-prototype`，并把前端原型、生产实现和前端评审拆成按需方法；2026-10-08 又补入独立 `tech-writing` 入口，并把 blast-radius 证明和 benchmark 可信度分别融入 `tech-review` 与 `research`。源码、正式来源增量、方法映射和准备型行为／路由用例已补齐；**尚未完成独立模型行为评估或跨宿主运行验收**。
 
 ## 入口如何划分
 
@@ -11,6 +11,7 @@
 | 入口 | 负责的能力 | 适用请求与边界 |
 |---|---|---|
 | [tech-design](skills/tech-design/SKILL.md) | requirements-design、domain-modeling、solution-evaluation、architecture-design | 定义行为、概念、选型或职责边界；按问题选模式，不把四项当作固定阶段 |
+| [tech-writing](skills/tech-writing/SKILL.md) | technical-writing | 在技术内容已经确定或可由现有证据核实时创建、重写和整理开发者文档；不替代未决设计、事实调研或实际评审 |
 | [research](skills/research/SKILL.md) | research | 解决事实不确定性、证据冲突和版本问题；不强行替用户重做选型 |
 | [work-plan](skills/work-plan/SKILL.md) | planning | 整理待决问题或可验收任务、依赖和迁移顺序；不推翻已定设计 |
 | [frontend-prototype](skills/frontend-prototype/SKILL.md) | frontend-prototype | 用低成本、可操作的轻量原型回答具体布局或交互问题；只做影响判断的部分，不提前建设生产前端 |
@@ -21,7 +22,7 @@
 | [doc-archive](skills/doc-archive/SKILL.md) | document-archival | 判断积累资料的去留，执行归档、查找历史或恢复；不绑定日常任务收尾 |
 | [skill-dev](skills/skill-dev/SKILL.md) | skill-development | 新建、修改和审查可复用 Skills；交付实际文件或只读审查结论，来源融合及模型评估按需开展 |
 
-`tech-design` 负责形成业务与技术决策，`research` 负责事实证据，`work-plan` 负责工作安排，`frontend-prototype` 负责用最少实现让用户判断具体界面方案；独立原型优先 HTML/CSS/少量 JavaScript，复用项目以是否省事或影响判断为准。技术 spike 不再由单独的通用 prototype 入口拥有；独立实验取证由 `research` 的实验参考承接，设计、实现与诊断中的局部实验留在原任务内。`implement` 与 `tech-review` 保持通用入口，只在前端任务中加载各自的 frontend lens。
+`tech-design` 负责形成业务与技术决策，`tech-writing` 负责在技术结论已经确定或可核实时交付可维护文档，`research` 负责事实证据，`work-plan` 负责工作安排，`frontend-prototype` 负责用最少实现让用户判断具体界面方案。`tech-design` 和 `tech-review` 仍然自己写好设计与评审结果，不把 `tech-writing` 变成运行时后置步骤。独立原型优先 HTML/CSS/少量 JavaScript，复用项目以是否省事或影响判断为准。技术 spike 不再由单独的通用 prototype 入口拥有；独立实验取证由 `research` 的实验参考承接，设计、实现与诊断中的局部实验留在原任务内。
 
 名称采用短词或必要的语义限定，不使用统一品牌前缀。v0.2 将原 `prototype` 重构为 `frontend-prototype`，并把前端原型、生产实现、前端评审统一到同一套方法家族下，但保持不同的交付标准。
 
@@ -55,7 +56,7 @@
 
 ## 方法深度放在哪里
 
-每个入口包含 `SKILL.md`、`agents/openai.yaml`、本地 `references/` 和第三方来源声明。入口负责选路、共通约束与完成标准；v0.2 当前 35 份参考文件保留分支方法，当前篇幅见结构检查记录。读取条件直接写在入口中，每个 Skill 的运行说明不依赖同级其他 Skill 或作者机器上的路径。
+每个入口包含 `SKILL.md`、`agents/openai.yaml`、本地 `references/` 和第三方来源声明。入口负责选路、共通约束与完成标准；v0.2 当前 42 份参考文件保留分支方法，当前篇幅见结构检查记录。读取条件直接写在入口中，每个 Skill 的运行说明不依赖同级其他 Skill 或作者机器上的路径。
 
 当前选择任务入口加条件加载的本地参考，保留足够的执行方法，不以“正文越短越好”为目标。参考文件按职责组织：不同 Skill 中同名的 `frontend.md` 可以分别讲架构、实现和评审；共同原则保持一致，但不要求整篇内容相同。暂不新增统一方法库、生成步骤或前端专用实现／评审入口，具体取舍见 [组织依据](provenance/v0.2-frontend-method-family.md#organization-chosen-for-this-revision)。
 
@@ -84,6 +85,7 @@ Skill 的指令、触发边界和资源组织由 `skill-dev` 承接创建、修�
 | 入口 | 维护责任 |
 |---|---|
 | `tech-design` | 修订当前设计；及时记录已确定术语；按需创建、更新或替代 ADR |
+| `tech-writing` | 在既定技术内容基础上创建或修订 README、指南、设计记录、ADR、上下文与既有报告；沿用项目格式，不替未决工程问题做决定 |
 | `research` / `frontend-prototype` | 保留可追溯证据，指出对设计的影响；原型结论不自动成为已接受决策 |
 | `work-plan` | 将必要文档同步纳入受影响任务的验收，计划阶段不提前宣称实施完成 |
 | `implement` | 实施中处理设计偏差，完成前同步授权范围内失真的文档并记录实际验证证据 |
@@ -123,19 +125,19 @@ ADR 可以维护状态、追加注明日期的结果和证据；推翻核心决�
 
 ## 来源与可追溯性
 
-主要研究了 Matt Pocock、citypaul、Anthropic、obra/superpowers、arjunprabhulal、klittle32 的相关 Skills，以及 Vercel ADR、Warp review-spec、OpenSpec、Spec Kit 的相关材料。v0.2 前端方法家族另外对照了 Anthropic `frontend-design`、Impeccable、UI/UX Pro Max、Taste Skill 与 Vercel Web Interface Guidelines；研究范围限于来源锁定中列出的文件，不代表完整评估各项目的子参考、脚本或知识库；当前整合说明见 [v0.2 frontend method family](provenance/v0.2-frontend-method-family.md)。
+主要研究了 Matt Pocock、citypaul、Anthropic、obra/superpowers、arjunprabhulal、klittle32 的相关 Skills，以及 Vercel ADR、Warp review-spec、OpenSpec、Spec Kit 的相关材料。v0.2 前端方法家族另外对照了 Anthropic `frontend-design`、Impeccable、UI/UX Pro Max、Taste Skill 与 Vercel Web Interface Guidelines；2026-10-08 的技术写作／风险／基准补强直接锁定 Cursor pstack，并把 Tech Leads Club、Anthropic `doc-coauthoring`、GitHub awesome-copilot 等作为对照研究。研究范围只覆盖记录中列出的材料，不代表完整评估各项目。前端取舍见 [v0.2 frontend method family](provenance/v0.2-frontend-method-family.md)，本轮文档方法见 [technical writing method family](provenance/technical-writing-method-family-2026-10-08.md)，pstack 能力取舍见 [pstack capability assessment](provenance/pstack-capability-assessment-2026-10-08.md)。
 
-- [来源锁定文件](provenance/sources.lock.json)：v0.2 当前 102 个文件的仓库、固定 commit、原始链接、SHA-256 和阅读范围。此前 80 份记录保留；归档入口补充 OpenSpec、GSD、PACEflow、SDLC Studio、llm-wiki 的方法与许可来源，选段阅读标明行号。只锁定实际使用的来源，不把整个检索范围写成全文评估。
-- [方法映射](provenance/method-map.json)：v0.2 当前 30 组方法的原始材料、保留内容、调整理由和最终文件。归档新增三组方法；此前判别用例保留，新增入口没有为缺少执行器的模型评估制造题库。
+- [来源锁定文件](provenance/sources.lock.json)及同目录 `sources.lock.*.json` 正式增量：当前共 106 个锁定文件，记录仓库、固定 commit、原始链接、SHA-256 和阅读范围。基础 102 条历史记录保持不改，本轮新增 4 条 Cursor pstack 方法／许可来源。`tooling/validate.py --full` 将基础文件与正式增量合并成一个 canonical source set。
+- [方法映射](provenance/method-map.json)及同目录 `method-map.*.json` 正式增量：当前共 36 组方法。基础 30 组保留，本轮新增 technical-writing-style、technical-document-format、adr-context-writing、review-report-writing、blast-radius-proof、benchmark-validity 六组；人类可读摘要见 [2026-10-08 method additions](provenance/method-map.2026-10-08.md)。
 - 各 Skill 的 `THIRD_PARTY_NOTICES.md`：独立复制时保留的来源、修改声明和适用许可文本。没有为整个新集合擅自选定统一发布许可证。
 
 来源锁定表示研究时的固定版本，不声称是各项目当前最新版；选段阅读也不代表完整评估整个框架。本地格式复核使用宿主提供的 `skill-creator` 校验脚本，不是运行这些 Skills 的前提。
 
 ## 验证到什么程度
 
-v0.2 当前是分支开发版本。已完成入口、manifest、旧 prototype 评估引用和 provenance 目标的结构迁移；退役的通用原型用例和本地作者演练产物已删除。**frontend-prototype 暂无独立行为基线**。`implement` 和 `tech-review` 的既有行为题仍保留，但新增 frontend lens 也尚未做独立模型执行验证。
+v0.2 当前是可合并候选版本。源码、manifest、正式 provenance 增量、技术写作行为题和相邻路由题已经准备；`tooling/validate.py --full` 会同时检查基础记录与 `*.2026-10-08.json` 正式增量。当前准备型题库包含 59 个行为用例和 83 个路由请求；这些是静态判别材料，不是模型运行结果。**frontend-prototype 仍暂无独立行为基线**；`tech-writing`、新增 frontend lens、blast-radius 和 benchmark 方法也尚未完成独立模型执行验证。
 
-当前检查范围和结果见 [验证状态](evals/status.md)。日常结构校验检查入口/manifest 一致性、元数据和引用闭包；用例声明、来源映射和宿主名称场景通过 `--full` 按需检查。这些检查不证明方法效果。独立模型评估在问题、执行机制与授权具备时开展，不作为源码修订的强制前置。
+历史检查记录见 [验证状态](evals/status.md)，本轮合并候选的检查与未决项见 [2026-10-08 promotion status](evals/promotion-2026-10-08.md)。日常结构校验检查入口/manifest 一致性、元数据和引用闭包；用例声明、来源映射和宿主名称场景通过 `--full` 按需检查。这些检查不证明方法效果。独立模型评估在问题、执行机制与授权具备时开展，不作为源码修订的强制前置。
 
 ## 本地复核
 

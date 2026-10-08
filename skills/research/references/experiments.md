@@ -16,7 +16,13 @@ Pin the runtime/dependency versions and relevant configuration. Exercise the act
 
 Record the baseline, data scale and distribution, request mix, concurrency, hardware/runtime, warm-up, cache state, repeated runs, and measurement method. Distinguish throughput, latency distribution, resource cost, and failure rate. Prevent the generator, logging, or unrelated environment contention from becoming the hidden bottleneck.
 
-Compare under equivalent conditions. Show variability where it matters. A faster median with worse tail latency or error rate may fail the actual requirement. A microbenchmark can identify a local cost but cannot by itself prove system capacity.
+Before acting on a performance number, prove that the measured work actually happened inside the timed region and produced correct output. Count failures, retries, rejected work, and incomplete output when they can change the apparent speed. A fast no-op, timeout, cached shortcut, or overloaded load generator is not evidence that the target path improved.
+
+Run compared sides under production-relevant and equivalent settings. When environment drift, warm-up, or cache state can bias the result, interleave A/B runs rather than measuring one side in a block and the other later. Report enough repetitions and variability to show whether the claimed gap is larger than run-to-run noise.
+
+Name the limiting resource when the result will drive a design or adoption decision. Check basic physical or algorithmic bounds against the claim: CPU time, cores, storage/network bandwidth, request work, and the measured component's share of end-to-end latency. An implausible result is a reason to inspect the harness before celebrating it.
+
+Compare under equivalent conditions. Show variability where it matters. A faster median with worse tail latency or error rate may fail the actual requirement. A microbenchmark can identify a local cost but cannot by itself prove system capacity. If a side cannot be tuned or its limiter cannot be established, narrow the conclusion or call the comparison inconclusive rather than declaring a winner from a misleading run.
 
 ## Migration and recovery
 

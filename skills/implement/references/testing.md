@@ -10,6 +10,8 @@ Prefer stable caller-facing contracts for behavior tests. A complex algorithm or
 
 Observe at the level of the claim. If the requirement is user retrieval, an API-level test may be strongest. If the requirement is a database uniqueness constraint, transaction, or exact stored format, direct database inspection can be necessary evidence. One test surface does not prove every layer.
 
+When more than one boundary is plausible, give each candidate a one-line tradeoff: what failure classes it can catch and what it cannot observe. Choose the smallest boundary that can falsify the important claim without confusing unrelated layers. A passing check at one seam is not evidence for behavior that seam cannot see.
+
 ## Use independent expected results
 
 Derive expectations from the requirement, a manually checked example, a known invariant, a trusted independent implementation, or a legitimate external oracle. Repeating the implementation's arithmetic or algorithm inside the test can reproduce the same mistake.

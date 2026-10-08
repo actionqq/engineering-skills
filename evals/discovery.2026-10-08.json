@@ -1,0 +1,66 @@
+{
+  "status": "prepared-not-run",
+  "note": "Promotion routing cases for tech-writing and its boundaries with design, review, and research. Read together with discovery.json.",
+  "queries": [
+    {
+      "id": "writing-readme-positive",
+      "request": "把这段已经确定的运行说明整理进 README，沿用现有文档风格，不改技术方案。",
+      "context_case": "writing-existing-readme",
+      "expected_primary": "tech-writing",
+      "kind": "positive"
+    },
+    {
+      "id": "writing-design-positive",
+      "request": "方案已经定了，把这些笔记整理成一份技术设计文档，不要重新选型。",
+      "context_case": "writing-settled-design",
+      "expected_primary": "tech-writing",
+      "kind": "positive"
+    },
+    {
+      "id": "writing-design-neighbor",
+      "request": "数据库任务表和 Temporal 还没决定，你先比较并给出最终方案，再写设计。",
+      "context_case": "writing-settled-design",
+      "expected_primary": "tech-design",
+      "kind": "neighbor",
+      "avoid_forcing": "tech-writing"
+    },
+    {
+      "id": "writing-adr-positive",
+      "request": "把这个已接受的决定记录成 ADR，项目没有现成 ADR 模板。",
+      "context_case": "writing-adr-status",
+      "expected_primary": "tech-writing",
+      "kind": "positive"
+    },
+    {
+      "id": "writing-review-report-positive",
+      "request": "不要重新评审，把现有评审结论整理成一份可发给开发者的报告。",
+      "context_case": "writing-review-report",
+      "expected_primary": "tech-writing",
+      "kind": "positive"
+    },
+    {
+      "id": "writing-review-report-neighbor",
+      "request": "评审这个 PR，找出会导致生产问题的缺陷并给出证据。",
+      "context_case": "writing-review-report",
+      "expected_primary": "tech-review",
+      "kind": "neighbor",
+      "avoid_forcing": "tech-writing"
+    },
+    {
+      "id": "benchmark-validity-positive",
+      "request": "判断这组 benchmark 能不能支持‘新实现快 40%’的结论。",
+      "context_case": "research-benchmark-validity",
+      "expected_primary": "research",
+      "kind": "positive",
+      "avoid_forcing": "tech-writing"
+    },
+    {
+      "id": "blast-radius-review-positive",
+      "request": "评审这个很小的字段改名，我担心影响不止当前模块。",
+      "context_case": "review-blast-radius-boundary",
+      "expected_primary": "tech-review",
+      "kind": "positive",
+      "avoid_forcing": "tech-writing"
+    }
+  ]
+}

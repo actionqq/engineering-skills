@@ -10,6 +10,9 @@
       "solution-evaluation",
       "architecture-design"
     ],
+    "tech-writing": [
+      "technical-writing"
+    ],
     "research": [
       "research"
     ],
@@ -42,7 +45,7 @@
     ]
   },
   "installed": false,
-  "status": "v0.2-authored-and-locally-checked; independent-behavior-evaluation-pending",
+  "status": "v0.2-promotion-candidate; independent-behavior-and-cross-host-acceptance-pending",
   "renamed_entries": {
     "design": "tech-design",
     "plan": "work-plan",

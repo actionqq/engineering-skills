@@ -24,6 +24,7 @@ Read the relevant project instructions, current design, accepted decisions, and 
 | Several consequential interface shapes are plausible | [Competing designs](references/alternatives.md) |
 | Where should code live, and how is dependency direction enforced? | [Structure and migration](references/structure.md) |
 | Routes, UI reuse, state/data ownership, or client/server boundaries matter | [Frontend structure](references/frontend.md) |
+| How should the resulting design, ADR, or context artifact be organized and written? | [Design documentation](references/documentation.md) |
 
 For a design-only request, produce or revise the design. For a read-only assessment, report findings without rewriting its subject. An already-authorized implementation may use these methods to resolve necessary design details without restarting a separate approval workflow.
 
@@ -39,7 +40,7 @@ Use representative caller or user scenarios to connect behavior, responsibilitie
 
 Maintain the requested design as scope, constraints, and the chosen approach become settled or change. Record resolved domain language and warranted decisions as they emerge, using the project's existing document roles and locations. A file named `CONTEXT.md` is not necessarily a glossary. Create an artifact only when there is material content and a downstream reader; a discussion alone does not require a new document set.
 
-Prefer the requested existing document. Give the chosen approach, decisive trade-offs, necessary contracts, verification path, and unresolved blockers at the depth the task requires. Preserve decision status: a recommendation is not automatically a team-approved ADR. Conversely, do not ask again for an action the user has already authorized.
+Prefer the requested existing document. Give the chosen approach, decisive trade-offs, necessary contracts, verification path, and unresolved blockers at the depth the task requires. Preserve decision status: a recommendation is not automatically a team-approved ADR. Conversely, do not ask again for an action the user has already authorized. When the task produces or revises a maintained design, ADR, or context artifact and the repository does not already define its shape, use [Design documentation](references/documentation.md) rather than inventing a one-off template.
 
 Keep design organization separate from implementation decomposition. Length alone is not a reason to split a design. When independently maintained topics justify splitting an existing or user-requested single document, propose concrete boundaries and navigation and obtain agreement unless reorganization is already authorized. Respect an explicit choice to keep it whole; use stable sections and targeted reading, and do not require document splitting before implementation can be divided into tasks. An authorized split preserves the original entrypoint, governing constraints, acceptance coverage, decision history, and affected links.
 
