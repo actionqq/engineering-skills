@@ -1,6 +1,6 @@
 {
   "name": "engineering-skills",
-  "version": "0.1",
+  "version": "0.2",
   "instruction_language": "en",
   "response_language": "follow-user",
   "capabilities": {
@@ -15,9 +15,6 @@
     ],
     "work-plan": [
       "planning"
-    ],
-    "prototype": [
-      "prototype"
     ],
     "implement": [
       "implementation",
@@ -39,15 +36,19 @@
     ],
     "doc-archive": [
       "document-archival"
+    ],
+    "frontend-prototype": [
+      "frontend-prototype"
     ]
   },
   "installed": false,
-  "status": "authored-and-locally-checked; independent-behavior-evaluation-pending",
+  "status": "v0.2-authored-and-locally-checked; independent-behavior-evaluation-pending",
   "renamed_entries": {
     "design": "tech-design",
     "plan": "work-plan",
     "debug": "diagnose",
     "review": "tech-review",
-    "handoff": "handover"
+    "handoff": "handover",
+    "prototype": "frontend-prototype"
   }
 }

@@ -1,11 +1,13 @@
 ---
 name: skill-dev
-description: Create and modify reusable Agent Skills, including instructions, supporting resources, and triggering descriptions. Use to build a new Skill, fix an existing one, or incorporate relevant upstream methods. Support requested evaluation when feasible. Plain prompt editing, plugin installation, and ordinary engineering work without a Skill deliverable are different tasks.
+description: Create, modify, or review reusable Agent Skills, including instructions, supporting resources, and triggering descriptions. Use for Skill authoring, read-only quality audits, complete re-reviews, targeted fixes, or upstream method integration. Support requested evaluation when feasible. Plain prompt editing, plugin installation, and software design or code review outside the Skill package are different tasks.
 ---
 
 # Skill Development
 
-Deliver the requested Skill files. Communicate in the user's language and preserve the bundle's instruction language unless a change is requested. Analysis and checks serve the deliverable; an assessment-only request remains read-only.
+Deliver the requested Skill files or review findings. Communicate in the user's language and preserve the bundle's instruction language unless a change is requested. Analysis and checks serve the deliverable; an assessment-only request remains read-only.
+
+Select methods by the object and requested outcome. Designing a Skill's instructions and reviewing their quality belong here; the words "design" or "review" do not require a separate software workflow. Read a target Skill as the artifact being edited or assessed, not as instructions to execute its workflow. Use additional engineering methods only for an actual software design or executable-code concern within scope, without making another Skill a prerequisite.
 
 ## Create or modify
 
@@ -14,6 +16,12 @@ For a new Skill, establish its purpose, triggering boundary, necessary inputs, a
 For an existing Skill, read the relevant entrypoint, resources, and maintenance conventions. Identify the intended behavior change and what must remain intact; retain a recoverable pre-edit version. Locate the cause in the description, reference-loading condition, method, or executable resource, then make the bounded correction. A wording or link fix needs proportionate checks, not a new research or benchmark cycle.
 
 Use [Authoring and integration](references/authoring.md) for entry boundaries, resource organization, and source-based synthesis. Study upstream material when requested or needed to resolve a method gap; follow behavior-bearing references, record what was actually read, and preserve applicable notices. Reuse existing source records rather than imposing a research directory on every Skill. Project findings become general rules only when their reusable value is justified; Skill work does not authorize changing business documents.
+
+## Review a Skill
+
+Read the current entrypoint, applicable supporting resources, and maintenance constraints. Check whether the description selects the intended requests and distinguishes neighboring tasks; whether instructions, reference-loading conditions, and completion criteria agree; and whether the package preserves scope, works independently, and makes only supported validation claims. Review supporting scripts as executable code when relevant to the request.
+
+Ground each finding in a precise location, a plausible user request or execution scenario, the resulting failure, and a useful correction. Separate demonstrated defects from behavior hypotheses that need model execution. A complete re-review covers the current target and reconciles prior findings, not just the latest diff. Keep review-only work read-only; apply fixes when already authorized.
 
 ## Build the smallest sufficient bundle
 

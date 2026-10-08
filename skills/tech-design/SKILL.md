@@ -1,6 +1,6 @@
 ---
 name: tech-design
-description: Design or revise software behavior, domain models, technology choices, interfaces, and system architecture. Use for technical decisions, API evolution, runtime or source layout, and maintaining designs or ADRs. Select only the needed modes. Fact-finding alone, implementation scheduling, read-only review, and visual styling are separate tasks.
+description: Design or revise software behavior, domain models, technology choices, interfaces, and system architecture. Use for technical decisions, API evolution, runtime or source layout, and maintaining designs or ADRs. Select only the needed modes. Agent Skill authoring or instruction review, fact-finding alone, implementation scheduling, read-only review, and visual styling are separate tasks.
 ---
 
 # Software Design
@@ -8,6 +8,8 @@ description: Design or revise software behavior, domain models, technology choic
 Turn the requested problem into decisions an implementer can use and a reviewer can verify. Preserve the user's outcome, existing decisions, and authorized scope. A question or suggestion is input to evaluate, not an instruction to reverse the previous design. Communicate in the user's language; retain the project's established terminology.
 
 ## Select the work
+
+Apply this workflow to software decisions, not to creating or revising an Agent Skill's instructions, triggers, or resource organization. A Skill describing software design is still an authoring target; its topic alone does not activate this workflow. Use these methods within Skill work only when the requested outcome includes an actual software design decision.
 
 Read the relevant project instructions, current design, accepted decisions, and enough implementation to distinguish intended behavior from current behavior. Choose references by the unresolved question; several may apply, but they are not a pipeline.
 

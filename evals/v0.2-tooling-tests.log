@@ -1,0 +1,14 @@
+test_runner_preserves_historical_fixture_and_evidence_limits (test_author_exercises.AuthorExerciseTests.test_runner_preserves_historical_fixture_and_evidence_limits) ... ok
+test_grading_answers_are_not_exported (test_materialize.MaterializerTests.test_grading_answers_are_not_exported) ... ok
+test_refuses_overwriting_user_state (test_materialize.MaterializerTests.test_refuses_overwriting_user_state) ... ok
+test_refuses_path_escape_before_writing (test_materialize.MaterializerTests.test_refuses_path_escape_before_writing) ... ok
+test_wip_contains_index_worktree_and_untracked (test_materialize.MaterializerTests.test_wip_contains_index_worktree_and_untracked) ... ok
+test_claimed_coverage_still_requires_actual_cases (test_validate.ValidationCoverageTests.test_claimed_coverage_still_requires_actual_cases) ... ok
+test_missing_archive_resource_still_fails (test_validate.ValidationCoverageTests.test_missing_archive_resource_still_fails) ... ok
+test_new_skill_does_not_require_preparing_model_evaluations (test_validate.ValidationCoverageTests.test_new_skill_does_not_require_preparing_model_evaluations) ... ok
+test_unknown_capability_is_not_accepted_as_optional_coverage (test_validate.ValidationCoverageTests.test_unknown_capability_is_not_accepted_as_optional_coverage) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.365s
+
+OK

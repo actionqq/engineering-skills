@@ -1,10 +1,13 @@
 #!/usr/bin/env python3
-"""Validate bundle structure and traceability; does not score model behavior."""
+"""Validate Skill structure; optionally check evaluation and provenance records."""
 import argparse
 import ast
+import html
 import json
 import re
+import unicodedata
 from pathlib import Path
+from urllib.parse import unquote, urlsplit
 
 import yaml
 
@@ -12,7 +15,57 @@ ROOT = Path(__file__).resolve().parents[1]
 LINK = re.compile(r'\[[^\]]*\]\(([^)]+)\)')
 
 
-def validate(root):
+def markdown_body(content):
+    """Exclude metadata and fenced examples from resource/heading checks."""
+    content = re.sub(r'\A---\n.*?\n---\n', '', content, count=1, flags=re.S)
+    lines, fence = [], None
+    for line in content.splitlines():
+        marker = re.match(r'^ {0,3}(`{3,}|~{3,})(.*)$', line)
+        if fence:
+            if (marker and marker[1][0] == fence[0] and len(marker[1]) >= len(fence)
+                    and not marker[2].strip()):
+                fence = None
+            lines.append('')
+        elif marker:
+            fence = marker[1]
+            lines.append('')
+        else:
+            lines.append(line)
+    return '\n'.join(lines)
+
+
+def markdown_anchors(content):
+    """Collect ATX/Setext heading slugs and explicit HTML anchors."""
+    body = markdown_body(content)
+    anchors = set()
+    for tag in re.findall(r'<[^>]+>', body):
+        for value in re.findall(r'\b(?:id|name)\s*=\s*[\"\']([^\"\']+)[\"\']', tag):
+            anchors.add(html.unescape(value))
+    used, previous = set(), ''
+    for line in body.splitlines():
+        heading = re.match(r'^ {0,3}#{1,6}(?:[ \t]+(.*?)|[ \t]*)$', line)
+        if heading:
+            title = re.sub(r'[ \t]+#+[ \t]*$', '', heading[1] or '').strip()
+        elif previous.strip() and re.fullmatch(r' {0,3}(?:=+|-+)[ \t]*', line):
+            title = previous.strip()
+        else:
+            previous = line
+            continue
+        title = re.sub(r'\[([^\]]*)\]\([^)]+\)', r'\1', title)
+        title = html.unescape(re.sub(r'<[^>]+>', '', title)).lower()
+        slug = ''.join(c for c in title if c in '-_' or
+                       unicodedata.category(c)[0] not in 'PSC').replace(' ', '-')
+        candidate, suffix = slug, 0
+        while candidate in used:
+            suffix += 1
+            candidate = f'{slug}-{suffix}'
+        used.add(candidate)
+        anchors.add(candidate)
+        previous = ''
+    return anchors
+
+
+def validate(root, *, full=False):
     errors = []
     def check(condition, message):
         if not condition:
@@ -62,13 +115,22 @@ def validate(root):
             if not current.is_file():
                 errors.append(f'Missing resource: {current}')
                 continue
-            for target in LINK.findall(current.read_text()):
-                if '://' in target or target.startswith('#'):
+            for target in LINK.findall(markdown_body(current.read_text())):
+                url = urlsplit(target)
+                if url.scheme or url.netloc:
                     continue
-                linked = (current.parent / target.split('#')[0]).resolve()
+                linked = ((current.parent / unquote(url.path)).resolve()
+                          if url.path else current)
+                if not linked.is_relative_to(folder.resolve()):
+                    errors.append(f'{name}: resource escapes standalone folder: {target}')
+                    continue
                 check(linked.is_file(), f'Broken link in {current}: {target}')
-                if linked.suffix == '.md' and linked not in visited:
-                    todo.append(linked)
+                if linked.is_file() and linked.suffix.lower() == '.md':
+                    if url.fragment:
+                        check(unquote(url.fragment) in markdown_anchors(linked.read_text()),
+                              f'Broken anchor in {current}: {target}')
+                    if linked not in visited:
+                        todo.append(linked)
         for ref in (folder / 'references').glob('*.md'):
             references += 1
             check(ref.resolve() in visited, f'{name}: unreachable reference {ref.name}')
@@ -76,6 +138,12 @@ def validate(root):
         for document in [skill, *(folder / 'references').glob('*.md')]:
             check('/home/seven/' not in document.read_text(), f'{document}: private absolute path')
             check('[TODO:' not in document.read_text(), f'{document}: unfinished placeholder')
+    result = {'kind':'structural-validation','passed':not errors,'errors':errors,
+              'skills':len(expected),'capabilities':len(all_capabilities),'references':references,
+              'entrypoint_words':instruction_words,
+              'limits':'Skill metadata and local resource closure only; no model behavior or quality comparison.'}
+    if not full:
+        return result
     cases_doc = json.loads((root / 'evals/cases.json').read_text())
     # The historical case bank is optional coverage, not an authoring prerequisite.
     # Check every coverage claim it makes without manufacturing cases for new Skills.
@@ -143,22 +211,23 @@ def validate(root):
             check(case_id in ids, 'Unknown method case '+case_id)
     all_refs = {str(p.relative_to(root)) for p in (root / 'skills').glob('*/references/*.md')}
     check(all_refs <= mapped_resources, 'Some references have no method provenance')
-    return {'kind':'structural-validation','passed':not errors,'errors':errors,
-            'skills':len(expected),'capabilities':len(all_capabilities),'references':references,
-            'capabilities_with_prepared_cases':len(covered),
-            'capabilities_without_prepared_cases':sorted(all_capabilities - covered),
-            'prepared_cases':len(cases),'method_groups':len(methods),'pinned_files':len(sources),
-            'prepared_trigger_requests':len(queries),'prepared_host_name_scenarios':len(host_cases),
-            'entrypoint_words':instruction_words,
-            'limits':'Syntax, local resource closure, declared coverage and source bookkeeping only; no model behavior or quality comparison.'}
+    result.update(passed=not errors,
+                  capabilities_with_prepared_cases=len(covered),
+                  capabilities_without_prepared_cases=sorted(all_capabilities - covered),
+                  prepared_cases=len(cases),method_groups=len(methods),pinned_files=len(sources),
+                  prepared_trigger_requests=len(queries),prepared_host_name_scenarios=len(host_cases),
+                  limits='Syntax, local resource closure, declared coverage and source bookkeeping only; no model behavior or quality comparison.')
+    return result
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--root', type=Path, default=ROOT)
     parser.add_argument('--output', type=Path)
+    parser.add_argument('--full', action='store_true',
+                        help='Also check evaluation fixtures and provenance records')
     args = parser.parse_args()
-    result = validate(args.root.resolve())
+    result = validate(args.root.resolve(), full=args.full)
     text = json.dumps(result, ensure_ascii=False, indent=2) + '\n'
     if args.output:
         args.output.write_text(text, encoding='utf-8')

@@ -1,41 +1,48 @@
 ---
 name: tech-review
-description: Review software architecture, design documents, or code changes for evidence-backed problems and actionable improvements. Use for architecture audits, design readiness, PR/branch/commit/worktree reviews, and complete re-reviews. Default to read-only; apply fixes only when the task authorizes them. Do not confuse ordinary proofreading or author self-checks with independent review.
+description: Review software architecture, design documents, code changes, or user-facing frontend work for evidence-backed problems and actionable improvements. Use for architecture audits, software design readiness, PR/branch/commit/worktree reviews, frontend quality review, and complete re-reviews of those targets. Default to read-only; apply fixes when authorized. Agent Skill instruction or trigger audits, ordinary proofreading, and author self-checks are different tasks.
 ---
 
 # Engineering Review
 
-Match the conclusion to the object actually reviewed. Communicate in the user's language. Use the repository's required output format where one exists; otherwise prioritize important findings over ceremony.
+Match the review lens to the object actually under review. Communicate in the user's language and follow the project's review format when one exists.
 
 ## Fix the target and choose the lens
 
-Identify requested scope, current revision or content snapshot, governing requirements, and available validation. Infer a clear target from context instead of asking redundant questions. Resolve genuine comparison ambiguity before relying on a diff.
+Review the actual object. Auditing an Agent Skill's instructions, triggers, or resource organization belongs to Skill authoring and review, even when requested as a full review or presented in a PR. A Skill about engineering review is an artifact to inspect, not a reason to execute its workflow. Apply the relevant lens to supporting executable code or actual software designs when those are within the requested scope.
+
+Identify scope, revision or snapshot, governing requirements, and available validation. Infer an obvious target from context instead of asking redundant questions.
 
 | Review target | Read |
 |---|---|
 | Existing responsibilities, dependencies, or architecture investment | [Architecture audit](references/architecture.md) |
 | A design, proposal, specification, or implementation plan | [Design review](references/design.md) |
 | A PR, branch, commit, exact snapshots, or uncommitted code | [Code review](references/code.md) |
+| User-facing frontend behavior, interaction, responsive behavior, or UI quality | [Frontend review](references/frontend.md) |
 | Independent review, separate review axes, or several reviewers | [Independence and synthesis](references/independence.md) |
 
-Mixed work can combine lenses without running three unrelated full audits. A request for a complete re-review requires rereading the current full target and relevant governing material, closing prior findings, and looking for new contradictions—not merely inspecting the repair diff.
+Mixed work may combine lenses without running several unrelated full audits. A frontend PR can use the code lens plus the frontend lens; a design document does not need code checks unless implementation is actually part of the target.
+
+Choose additional lenses from affected behavior and credible risks. Read the applicable sections, not every domain checklist available in the repository. Broaden the review when evidence exposes a related problem, and state that additional scope.
 
 ## Establish a finding
 
-Trace enough surrounding code, calls, states, or document sections to test the suspicion. Look for evidence against it. Existing review comments and author explanations are hypotheses, not established defects or proof of correctness.
+Trace enough surrounding code, calls, UI states, or document sections to test the suspicion. Look for evidence against it. Prior findings and author explanations are hypotheses, not proof.
 
-A reportable issue needs a precise location, a concrete trigger or scenario, supporting evidence or violated requirement, impact, and a useful correction direction. Distinguish defects, required-standard deviations, unresolved questions, and optional improvements. A code smell, aesthetic preference, or hypothetical possibility alone is not a blocking finding.
+A reportable issue needs a precise location, concrete trigger or scenario, supporting evidence or violated requirement, impact, and a useful correction direction. Distinguish defects, required-standard deviations, unresolved questions, and optional improvements.
 
-Check relevant code, current design, accepted ADRs, and declared context/glossary roles for material inconsistencies and unsupported completion claims. Distinguish a historical superseded decision from stale current guidance; do not demand all documents repeat the same facts. Report missing synchronization when it would mislead implementation or operation. Review remains read-only unless correction is authorized, including for apparently obvious documentation fixes.
+Do not turn personal preference or the existence of another possible design into a defect.
 
-Check whether design changes invalidate the scope of earlier review or validation claims and whether progress summaries agree with the maintained plan. Report affected stale conclusions without treating a still-valid accepted decision as rejected. A favorable review is a readiness assessment, not stakeholder acceptance or runtime verification.
+Check consistency with current designs, accepted ADRs, maintained context, and actual implementation or verification status. Distinguish superseded history from stale current guidance. Report missing synchronization when it would mislead implementation or operation, including changes that invalidate earlier verification. Do not demand duplicate documentation or treat a still-valid decision as rejected.
 
-Order findings by actual consequence and conditions. Remove duplicates and unsupported allegations. Report no findings when none meet the bar; do not invent issues to make a review appear useful.
+Order findings by consequence and conditions. Remove duplicates and unsupported allegations. Report no findings when none meet the bar.
 
 ## Preserve scope and evidence
 
-The subject is read-only unless fixes are part of the request. Existing authorization to correct issues remains valid: verify each issue, make the bounded correction, and check the result rather than asking for the same authorization again. Do not overwrite unrelated work or silently reconcile conflicting standards by editing them.
+The subject is read-only unless fixes are part of the request. Existing authorization to correct issues remains valid: verify, repair within scope, and check the result without asking again. Protect unrelated work and do not silently rewrite governing requirements to remove a conflict.
 
-Author self-checks are valuable but not independent. Claim isolation only when the context actually excluded author reasoning and expected answers. If unavailable, perform ordinary review and state that limit.
+Passing tests do not replace review; static review does not establish runtime acceptance. A readiness conclusion is not stakeholder acceptance, and later changes can invalidate it.
 
-Deliver actionable findings, reviewed scope, actual validation, and the appropriate readiness judgment. Passing tests do not replace review; static review does not establish runtime acceptance. A later change can invalidate a prior conclusion.
+A complete re-review rereads the current full target and relevant governing material, reconciles prior findings, and looks for new problems rather than checking only the repair diff.
+
+Deliver actionable findings, reviewed scope, actual validation, and the appropriate readiness conclusion. Do not claim independent review when the context was not independent.
