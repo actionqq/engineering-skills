@@ -139,6 +139,23 @@
       ]
     },
     {
+      "id": "faithful-experiment",
+      "destinations": [
+        "skills/research/references/experiments.md",
+        "skills/implement/references/fidelity.md"
+      ],
+      "sources": [
+        "mattpocock/skills:skills/engineering/prototype/LOGIC.md",
+        "mattpocock/skills:skills/engineering/tdd/mocking.md",
+        "citypaul/.dotfiles:claude/.claude/skills/codebase-design/references/deepening.md"
+      ],
+      "retained": "依赖替身按行为保真度选择；明确观察与结论的适用边界。",
+      "adaptation_or_rejection": "补充数据库、并发、性能及迁移实验的真实关键边界；模拟器不能证明目标数据库保证。 v0.2 将通用工程实验方法保留在 research 的条件参考中；原 prototype 用例已移除，不声明为 research 或前端能力的行为验证。",
+      "eval_cases": [
+        "implement-test-plan"
+      ]
+    },
+    {
       "id": "planning",
       "destinations": [
         "skills/work-plan/references/delivery.md",
@@ -160,41 +177,6 @@
         "plan-independent-briefs",
         "implement-small-without-spec",
         "implement-stale-unit-brief"
-      ]
-    },
-    {
-      "id": "interactive-prototype",
-      "destinations": [
-        "skills/prototype/references/interactive.md"
-      ],
-      "sources": [
-        "mattpocock/skills:skills/engineering/prototype/SKILL.md",
-        "mattpocock/skills:skills/engineering/prototype/LOGIC.md",
-        "mattpocock/skills:skills/engineering/prototype/UI.md"
-      ],
-      "retained": "状态/实体实验提供可操纵输入和可观察状态；UI 方案用相同任务和数据比较。",
-      "adaptation_or_rejection": "形式由问题决定；原型允许必要断言，不自动提交或升级成生产功能。",
-      "eval_cases": [
-        "prototype-state"
-      ]
-    },
-    {
-      "id": "faithful-experiment",
-      "destinations": [
-        "skills/prototype/references/experiments.md",
-        "skills/implement/references/fidelity.md"
-      ],
-      "sources": [
-        "mattpocock/skills:skills/engineering/prototype/LOGIC.md",
-        "mattpocock/skills:skills/engineering/tdd/mocking.md",
-        "citypaul/.dotfiles:claude/.claude/skills/codebase-design/references/deepening.md"
-      ],
-      "retained": "依赖替身按行为保真度选择；明确观察与结论的适用边界。",
-      "adaptation_or_rejection": "补充数据库、并发、性能及迁移实验的真实关键边界；模拟器不能证明目标数据库保证。",
-      "eval_cases": [
-        "prototype-boundary",
-        "prototype-sqlite",
-        "implement-test-plan"
       ]
     },
     {
@@ -365,7 +347,7 @@
         "skills/diagnose/SKILL.md",
         "skills/handover/SKILL.md",
         "skills/implement/SKILL.md",
-        "skills/prototype/SKILL.md",
+        "skills/frontend-prototype/SKILL.md",
         "skills/research/SKILL.md",
         "skills/skill-dev/SKILL.md",
         "skills/tech-design/SKILL.md",
@@ -384,7 +366,6 @@
         "docs-implement-no-churn",
         "docs-implement-file-limit",
         "docs-research-evidence",
-        "docs-prototype-promotion",
         "docs-plan-maintenance",
         "docs-diagnose-readonly",
         "docs-review-consistency",
@@ -511,6 +492,59 @@
       ],
       "retained": "活跃与历史入口、按需读取历史、恢复前冲突与时效检查、归档记录保留和索引修复。",
       "adaptation_or_rejection": "不要求整主题 wiki 或注册表；允许带历史标识的证据引用。恢复位置不恢复权威或验证，普通目录与说明不能保证所有宿主搜索排除归档；不擅自修改全局策略。",
+      "eval_cases": []
+    },
+    {
+      "id": "frontend-design-foundation",
+      "destinations": [
+        "skills/frontend-prototype/references/design-foundation.md",
+        "skills/implement/references/frontend.md",
+        "skills/tech-review/references/frontend.md"
+      ],
+      "sources": [
+        "anthropics/claude-code:plugins/frontend-design/skills/frontend-design/SKILL.md",
+        "pbakaus/impeccable:skill/SKILL.src.md",
+        "nextlevelbuilder/ui-ux-pro-max-skill:.claude/skills/ui-ux-pro-max/SKILL.md",
+        "tasteskill/tasteskill:skills/taste-skill/SKILL.md",
+        "citypaul/.dotfiles:claude/.claude/skills/structure-codebase/references/frontend-patterns.md",
+        "mattpocock/skills:skills/engineering/prototype/UI.md"
+      ],
+      "retained": "Share task-relevant hierarchy, layout, content, and visual principles across delivery profiles. The prototype uses a readable sketch; implementation and review retain their production design-system and quality concerns.",
+      "adaptation_or_rejection": "Existing conventions and explicit briefs outrank novelty. Prototype styling stops at what changes the decision: no full visual system, brand polish, or fixed aesthetic recipes by default. Role-specific references remain local and need not have identical content. Production guidance is not copied wholesale into prototype work. These delivery and packaging boundaries are local synthesis, not an upstream mandate or measured model advantage.",
+      "eval_cases": []
+    },
+    {
+      "id": "frontend-interaction-states",
+      "destinations": [
+        "skills/frontend-prototype/references/interaction.md",
+        "skills/implement/references/frontend.md",
+        "skills/tech-review/references/frontend.md"
+      ],
+      "sources": [
+        "pbakaus/impeccable:skill/SKILL.src.md",
+        "nextlevelbuilder/ui-ux-pro-max-skill:.claude/skills/ui-ux-pro-max/SKILL.md",
+        "vercel-labs/web-interface-guidelines:README.md",
+        "mattpocock/skills:skills/engineering/prototype/UI.md"
+      ],
+      "retained": "Preserve meaningful controls, state visibility, representative content, and comparable scenarios. Prototype only the decisive interaction; implementation and review consider the actual production flow and applicable failure states.",
+      "adaptation_or_rejection": "A frontend prototype uses local data, in-memory state, and simulated effects. Loading, errors, responsiveness, focus details, and other states are included only when they affect its question; no complete state matrix is required. This narrowing does not reduce implementation or review obligations. Default variant counts and mandatory integration into an existing route are not adopted.",
+      "eval_cases": []
+    },
+    {
+      "id": "frontend-prototype-evidence",
+      "destinations": [
+        "skills/frontend-prototype/SKILL.md",
+        "skills/frontend-prototype/references/verification.md"
+      ],
+      "sources": [
+        "mattpocock/skills:skills/engineering/prototype/SKILL.md",
+        "mattpocock/skills:skills/engineering/prototype/LOGIC.md",
+        "pbakaus/impeccable:skill/SKILL.src.md",
+        "anthropics/claude-code:plugins/frontend-design/skills/frontend-design/SKILL.md",
+        "mattpocock/skills:skills/engineering/prototype/UI.md"
+      ],
+      "retained": "A disposable, easy-to-run prototype answers a concrete question. Keep local state, expose the relevant effect, walk through the result, and distinguish observed behavior from user preference or production readiness.",
+      "adaptation_or_rejection": "For this frontend scope, standalone work prefers HTML/CSS and minimal JavaScript; project reuse is conditional on lower effort or necessary context. This is our chosen adaptation: the upstream single-file HTML rule targets logic demos, while its UI branch prefers existing pages and multiple variants. We retain question-driven, low-cost work but reject mandatory variants, full-app architecture, automated tests, production QA, automatic commits, and automatic promotion. Technical experiments remain outside this entry.",
       "eval_cases": []
     }
   ]

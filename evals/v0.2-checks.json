@@ -1,0 +1,230 @@
+{
+  "kind": "v0.2-local-review-checks",
+  "date": "2026-09-29",
+  "review_base": "8a5825b4c5ebb537a7e63b2e50f8063b868d463b",
+  "review_head_before_repairs": "8e51b8ab92b982693aa3fb2da76a29761c6f6824",
+  "official_format_checks": [
+    {
+      "skill": "diagnose",
+      "exit_code": 0,
+      "output": "Skill is valid!"
+    },
+    {
+      "skill": "doc-archive",
+      "exit_code": 0,
+      "output": "Skill is valid!"
+    },
+    {
+      "skill": "frontend-prototype",
+      "exit_code": 0,
+      "output": "Skill is valid!"
+    },
+    {
+      "skill": "handover",
+      "exit_code": 0,
+      "output": "Skill is valid!"
+    },
+    {
+      "skill": "implement",
+      "exit_code": 0,
+      "output": "Skill is valid!"
+    },
+    {
+      "skill": "research",
+      "exit_code": 0,
+      "output": "Skill is valid!"
+    },
+    {
+      "skill": "skill-dev",
+      "exit_code": 0,
+      "output": "Skill is valid!"
+    },
+    {
+      "skill": "tech-design",
+      "exit_code": 0,
+      "output": "Skill is valid!"
+    },
+    {
+      "skill": "tech-review",
+      "exit_code": 0,
+      "output": "Skill is valid!"
+    },
+    {
+      "skill": "work-plan",
+      "exit_code": 0,
+      "output": "Skill is valid!"
+    }
+  ],
+  "isolated_resource_closure": [
+    {
+      "skill": "frontend-prototype",
+      "reachable_markdown_files": 4,
+      "passed": true
+    },
+    {
+      "skill": "implement",
+      "reachable_markdown_files": 7,
+      "passed": true
+    },
+    {
+      "skill": "tech-review",
+      "reachable_markdown_files": 6,
+      "passed": true
+    },
+    {
+      "skill": "research",
+      "reachable_markdown_files": 3,
+      "passed": true
+    }
+  ],
+  "active_index_links_checked": 104,
+  "method_index_sync": true,
+  "tooling_tests": {
+    "passed": true,
+    "count": 9,
+    "log": "v0.2-tooling-tests.log",
+    "includes": "Author runner executes cart red/green, price tests, historical SQLite concurrency probe, and static review without modifying the reviewed snapshots."
+  },
+  "retired_cases_preserved_exactly": [
+    "prototype-state",
+    "prototype-boundary",
+    "prototype-sqlite",
+    "docs-prototype-promotion"
+  ],
+  "source_hash_checks": [
+    {
+      "id": "anthropics/claude-code:plugins/frontend-design/skills/frontend-design/SKILL.md",
+      "previous_sha256": "d91970639e9f5c37682ac7ab60094d35f1c7c1f38d731bd56396563aee10c1d3",
+      "verified_sha256": "d91970639e9f5c37682ac7ab60094d35f1c7c1f38d731bd56396563aee10c1d3",
+      "raw_and_github_contents_api_agree": true
+    },
+    {
+      "id": "pbakaus/impeccable:skill/SKILL.src.md",
+      "previous_sha256": "176b067cc0b760e8ac444158437135bb80b4e7a6ce8186deac5af54973aa37a7",
+      "verified_sha256": "0333d85ba408d29c7748838762b6d1e0a211dec22cd7e78ed6db987d983e91d4",
+      "raw_and_github_contents_api_agree": true
+    },
+    {
+      "id": "nextlevelbuilder/ui-ux-pro-max-skill:.claude/skills/ui-ux-pro-max/SKILL.md",
+      "previous_sha256": "f5cc255a73a9f13a0ce11288519f94f4d44293a5264b29080431b99ceab04bf8",
+      "verified_sha256": "ea087c341bfb5b23195c7302027268ede86da802554c18a5c4896a6017b439f9",
+      "raw_and_github_contents_api_agree": true
+    },
+    {
+      "id": "tasteskill/tasteskill:skills/taste-skill/SKILL.md",
+      "previous_sha256": "07aba21103983afbcac42bcf93e8b7577bf87e3dde31bb46d2cd7ee60359b614",
+      "verified_sha256": "a23a9e4e74a87e3f458d53cbff60adbc666e7a1e8633d43f9e213111e48f69b0",
+      "raw_and_github_contents_api_agree": true
+    },
+    {
+      "id": "vercel-labs/web-interface-guidelines:README.md",
+      "previous_sha256": "9a17bdfe3705ecd2fad628933e754122e35a722f8f2a3b191494f56d7b294af8",
+      "verified_sha256": "4c46fee0b386f20e50d5e04fba2a9c5311133f430ade26309c8a2594c144cd3b",
+      "raw_and_github_contents_api_agree": true
+    }
+  ],
+  "new_license_records": 5,
+  "source_terms_observation": "The pinned Anthropic entry names LICENSE.txt, which was absent at that path. Root LICENSE.md is retained as observed; no permissive license was inferred.",
+  "file_sha256": {
+    "evals/retired-cases.json": "b3c283c688605829f1b7b62ccf023b4c925d8da096d43ca637cb3f296dcbb5bf",
+    "manifest.json": "20ca63bb08af650362e01b9e35522848bb7cf9201fbf712bc7f330e6289f4d68",
+    "provenance/method-map.json": "3d771d06694c171f1bf5bb2898c000b235e43834ce45c60634516fa9a1ebc791",
+    "provenance/sources.lock.json": "edcfca64a017e26223cb1ecb112d33dfdebb3955a0966862499e876a25ced338",
+    "skills/diagnose/SKILL.md": "38c5a74b125197fcaebd0ee977b191f655a9feea220a5bfedf1c4ab7afcbb020",
+    "skills/diagnose/THIRD_PARTY_NOTICES.md": "b9fe112af472d24a80db786c43ef6da1e7176d54a7d0e9fef0584f3200391904",
+    "skills/diagnose/agents/openai.yaml": "6caa8f748b3eb234b19d451a5df00b2fc1c96ff4257e34a7ce1012405b189785",
+    "skills/diagnose/references/reproduction.md": "b028f5c0c5fbe28b1bc160bfb83426c8a542315cde57eb36d9cd7dc12eb0e026",
+    "skills/diagnose/references/tracing.md": "d10f346ddc279c17e4753b3146b40c1b6a2a60e56123ddae2974b2b952ed9109",
+    "skills/doc-archive/SKILL.md": "e970275a2d7db3f50764ae3bea3b874a4fb3c93beabafde063f24073486120dc",
+    "skills/doc-archive/THIRD_PARTY_NOTICES.md": "1457131fc09c89242356214d1c043a7fe28036e567d7b0b8a35d730069eb4a45",
+    "skills/doc-archive/agents/openai.yaml": "05c35f3f1a7dbdb2030d088b1cd327bfb16cff9a0781d0c359968c84c32e087d",
+    "skills/doc-archive/references/assessment.md": "f6f2e63b18269e4f1347867cebbb8eb3834013d11f53b4a9b0e85febe71763c2",
+    "skills/doc-archive/references/operations.md": "611f632adc15524984ef286613ad4b2b27171b1c4850be23c929183d3034456b",
+    "skills/doc-archive/references/retrieval.md": "60a39441a376bcf4db6cb2a47b49eb71b110b796d3cc9b6dd9ad98d444a517da",
+    "skills/frontend-prototype/SKILL.md": "8fd70ef02d4e2ce105b9e01ec8e0a21bf6143d0ec3ac3d19b30065fd79ddd7e0",
+    "skills/frontend-prototype/THIRD_PARTY_NOTICES.md": "ddef24daeb7e0346f9b14edddcbca7ee1da5f76feecb58160f1e7a237c3d46a5",
+    "skills/frontend-prototype/agents/openai.yaml": "37b6c061e9fe3204776c4da7779a904a90756c25b1b98469de26b25a785643de",
+    "skills/frontend-prototype/references/design-foundation.md": "6528761737a5bebb76d485626dfb4ca0dd8ebd4d8e16176060fc52a9bc525fa3",
+    "skills/frontend-prototype/references/interaction.md": "da9f8784b0a7d84b121200f1538f604ec0c53ad5eb778a000808ac43fef80b11",
+    "skills/frontend-prototype/references/verification.md": "b24a07b29cb3fb120721079e7c6c9ad765289183a86186b81f348a7fc862c7e4",
+    "skills/handover/SKILL.md": "b7ab356479b61045d65e9ef7c49a3aaa55e7f36050e4d1b401aab9775de2b896",
+    "skills/handover/THIRD_PARTY_NOTICES.md": "f4e7b559439f64bb02d334922ef2da66928e1ac9aa1005199062459a543b71e8",
+    "skills/handover/agents/openai.yaml": "1a86e697a6ac48b74b47419b05f2ecbf0ae0bdfe78b4e5ad100684b26ffb5a8f",
+    "skills/handover/references/record.md": "c0ea355ea0cade3cadec687db1ed7a564bf9c2327984a2776bb375d4981c2589",
+    "skills/implement/SKILL.md": "2f1442801ec5798fed9626aac855f1fb6425b3184925b26c5243634c88d236ee",
+    "skills/implement/THIRD_PARTY_NOTICES.md": "995301ee4a0e9b2dabd33f3b2757efa61c6cef8323b0782b56a5a30e524997f3",
+    "skills/implement/agents/openai.yaml": "183a5dca16e1bb13b717a148a9bd4935eb70be2bb42feb7ffcff03a6f45ff6b2",
+    "skills/implement/references/documents.md": "82abf5d08d3caa4d526e6da46944b2924d641310be86395c5974e571d7bbfa67",
+    "skills/implement/references/evolution.md": "e0ddead0515d26c23d2ac3b0f774f1a52f2c6b50e9ea48e9ce437360c5a7b084",
+    "skills/implement/references/fidelity.md": "929f25e27761d26450d1073da168ab50633414d19cd859eae3a0138bc8714c58",
+    "skills/implement/references/frontend.md": "d37805e93e79372ce7b99490ad07b1998f5c6094b8bfefeca9f0ba79a734b4dd",
+    "skills/implement/references/refactoring.md": "464df60920eebfc78524fc255ea0f5a6dd31b3055eae25dc58dd794fb34fd03c",
+    "skills/implement/references/testing.md": "f74b6846af27d47fca3cf2b6fc5e3f05ca1c41d5a2016c9d580d13ff6763ed9d",
+    "skills/research/SKILL.md": "62a84c6f2f14cde3ecd12574ada090bd3263c9b6592a008436ea0943a706d8e3",
+    "skills/research/THIRD_PARTY_NOTICES.md": "f2dfb985fcf9a78b34822e8a318fa3788b632aaf4e726fed4e87368cc9a5a6ea",
+    "skills/research/agents/openai.yaml": "c06147ce0afffeae348b8a46f88efedc84c62469ebc6fc06b6b8d9ab9d4f5d22",
+    "skills/research/references/evidence.md": "ab6c712e2cc393814c00420419c55c31d5faa6771f00b9c3771a3df9e9a80f6b",
+    "skills/research/references/experiments.md": "8a68b2e0fe2192eec8083af8aef9e793e1d1a58c770d262e353e5683edf52400",
+    "skills/skill-dev/SKILL.md": "d96a582402a650a295920ad7a97b0558385233a41503f2a565f413306b5d8680",
+    "skills/skill-dev/THIRD_PARTY_NOTICES.md": "27cba36340127e531dd3e295fb45348e0a9995c9cf4cc43f833f91c4736f8410",
+    "skills/skill-dev/agents/openai.yaml": "cb101567183f1f4af8a8503ef0c2ed1785e2e03849c7ae72ad2ecf2b8b4bed76",
+    "skills/skill-dev/references/authoring.md": "af0eb5632d69e967aa770dfb3426a23c7383f3b710ef9152f717e6e2e56d9126",
+    "skills/skill-dev/references/discovery.md": "e8d5e10ecebb7410f9a7fe9dbe7198dff34c3e7f218de349fb9be0becb84c03b",
+    "skills/skill-dev/references/evaluation.md": "83e0965073ce70c899661e7a773fb5bb5cc0011f42eb6db58ec29025f8c1c93b",
+    "skills/tech-design/SKILL.md": "8f92e25d0d19ebfc260af349847bdb71095b00b63defb5078f5b38289e09f226",
+    "skills/tech-design/THIRD_PARTY_NOTICES.md": "a199aca5673851dd7f7365c8c125d6d0c35f55858143e9d0a5f9d908db23678c",
+    "skills/tech-design/agents/openai.yaml": "51a545b9139603a4bc60b85499903337affafd675a8eac11bc01550b076a51e6",
+    "skills/tech-design/references/alternatives.md": "4a5e4916db39597cf652564bde54f45b09eaf82aa601c644d01f763be0adb34f",
+    "skills/tech-design/references/architecture.md": "672f17780b2ac35f000fc1bdc71812a82a38b5ac74edc320b4d4b04b6dd4ee8f",
+    "skills/tech-design/references/contracts.md": "3f21b0b9026cb3a18685198093bed4b902000a94d0b4ceeea02f548a6360ce5b",
+    "skills/tech-design/references/domain.md": "d47380bdc6b81257454da70ea883096216b6ead9bace5795b219f10b901d83b7",
+    "skills/tech-design/references/frontend.md": "d63f24e1abf887638fb6890205dfe30c46523afc48aeae5fa7b9e1bd9bb1698f",
+    "skills/tech-design/references/requirements.md": "094734a6222d905016c99e13f7a42ff925c2e20a77cd0d6f0ebdf146fd3a0f9f",
+    "skills/tech-design/references/selection.md": "84f07ae3abb79c8a59fee496c19bc62d34f96787c93b9069e609e69ed5c42265",
+    "skills/tech-design/references/structure.md": "f5e4069ca7deb772492e6697a53e425a336cbd4d5c9f82d8c2531772a3e3a37f",
+    "skills/tech-design/references/systems.md": "60634d61f7a466acb9098ae2a09cdc2a96ddbe944e5fe4f63c0a47201f2d12c3",
+    "skills/tech-review/SKILL.md": "46f21393e8af6db01c725313264c56bf895ef69602ca6501c4c51a6f11104e65",
+    "skills/tech-review/THIRD_PARTY_NOTICES.md": "464f1b7853d6845bc2bf3c925b3a21adfa2555639adcfa3b82d1af54f0051956",
+    "skills/tech-review/agents/openai.yaml": "77dfae13c9fa735a98c70d2ba7789f6648b2dea0234a0472ed1b6a7e25b0e318",
+    "skills/tech-review/references/architecture.md": "5662459bf8338578160d62f1654ca4e2c4147f2f37d6190f57a45694867a6fa6",
+    "skills/tech-review/references/code.md": "0f1c0f87c2f3c0244ce1582a2ebcda89b9c908274a93b71a0b94e1965e9b8879",
+    "skills/tech-review/references/design.md": "d0496fb6358be902051a115635238066e9099b82ab6ba3b21a88b332610d9718",
+    "skills/tech-review/references/frontend.md": "938d846ebcd5514ad0572f5ef8418111bbde9d946f759cec1d31fc4f62b1da97",
+    "skills/tech-review/references/independence.md": "6104e0cfb23eab9655464eee23275622961c09c2ee42c6a4f0d215a2dd009cb3",
+    "skills/work-plan/SKILL.md": "58698a04f8adc8124ac620e351ebdfcd8610c900f722900a5e068b42bbdaa298",
+    "skills/work-plan/THIRD_PARTY_NOTICES.md": "52542a88ef537a8f855894f4a995e259e9ea7742e6796cefc2d046ef72f2e8aa",
+    "skills/work-plan/agents/openai.yaml": "568d1421f8f18e97776eb691324b17c064bcc7c42d174e9c644b154f63f3d217",
+    "skills/work-plan/references/delivery.md": "50a356b9a681b5a9ceb42db4046342bb44049bc1a3f734bc18f7776badbddd47",
+    "tooling/run_author_exercises.py": "1c77b873c739ff32771e7275f5e2170e42ac67b6704bfa4b13b7769da3ae2555",
+    "tooling/test_author_exercises.py": "1ec4993e2a3450ebff6ca372d77aa2324d133d8361369ecb21832a2103ef1695",
+    "provenance/method-map.md": "3eeda77c5ca90925aa26fb5f77f7abf219686a481851d2fa0efd61091a189b57",
+    "provenance/v0.2-frontend-method-family.md": "8779a156452577c5c26535c5dfdf14b73d0e98780187ed4789eeb4c80d98c606",
+    "README.md": "edbb3933aebee54e6632c4f07519036a0b889a853e0a1b3b7ff9f6f610f65480"
+  },
+  "limits": "Structural, format, provenance and tooling evidence only. No independent model execution, frontend behavior baseline, host discovery, installation or cross-host acceptance. Historical author exercises do not establish current Skill effectiveness.",
+  "prototype_verification_clarification": {
+    "scope": "No automated tests or testing infrastructure for frontend prototypes; browser walkthrough and visual inspection only.",
+    "checks_run": [
+      "frontend-prototype quick_validate",
+      "bundle structural validation",
+      "git diff --check"
+    ],
+    "tooling_tests_rerun": false
+  },
+  "prototype_lightweight_revision": {
+    "base_revision": "291ccd08b36a6fa2bbc0bd320b2431e898d518ef",
+    "scope": "Low-cost, question-driven frontend prototype; minimal standalone implementation, conditional project reuse, relevant states only, browser walkthrough, stop when assessable.",
+    "checks_run": [
+      "frontend-prototype quick_validate",
+      "bundle structural validation",
+      "isolated prototype resource closure",
+      "maintained local links and method index consistency",
+      "git diff --check"
+    ],
+    "isolated_reachable_files": 4,
+    "maintained_links_checked": 104,
+    "production_implementation_and_review_unchanged": true,
+    "tests_added_or_rerun": false,
+    "model_behavior_evaluated": false
+  }
+}

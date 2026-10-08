@@ -1,6 +1,6 @@
 ---
 name: research
-description: Investigate substantive technical questions using primary sources, source code, and reproducible evidence. Use to resolve conflicting claims, verify version-dependent capabilities, or establish what is known and uncertain. Summarizing supplied text, routine code navigation, and implementing an already-decided choice do not need a research workflow.
+description: Investigate substantive technical questions using primary sources, source code, and reproducible evidence. Use to resolve conflicting claims, verify version-dependent capabilities, run bounded technical experiments, or establish what is known and uncertain. Summarizing supplied text, routine code navigation, and implementing an already-decided choice do not need a research workflow.
 ---
 
 # Technical Research
@@ -16,6 +16,8 @@ Define what evidence would settle the important claims. For a version-specific c
 ## Gather independent evidence
 
 Read [Evidence practice](references/evidence.md) for conflicting, time-sensitive, consequential, or multi-source work.
+
+When the question needs a runnable compatibility, performance, concurrency, or migration probe, read [Engineering experiments](references/experiments.md). Run the bounded experiment within the task's authorization, preserve the decisive real boundary, and keep observations separate from production acceptance. A request to deliver an experiment calls for actual artifacts and feasible execution, not only a literature summary.
 
 Start with the closest available evidence: project code/configuration for local behavior, exact documentation or source for a dependency, original papers or data for research claims. Verify current versions, support, pricing, or other changing facts when they matter. Offline access permits a bounded answer from identified local material, not a claim about current external status.
 
