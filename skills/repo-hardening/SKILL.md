@@ -1,6 +1,6 @@
 ---
 name: repo-hardening
-description: Find recurring engineering mistakes in a repository and make them harder or impossible to repeat by changing the strongest owning layer: architecture, types, APIs, lint or CI, tests, tooling, or instructions. Use when the user asks to stop agents or contributors from repeating the same repository mistake, turn repeated review corrections into enforceable guardrails, or harden a codebase against recurring failure classes. This is repository and engineering-process hardening, not security hardening; one-off bugs belong to diagnosis and ordinary current-change inspection belongs to review.
+description: "Find recurring engineering mistakes in a repository and make them harder or impossible to repeat by changing the strongest owning layer: architecture, types, APIs, lint or CI, tests, tooling, or instructions. Use when the user asks to stop agents or contributors from repeating the same repository mistake, turn repeated review corrections into enforceable guardrails, or harden a codebase against recurring failure classes. This is repository and engineering-process hardening, not security hardening; one-off bugs belong to diagnosis and ordinary current-change inspection belongs to review."
 ---
 
 # Repository Hardening
