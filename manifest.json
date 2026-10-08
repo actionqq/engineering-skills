@@ -31,6 +31,9 @@
       "design-review",
       "code-review"
     ],
+    "repo-hardening": [
+      "repository-hardening"
+    ],
     "handover": [
       "handoff"
     ],

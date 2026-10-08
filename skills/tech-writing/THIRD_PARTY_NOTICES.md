@@ -1,6 +1,6 @@
 # Third-party notices
 
-This Skill is an English synthesis written for `engineering-skills`. It is not an unmodified copy of an upstream Skill. Direct method sources below are pinned in the collection's canonical provenance records. Additional repositories discussed in the 2026-10-08 research note were comparison material only and are not represented here as standalone method dependencies.
+This Skill is an English synthesis written for `engineering-skills`. It is not an unmodified copy of an upstream Skill. Direct method sources below are pinned in the collection's canonical provenance records. Additional repositories discussed in the 2026-10-08 research notes were comparison material only and are not represented here as standalone method dependencies.
 
 ## Cursor pstack
 
@@ -62,8 +62,7 @@ Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction, including without limitation the rights
 to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
 The above copyright notice and this permission notice shall be included in all
 copies or substantial portions of the Software.
@@ -73,10 +72,9 @@ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
 AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 ```
 
 ## Research-only comparisons
 
-The broader document-format study also compared Tech Leads Club, Anthropic `doc-coauthoring`, citypaul technical-writing, Vercel ADR, GitHub Spec Kit, simplyblock design-doc guidance, dotcontext, and GitHub awesome-copilot. Their role and the accepted/rejected conclusions are recorded in `provenance/technical-writing-method-family-2026-10-08.md`. They are not runtime dependencies of this standalone Skill and are not presented here as direct copied method sources.
+The broader writing study also compared Tech Leads Club, Anthropic `doc-coauthoring`, citypaul technical-writing, Vercel ADR, GitHub Spec Kit, simplyblock design-doc guidance, dotcontext, GitHub awesome-copilot, Addy Osmani's Clarity, and AminBlg's SimpleEnglish. Their accepted and rejected ideas are research context, not runtime dependencies of this standalone Skill. In particular, controlled-English vocabulary and fixed sentence limits are not global defaults; strict controlled language is opt-in.

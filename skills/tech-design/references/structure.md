@@ -39,7 +39,9 @@ Before moving packages, inspect workspace globs, build/test/coverage discovery, 
 
 Identify behavior and consumers, establish appropriate protection, prepare discovery and direction checks, then migrate in bounded slices. Keep provider inversion, behavioral decomposition, file moves, and compatibility removal distinguishable. Reparenting a provider-dependent package does not make it provider-independent.
 
-Preserve public names and exports where useful during movement. Remove old paths only after consumers migrate; state which temporary aliases exist and when they can disappear. Verify consumer builds, public imports, route/startup discovery, resource shutdown, and project-required tests. Check production versus test/development edges.
+Preserve public names and exports where useful during movement. For an internal API with no external compatibility commitment, when all callers can move together, inventory those callers and prefer migrating them and deleting the obsolete path in the same bounded wave. A temporary alias or adapter is exceptional and needs named consumers plus a retirement condition. Public APIs, independently deployed consumers, persisted formats, and staged migrations may require compatibility by design.
+
+Verify consumer builds, public imports, route/startup discovery, resource shutdown, and project-required tests. Check production versus test/development edges.
 
 Deliver the selected shape, placement rules, permitted dependency direction, enforcement, migration sequence, and verification. A visually simpler tree or successful compile alone is not proof of architectural compliance or reduced total complexity.
 

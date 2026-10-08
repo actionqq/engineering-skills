@@ -23,6 +23,16 @@ Vary sentence length naturally. One thought per sentence does not require every 
 
 For instructions, put the relevant condition before the action and use an imperative verb. Address the reader as “you” when the repository's documentation style does so. Do not describe an easy operation as “simple,” “obvious,” or “quick” merely to sound reassuring.
 
+## Preserve meaning, attribution, and voice
+
+Do not invent or silently strengthen a fact, number, date, quotation, citation, causal claim, preference, or first-person experience while improving prose. Keep attribution attached to the claim: a source report, a project decision, and an author's opinion are different kinds of evidence.
+
+A sample of the author's writing can guide vocabulary, rhythm, punctuation, paragraph shape, and formality. It is not permission to import the sample's facts, experiences, or opinions into a new document.
+
+Make the least invasive edit that satisfies the request. Polishing does not authorize a new argument. Shortening does not authorize removing a condition or limitation. A writing review does not authorize replacing the text unless rewriting was requested.
+
+After the substantive edit, make one deliberate self-review for the largest remaining clarity or truth problem. Repeated convergence passes can flatten useful voice and should not become a ritual.
+
 ## Make structure carry meaning
 
 Use one H1 unless the target format says otherwise. Follow the repository's heading capitalization and hierarchy. A useful heading tells a skimmer what the section gives them, not only its broad topic.

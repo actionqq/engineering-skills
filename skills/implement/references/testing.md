@@ -12,6 +12,14 @@ Observe at the level of the claim. If the requirement is user retrieval, an API-
 
 When more than one boundary is plausible, give each candidate a one-line tradeoff: what failure classes it can catch and what it cannot observe. Choose the smallest boundary that can falsify the important claim without confusing unrelated layers. A passing check at one seam is not evidence for behavior that seam cannot see.
 
+## Make every test falsify a meaningful claim
+
+For each test, name the concrete behavior that could break and make the test fail. A test that remains green while the harmful behavior is restored does not protect that requirement.
+
+Avoid change-detector tests that fail only because private structure, exact source text, or incidental wording changed. Source-string or AST assertions can be appropriate for an actual static policy, but they are weak substitutes for a behavioral contract. Testing that a Skill contains a phrase does not establish that an agent follows it.
+
+Test framework or library mechanics only when project configuration or integration could realistically violate the contract. Otherwise test the behavior your code owns rather than proving the framework works as documented.
+
 ## Use independent expected results
 
 Derive expectations from the requirement, a manually checked example, a known invariant, a trusted independent implementation, or a legitimate external oracle. Repeating the implementation's arithmetic or algorithm inside the test can reproduce the same mistake.

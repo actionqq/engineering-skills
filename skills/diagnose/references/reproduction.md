@@ -34,6 +34,12 @@ Measure the user-relevant metric under comparable workload, data size, cache sta
 
 Use a known-good revision or configuration when available. Account for warm-up and variability. A local improvement can coexist with a system regression if the work moved elsewhere or increased tail latency.
 
+## Verify the repaired scenario
+
+A focused regression test can establish that the repaired boundary now rejects the known defect, but it does not replace the original reproduction when that scenario is available. After a fix, rerun the original or faithfully captured scenario under comparable conditions.
+
+If the original reproduction was not exercised, report the result as partial or not verified at that level rather than declaring the user-visible bug fully verified. State which narrower checks did run.
+
 ## Missing reproduction
 
 Use existing traces and source to narrow hypotheses, clearly separating confirmed facts from possibilities. State what was attempted, what it excludes, and the smallest next artifact or access needed. Do not demand a perfect automated reproducer before reading code, and do not call an unobserved post-patch outcome verified.

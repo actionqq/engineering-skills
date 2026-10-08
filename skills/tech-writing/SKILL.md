@@ -22,6 +22,7 @@ Choose the reference by the artifact, not by filename alone:
 | Artifact or question | Read |
 |---|---|
 | General style, README, guide, tutorial, reference, explanation, or documentation edit | [Writing and document structure](references/style.md) |
+| Plain language for cross-functional or non-native readers, translation-friendly procedures, or explicitly requested controlled English | [Plain technical language](references/plain-language.md) |
 | A settled technical design, proposal, specification, or RFC-shaped document | [Technical design documents](references/design-doc.md) |
 | An architecture decision record | [Architecture decision records](references/adr.md) |
 | `CONTEXT.md`, glossary, project context, or another maintained context artifact | [Context and glossary documents](references/context.md) |
