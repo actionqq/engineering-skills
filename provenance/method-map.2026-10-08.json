@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "note": "Canonical promoted method additions for the 2026-10-08 technical-writing and pstack sync. Read together with method-map.json.",
+  "note": "Canonical method additions promoted on 2026-10-08. Read together with method-map.json.",
   "methods": [
     {
       "id": "technical-writing-style",
@@ -14,9 +14,7 @@
       ],
       "retained": "Write for the actual reader, keep project terminology exact, cut filler, prefer direct concrete language, and choose structure by the document's purpose rather than one universal template.",
       "adaptation_or_rejection": "The collection does not require pstack's unslop dependency, a single Diataxis mode for every mixed engineering artifact, Cursor-specific invocation, or fixed sentence-length rules. Existing project style and explicit user format take precedence.",
-      "eval_cases": [
-        "writing-existing-readme"
-      ]
+      "eval_cases": ["writing-existing-readme"]
     },
     {
       "id": "technical-document-format",
@@ -30,9 +28,7 @@
       ],
       "retained": "Use the repository's maintained format first. Without one, keep a stable design core around context, scope, the chosen approach, consequential contracts and failure semantics, verification path, risks, and unresolved blockers; load specialized sections only when the design needs them.",
       "adaptation_or_rejection": "Do not force a large RFC/TDD template, duplicate detailed work-plan tasks inside design documents, or treat document length as a reason to split. Settled design writing must not silently reopen approved choices.",
-      "eval_cases": [
-        "writing-settled-design"
-      ]
+      "eval_cases": ["writing-settled-design"]
     },
     {
       "id": "adr-context-writing",
@@ -47,9 +43,7 @@
       ],
       "retained": "Default ADRs to a lean context/decision/consequences record unless the repository has a stronger convention or the trade-off history needs more structure. Treat context and glossary files by their repository-defined role, preserve canonical terms, and keep current truth distinct from history.",
       "adaptation_or_rejection": "Do not impose one filename such as CONTEXT.md or GLOSSARY.md across repositories. Implementation plans, test matrices, approval metadata, and delivery status are not mandatory ADR content, and an accepted decision is not downgraded merely because implementation or verification is still pending.",
-      "eval_cases": [
-        "writing-adr-status"
-      ]
+      "eval_cases": ["writing-adr-status"]
     },
     {
       "id": "review-report-writing",
@@ -63,39 +57,54 @@
       ],
       "retained": "A review report preserves a precise target, trigger or scenario, evidence or violated requirement, impact, correction direction, reviewed scope, and actual validation limits. Findings remain evidence-backed and distinguish defects from questions or optional improvements.",
       "adaptation_or_rejection": "These are information requirements, not mandatory visible subheadings or a machine JSON schema. Formatting existing findings does not authorize a new review, and unavailable evidence remains an explicit limitation rather than a pass.",
-      "eval_cases": [
-        "writing-review-report"
-      ]
+      "eval_cases": ["writing-review-report"]
     },
     {
       "id": "blast-radius-proof",
-      "destinations": [
-        "skills/tech-review/references/code.md"
-      ],
+      "destinations": ["skills/tech-review/references/code.md"],
       "sources": [
         "cursor/plugins:pstack/skills/blast-radius/SKILL.md",
         "citypaul/.dotfiles:claude/.claude/skills/codebase-design/references/deepening.md"
       ],
       "retained": "Small diffs can cross serialization, persistence, process, language, lifecycle, feature-flag, and timing boundaries that symbol search cannot see. Identify the facts a safety argument depends on and push important ones to the strongest proportionate evidence available.",
       "adaptation_or_rejection": "No separate blast-radius workflow or multi-model arena is required. Proof strength follows the actual risk and authorization; an important fact that cannot be established is reported as not verified rather than converted into a speculative defect.",
-      "eval_cases": [
-        "review-blast-radius-boundary"
-      ]
+      "eval_cases": ["review-blast-radius-boundary"]
     },
     {
       "id": "benchmark-validity",
-      "destinations": [
-        "skills/research/references/experiments.md"
-      ],
+      "destinations": ["skills/research/references/experiments.md"],
       "sources": [
         "cursor/plugins:pstack/skills/benchmark-checklist/SKILL.md",
         "mattpocock/skills:skills/engineering/prototype/LOGIC.md"
       ],
       "retained": "Before acting on a performance result, verify that the measured work happened and produced correct output, count failures and retries, compare equivalent configurations, interleave sides when drift matters, show relevant variability, identify the limiter, and sanity-check physical or algorithmic bounds.",
       "adaptation_or_rejection": "No universal five-run minimum or fixed operating-system commands are imposed. A user-requested ballpark can remain lightweight when labelled; adoption or design decisions require proportionate repeatability and relevance. Untuned or unexplained comparisons produce a narrowed or inconclusive conclusion, not an automatic winner.",
-      "eval_cases": [
-        "research-benchmark-validity"
-      ]
+      "eval_cases": ["research-benchmark-validity"]
+    },
+    {
+      "id": "repository-hardening-enforcement",
+      "destinations": [
+        "skills/repo-hardening/SKILL.md",
+        "skills/repo-hardening/references/enforcement.md"
+      ],
+      "sources": [
+        "warpdotdev/common-skills:.agents/skills/skill-doctor/references/skill-improvements.md",
+        "citypaul/.dotfiles:claude/.claude/skills/structure-codebase/references/enforcement-and-migration.md"
+      ],
+      "retained": "Repeated failures are first attributed to a current owning surface, then prevented at the strongest proportionate layer: architecture or public boundaries, types, deterministic checks, tooling, behavior tests, and finally instructions for irreducible judgment. Historical mistakes provide the best proof that the new guardrail catches the intended class.",
+      "adaptation_or_rejection": "The collection does not auto-edit Skills after every agent correction, require a fixed recurrence count, mandate multi-agent transcript scoring, or treat documentation as enforcement when a mechanical mechanism can own the rule. One-off defects stay in diagnosis and security hardening is outside this entry's meaning.",
+      "eval_cases": ["hardening-repeated-import", "hardening-existing-instruction"]
+    },
+    {
+      "id": "plain-technical-language",
+      "destinations": [
+        "skills/tech-writing/SKILL.md",
+        "skills/tech-writing/references/plain-language.md"
+      ],
+      "sources": ["cursor/plugins:pstack/skills/technical-writing/SKILL.md"],
+      "retained": "For cross-functional, non-native, and translation-sensitive readers, prefer explicit actors, conditions before instructions, stable terminology, one clear procedural action at a time where needed, and unambiguous relationships while preserving code literals and technical meaning.",
+      "adaptation_or_rejection": "Fixed word limits, blanket grammar bans, and vocabulary rules that change normative meanings are not global defaults. Strict controlled language is used only when explicitly requested, and formal compliance is not claimed without the authoritative standard and sufficient evidence.",
+      "eval_cases": ["writing-plain-runbook"]
     }
   ]
 }

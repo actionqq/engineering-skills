@@ -1,11 +1,10 @@
 {
   "schema_version": 2,
   "capabilities": {
-    "tech-writing": [
-      "technical-writing"
-    ]
+    "tech-writing": ["technical-writing"],
+    "repo-hardening": ["repository-hardening"]
   },
-  "origin": "Promotion cases for the 2026-10-08 technical-writing and pstack method sync. Prepared evaluator material; no model run result is embedded.",
+  "origin": "Prepared promotion cases for the 2026-10-08 technical-writing, pstack, repository-hardening, and plain-language additions. No model run result is embedded.",
   "cases": [
     {
       "id": "writing-existing-readme",
@@ -13,19 +12,9 @@
       "capabilities": ["technical-writing"],
       "request": "把这段已经确定的运行说明整理进 README，沿用现有文档风格，不改技术方案。",
       "setup": "只做文档编辑；现有 README 和事实材料已提供。",
-      "files": {
-        "README.md": "# Worker\n\n## Run\n\nUse `worker start`.\n",
-        "facts.md": "停止命令是 `worker stop`。配置文件固定为 `worker.yaml`。停止不会删除队列中的任务。\n"
-      },
-      "expect": [
-        "沿用 README 的既有结构和准确命令名",
-        "只写已给定或可核实的技术事实",
-        "不重新设计 worker 生命周期"
-      ],
-      "reject": [
-        "为了套模板重写整份 README",
-        "虚构配置项、版本或验证结果"
-      ],
+      "files": {"README.md": "# Worker\n\n## Run\n\nUse `worker start`.\n", "facts.md": "停止命令是 `worker stop`。配置文件固定为 `worker.yaml`。停止不会删除队列中的任务。\n"},
+      "expect": ["沿用 README 的既有结构和准确命令名", "只写已给定或可核实的技术事实", "不重新设计 worker 生命周期"],
+      "reject": ["为了套模板重写整份 README", "虚构配置项、版本或验证结果"],
       "near_miss": "讨论 worker 应不应该改成新的生命周期状态机。"
     },
     {
@@ -34,18 +23,9 @@
       "capabilities": ["technical-writing"],
       "request": "方案已经定了，把这些笔记整理成一份技术设计文档，不要重新选型。",
       "setup": "设计结论已批准，只需要形成可维护文档。",
-      "files": {
-        "notes.md": "目标：任务执行失败后可重试。采用数据库任务表，不引入新队列。worker 抢占任务时写 lease_until；超时任务可被其他 worker 重新领取。非目标：跨地域容灾。验收：worker 崩溃后 lease 到期，任务可继续执行且不能重复提交最终结果。\n"
-      },
-      "expect": [
-        "文档清楚区分目标、非目标、已选方案、关键失败语义和验收路径",
-        "不把详细实施任务清单塞进设计正文",
-        "不把既定数据库方案重新变成待选项"
-      ],
-      "reject": [
-        "强制生成与问题无关的安全、性能等空章节",
-        "自行改成消息队列方案"
-      ],
+      "files": {"notes.md": "目标：任务执行失败后可重试。采用数据库任务表，不引入新队列。worker 抢占任务时写 lease_until；超时任务可被其他 worker 重新领取。非目标：跨地域容灾。验收：worker 崩溃后 lease 到期，任务可继续执行且不能重复提交最终结果。\n"},
+      "expect": ["文档清楚区分目标、非目标、已选方案、关键失败语义和验收路径", "不把详细实施任务清单塞进设计正文", "不把既定数据库方案重新变成待选项"],
+      "reject": ["强制生成与问题无关的安全、性能等空章节", "自行改成消息队列方案"],
       "near_miss": "比较数据库任务表、Kafka 和 Temporal 后重新决定技术方案。"
     },
     {
@@ -54,18 +34,9 @@
       "capabilities": ["technical-writing"],
       "request": "把这个已接受的决定记录成 ADR，项目没有现成 ADR 模板。",
       "setup": "决定已经接受；实现尚未开始，也没有验证结果。",
-      "files": {
-        "decision.md": "决定：训练产物使用内容哈希作为不可变标识。原因：同一训练结果需要被多个部署稳定引用；不能因部署删除而改变产物身份。代价：修改元数据需要新版本记录。\n"
-      },
-      "expect": [
-        "默认使用精简的 Context / Decision / Consequences 结构并保留 accepted 状态",
-        "明确实现和验证尚未完成，不伪造交付状态",
-        "保留关键取舍而不是复制实施计划"
-      ],
-      "reject": [
-        "因为没有验证就把 accepted 改回 proposed",
-        "强制加入完整任务表、测试矩阵或 RACI"
-      ],
+      "files": {"decision.md": "决定：训练产物使用内容哈希作为不可变标识。原因：同一训练结果需要被多个部署稳定引用；不能因部署删除而改变产物身份。代价：修改元数据需要新版本记录。\n"},
+      "expect": ["默认使用精简的 Context / Decision / Consequences 结构并保留 accepted 状态", "明确实现和验证尚未完成，不伪造交付状态", "保留关键取舍而不是复制实施计划"],
+      "reject": ["因为没有验证就把 accepted 改回 proposed", "强制加入完整任务表、测试矩阵或 RACI"],
       "near_miss": "评审这个决定本身是否应该被接受。"
     },
     {
@@ -74,18 +45,9 @@
       "capabilities": ["technical-writing"],
       "request": "不要重新评审，把现有评审结论整理成一份可发给开发者的报告。",
       "setup": "finding 已经由另一个评审过程确定。",
-      "files": {
-        "findings.md": "Finding: src/cache.py:42。触发：两个请求同时 miss。证据：锁只覆盖写入，不覆盖回源。影响：重复回源放大下游流量。修正方向：让同 key 的 in-flight fetch 合并。验证限制：没有运行压测。\n"
-      },
-      "expect": [
-        "保留位置、触发条件、证据、影响、修正方向和未验证范围",
-        "把未运行压测表述为 Not verified 或等价证据限制",
-        "不新增未经评审确认的新 finding"
-      ],
-      "reject": [
-        "把没有压测写成已验证安全",
-        "为了格式完整重新审查整个代码库"
-      ],
+      "files": {"findings.md": "Finding: src/cache.py:42。触发：两个请求同时 miss。证据：锁只覆盖写入，不覆盖回源。影响：重复回源放大下游流量。修正方向：让同 key 的 in-flight fetch 合并。验证限制：没有运行压测。\n"},
+      "expect": ["保留位置、触发条件、证据、影响、修正方向和未验证范围", "把未运行压测表述为 Not verified 或等价证据限制", "不新增未经评审确认的新 finding"],
+      "reject": ["把没有压测写成已验证安全", "为了格式完整重新审查整个代码库"],
       "near_miss": "实际检查 src/cache.py 并寻找更多并发缺陷。"
     },
     {
@@ -94,18 +56,9 @@
       "capabilities": ["research"],
       "request": "判断这组 benchmark 能不能支持‘新实现快 40%’的结论。",
       "setup": "只根据给定记录评估测量可信度。",
-      "files": {
-        "bench.md": "A: 100ms。B: 60ms。各跑 1 次。B 有 18% 请求返回 429；脚本只统计完成时间，没有校验输出。A 在 release 模式，B 使用默认配置。\n"
-      },
-      "expect": [
-        "指出错误率、输出正确性和配置不等价使 40% 结论不可成立",
-        "区分当前观察值与可用于选型的性能结论",
-        "给出最小必要的重测条件而不是直接宣布 B 胜出"
-      ],
-      "reject": [
-        "只比较 100ms 与 60ms 就确认快 40%",
-        "忽略 429 因为它返回得更快"
-      ],
+      "files": {"bench.md": "A: 100ms。B: 60ms。各跑 1 次。B 有 18% 请求返回 429；脚本只统计完成时间，没有校验输出。A 在 release 模式，B 使用默认配置。\n"},
+      "expect": ["指出错误率、输出正确性和配置不等价使 40% 结论不可成立", "区分当前观察值与可用于选型的性能结论", "给出最小必要的重测条件而不是直接宣布 B 胜出"],
+      "reject": ["只比较 100ms 与 60ms 就确认快 40%", "忽略 429 因为它返回得更快"],
       "near_miss": "实现一个新的 benchmark harness。"
     },
     {
@@ -114,20 +67,43 @@
       "capabilities": ["code-review"],
       "request": "评审这个很小的字段改名，我担心影响不止当前模块。",
       "setup": "代码 diff 很小，但字段通过 JSON 跨进程传递。",
-      "files": {
-        "diff.txt": "producer.py: payload['status'] 改为 payload['state']。consumer.go 仍从 JSON 读取 status。\n",
-        "contract.md": "producer 与 consumer 独立部署，消息最多保留 24 小时。\n"
-      },
-      "expect": [
-        "追踪到序列化边界和独立部署 consumer，而不是只搜索 Python 调用者",
-        "把旧消息和滚动发布兼容性作为具体风险",
-        "指出安全结论依赖哪些可验证事实"
-      ],
-      "reject": [
-        "因为 Python 内没有其他 status 引用就判定安全",
-        "只给抽象的‘可能有兼容问题’而没有触发路径"
-      ],
+      "files": {"diff.txt": "producer.py: payload['status'] 改为 payload['state']。consumer.go 仍从 JSON 读取 status。\n", "contract.md": "producer 与 consumer 独立部署，消息最多保留 24 小时。\n"},
+      "expect": ["追踪到序列化边界和独立部署 consumer，而不是只搜索 Python 调用者", "把旧消息和滚动发布兼容性作为具体风险", "指出安全结论依赖哪些可验证事实"],
+      "reject": ["因为 Python 内没有其他 status 引用就判定安全", "只给抽象的‘可能有兼容问题’而没有触发路径"],
       "near_miss": "仅把字段命名风格从 status 改成 state。"
+    },
+    {
+      "id": "hardening-repeated-import",
+      "skill": "repo-hardening",
+      "capabilities": ["repository-hardening"],
+      "request": "过去四个 PR 都有人绕过 FooClient 直接 import internal_db，review 后又改回来。别再提醒一次了，想办法让以后这种改法直接过不了。",
+      "setup": "仓库历史中已有四次同类 review/revert；FooClient 是当前受支持入口。",
+      "files": {"history.md": "PR12/PR18/PR21/PR27: direct import internal_db; each review required FooClient instead.\n", "src/foo_client.py": "class FooClient: ...\n", "src/internal_db.py": "# private database transport\n"},
+      "expect": ["把多次直接 import 归为同一可机械识别的失败类", "优先考虑公开边界、依赖规则或 lint/CI 等结构化 enforcement，而不是再加一段提醒", "用一个历史 direct-import 例子证明新 guardrail 会失败，并验证 FooClient 合法路径仍可用"],
+      "reject": ["只在 AGENTS.md 再写一次不要 import internal_db", "因为发生过四次就直接宣称必须重构全部数据访问层"],
+      "near_miss": "第一次看到 internal_db 导致的运行时异常，需要定位根因。"
+    },
+    {
+      "id": "hardening-existing-instruction",
+      "skill": "repo-hardening",
+      "capabilities": ["repository-hardening"],
+      "request": "Agent 又把 generated/ 里的文件手改了。AGENTS.md 其实已经明确禁止，最近三次还是发生。不要继续加同一句话，看看怎么彻底解决。",
+      "setup": "现有说明已准确禁止手改 generated/；生成器是唯一受支持来源。",
+      "files": {"AGENTS.md": "Do not edit generated/ directly. Run tools/generate.py.\n", "tools/generate.py": "# canonical generator\n", "history.md": "Three reviewed changes edited generated/ by hand.\n"},
+      "expect": ["识别现有 instruction 已覆盖正确行为，不把问题误归因为缺一句提示词", "检查生成目录、CI diff check、ownership 或生成器工作流等更强 owning surface", "提出的 check 能在真实手改历史样例上失败"],
+      "reject": ["把相同禁令复制到更多 prompt 文件", "未验证任何机制就声称该错误以后不可能发生"],
+      "near_miss": "用户只要求重写 AGENTS.md 中 generated/ 的措辞。"
+    },
+    {
+      "id": "writing-plain-runbook",
+      "skill": "tech-writing",
+      "capabilities": ["technical-writing"],
+      "request": "把这个内部 runbook 改得让非母语同事也能一次看懂，命令和 MUST/MAY 语义不能变。",
+      "setup": "事实和操作步骤已确定；只做 plain-language 编辑，不要求 ASD-STE100 合规。",
+      "files": {"runbook.md": "Operators MUST drain the queue before `worker stop`. If emergency mode is active, they MAY skip the drain and run `worker stop --force`.\n"},
+      "expect": ["保留 MUST/MAY 的义务等级和命令字面值", "把条件放在受它约束的动作附近，并让步骤关系清楚", "不声称正式 ASD-STE100 合规"],
+      "reject": ["把 MAY 改成 must 或删除以追求简单词汇", "套固定词数规则导致规范语义变化"],
+      "near_miss": "决定 emergency mode 是否应该允许跳过 drain。"
     }
   ]
 }

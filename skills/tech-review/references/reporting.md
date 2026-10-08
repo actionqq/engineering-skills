@@ -1,41 +1,21 @@
 # Review Reporting
 
-Use this after the review has established its findings and evidence. Reporting must preserve the review's actual scope and uncertainty instead of turning a partial check into a cleaner-looking verdict.
+Use this after the review has established its findings and evidence. Reporting preserves the actual target, scope, validation, and uncertainty; it does not upgrade a partial check into a cleaner verdict.
 
-## Follow the target and repository format
+## Follow the repository format
 
-Use an existing project review format when it exists. Keep distinct axes separate when they answer different questions, such as specification conformance, project standards, correctness, frontend behavior, or architecture quality. Do not force every review into the same headings or combine semantically different results into one score.
+Use an existing project review format when one exists. Keep materially different review axes separate when combining them would hide meaning. A material report should identify the reviewed target and snapshot, governing requirements or standards, validation actually performed, findings, evidence limits, and the appropriate conclusion.
 
-A material report should identify the reviewed target and snapshot, the governing requirements or standards used, validation actually performed, findings, evidence-state limits, and the appropriate conclusion.
+Use the **Verified**, **Not verified**, and **Not applicable** meanings defined by the review workflow. Do not redefine or soften them here. Applicable skipped, blocked, stale, or partial evidence must remain visible in the conclusion.
 
-## Findings carry evidence, not ceremony
+## Make findings self-contained
 
-Each reportable finding needs:
+Each reportable finding needs enough information for the author to act without reconstructing the reviewer conversation: a precise location or target, the trigger or scenario, supporting evidence or violated requirement, concrete impact, and a useful correction direction.
 
-- a precise current location or target;
-- the trigger or scenario that makes it reachable or relevant;
-- supporting evidence or the violated requirement;
-- the concrete impact;
-- a useful correction direction.
+These are information requirements, not mandatory visible headings. Prefer compact findings, group duplicate symptoms of one cause, and keep confirmed defects, required-standard deviations, unresolved questions, and optional improvements distinguishable.
 
-These are information requirements rather than mandatory labels. Prefer one compact paragraph when separate “Problem / Impact / Recommendation” headings add no information.
+## Report clean and independent reviews accurately
 
-Order findings by consequence and conditions. Group duplicate symptoms of one cause. Keep confirmed defects, required-standard deviations, unresolved questions, and optional improvements distinguishable when mixing them would overstate or understate severity.
+When no finding meets the bar, say so directly while retaining the reviewed scope, validation, and material limits. "No findings in the checks performed" is appropriate when some applicable areas remain unverified.
 
-## Preserve verification state
-
-For material checks, use the evidence meanings from the review workflow:
-
-- **Verified** — performed with evidence sufficient for the stated conclusion.
-- **Not verified** — applicable, but evidence was missing, blocked, stale, partial, or unusable.
-- **Not applicable** — genuinely outside the target or agreed scope.
-
-Do not convert `Not verified` into pass because no defect was observed. A report with skipped or blocked applicable checks cannot claim that all checks passed or that runtime behavior is established.
-
-## Clean reports still need scope
-
-When no finding meets the reporting bar, say so directly and retain the reviewed scope, validation performed, and material limits. “No findings in the checks performed” is appropriate when some applicable areas remain unverified.
-
-For independent or multi-review work, synthesize validated findings rather than votes. Report the actual independence level and snapshot. A majority does not prove a finding, and a minority finding with stronger evidence can be the important one.
-
-Use concrete project language. Replace vague phrases such as “could cause issues” with the actual state, caller, condition, violated contract, or user-visible consequence. The author should be able to act without reconstructing the reviewer conversation.
+For independent or multi-review work, synthesize evidence rather than votes and state the actual independence level. Use concrete project language instead of generic phrases such as "could cause issues."
