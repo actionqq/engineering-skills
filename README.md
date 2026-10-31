@@ -1,8 +1,8 @@
-# Engineering Skills v0.2
+# Engineering Skills v0.3
 
 一套根据上游原始材料研究、融合和改写的工程 Skills。包含 10 个不带统一品牌前缀的入口，覆盖 16 项能力。指令与方法参考使用英文，交流和交付语言跟随用户。
 
-这是 v0.2 开发分支上的源码版本，尚未完成整套安装验收。2026-09-29 的 Skill 审查边界修订已定向同步到本机现有的 `skill-dev`、`tech-design`、`tech-review` 安装目录，不代表整套 v0.2 已部署。v0.2 将通用 `prototype` 收窄为 `frontend-prototype`，并把前端设计能力拆成可按需复用的方法：原型负责探索与验证前端体验，`implement` 只加载生产实现所需的前端约束，`tech-review` 只加载前端评审 lens。当前已完成源码和来源账本更新；**尚未完成 v0.2 的独立模型行为评估或跨宿主验收**。
+这是 v0.3 开发分支上的源码版本，尚未完成整套安装验收。v0.3 针对上游方法做了新一轮同步：补入基于证据的完成验证与条件式安全评审 lens，并明确上游全包审查、方法取舍和来源记录流程。2026-09-29 的 Skill 审查边界修订已定向同步到本机现有的 `skill-dev`、`tech-design`、`tech-review` 安装目录，不代表整套 v0.2 已部署。v0.2 将通用 `prototype` 收窄为 `frontend-prototype`，并把前端设计能力拆成可按需复用的方法：原型负责探索与验证前端体验，`implement` 只加载生产实现所需的前端约束，`tech-review` 只加载前端评审 lens。当前已完成首轮源码迭代；**尚未完成 v0.3 的独立模型行为评估或跨宿主验收**。评估依据见 [v0.3 upstream assessment](provenance/v0.3-upstream-assessment.md)。
 
 ## 入口如何划分
 

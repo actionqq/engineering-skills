@@ -1,6 +1,6 @@
 {
   "name": "engineering-skills",
-  "version": "0.2",
+  "version": "0.3",
   "instruction_language": "en",
   "response_language": "follow-user",
   "capabilities": {
@@ -42,7 +42,7 @@
     ]
   },
   "installed": false,
-  "status": "v0.2-authored-and-locally-checked; independent-behavior-evaluation-pending",
+  "status": "v0.3-authored; structural-and-tooling-validation-pending; independent-behavior-evaluation-pending",
   "renamed_entries": {
     "design": "tech-design",
     "plan": "work-plan",

@@ -24,6 +24,7 @@ Resolve ordinary implementation details within scope. If actual code or environm
 - When external effects, mocks, clocks, fakes, or integration boundaries matter, read [Dependency fidelity](references/fidelity.md).
 - For behavior-preserving restructuring or broad movement, read [Safe refactoring](references/refactoring.md).
 - For stored data, published schemas, or mixed-version rollout changes, read [Migration and recovery](references/evolution.md).
+- Before claiming a fix, completion, passing checks, or merge readiness, read [Verification before completion](references/verification.md); use its evidence-to-claim mapping proportionately.
 - When implementation changes maintained project facts, exposes a design mismatch, or produces durable findings, read [Maintaining project documents](references/documents.md). Record settled changes as work proceeds.
 
 Select references from the changed behavior and its risks, not just the repository's technology stack. Read the relevant sections; do not turn a bounded change into a redesign or a whole-product audit.

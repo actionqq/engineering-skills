@@ -15,7 +15,7 @@ For a new Skill, establish its purpose, triggering boundary, necessary inputs, a
 
 For an existing Skill, read the relevant entrypoint, resources, and maintenance conventions. Identify the intended behavior change and what must remain intact; retain a recoverable pre-edit version. Locate the cause in the description, reference-loading condition, method, or executable resource, then make the bounded correction. A wording or link fix needs proportionate checks, not a new research or benchmark cycle.
 
-Use [Authoring and integration](references/authoring.md) for entry boundaries, resource organization, and source-based synthesis. Study upstream material when requested or needed to resolve a method gap; follow behavior-bearing references, record what was actually read, and preserve applicable notices. Reuse existing source records rather than imposing a research directory on every Skill. Project findings become general rules only when their reusable value is justified; Skill work does not authorize changing business documents.
+Use [Authoring and integration](references/authoring.md) for entry boundaries and resource organization. For broad upstream synchronization, use [Upstream integration](references/upstream-integration.md) to inspect complete capability packages and make explicit adopt/adapt/replace/merge/create/defer decisions. Study upstream material when requested or needed to resolve a method gap; follow behavior-bearing references, record what was actually read, and preserve applicable notices. Reuse existing source records rather than imposing a research directory on every Skill. Project findings become general rules only when their reusable value is justified; Skill work does not authorize changing business documents.
 
 ## Review a Skill
 

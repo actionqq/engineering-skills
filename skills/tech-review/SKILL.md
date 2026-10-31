@@ -23,7 +23,7 @@ Identify scope, revision or snapshot, governing requirements, and available vali
 
 Mixed work may combine lenses without running several unrelated full audits. A frontend PR can use the code lens plus the frontend lens; a design document does not need code checks unless implementation is actually part of the target.
 
-Choose additional lenses from affected behavior and credible risks. Read the applicable sections, not every domain checklist available in the repository. Broaden the review when evidence exposes a related problem, and state that additional scope.
+Choose additional lenses from affected behavior and credible risks. For authentication, authorization, tenant isolation, untrusted input, secrets, cryptography, file/network access, or privileged operations, also read [Security review](references/security.md). Read applicable sections, not every domain checklist available in the repository. Broaden the review when evidence exposes a related problem, and state that additional scope.
 
 ## Establish a finding
 
