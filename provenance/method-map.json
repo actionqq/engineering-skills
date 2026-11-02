@@ -546,6 +546,87 @@
       "retained": "A disposable, easy-to-run prototype answers a concrete question. Keep local state, expose the relevant effect, walk through the result, and distinguish observed behavior from user preference or production readiness.",
       "adaptation_or_rejection": "For this frontend scope, standalone work prefers HTML/CSS and minimal JavaScript; project reuse is conditional on lower effort or necessary context. This is our chosen adaptation: the upstream single-file HTML rule targets logic demos, while its UI branch prefers existing pages and multiple variants. We retain question-driven, low-cost work but reject mandatory variants, full-app architecture, automated tests, production QA, automatic commits, and automatic promotion. Technical experiments remain outside this entry.",
       "eval_cases": []
+    },
+    {
+      "id": "prototype-visual-direction-conditional",
+      "destinations": [
+        "skills/frontend-prototype/references/design-foundation.md"
+      ],
+      "sources": [
+        "anthropics/skills:skills/frontend-design/SKILL.md",
+        "pbakaus/impeccable:.agents/skills/impeccable/SKILL.md"
+      ],
+      "retained": "When visual direction is genuinely being compared, ground the direction in the subject, audience, and interface job; make typography, palette, information hierarchy, and density deliberate and visible.",
+      "adaptation_or_rejection": "The local prototype is a low-cost decision sketch, not a production-grade redesign. Borrow only the relevant visual-choice and surface-mode reasoning; reject upstream runtime launcher, full polish floor, default motion, and automatic design-system work.",
+      "eval_cases": []
+    },
+    {
+      "id": "technical-document-prose",
+      "destinations": [
+        "skills/tech-design/SKILL.md",
+        "skills/work-plan/SKILL.md"
+      ],
+      "sources": [
+        "cursor/plugins:pstack/skills/technical-writing/SKILL.md",
+        "cursor/plugins:pstack/skills/unslop/SKILL.md"
+      ],
+      "retained": "Choose the purpose of a document section, write explicit actor-condition-outcome statements, preserve stable terminology, put prerequisites before instructions, avoid vague claims and filler.",
+      "adaptation_or_rejection": "Integrate a compact writing quality check into existing design and planning entrypoints. Do not add a standalone writer, mandatory separate editing pass, English-only vocabulary bans, or plugin-specific invocation settings.",
+      "eval_cases": []
+    },
+    {
+      "id": "external-review-feedback-handling",
+      "destinations": [
+        "skills/tech-design/SKILL.md"
+      ],
+      "sources": [
+        "obra/superpowers:skills/receiving-code-review/SKILL.md"
+      ],
+      "retained": "Understand and verify review feedback in project context before accepting it, provide technical reasons for disagreement, and track substantive disposition across repeated reviews when needed.",
+      "adaptation_or_rejection": "Upstream is explicitly code-review reception. Design/ADR applicability and accept/reject/defer disposition recording are local adaptations, not an upstream-proven design-review method. Reject its universal stop-on-any-ambiguity and unconditional implementation steps.",
+      "eval_cases": []
+    },
+    {
+      "id": "conditional-security-implementation",
+      "destinations": [
+        "skills/implement/SKILL.md"
+      ],
+      "sources": [
+        "openai/skills:skills/.curated/security-best-practices/SKILL.md"
+      ],
+      "retained": "Identify actual language/framework and trust boundary, consult matching security guidance, prefer secure defaults during implementation, and be candid about unsupported checks.",
+      "adaptation_or_rejection": "Upstream source explicitly supports Python, JavaScript/TypeScript, and Go. Do not copy language-specific rules into a universal implement Skill or imply coverage for Java/Spring. Security risk prompts are conditional, without automatically triggering a full audit.",
+      "eval_cases": []
+    },
+    {
+      "id": "v03-local-verification-method",
+      "destinations": [
+        "skills/implement/references/verification.md"
+      ],
+      "sources": [],
+      "retained": "Local v0.3 verification-before-completion reference; checks evidence-to-claim mapping and avoids labeling unrun checks as passes.",
+      "adaptation_or_rejection": "This bookkeeping group records a previously unmapped reference. It does not retrospectively attribute its text to an unverified upstream file or assert model behavior results.",
+      "eval_cases": []
+    },
+    {
+      "id": "v03-local-security-review-method",
+      "destinations": [
+        "skills/tech-review/references/security.md"
+      ],
+      "sources": [],
+      "retained": "Local v0.3 security review lens for boundaries, authorization, secrets, and evidenced findings.",
+      "adaptation_or_rejection": "This bookkeeping group records a previously unmapped reference. No new specialist security audit capability or upstream provenance claim is implied.",
+      "eval_cases": []
+    },
+    {
+      "id": "v03-local-upstream-integration-method",
+      "destinations": [
+        "skills/skill-dev/references/upstream-integration.md"
+      ],
+      "sources": [],
+      "retained": "Local v0.3 capability-package discovery and adopt/adapt/reject evaluation method.",
+      "adaptation_or_rejection": "This bookkeeping group records a previously unmapped reference. It already covers breadth of upstream discovery; earlier suggestion that this capability was absent is withdrawn.",
+      "eval_cases": []
     }
   ]
 }

@@ -484,5 +484,48 @@
     }
   ],
   "original_pinned_files_reverified": 75,
-  "additional_pinned_files": 5
+  "additional_pinned_files": 5,
+  "followup_2026_11_02": {
+    "date": "2026-11-02",
+    "basis": "Full-text reads of the six pinned upstream SKILL.md files used for a scoped, original synthesis; no model behavior tests.",
+    "sources": [
+      {
+        "id": "anthropics/skills:skills/frontend-design/SKILL.md",
+        "sha256": "d91970639e9f5c37682ac7ab60094d35f1c7c1f38d731bd56396563aee10c1d3",
+        "matches": true,
+        "review_scope": "full-text"
+      },
+      {
+        "id": "pbakaus/impeccable:.agents/skills/impeccable/SKILL.md",
+        "sha256": "fab04b31f946573b00a8559db1fc070f8ea5825254d491c2b13156e5661a86d7",
+        "matches": true,
+        "review_scope": "full-text"
+      },
+      {
+        "id": "cursor/plugins:pstack/skills/technical-writing/SKILL.md",
+        "sha256": "61fe9c424a798ebf36ad94941f87be049cb8827bdf86d21474a0dde37b513c43",
+        "matches": true,
+        "review_scope": "full-text"
+      },
+      {
+        "id": "cursor/plugins:pstack/skills/unslop/SKILL.md",
+        "sha256": "ccab208e315ce05e2fab8eeee2f7879f1289b5c6844840b2d307adf31c79144f",
+        "matches": true,
+        "review_scope": "full-text"
+      },
+      {
+        "id": "obra/superpowers:skills/receiving-code-review/SKILL.md",
+        "sha256": "091df1629510af1b92fc4abd6f96732ebedb4cb2c0f3457e8f2740b0504a2438",
+        "matches": true,
+        "review_scope": "full-text"
+      },
+      {
+        "id": "openai/skills:skills/.curated/security-best-practices/SKILL.md",
+        "sha256": "7b3dae1ffc5434d890f3c65c8f552af52d0307fab3b35dec13013c9ca3844c4f",
+        "matches": true,
+        "review_scope": "full-text"
+      }
+    ],
+    "original_text_copied": false
+  }
 }

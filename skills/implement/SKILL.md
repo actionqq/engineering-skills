@@ -27,6 +27,8 @@ Resolve ordinary implementation details within scope. If actual code or environm
 - Before claiming a fix, completion, passing checks, or merge readiness, read [Verification before completion](references/verification.md); use its evidence-to-claim mapping proportionately.
 - When implementation changes maintained project facts, exposes a design mismatch, or produces durable findings, read [Maintaining project documents](references/documents.md). Record settled changes as work proceeds.
 
+For security-sensitive changes, identify the affected language, framework, and trust boundaries before coding. For example, authorization or tenant isolation, untrusted input and file or network access, and secret handling may require secure-by-default implementation choices and negative-path checks. Load matching project requirements and current authoritative framework or language guidance when relevant; do not apply another stack's rules as if they were universal. If appropriate guidance or verification is unavailable, state the limit rather than claiming a security assessment.
+
 Select references from the changed behavior and its risks, not just the repository's technology stack. Read the relevant sections; do not turn a bounded change into a redesign or a whole-product audit.
 
 ## Implement with the smallest trustworthy feedback loop

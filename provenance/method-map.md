@@ -241,3 +241,60 @@
 - 落点：[skills/frontend-prototype/SKILL.md](../skills/frontend-prototype/SKILL.md), [skills/frontend-prototype/references/verification.md](../skills/frontend-prototype/references/verification.md)
 - 来源：[mattpocock/skills:skills/engineering/prototype/SKILL.md](https://raw.githubusercontent.com/mattpocock/skills/c55ee46073ed923f86ce59a5eb3b6d895095d1b7/skills/engineering/prototype/SKILL.md), [mattpocock/skills:skills/engineering/prototype/LOGIC.md](https://raw.githubusercontent.com/mattpocock/skills/c55ee46073ed923f86ce59a5eb3b6d895095d1b7/skills/engineering/prototype/LOGIC.md), [pbakaus/impeccable:skill/SKILL.src.md](https://raw.githubusercontent.com/pbakaus/impeccable/114ea1d3838fca73b253af45f873b9c4f5f213c8/skill/SKILL.src.md), [anthropics/claude-code:plugins/frontend-design/skills/frontend-design/SKILL.md](https://raw.githubusercontent.com/anthropics/claude-code/dec92bc87ab6fe9c7be0fcba1f97966f902dd243/plugins/frontend-design/skills/frontend-design/SKILL.md), [mattpocock/skills:skills/engineering/prototype/UI.md](https://raw.githubusercontent.com/mattpocock/skills/c55ee46073ed923f86ce59a5eb3b6d895095d1b7/skills/engineering/prototype/UI.md)
 - 行为评估：未准备或执行；不以结构检查代替模型行为证据。
+
+## prototype-visual-direction-conditional
+
+- 保留：When visual direction is genuinely being compared, ground the direction in the subject, audience, and interface job; make typography, palette, information hierarchy, and density deliberate and visible.
+- 调整或拒绝：The local prototype is a low-cost decision sketch, not a production-grade redesign. Borrow only the relevant visual-choice and surface-mode reasoning; reject upstream runtime launcher, full polish floor, default motion, and automatic design-system work.
+- 落点：[skills/frontend-prototype/references/design-foundation.md](../skills/frontend-prototype/references/design-foundation.md)
+- 来源：[anthropics/skills:skills/frontend-design/SKILL.md](https://raw.githubusercontent.com/anthropics/skills/ca45fc496a3436251f191354091d557da31c15b5/skills/frontend-design/SKILL.md), [pbakaus/impeccable:.agents/skills/impeccable/SKILL.md](https://raw.githubusercontent.com/pbakaus/impeccable/e89e3ada3e875a89ac2c5d33d11e65ebef6fe285/.agents/skills/impeccable/SKILL.md)
+- 行为评估：未执行；静态编辑与来源核实不代表模型输出已验证。
+
+## technical-document-prose
+
+- 保留：Choose the purpose of a document section, write explicit actor-condition-outcome statements, preserve stable terminology, put prerequisites before instructions, avoid vague claims and filler.
+- 调整或拒绝：Integrate a compact writing quality check into existing design and planning entrypoints. Do not add a standalone writer, mandatory separate editing pass, English-only vocabulary bans, or plugin-specific invocation settings.
+- 落点：[skills/tech-design/SKILL.md](../skills/tech-design/SKILL.md), [skills/work-plan/SKILL.md](../skills/work-plan/SKILL.md)
+- 来源：[cursor/plugins:pstack/skills/technical-writing/SKILL.md](https://raw.githubusercontent.com/cursor/plugins/ae5650febf4320793844c12c4adaa937f417f8da/pstack/skills/technical-writing/SKILL.md), [cursor/plugins:pstack/skills/unslop/SKILL.md](https://raw.githubusercontent.com/cursor/plugins/ae5650febf4320793844c12c4adaa937f417f8da/pstack/skills/unslop/SKILL.md)
+- 行为评估：未执行；静态编辑与来源核实不代表模型输出已验证。
+
+## external-review-feedback-handling
+
+- 保留：Understand and verify review feedback in project context before accepting it, provide technical reasons for disagreement, and track substantive disposition across repeated reviews when needed.
+- 调整或拒绝：Upstream is explicitly code-review reception. Design/ADR applicability and accept/reject/defer disposition recording are local adaptations, not an upstream-proven design-review method. Reject its universal stop-on-any-ambiguity and unconditional implementation steps.
+- 落点：[skills/tech-design/SKILL.md](../skills/tech-design/SKILL.md)
+- 来源：[obra/superpowers:skills/receiving-code-review/SKILL.md](https://raw.githubusercontent.com/obra/superpowers/2ce8aa15d05bd57213e6f746f953aafb7ded7a8b/skills/receiving-code-review/SKILL.md)
+- 行为评估：未执行；静态编辑与来源核实不代表模型输出已验证。
+
+## conditional-security-implementation
+
+- 保留：Identify actual language/framework and trust boundary, consult matching security guidance, prefer secure defaults during implementation, and be candid about unsupported checks.
+- 调整或拒绝：Upstream source explicitly supports Python, JavaScript/TypeScript, and Go. Do not copy language-specific rules into a universal implement Skill or imply coverage for Java/Spring. Security risk prompts are conditional, without automatically triggering a full audit.
+- 落点：[skills/implement/SKILL.md](../skills/implement/SKILL.md)
+- 来源：[openai/skills:skills/.curated/security-best-practices/SKILL.md](https://raw.githubusercontent.com/openai/skills/49f948faa9258a0c61caceaf225e179651397431/skills/.curated/security-best-practices/SKILL.md)
+- 行为评估：未执行；静态编辑与来源核实不代表模型输出已验证。
+
+## v03-local-verification-method
+
+- 保留：Local v0.3 verification-before-completion reference; checks evidence-to-claim mapping and avoids labeling unrun checks as passes.
+- 调整或拒绝：This bookkeeping group records a previously unmapped reference. It does not retrospectively attribute its text to an unverified upstream file or assert model behavior results.
+- 落点：[skills/implement/references/verification.md](../skills/implement/references/verification.md)
+- 来源：本地 v0.3 原创方法；此项仅补登记，不追溯虚构上游。
+- 行为评估：未执行；静态编辑与来源核实不代表模型输出已验证。
+
+## v03-local-security-review-method
+
+- 保留：Local v0.3 security review lens for boundaries, authorization, secrets, and evidenced findings.
+- 调整或拒绝：This bookkeeping group records a previously unmapped reference. No new specialist security audit capability or upstream provenance claim is implied.
+- 落点：[skills/tech-review/references/security.md](../skills/tech-review/references/security.md)
+- 来源：本地 v0.3 原创方法；此项仅补登记，不追溯虚构上游。
+- 行为评估：未执行；静态编辑与来源核实不代表模型输出已验证。
+
+## v03-local-upstream-integration-method
+
+- 保留：Local v0.3 capability-package discovery and adopt/adapt/reject evaluation method.
+- 调整或拒绝：This bookkeeping group records a previously unmapped reference. It already covers breadth of upstream discovery; earlier suggestion that this capability was absent is withdrawn.
+- 落点：[skills/skill-dev/references/upstream-integration.md](../skills/skill-dev/references/upstream-integration.md)
+- 来源：本地 v0.3 原创方法；此项仅补登记，不追溯虚构上游。
+- 行为评估：未执行；静态编辑与来源核实不代表模型输出已验证。
+
