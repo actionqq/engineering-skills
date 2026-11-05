@@ -24,8 +24,8 @@ Resolve ordinary implementation details within scope. If actual code or environm
 - When external effects, mocks, clocks, fakes, or integration boundaries matter, read [Dependency fidelity](references/fidelity.md).
 - For behavior-preserving restructuring or broad movement, read [Safe refactoring](references/refactoring.md).
 - For stored data, published schemas, or mixed-version rollout changes, read [Migration and recovery](references/evolution.md).
-- Before claiming a fix, completion, passing checks, or merge readiness, read [Verification before completion](references/verification.md); use its evidence-to-claim mapping proportionately.
-- When implementation changes maintained project facts, exposes a design mismatch, or produces durable findings, read [Maintaining project documents](references/documents.md). Record settled changes as work proceeds.
+- When a claim depends on execution evidence, read [Verification before completion](references/verification.md) before reporting it and use its evidence-to-claim mapping proportionately.
+- When implementation changes maintained project facts, exposes a design mismatch, or produces durable findings, read [Maintaining project documents](references/documents.md).
 
 For security-sensitive changes, identify the affected language, framework, and trust boundaries before coding. For example, authorization or tenant isolation, untrusted input and file or network access, and secret handling may require secure-by-default implementation choices and negative-path checks. Load matching project requirements and current authoritative framework or language guidance when relevant; do not apply another stack's rules as if they were universal. If appropriate guidance or verification is unavailable, state the limit rather than claiming a security assessment.
 
@@ -43,7 +43,7 @@ Separate regressions caused by the change, pre-existing baseline failures, and e
 
 Run checks proportionate to the actual risk and project requirements. Inspect the final behavior independently of test success, including important failure paths, affected callers, compatibility, and accidental scope growth.
 
-Update maintained project documents when the delivered change makes them inaccurate and the update is within scope. Keep design acceptance, implementation completion, and runtime verification as separate conclusions.
+When the work changes or clarifies a project fact, update the current guidance responsible for that fact within scope. Use historical material as evidence of the earlier work. Keep design acceptance, implementation completion, and runtime verification as separate conclusions.
 
 For planned units, record results and downstream-relevant changes in the maintained plan, continue the next authorized ready unit, and finish shared integration checks before claiming the whole request complete. On interruption, preserve the current unit, remaining work, and next action.
 

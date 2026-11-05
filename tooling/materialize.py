@@ -1,9 +1,13 @@
 #!/usr/bin/env python3
 """Export raw case inputs only. This is packaging, not a security sandbox."""
 import argparse
-import json
 import subprocess
 from pathlib import Path, PurePosixPath
+
+if __package__:
+    from .case_bank import load_case_bank
+else:
+    from case_bank import load_case_bank
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -54,7 +58,7 @@ def main():
     parser.add_argument('case_id')
     parser.add_argument('destination', type=Path)
     args = parser.parse_args()
-    cases = json.loads((ROOT / 'evals/cases.json').read_text())['cases']
+    _, cases = load_case_bank(ROOT)
     matching = [case for case in cases if case['id'] == args.case_id]
     if not matching:
         parser.error('Unknown case ID')

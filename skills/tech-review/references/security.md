@@ -1,6 +1,6 @@
 # Security Review Lens
 
-Load this lens when the changed surface handles authentication, authorization, untrusted input, secrets, tenant boundaries, file or network access, deserialization, cryptography, sensitive data, privileged execution, or security-relevant configuration. It supplements the relevant code or architecture lens; it is not a substitute for a specialist audit.
+Load this lens when the reviewed surface handles authentication, authorization, untrusted input, secrets, tenant boundaries, file or network access, deserialization, cryptography, sensitive data, privileged execution, or security-relevant configuration. It supplements the relevant code or architecture lens; it is not a substitute for a specialist audit.
 
 ## Establish the boundary
 

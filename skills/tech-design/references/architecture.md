@@ -18,6 +18,20 @@ Apply a behavior-preserving inlining thought experiment. If inlining spreads pol
 
 Look for counterevidence before combining modules: independent authorization, failures, deployment, transactions, ownership, or change axes may require separation. Thin routes, CLI entries, adapters, generated clients, and composition roots can be intentionally thin. A small facade over unrelated policies can create a god module rather than depth.
 
+## Concentrate boundary handling
+
+Treat raw external data at the boundary where it enters a trust or representation domain: CLI input, configuration, network protocols, storage records, third-party APIs, or another independently controlled system. Validate and narrow there, then convert to owned domain concepts.
+
+Inside a boundary whose contract has already established validity, do not scatter the same defensive parsing through every helper. Re-validation is justified when a new independently exposed boundary is crossed, not merely because the call stack is deep.
+
+Keep transport, storage, and framework representations private unless they are intentionally part of the public contract. Prefer a thin mechanical shell around business logic that can operate on owned types without framework-specific knowledge.
+
+## Separate shared state before serializing it
+
+When concurrent actors appear to require a lock, first ask whether they truly need to mutate the same object. Independent actors that publish independent facts should usually own separate files, keys, records, branches, or state objects and combine them at a read or reporting boundary.
+
+Use structural serialization such as a single writer, lock, compare-and-swap, or sequential phase only when one shared mutable target is a real invariant. A convention that says “do not write at the same time” is not concurrency control.
+
 ## Design from caller scenarios
 
 State one coherent responsibility and explicit exclusions. Exercise a common call and relevant invalid-input, partial-failure, cancellation, retry, and lifecycle scenarios. Make important effects and costs visible without exposing the private collaborator graph. An enormous options object or generic command dispatcher often moves orchestration back to callers.

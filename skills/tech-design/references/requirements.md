@@ -12,6 +12,8 @@ For an existing system, describe added, changed, removed, and deliberately uncha
 
 Represent material decisions with their prerequisites. Ask about a dependent choice only after enough prerequisites are known to make the answer meaningful. Investigate discoverable facts yourself. A question about an existing API's behavior usually requires reading or testing it, not interviewing the user.
 
+When several unresolved business choices share the same settled prerequisites and do not depend on one another, ask that frontier together in one numbered round. After the answers, recompute which dependent choices are now meaningful and ask those next. Keep a choice out of the current round when its answer depends on another unresolved choice in that round. This is an efficiency rule, not a fixed interview ceremony: clear or bounded decisions do not need artificial rounds.
+
 Distinguish:
 
 - **Fact:** verify through code, documentation, data, or experiment.

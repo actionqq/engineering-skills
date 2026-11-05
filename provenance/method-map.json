@@ -168,7 +168,7 @@
         "github/spec-kit:spec-driven.md",
         "Fission-AI/OpenSpec:docs/concepts.md"
       ],
-      "retained": "先画决策依赖，决策具备后按可验证行为切片；意图、任务和验收保持关联；保留扩展、迁移、收缩顺序。 按结果、依赖、上下文负担、验证与接续需求选择清单或独立执行说明；任务引用设计，明确依赖解除条件和整体验收。",
+      "retained": "先画决策依赖，决策具备后按可验证行为切片，并让意图、任务和验收保持关联。可协调切换时一次迁完，支持的版本或数据格式需要共存时按扩展、迁移、收缩排序。按独立执行和接续需求选择清单或任务说明，明确依赖解除条件和整体验收。",
       "adaptation_or_rejection": "不强制外部 tracker、每次会话一个工单、token 估算、library-first 或完整框架流程。 轻量 task spec、按需细化及上下文恢复规则是本集合的综合设计；不把设计拆文档作为拆任务前提，不强制每步独立文件、新会话或代理，不预写完整实现与测试。",
       "eval_cases": [
         "plan-decisions",
@@ -524,10 +524,11 @@
         "pbakaus/impeccable:skill/SKILL.src.md",
         "nextlevelbuilder/ui-ux-pro-max-skill:.claude/skills/ui-ux-pro-max/SKILL.md",
         "vercel-labs/web-interface-guidelines:README.md",
+        "mattpocock/skills:skills/engineering/prototype/LOGIC.md",
         "mattpocock/skills:skills/engineering/prototype/UI.md"
       ],
       "retained": "Preserve meaningful controls, state visibility, representative content, and comparable scenarios. Prototype only the decisive interaction; implementation and review consider the actual production flow and applicable failure states.",
-      "adaptation_or_rejection": "A frontend prototype uses local data, in-memory state, and simulated effects. Loading, errors, responsiveness, focus details, and other states are included only when they affect its question; no complete state matrix is required. This narrowing does not reduce implementation or review obligations. Default variant counts and mandatory integration into an existing route are not adopted.",
+      "adaptation_or_rejection": "A frontend prototype defaults to local data, in-memory state, and simulated effects. Use browser-local sample state when recovery after reload or return is the behavior being judged. Include loading, errors, responsiveness, focus, and other states only when they affect the question. Default variant counts and mandatory integration into an existing route are not adopted.",
       "eval_cases": []
     },
     {
@@ -563,7 +564,7 @@
     {
       "id": "technical-document-prose",
       "destinations": [
-        "skills/tech-design/SKILL.md",
+        "skills/tech-design/references/documentation.md",
         "skills/work-plan/SKILL.md"
       ],
       "sources": [
@@ -571,7 +572,7 @@
         "cursor/plugins:pstack/skills/unslop/SKILL.md"
       ],
       "retained": "Choose the purpose of a document section, write explicit actor-condition-outcome statements, preserve stable terminology, put prerequisites before instructions, avoid vague claims and filler.",
-      "adaptation_or_rejection": "Integrate a compact writing quality check into existing design and planning entrypoints. Do not add a standalone writer, mandatory separate editing pass, English-only vocabulary bans, or plugin-specific invocation settings.",
+      "adaptation_or_rejection": "Keep the v0.3 prose check in design documentation and planning. The separately triggered tech-writing entry owns general technical-document work; neither entry requires a mandatory separate editing pass, English-only vocabulary bans, or plugin-specific invocation settings.",
       "eval_cases": []
     },
     {

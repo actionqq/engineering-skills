@@ -21,7 +21,7 @@ For a standalone prototype, prefer HTML, CSS, and a little JavaScript, in one fi
 
 In an existing product, reuse its stack and components only when that is clearly cheaper or the surrounding interface is necessary to judge the result. Use an isolated demo entry or explicit prototype switch; do not alter production behavior. A framework is an option when it reduces the work, not a default architectural commitment.
 
-Keep sample data local and state in memory. Simulate service responses and saving. Do not introduce a backend, database, authentication system, shared state library, or reusable architecture for possible future production use.
+Keep sample data local and state in memory by default. When judging recovery after a reload or return, retain only the sample state needed for that flow in browser-local storage. Simulate service responses and server-side saving. Do not introduce a backend, database, authentication system, shared state library, or reusable architecture for possible future production use.
 
 ## Build only what changes the answer
 

@@ -15,7 +15,7 @@ Code reading may help build the reproduction. Prefer a failing test, minimal inv
 
 ## Test a causal explanation
 
-Read [Tracing and hypothesis tests](references/tracing.md) for failures spanning call chains, components, environments, or test order.
+Read [Tracing and hypothesis tests](references/tracing.md) for failures spanning call chains, components, environments, or test order, and for failures that persist after repeated fixes.
 
 For each plausible explanation, state the supporting observation and a prediction that could distinguish it from competitors. Choose the smallest informative probe. Change one causal variable at a time where possible; avoid stacking patches whose effects cannot be separated.
 
@@ -25,10 +25,10 @@ Without reproduction, continue useful source and artifact investigation but labe
 
 ## Fix and verify
 
-For diagnosis-only work, provide evidence and the repair direction without editing the subject. For authorized fixes, change the responsible behavior and add a proportionate regression check at a boundary that reproduces the real failure.
+For diagnosis-only work, provide evidence and the repair direction without editing the subject. For authorized fixes, change the responsible behavior and reuse an existing check that distinguishes the original failure from the repaired behavior. Add a focused regression check when coverage is missing and a faithful test boundary is available.
 
-Compare the expected behavior with relevant design, accepted decisions, and the project's declared context documents. During an authorized fix, update documentation only where behavior or a newly established constraint makes it inaccurate; a routine bug fix need not create an ADR. Preserve accepted decision history, append supported outcomes where useful, and surface material conflicts instead of silently changing the governing choice. Diagnosis-only and explicit file limits also apply to documentation.
+Compare expected behavior with current designs, accepted decisions, and the project's declared context. During an authorized fix, reflect changed or newly established facts in the relevant current guidance. Record supported outcomes in this task's existing plan or verification record where useful. Preserve historical rationale and evidence, and date authorized factual corrections or follow-ups to historical accounts. Reserve ADRs for consequential decisions and surface material conflicts over the governing choice. Diagnosis-only and explicit file limits also apply to documentation.
 
-Rerun the original scenario and affected checks. A single quiet run does not establish that an intermittent failure is gone. Separate baseline failures and blocked checks from the fix result. Remove temporary probes added by this task and preserve useful, appropriately redacted reproduction evidence.
+Run the affected checks and rerun the original scenario when it is available within the task's scope. If the original scenario cannot be exercised, state what the narrower evidence covers. A single quiet run does not establish that an intermittent failure is gone. Separate baseline failures and blocked checks from the fix result. Remove temporary probes added by this task and preserve useful, appropriately redacted reproduction evidence.
 
 Deliver the cause-to-symptom explanation, experiments and actual observations, change or mitigation, verification, and unresolved uncertainty. Do not claim success solely because a plausible patch was written.

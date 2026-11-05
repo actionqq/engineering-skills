@@ -12,6 +12,8 @@ Keep the original scenario while reducing inputs or dependencies one at a time. 
 
 Separate a behavioral failure from setup failures. Missing credentials, unavailable services, or a broken test runner can block an experiment without supporting any causal explanation of the original bug.
 
+If you deliberately force a red result by mutating code, a fixture, configuration, or injected fault, prove that the mutation actually took effect before trusting the failure. Use a diff against a pristine copy or an equivalent direct check. Otherwise a no-op edit, stale artifact, baseline failure, or setup error can masquerade as evidence that the feedback loop detects the target bug.
+
 ## Intermittent and order-dependent failures
 
 Record sample count, failure frequency, seeds, concurrency, and environment. Use explicit barriers or controlled event ordering to force the suspected race when possible. Repeated random stress can support a hypothesis but does not explain which interleaving caused it.
@@ -31,6 +33,12 @@ Treat build failures, missing services, and incompatible test harnesses as untes
 Measure the user-relevant metric under comparable workload, data size, cache state, runtime, and resource conditions. Distinguish latency, throughput, errors, and resource cost. Find where time or contention accumulates with profiling, query plans, or targeted timing; logging everything may itself change the failure.
 
 Use a known-good revision or configuration when available. Account for warm-up and variability. A local improvement can coexist with a system regression if the work moved elsewhere or increased tail latency.
+
+## Verify the repaired scenario
+
+A focused regression test can establish that the repaired boundary now rejects the known defect, but it does not replace the original reproduction when that scenario is available. After a fix, rerun the original or faithfully captured scenario under comparable conditions.
+
+If the original reproduction was not exercised, report the result as partial or not verified at that level rather than declaring the user-visible bug fully verified. State which narrower checks did run.
 
 ## Missing reproduction
 

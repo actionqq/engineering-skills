@@ -6,7 +6,7 @@ Implement the smallest sequence that lets the user judge the proposed interactio
 
 For a drawer comparison, make it open, close, and show enough surrounding content to judge the trade-off. For a multi-step form, make the relevant steps navigable. Prefer native buttons, links, and labeled inputs to custom control machinery.
 
-Use sample data and local variables for state. A save can update an in-memory list or show a simulated result; it does not need a service, durable storage, or production validation logic. Provide a simple way to return to the starting point when the comparison needs repetition.
+Use sample data and in-memory state by default. When recovery after a reload or return is the behavior being judged, keep only the needed sample values in browser-local storage and try that recovery path. For other saves, an in-memory update or simulated result is enough. Provide a simple way to return to the starting point when the comparison needs repetition.
 
 ## Demonstrate only relevant states
 

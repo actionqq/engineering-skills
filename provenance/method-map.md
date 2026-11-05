@@ -76,7 +76,7 @@
 
 ## planning
 
-- 保留：先画决策依赖，决策具备后按可验证行为切片；意图、任务和验收保持关联；保留扩展、迁移、收缩顺序。 按结果、依赖、上下文负担、验证与接续需求选择清单或独立执行说明；任务引用设计，明确依赖解除条件和整体验收。
+- 保留：先画决策依赖，决策具备后按可验证行为切片，并让意图、任务和验收保持关联。可协调切换时一次迁完，支持的版本或数据格式需要共存时按扩展、迁移、收缩排序。按独立执行和接续需求选择清单或任务说明，明确依赖解除条件和整体验收。
 - 调整或拒绝：不强制外部 tracker、每次会话一个工单、token 估算、library-first 或完整框架流程。 轻量 task spec、按需细化及上下文恢复规则是本集合的综合设计；不把设计拆文档作为拆任务前提，不强制每步独立文件、新会话或代理，不预写完整实现与测试。
 - 落点：[skills/work-plan/references/delivery.md](../skills/work-plan/references/delivery.md), [skills/work-plan/SKILL.md](../skills/work-plan/SKILL.md), [skills/implement/SKILL.md](../skills/implement/SKILL.md)
 - 来源：[mattpocock/skills:skills/engineering/wayfinder/SKILL.md](https://raw.githubusercontent.com/mattpocock/skills/c55ee46073ed923f86ce59a5eb3b6d895095d1b7/skills/engineering/wayfinder/SKILL.md), [mattpocock/skills:skills/engineering/to-tickets/SKILL.md](https://raw.githubusercontent.com/mattpocock/skills/c55ee46073ed923f86ce59a5eb3b6d895095d1b7/skills/engineering/to-tickets/SKILL.md), [github/spec-kit:spec-driven.md](https://raw.githubusercontent.com/github/spec-kit/d4229c071c7ea3885b43e8a7739847300f618f13/spec-driven.md), [Fission-AI/OpenSpec:docs/concepts.md](https://raw.githubusercontent.com/Fission-AI/OpenSpec/bae58cf61479986431bb798acbe5a688a591c18c/docs/concepts.md)
@@ -229,9 +229,9 @@
 ## frontend-interaction-states
 
 - 保留：Preserve meaningful controls, state visibility, representative content, and comparable scenarios. Prototype only the decisive interaction; implementation and review consider the actual production flow and applicable failure states.
-- 调整或拒绝：A frontend prototype uses local data, in-memory state, and simulated effects. Loading, errors, responsiveness, focus details, and other states are included only when they affect its question; no complete state matrix is required. This narrowing does not reduce implementation or review obligations. Default variant counts and mandatory integration into an existing route are not adopted.
+- 调整或拒绝：A frontend prototype defaults to local data, in-memory state, and simulated effects. Use browser-local sample state when recovery after reload or return is the behavior being judged. Include loading, errors, responsiveness, focus, and other states only when they affect the question. Default variant counts and mandatory integration into an existing route are not adopted.
 - 落点：[skills/frontend-prototype/references/interaction.md](../skills/frontend-prototype/references/interaction.md), [skills/implement/references/frontend.md](../skills/implement/references/frontend.md), [skills/tech-review/references/frontend.md](../skills/tech-review/references/frontend.md)
-- 来源：[pbakaus/impeccable:skill/SKILL.src.md](https://raw.githubusercontent.com/pbakaus/impeccable/114ea1d3838fca73b253af45f873b9c4f5f213c8/skill/SKILL.src.md), [nextlevelbuilder/ui-ux-pro-max-skill:.claude/skills/ui-ux-pro-max/SKILL.md](https://raw.githubusercontent.com/nextlevelbuilder/ui-ux-pro-max-skill/09170eec67eefd46a7ae85de61b40c194020f997/.claude/skills/ui-ux-pro-max/SKILL.md), [vercel-labs/web-interface-guidelines:README.md](https://raw.githubusercontent.com/vercel-labs/web-interface-guidelines/e3d624baaf29dc1fc645aff3e38f03e564d2d6b1/README.md), [mattpocock/skills:skills/engineering/prototype/UI.md](https://raw.githubusercontent.com/mattpocock/skills/c55ee46073ed923f86ce59a5eb3b6d895095d1b7/skills/engineering/prototype/UI.md)
+- 来源：[pbakaus/impeccable:skill/SKILL.src.md](https://raw.githubusercontent.com/pbakaus/impeccable/114ea1d3838fca73b253af45f873b9c4f5f213c8/skill/SKILL.src.md), [nextlevelbuilder/ui-ux-pro-max-skill:.claude/skills/ui-ux-pro-max/SKILL.md](https://raw.githubusercontent.com/nextlevelbuilder/ui-ux-pro-max-skill/09170eec67eefd46a7ae85de61b40c194020f997/.claude/skills/ui-ux-pro-max/SKILL.md), [vercel-labs/web-interface-guidelines:README.md](https://raw.githubusercontent.com/vercel-labs/web-interface-guidelines/e3d624baaf29dc1fc645aff3e38f03e564d2d6b1/README.md), [mattpocock/skills:skills/engineering/prototype/LOGIC.md](https://raw.githubusercontent.com/mattpocock/skills/c55ee46073ed923f86ce59a5eb3b6d895095d1b7/skills/engineering/prototype/LOGIC.md), [mattpocock/skills:skills/engineering/prototype/UI.md](https://raw.githubusercontent.com/mattpocock/skills/c55ee46073ed923f86ce59a5eb3b6d895095d1b7/skills/engineering/prototype/UI.md)
 - 行为评估：未准备或执行；不以结构检查代替模型行为证据。
 
 ## frontend-prototype-evidence
@@ -253,8 +253,8 @@
 ## technical-document-prose
 
 - 保留：Choose the purpose of a document section, write explicit actor-condition-outcome statements, preserve stable terminology, put prerequisites before instructions, avoid vague claims and filler.
-- 调整或拒绝：Integrate a compact writing quality check into existing design and planning entrypoints. Do not add a standalone writer, mandatory separate editing pass, English-only vocabulary bans, or plugin-specific invocation settings.
-- 落点：[skills/tech-design/SKILL.md](../skills/tech-design/SKILL.md), [skills/work-plan/SKILL.md](../skills/work-plan/SKILL.md)
+- 调整或拒绝：Keep the v0.3 prose check in design documentation and planning. The separately triggered tech-writing entry owns general technical-document work; neither entry requires a mandatory separate editing pass, English-only vocabulary bans, or plugin-specific invocation settings.
+- 落点：[skills/tech-design/references/documentation.md](../skills/tech-design/references/documentation.md), [skills/work-plan/SKILL.md](../skills/work-plan/SKILL.md)
 - 来源：[cursor/plugins:pstack/skills/technical-writing/SKILL.md](https://raw.githubusercontent.com/cursor/plugins/ae5650febf4320793844c12c4adaa937f417f8da/pstack/skills/technical-writing/SKILL.md), [cursor/plugins:pstack/skills/unslop/SKILL.md](https://raw.githubusercontent.com/cursor/plugins/ae5650febf4320793844c12c4adaa937f417f8da/pstack/skills/unslop/SKILL.md)
 - 行为评估：未执行；静态编辑与来源核实不代表模型输出已验证。
 
@@ -297,4 +297,3 @@
 - 落点：[skills/skill-dev/references/upstream-integration.md](../skills/skill-dev/references/upstream-integration.md)
 - 来源：本地 v0.3 原创方法；此项仅补登记，不追溯虚构上游。
 - 行为评估：未执行；静态编辑与来源核实不代表模型输出已验证。
-

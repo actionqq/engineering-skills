@@ -1,0 +1,3 @@
+interface:
+  display_name: "Repo Hardening"
+  short_description: "Turn recurring repository mistakes into enforceable guardrails"

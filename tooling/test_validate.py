@@ -50,6 +50,18 @@ class ValidationCoverageTests(unittest.TestCase):
         self.assertFalse(result['passed'])
         self.assertIn('Case capability map has unknown entry or capability: research', result['errors'])
 
+    def test_full_validation_reads_dated_case_fragments(self):
+        base = json.loads((self.root / 'evals/cases.json').read_text())
+        fragment = {
+            'schema_version': 2,
+            'capabilities': {},
+            'cases': [base['cases'][0]],
+        }
+        (self.root / 'evals/cases.2099-01-01.json').write_text(json.dumps(fragment))
+        result = validate(self.root, full=True)
+        self.assertFalse(result['passed'])
+        self.assertIn('Duplicate case IDs', result['errors'])
+
     def test_missing_archive_resource_still_fails(self):
         (self.root / 'skills/doc-archive/references/operations.md').unlink()
         result = validate(self.root)

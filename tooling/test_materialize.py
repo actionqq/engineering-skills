@@ -1,5 +1,6 @@
 import json
 import subprocess
+import sys
 import tempfile
 import unittest
 from pathlib import Path
@@ -38,6 +39,15 @@ class MaterializerTests(unittest.TestCase):
                 with self.assertRaises(ValueError):
                     materialize(self.case,self.dest)
                 self.assertFalse(self.dest.exists())
+
+    def test_cli_exports_dated_case(self):
+        result = subprocess.run(
+            [sys.executable, '-B', str(ROOT / 'tooling/materialize.py'),
+             'writing-existing-readme', str(self.dest)],
+            capture_output=True, text=True,
+        )
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertIn('worker start', (self.dest / 'workspace/README.md').read_text())
 
     def test_wip_contains_index_worktree_and_untracked(self):
         cases=json.loads((ROOT/'evals/cases.json').read_text())['cases']

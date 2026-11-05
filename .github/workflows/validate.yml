@@ -1,0 +1,25 @@
+name: Validate engineering skills
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install maintenance dependencies
+        run: python -m pip install -r tooling/requirements.txt
+      - name: Validate Skill structure
+        run: python tooling/validate.py
+      - name: Validate evaluation and provenance records
+        run: python tooling/validate.py --full
+      - name: Run tooling regression tests
+        run: python -B -m unittest discover -s tooling -p 'test_*.py' -v

@@ -45,7 +45,9 @@ For parallel plans, give writers separate responsibility or isolated checkouts a
 
 ## Wide refactors
 
-When one mechanical change affects too many consumers for a working vertical slice:
+Follow the agreed transition. When all affected callers can switch together within the supported rollout and data constraints, plan one cutover that updates the callers, removes the obsolete path, and verifies the integrated result.
+
+When supported old and new versions or formats must coexist, use this sequence.
 
 1. Introduce the compatible new form alongside the old.
 2. Migrate bounded consumer groups with relevant checks.

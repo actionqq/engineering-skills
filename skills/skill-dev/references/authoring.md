@@ -6,9 +6,19 @@ Use when deciding what belongs in a Skill or synthesizing upstream approaches.
 
 Describe the requests to handle, necessary inputs, important decisions, output, and observable completion. Keep adjacent non-target tasks explicit where confusion is likely. A list of impressive capabilities is not an instruction set.
 
-For source-based work, inspect the relevant original material and license, including references carrying required behavior. Record the retained, adapted, or rejected methods and why, using the existing provenance mechanism where one exists. Preserve important prerequisites, persistence steps, and authority assumptions; distinguish exact revisions and material read from material merely fetched. Relate the adaptation to a concrete use, but do not require a separate case file unless an executable evaluation or requested evaluation design needs it.
+For source-based work, inspect the relevant original material and license, including references carrying required behavior. Record the retained, adapted, or rejected methods and why, using the existing provenance mechanism where one exists. Preserve important prerequisites, persistence steps, and authority assumptions; distinguish exact revisions and material read from material merely fetched.
 
-Resolve conflicting upstream rules rather than pasting both. For example, stable behavior tests can coexist with focused algorithm tests; a rule to confirm every test boundary may conflict with authorized routine implementation; an automatic commit step may exceed a user's request. Preserve the engineering purpose while choosing explicit local semantics.
+## Integrate by semantic change, not by append
+
+Compare an upstream method with the current local behavior before editing. Choose the smallest accurate action:
+
+- **ADD** — introduce a genuinely new concept or user-visible behavior;
+- **REPLACE** — use the stronger method and remove the weaker or obsolete expression it supersedes;
+- **MERGE** — combine overlapping local rules into one clearer owner;
+- **MOVE** — keep the method but relocate its full explanation to the surface that owns it, leaving only task-specific projection elsewhere;
+- **DROP** — remove a redundant, obsolete, unsupported, or no-longer-useful rule.
+
+Resolve conflicting upstream rules rather than pasting both. Prefer one complete owner for a method and concise task-specific projections in neighboring references. Do not measure a successful upstream sync by added lines; a stronger revision can be smaller than what it replaces.
 
 ## Place detail by when it is needed
 
@@ -16,7 +26,7 @@ Keep decisions every invocation needs in `SKILL.md`. Put substantial mode-specif
 
 Keep related definitions, constraints, and caveats together. Remove duplicated prose inside one bundle, but do not create cross-Skill runtime dependencies merely to deduplicate a few sentences between independently installable entries.
 
-Do not use a word count as a quality target. When material is too large for one invocation, disclose it by mode. Remove a rule because it is irrelevant, redundant, wrong, or shown not to help—not merely because it makes the entry longer.
+Do not use a word count as a quality target. Remove a rule because it is irrelevant, redundant, wrong, superseded, or shown not to help—not merely because it makes the entry longer.
 
 ## Write executable guidance
 

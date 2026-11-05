@@ -14,6 +14,8 @@ Walk through a crash or lost connection before and after each durable write, ext
 
 For example, a worker may commit a database update and die before acknowledging a message. Redelivery must not repeat a nonrepeatable effect. A queue's delivery setting alone cannot make an external service effect atomic with the database; the design needs a supported deduplication or recovery path at that boundary.
 
+For every state-mutating command, lifecycle step, or processing loop that can be retried, answer what happens when it runs twice and when the previous run crashed after each durable transition. Prefer operations that reconcile toward the same correct end state from partial prior state. When replay cannot be idempotent, make the operation identity, deduplication boundary, compensation, or manual recovery explicit.
+
 Define cancellation and timeout semantics: whether work stops, may complete later, or needs reconciliation. Compensation is a new fallible action, not time travel; identify who retries or resolves failed compensation. Make terminal failures and manual recovery visible instead of retrying indefinitely.
 
 ## Bound work and expose the right signals

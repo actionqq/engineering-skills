@@ -22,8 +22,10 @@ Test one causal distinction at a time where feasible. Record the actual observat
 
 When attempted fixes add no information, check whether the feedback tests the right symptom, the compared environments are equivalent, the failure is a baseline issue, or hidden shared state invalidates the experiment. Architecture may be involved, but a fixed number of failed patches is not evidence of that conclusion.
 
+If several attempted fixes all depend on the same premise and fail the same gate, promote that premise to an explicit hypothesis before writing another fix. State the shared assumption and measure or probe it directly. In a distribution or concurrency problem this may mean measuring ownership or skew by actor; elsewhere it may be a configuration value, lifecycle state, dependency behavior, or workload property. Repeated failure is a reason to test the premise, not proof that it is false.
+
 Distinguish mitigation from repair. A restart, longer timeout, retry, or fallback may reduce harm without explaining the cause. Verify its consequences, including duplicate side effects and resource accumulation, and preserve the remaining investigation rather than declaring root cause solved.
 
 ## Close the causal chain
 
-The explanation should connect trigger, violated assumption, propagated state, and observed outcome. The repair should change that chain, and the regression check should fail when the relevant error is reintroduced. Rerun the original scenario after a minimized check succeeds. Remove temporary probes you added, and retain the useful reproduction and unresolved limits.
+The explanation should connect trigger, violated assumption, propagated state, and observed outcome. The repair should change that chain, and the regression check should fail when the relevant error is reintroduced. After a minimized check succeeds, rerun the original scenario when its conditions are available within scope. Report minimized-check evidence at its actual scope. Remove temporary probes you added, and retain the useful reproduction and unresolved limits.

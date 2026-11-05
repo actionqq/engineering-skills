@@ -14,7 +14,7 @@ If a hard-coded dependency prevents meaningful observation, introduce the smalle
 
 Keep behavior changes, responsibility moves, provider inversion, and mechanical file movement distinguishable. After each useful slice, verify the preserved behavior and the new structural property. A mass move combined with changed errors and a new persistence model is difficult to diagnose even if it initially compiles.
 
-For broad API migration, expand a compatible new form, migrate consumers in bounded groups, then remove the old form after checking remaining callers. Temporary adapters need an explicit retirement condition. Do not count a compatibility facade as proof that complexity disappeared.
+For internal APIs that can switch in one cutover, migrate all affected callers and remove the obsolete form in the same change. When supported callers or retained data require old and new forms to coexist, introduce a compatible new form, migrate in bounded groups, and remove the old form after its last required use. Temporary adapters need an explicit retirement condition. Include their cost when assessing complexity.
 
 For package movement, verify actual module roots, package declarations, imports/exports, discovery globs, build contexts, and startup or route registration. Compilation tests only part of the claim; a package can compile while belonging to the wrong architectural layer.
 
