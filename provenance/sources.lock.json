@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "note": "Pinned source observations for v0.1 and v0.2, not claims about current upstream HEAD or complete framework evaluation. Fetched-only resources were not used as method evidence.",
+  "note": "Pinned source observations for v0.1 through v0.3, not claims about current upstream HEAD or complete framework evaluation. Fetched-only resources were not used as method evidence.",
   "sources": [
     {
       "repo": "mattpocock/skills",
@@ -440,7 +440,9 @@
       "sha256": "bf68f4cac5a56c673a928c2e6d619586c5b93ea364026ab37547772cb45a663a",
       "bytes": 10376,
       "id": "anthropics/skills:skills/skill-creator/agents/analyzer.md",
-      "review_scope": "fetched-only; not a method evidence claim"
+      "review_scope": "full-text",
+      "reviewed_date": "2026-11-16",
+      "review_note": "Previously fetched-only; read in full for method-review restoration. Source content and hash unchanged."
     },
     {
       "repo": "anthropics/skills",
@@ -1169,6 +1171,61 @@
       "bytes": 8612,
       "review_scope": "full-text",
       "observed_date": "2026-11-02"
+    },
+    {
+      "repo": "obra/superpowers",
+      "path": "skills/writing-skills/SKILL.md",
+      "commit": "22f0b463e7a5e579904dd6211a520321035526f7",
+      "id": "obra/superpowers:skills/writing-skills/SKILL.md@22f0b46",
+      "review_scope": "full-text",
+      "url": "https://raw.githubusercontent.com/obra/superpowers/22f0b463e7a5e579904dd6211a520321035526f7/skills/writing-skills/SKILL.md",
+      "sha256": "8cb3ac68c6d8c4bb46886b998b09af7989643cab8bd0e46ee86dd62e64546bbe",
+      "bytes": 16738,
+      "observed_date": "2026-11-16"
+    },
+    {
+      "repo": "obra/superpowers",
+      "path": "LICENSE",
+      "commit": "22f0b463e7a5e579904dd6211a520321035526f7",
+      "id": "obra/superpowers:LICENSE@22f0b46",
+      "review_scope": "license-retained",
+      "url": "https://raw.githubusercontent.com/obra/superpowers/22f0b463e7a5e579904dd6211a520321035526f7/LICENSE",
+      "sha256": "a37e0e9697144819e1d965176ac4ae5bc3fa02d11e7812036bbcadf6dafe2400",
+      "bytes": 1070,
+      "observed_date": "2026-11-16"
+    },
+    {
+      "repo": "softaworks/agent-toolkit",
+      "path": "skills/skill-judge/SKILL.md",
+      "commit": "3027f20f3181758385a1bb8c022d4041dfb4de84",
+      "id": "softaworks/agent-toolkit:skills/skill-judge/SKILL.md",
+      "review_scope": "full-text",
+      "url": "https://raw.githubusercontent.com/softaworks/agent-toolkit/3027f20f3181758385a1bb8c022d4041dfb4de84/skills/skill-judge/SKILL.md",
+      "sha256": "737ef3628f0e11353114c3bd05a1c9d0c448dbfec1ae85db839253cbe93198b6",
+      "bytes": 31029,
+      "observed_date": "2026-11-16"
+    },
+    {
+      "repo": "softaworks/agent-toolkit",
+      "path": "LICENSE",
+      "commit": "3027f20f3181758385a1bb8c022d4041dfb4de84",
+      "id": "softaworks/agent-toolkit:LICENSE",
+      "review_scope": "license-retained",
+      "url": "https://raw.githubusercontent.com/softaworks/agent-toolkit/3027f20f3181758385a1bb8c022d4041dfb4de84/LICENSE",
+      "sha256": "4b4447da5344f8b2d3a8a19ba8366d1ac7a24d9ab4690bd04576dc772ddf8321",
+      "bytes": 1072,
+      "observed_date": "2026-11-16"
+    },
+    {
+      "repo": "warpdotdev/common-skills",
+      "path": "LICENSE",
+      "commit": "2a03b403b4f8d42cb54b8953697737193b2e8306",
+      "id": "warpdotdev/common-skills:LICENSE",
+      "review_scope": "license-retained",
+      "url": "https://raw.githubusercontent.com/warpdotdev/common-skills/2a03b403b4f8d42cb54b8953697737193b2e8306/LICENSE",
+      "sha256": "9a10f320256635c6a2b58f9894b1f453e404142d07a6125ad788a3afbd7a7379",
+      "bytes": 1082,
+      "observed_date": "2026-11-16"
     }
   ]
 }

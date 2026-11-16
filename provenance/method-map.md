@@ -148,11 +148,19 @@
 
 ## evaluation
 
-- 保留：需要且能执行时，使用真实请求、执行轨迹和产物检验行为；修改以旧版检查回归，效果比较采用公平基线；可按请求独立设计评估。
-- 调整或拒绝：先确认执行机制和授权，缺少条件就跳过模型评估及准备产物，不用作者演练冒充替代；日常保留可执行的结构、引用、脚本检查。不要求 Claude Code、固定代理或跨宿主评测；原有未执行题库保留为历史材料，不强制续建。
+- 保留：需要新执行证据时，使用真实请求、轨迹和产物检验行为；修改以旧版检查回归，效果比较采用公平基线；可按请求独立设计评估。已有执行证据的归因和方法推演由默认内容审查承接。
+- 调整或拒绝：新模型实验先确认问题、机制和授权；缺少条件时继续内容审查与已有证据分析，不生成待运行材料，也不用作者推演冒充独立运行。不要求 Claude Code、固定代理或跨宿主评测，不把结构检查作为实质审查的替代。
 - 落点：[skills/skill-dev/references/evaluation.md](../skills/skill-dev/references/evaluation.md), [skills/skill-dev/references/discovery.md](../skills/skill-dev/references/discovery.md)
 - 来源：[anthropics/skills:skills/skill-creator/SKILL.md](https://raw.githubusercontent.com/anthropics/skills/34040c9c568585f6929bedeaad110ad08f079624/skills/skill-creator/SKILL.md), [anthropics/skills:skills/skill-creator/agents/grader.md](https://raw.githubusercontent.com/anthropics/skills/34040c9c568585f6929bedeaad110ad08f079624/skills/skill-creator/agents/grader.md), [anthropics/skills:skills/skill-creator/agents/comparator.md](https://raw.githubusercontent.com/anthropics/skills/34040c9c568585f6929bedeaad110ad08f079624/skills/skill-creator/agents/comparator.md)
 - 判别用例：`skill-dev-create`, `skill-dev-collision`, `skill-dev-eval-leak`
+
+## skill-method-review
+
+- 保留：先判断任务结果和关键方法，推演前提、领域正确性、失败恢复、完成条件和工作成本；按能力类型选择检查方法，结合已有产物与执行轨迹归因，再提出最小可复用修正。
+- 调整或拒绝：内容推演和已有证据分析进入默认审查，不以新模型实验为前提；不引入强制 TDD、固定评分或知识比例、自动扫描会话、通用禁令清单或自动部署，也不凭直觉认定模型已经掌握某项知识。序列化字段反例是本地说明，不是已运行的行为基准。
+- 落点：[skills/skill-dev/SKILL.md](../skills/skill-dev/SKILL.md), [skills/skill-dev/references/review.md](../skills/skill-dev/references/review.md)
+- 来源：Anthropic `skill-creator` 及 `agents/analyzer.md`、Matt Pocock `writing-for-agents`、Warp `skill-improvements.md`、Superpowers `writing-skills`、Softaworks `skill-judge`；固定修订和阅读范围见 [来源锁定](sources.lock.json)及 [本轮取舍](v0.3-upstream-assessment.md#2026-11-16-method-review-restoration)。
+- 验证边界：未新增待运行题库；本轮内容检查与结构检查不代表独立模型执行通过。
 
 ## document-ownership
 

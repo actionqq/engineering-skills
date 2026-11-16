@@ -57,13 +57,15 @@
 
 ## 方法深度放在哪里
 
-每个入口包含 `SKILL.md`、`agents/openai.yaml`、本地 `references/` 和第三方来源声明。入口负责选路、共通约束与完成标准；合并后的 v0.3 当前 47 份参考文件保留分支方法，当前篇幅见结构检查记录。读取条件直接写在入口中，每个 Skill 的运行说明不依赖同级其他 Skill 或作者机器上的路径。
+每个入口包含 `SKILL.md`、`agents/openai.yaml`、本地 `references/` 和第三方来源声明。入口负责选路、共通约束与完成标准；合并后的 v0.3 当前 48 份参考文件保留分支方法，当前篇幅见结构检查记录。读取条件直接写在入口中，每个 Skill 的运行说明不依赖同级其他 Skill 或作者机器上的路径。
 
 当前选择任务入口加条件加载的本地参考，保留足够的执行方法，不以“正文越短越好”为目标。参考文件按职责组织：不同 Skill 中同名的 `frontend.md` 可以分别讲架构、实现和评审；共同原则保持一致，但不要求整篇内容相同。暂不新增统一方法库、生成步骤或前端专用实现／评审入口，具体取舍见 [组织依据](provenance/v0.2-frontend-method-family.md#organization-chosen-for-this-revision)。
 
 清晰的实现请求可以直接落实，必要的局部设计属于任务本身，不要求先产出设计文档或原型。已有决策从项目材料读取并尊重；方法与验证范围按受影响行为和风险选择，小改不自动扩成完整产品审查。
 
 Skill 的指令、触发边界和资源组织由 `skill-dev` 承接创建、修改与审查；不因请求里出现“设计”“完整评审”或修改对象名为 `tech-design`、`tech-review` 就启动对应的软件工程流程。读取目标 Skill 是检查待修改或评审的材料，不等于执行其工作流。范围内确有软件设计决策或配套可执行代码需要评审时，再按实际对象采用相关方法。
+
+`skill-dev` 的质量审查先核对任务结果和方法：沿典型任务检查关键判断、必要步骤、失败处理、完成条件与工作成本，按能力类型选择检查方式，再检查发现、加载和资源组织。已有对话、纠正及产物可直接用于归因；新模型实验按需开展。没有运行器不妨碍内容审查，静态推演也不冒充模型实测。方法取舍见 [2026-11-16 上游对照](provenance/v0.3-upstream-assessment.md#2026-11-16-method-review-restoration)。
 
 保留的具体方法包括：完整调用方负担与模块深度、同题不同接口设计、指定技术尽调、前后端目录边界、决策依赖与渐进迁移、真实依赖保真度、独立测试预期、复现与逆向追踪、失败语义回归、WIP 全范围评审、交接状态核实、隔离评估与公平基线，以及基于真实重复失败的结构化防复发。
 
@@ -129,8 +131,8 @@ ADR 可以维护状态、追加注明日期的结果和证据；推翻核心决�
 
 主要研究了 Matt Pocock、citypaul、Anthropic、obra/superpowers、arjunprabhulal、klittle32 的相关 Skills，以及 Vercel ADR、Warp review-spec、OpenSpec、Spec Kit 的相关材料。v0.2 前端方法家族另外对照了 Anthropic `frontend-design`、Impeccable、UI/UX Pro Max、Taste Skill 与 Vercel Web Interface Guidelines；2026-10-08 的技术写作／风险／基准补强直接锁定 Cursor pstack。本轮 upstream sweep 又直接锁定 Warp `common-skills` 的 Skill Doctor 改进规则，并对照 Anthropic eval family、Superpowers、Clarity、SimpleEnglish、Web Quality Skills 与 Spec Kit bug-fix 方法。研究范围只覆盖记录中列出的材料，不代表完整评估各项目。前端取舍见 [v0.2 frontend method family](provenance/v0.2-frontend-method-family.md)，本轮文档方法见 [technical writing method family](provenance/technical-writing-method-family-2026-10-08.md)，pstack 能力取舍见 [pstack capability assessment](provenance/pstack-capability-assessment-2026-10-08.md)，本次重新扫上游的结论见 [upstream sweep](provenance/upstream-sweep-2026-10-08.md)。
 
-- [来源锁定文件](provenance/sources.lock.json)及同目录 `sources.lock.*.json` 正式增量：合并后共 113 个锁定文件，记录仓库、固定 commit、原始链接、SHA-256 和阅读范围。基础记录与 2026-10-08 正式增量由 `tooling/validate.py --full` 合并检查；同一上游文件的不同固定版本使用修订后缀区分，分别保留阅读证据。
-- [方法映射](provenance/method-map.json)及同目录 `method-map.*.json` 正式增量：合并后共 45 组方法，其中基础 v0.3 记录 37 组，2026-10-08 正式增量 8 组；人类可读摘要见 [2026-10-08 method additions](provenance/method-map.2026-10-08.md)和 [upstream sweep](provenance/upstream-sweep-2026-10-08.md)。
+- [来源锁定文件](provenance/sources.lock.json)及同目录 `sources.lock.*.json` 正式增量：合并后共 118 个锁定文件，记录仓库、固定 commit、原始链接、SHA-256 和阅读范围。基础记录与 2026-10-08 正式增量由 `tooling/validate.py --full` 合并检查；同一上游文件的不同固定版本使用修订后缀区分，分别保留阅读证据。
+- [方法映射](provenance/method-map.json)及同目录 `method-map.*.json` 正式增量：合并后共 46 组方法，其中基础 v0.3 记录 38 组，2026-10-08 正式增量 8 组；人类可读摘要见 [方法融合记录](provenance/method-map.md)、[2026-10-08 method additions](provenance/method-map.2026-10-08.md)和 [upstream sweep](provenance/upstream-sweep-2026-10-08.md)。
 - 各 Skill 的 `THIRD_PARTY_NOTICES.md`：独立复制时保留的来源、修改声明和适用许可文本。没有为整个新集合擅自选定统一发布许可证。
 
 来源锁定表示研究时的固定版本，不声称是各项目当前最新版；选段阅读也不代表完整评估整个框架。本地格式复核使用宿主提供的 `skill-creator` 校验脚本，不是运行这些 Skills 的前提。

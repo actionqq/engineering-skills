@@ -333,8 +333,8 @@
         "anthropics/skills:skills/skill-creator/agents/grader.md",
         "anthropics/skills:skills/skill-creator/agents/comparator.md"
       ],
-      "retained": "需要且能执行时，使用真实请求、执行轨迹和产物检验行为；修改以旧版检查回归，效果比较采用公平基线；可按请求独立设计评估。",
-      "adaptation_or_rejection": "先确认执行机制和授权，缺少条件就跳过模型评估及准备产物，不用作者演练冒充替代；日常保留可执行的结构、引用、脚本检查。不要求 Claude Code、固定代理或跨宿主评测；原有未执行题库保留为历史材料，不强制续建。",
+      "retained": "需要新执行证据时，使用真实请求、轨迹和产物检验行为；修改以旧版检查回归，效果比较采用公平基线；可按请求独立设计评估。已有执行证据的归因和方法推演由默认内容审查承接。",
+      "adaptation_or_rejection": "新模型实验先确认问题、机制和授权；缺少条件时继续内容审查与已有证据分析，不生成待运行材料，也不用作者推演冒充独立运行。不要求 Claude Code、固定代理或跨宿主评测，不把结构检查作为实质审查的替代。",
       "eval_cases": [
         "skill-dev-create",
         "skill-dev-collision",
@@ -627,6 +627,24 @@
       "sources": [],
       "retained": "Local v0.3 capability-package discovery and adopt/adapt/reject evaluation method.",
       "adaptation_or_rejection": "This bookkeeping group records a previously unmapped reference. It already covers breadth of upstream discovery; earlier suggestion that this capability was absent is withdrawn.",
+      "eval_cases": []
+    },
+    {
+      "id": "skill-method-review",
+      "destinations": [
+        "skills/skill-dev/SKILL.md",
+        "skills/skill-dev/references/review.md"
+      ],
+      "sources": [
+        "anthropics/skills:skills/skill-creator/SKILL.md",
+        "anthropics/skills:skills/skill-creator/agents/analyzer.md",
+        "mattpocock/skills:skills/productivity/writing-for-agents/SKILL.md",
+        "warpdotdev/common-skills:.agents/skills/skill-doctor/references/skill-improvements.md",
+        "obra/superpowers:skills/writing-skills/SKILL.md@22f0b46",
+        "softaworks/agent-toolkit:skills/skill-judge/SKILL.md"
+      ],
+      "retained": "Review task outcomes and consequential method decisions before packaging; walk through prerequisites, domain correctness, failure recovery, completion, and cost. Choose checks by capability type, analyze available artifacts and execution traces, and attribute failures before proposing the smallest reusable correction.",
+      "adaptation_or_rejection": "Static walkthroughs and existing-evidence analysis are default review methods, not new model experiments. Do not import mandatory TDD or agent runs, fixed scores or knowledge ratios, automatic transcript collection, universal prohibition lists, automatic deployment, or assumptions about what a model already knows. The serialized-field counterexample is a local illustration, not an executed benchmark.",
       "eval_cases": []
     }
   ]

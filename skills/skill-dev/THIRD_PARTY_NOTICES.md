@@ -1,14 +1,14 @@
 # Third-party notices
 
-This Skill is an English synthesis, rewritten and adapted for engineering-skills v0.1. It is not an unmodified upstream Skill. Changes include conditional workflows, tool-neutral execution, scope controls, and explicit evidence limits. No upstream endorsement is implied.
+This Skill is an English synthesis, rewritten and adapted for engineering-skills through v0.3. It is not an unmodified upstream Skill. Changes include conditional workflows, tool-neutral execution, scope controls, and explicit evidence limits. No upstream endorsement is implied.
 
 Method and source scope applicable to this standalone folder:
 
 - [anthropics/skills:skills/skill-creator/SKILL.md](https://raw.githubusercontent.com/anthropics/skills/34040c9c568585f6929bedeaad110ad08f079624/skills/skill-creator/SKILL.md) — full-text
 - [mattpocock/skills:skills/productivity/writing-for-agents/SKILL.md](https://raw.githubusercontent.com/mattpocock/skills/c55ee46073ed923f86ce59a5eb3b6d895095d1b7/skills/productivity/writing-for-agents/SKILL.md) — full-text
 - [mattpocock/skills:skills/productivity/writing-for-agents/SKILL-MECHANICS.md](https://raw.githubusercontent.com/mattpocock/skills/c55ee46073ed923f86ce59a5eb3b6d895095d1b7/skills/productivity/writing-for-agents/SKILL-MECHANICS.md) — full-text
-- [anthropics/skills:skills/skill-creator/agents/grader.md](https://raw.githubusercontent.com/anthropics/skills/34040c9c568585f6929bedeaad110ad08f079624/skills/skill-creator/agents/grader.md) — selected-lines
-- [anthropics/skills:skills/skill-creator/agents/comparator.md](https://raw.githubusercontent.com/anthropics/skills/34040c9c568585f6929bedeaad110ad08f079624/skills/skill-creator/agents/comparator.md) — selected-lines
+- [anthropics/skills:skills/skill-creator/agents/grader.md](https://raw.githubusercontent.com/anthropics/skills/34040c9c568585f6929bedeaad110ad08f079624/skills/skill-creator/agents/grader.md) — full-text
+- [anthropics/skills:skills/skill-creator/agents/comparator.md](https://raw.githubusercontent.com/anthropics/skills/34040c9c568585f6929bedeaad110ad08f079624/skills/skill-creator/agents/comparator.md) — full-text
 - [citypaul/.dotfiles:claude/.claude/skills/expectations/SKILL.md](https://raw.githubusercontent.com/citypaul/.dotfiles/a109f9972bb46671c624fc05752031523e1cf6fc/claude/.claude/skills/expectations/SKILL.md) — full-text
 
 ## anthropics/skills
@@ -347,4 +347,99 @@ This license applies to the adapted portions of this directory
 (`claude/.claude/skills/improve-codebase-architecture/`) derived from Matt
 Pocock's `improve-codebase-architecture` skill and HTML report resource at:
 https://github.com/mattpocock/skills/tree/66898f60e8c744e269f8ce06c2b2b99ce7660d5f/skills/engineering/improve-codebase-architecture
+```
+
+## Method review revision — 2026-11-16
+
+Original synthesis adapting task-outcome review, capability-specific walkthroughs, completion criteria, and attribution of existing execution failures. New model experiments remain conditional. No upstream runners, scorecards, deployment actions, or universal prohibition lists are imported.
+
+Additional direct sources, read in full:
+
+- [Anthropic analyzer](https://github.com/anthropics/skills/blob/34040c9c568585f6929bedeaad110ad08f079624/skills/skill-creator/agents/analyzer.md) — connect instructions and execution to outcome quality; covered by the Anthropic license above.
+- [Warp Skill Doctor improvement guidelines](https://github.com/warpdotdev/common-skills/blob/2a03b403b4f8d42cb54b8953697737193b2e8306/.agents/skills/skill-doctor/references/skill-improvements.md) — attribute failures and prefer the smallest justified replacement.
+- [obra/superpowers:skills/writing-skills/SKILL.md](https://github.com/obra/superpowers/blob/22f0b463e7a5e579904dd6211a520321035526f7/skills/writing-skills/SKILL.md) — capability-specific application checks and method usability; adapted selectively.
+- [softaworks/agent-toolkit:skills/skill-judge/SKILL.md](https://github.com/softaworks/agent-toolkit/blob/3027f20f3181758385a1bb8c022d4041dfb4de84/skills/skill-judge/SKILL.md) — capability-specific application checks and method usability; adapted selectively.
+
+### obra/superpowers
+
+Pinned revision: `22f0b463e7a5e579904dd6211a520321035526f7`. License retained from `LICENSE`.
+
+```text
+MIT License
+
+Copyright (c) 2025 Jesse Vincent
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
+
+### softaworks/agent-toolkit
+
+Pinned revision: `3027f20f3181758385a1bb8c022d4041dfb4de84`. License retained from `LICENSE`.
+
+```text
+MIT License
+
+Copyright (c) 2026 Leonardo Flores
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
+
+### warpdotdev/common-skills
+
+Pinned revision: `2a03b403b4f8d42cb54b8953697737193b2e8306`. License retained from `LICENSE`.
+
+```text
+MIT License
+
+Copyright (c) 2026 Denver Technologies, Inc.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
 ```

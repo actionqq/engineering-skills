@@ -1,20 +1,14 @@
 # Evaluate Behavior and Comparative Value
 
-Use for a requested evaluation design, or a justified behavior check with an available execution mechanism and authorization. This is optional support for Skill development, not a prerequisite for creating or modifying files.
+Use for a requested evaluation design, or a justified new model experiment with an available execution mechanism and authorization. Method review and analysis of existing conversations or artifacts use [Method quality and existing evidence](review.md) independently of this workflow.
 
 ## Confirm execution before preparing cases
 
 Identify the question and a real way to run the candidate instructions on raw inputs: a supported fresh session, an authorized agent, or a suitable local runner. Keep the setup native to the current or intended harness; do not require Claude Code or install another host merely to satisfy this procedure. A schema validator or fixture exporter does not execute a Skill.
 
-If no suitable mechanism is available, skip the behavior evaluation and its setup artifacts. Continue the requested authoring and feasible checks, without producing a substitute benchmark or pending-case report. Only prepare a standalone evaluation plan or cases when the user explicitly requests them. An explicitly requested run that cannot execute should be reported as unavailable, not silently replaced by planning.
+If no suitable mechanism is available, skip the new run and its setup artifacts. Continue the requested authoring, content review, and available evidence analysis without producing a substitute benchmark or pending-case report. Only prepare a standalone evaluation plan or cases when the user explicitly requests them. An explicitly requested run that cannot execute should be reported as unavailable, not silently replaced by planning.
 
-## Start from real failures when available
-
-Recent real sessions, review corrections, failed tasks, support examples, and production-shaped cases can reveal Skill gaps that synthetic cases miss. Treat them as evidence inputs, not automatic instructions to edit the Skill.
-
-Before proposing a Skill change, attribute the failure to the owning surface. Ask whether a competent agent following the current Skill already had the instruction needed to succeed. If the answer is yes, distinguish model variance, missing context, trigger/discovery failure, harness or tool failure, product behavior, and repository enforcement from an instruction gap. Do not append more prose when another layer owns the failure.
-
-Cluster repeated failures by root cause and verify them against the current Skill and repository before generalizing. A no-change conclusion is valid when the evidence does not establish a reusable instruction gap.
+Use the task walkthrough or attributed failure to identify the question this experiment must resolve. Reuse relevant real examples when available; a new run should supply missing evidence, not repeat a conclusion already established by the artifacts.
 
 ## Construct discriminating tasks
 
