@@ -131,11 +131,11 @@ ADR 可以维护状态、追加注明日期的结果和证据；推翻核心决�
 
 主要研究了 Matt Pocock、citypaul、Anthropic、obra/superpowers、arjunprabhulal、klittle32 的相关 Skills，以及 Vercel ADR、Warp review-spec、OpenSpec、Spec Kit 的相关材料。v0.2 前端方法家族另外对照了 Anthropic `frontend-design`、Impeccable、UI/UX Pro Max、Taste Skill 与 Vercel Web Interface Guidelines；2026-10-08 的技术写作／风险／基准补强直接锁定 Cursor pstack。本轮 upstream sweep 又直接锁定 Warp `common-skills` 的 Skill Doctor 改进规则，并对照 Anthropic eval family、Superpowers、Clarity、SimpleEnglish、Web Quality Skills 与 Spec Kit bug-fix 方法。研究范围只覆盖记录中列出的材料，不代表完整评估各项目。前端取舍见 [v0.2 frontend method family](provenance/v0.2-frontend-method-family.md)，本轮文档方法见 [technical writing method family](provenance/technical-writing-method-family-2026-10-08.md)，pstack 能力取舍见 [pstack capability assessment](provenance/pstack-capability-assessment-2026-10-08.md)，本次重新扫上游的结论见 [upstream sweep](provenance/upstream-sweep-2026-10-08.md)。
 
-- [来源锁定文件](provenance/sources.lock.json)及同目录 `sources.lock.*.json` 正式增量：合并后共 129 个锁定文件，记录仓库、固定 commit、原始链接、SHA-256 和阅读范围。基础记录与 2026-10-08 正式增量由 `tooling/validate.py --full` 合并检查；同一上游文件的不同固定版本使用修订后缀区分，分别保留阅读证据。
+- [来源锁定文件](provenance/sources.lock.json)及同目录 `sources.lock.*.json` 正式增量：合并后共 131 个锁定文件，记录仓库、固定 commit、原始链接、SHA-256 和阅读范围。基础记录与 2026-10-08 正式增量由 `tooling/validate.py --full` 合并检查；同一上游文件的不同固定版本使用修订后缀区分，分别保留阅读证据。
 - [方法映射](provenance/method-map.json)及同目录 `method-map.*.json` 正式增量：合并后共 46 组方法，其中基础 v0.3 记录 38 组，2026-10-08 正式增量 8 组；人类可读摘要见 [方法融合记录](provenance/method-map.md)、[2026-10-08 method additions](provenance/method-map.2026-10-08.md)和 [upstream sweep](provenance/upstream-sweep-2026-10-08.md)。
 - 各 Skill 的 `THIRD_PARTY_NOTICES.md`：独立复制时保留的来源、修改声明和适用许可文本。没有为整个新集合擅自选定统一发布许可证。
 
-2026-11-17 将代码简化、属性测试与同根缺陷搜索的方法适配到现有参考；阅读范围和取舍见 [增量方法吸收](provenance/source-audit.md#2026-11-17增量方法吸收)。未新增入口、参考或模型评测流程。
+2026-11-17 将代码简化、属性测试与同根缺陷搜索的方法适配到现有参考；阅读范围和取舍见 [增量方法吸收](provenance/source-audit.md#2026-11-17增量方法吸收)。未新增入口、参考或模型评测流程。 后续补充保留判断依据和完整例子，区分历史动机与当前机制，并承接原型中的决策片段，见 [方法说明与决策证据](provenance/source-audit.md#2026-11-17方法说明与决策证据)。
 
 来源锁定表示研究时的固定版本，不声称是各项目当前最新版；选段阅读也不代表完整评估整个框架。本地格式复核使用宿主提供的 `skill-creator` 校验脚本，不是运行这些 Skills 的前提。
 

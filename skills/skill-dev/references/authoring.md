@@ -10,7 +10,7 @@ For source-based work, inspect the relevant original material and license, inclu
 
 ## Integrate by semantic change, not by append
 
-Compare an upstream method with the current local behavior before editing. Choose the smallest accurate action:
+Compare an upstream method with the current local behavior before editing. A demonstrated defect is not required: a clearer explanation, worked example, decision aid, or reusable technique may improve an already-covered task. Identify the choice or action it makes easier and preserve any necessary assumptions and limits. Choose the smallest accurate action:
 
 - **ADD** — introduce a genuinely new concept or user-visible behavior;
 - **REPLACE** — use the stronger method and remove the weaker or obsolete expression it supersedes;
@@ -30,7 +30,13 @@ Do not use a word count as a quality target. Remove a rule because it is irrelev
 
 ## Write executable guidance
 
-Prefer concrete decisions, observable outcomes, and meaningful examples over generic exhortations. Explain why unusual rules matter. Use fixed sequences for actual dependencies or fragile operations, not for open-ended judgment that admits several valid approaches.
+Give the executor a recognizable condition, a useful action or choice, and an observable result. At consequential judgments, explain how the action serves the task and which assumptions make it appropriate. This lets the executor apply the method when names or surface details change. Keep explicit constraints where they protect a real contract; explaining a constraint does not make it optional.
+
+Use a worked example when a rule leaves a plausible choice unclear. Show the relevant starting situation, the decision and its reason, then the useful result. Include enough boundary or failure behavior to distinguish the method from an attractive but incorrect shortcut. For a refactoring rule, for example, show which repeated caller decisions move to one owner and which responsibilities stay with callers; a shorter function alone does not demonstrate the benefit.
+
+Examples illustrate a reusable distinction, not a required output to imitate. Mark hypothetical examples and fragments as such, keep their assumptions next to them, and retain the details that carry the reasoning. A contrasting case is useful when it changes the choice. Use actual successful artifacts or traces when available, but separate observed success from a claim that the Skill caused it. Do not require every instruction to acquire an example or a new evaluation run.
+
+Use fixed sequences for actual dependencies or fragile operations, not for open-ended judgment that admits several valid approaches. When shortening, check that the reader can still recover the condition, rationale, action, and evidence of completion. Remove repetition or move branch-specific depth before deleting an explanation that makes the method usable.
 
 Distinguish names and descriptions from instructions: metadata influences selection before the body is read. Use lowercase hyphenated names of at most 64 characters with matching directory names. Keep descriptions discriminating. Normal discovery remains enabled unless explicitly changed by the user.
 

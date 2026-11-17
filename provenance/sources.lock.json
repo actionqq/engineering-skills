@@ -1349,6 +1349,28 @@
       "sha256": "7abe19ec9bb73b36141b999b861d24ad855e808bafe0f81e84cce28556f6c297",
       "bytes": 20131,
       "observed_date": "2026-11-17"
+    },
+    {
+      "id": "cursor/plugins:pstack/skills/why/SKILL.md@bf0c7cd",
+      "repo": "cursor/plugins",
+      "commit": "bf0c7cd80abdbf7fe47b634978a7d1b4071f71a7",
+      "path": "pstack/skills/why/SKILL.md",
+      "url": "https://raw.githubusercontent.com/cursor/plugins/bf0c7cd80abdbf7fe47b634978a7d1b4071f71a7/pstack/skills/why/SKILL.md",
+      "sha256": "6b65b3180f1f1bd3b696d7933daf900747410c82931d220a3f57a98addb1c0fd",
+      "bytes": 551,
+      "review_scope": "full-text",
+      "observed_date": "2026-11-17"
+    },
+    {
+      "id": "cursor/plugins:pstack/LICENSE@bf0c7cd",
+      "repo": "cursor/plugins",
+      "commit": "bf0c7cd80abdbf7fe47b634978a7d1b4071f71a7",
+      "path": "pstack/LICENSE",
+      "url": "https://raw.githubusercontent.com/cursor/plugins/bf0c7cd80abdbf7fe47b634978a7d1b4071f71a7/pstack/LICENSE",
+      "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+      "bytes": 1067,
+      "review_scope": "license-retained",
+      "observed_date": "2026-11-17"
     }
   ]
 }

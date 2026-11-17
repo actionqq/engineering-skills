@@ -15,7 +15,7 @@ Define what evidence would settle the important claims. For a version-specific c
 
 ## Gather independent evidence
 
-Read [Evidence practice](references/evidence.md) for conflicting, time-sensitive, consequential, or multi-source work.
+Read [Evidence practice](references/evidence.md) for conflicting, time-sensitive, consequential, multi-source work, or questions about why a design was chosen.
 
 Read [Engineering experiments](references/experiments.md) when assessing existing benchmark results or when the question needs a runnable compatibility, performance, concurrency, or migration probe. When a probe is needed, run it within the task's authorization, preserve the decisive real boundary, and keep observations separate from production acceptance. A request to deliver an experiment calls for actual artifacts and feasible execution, not only a literature summary.
 

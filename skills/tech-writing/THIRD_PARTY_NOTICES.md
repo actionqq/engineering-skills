@@ -78,3 +78,13 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SO
 ## Research-only comparisons
 
 The broader writing study also compared Tech Leads Club, Anthropic `doc-coauthoring`, citypaul technical-writing, Vercel ADR, GitHub Spec Kit, simplyblock design-doc guidance, dotcontext, GitHub awesome-copilot, Addy Osmani's Clarity, and AminBlg's SimpleEnglish. Their accepted and rejected ideas are research context, not runtime dependencies of this standalone Skill. In particular, controlled-English vocabulary and fixed sentence limits are not global defaults; strict controlled language is opt-in.
+
+## Historical rationale method — 2026-11-17
+
+[Cursor pstack why](https://raw.githubusercontent.com/cursor/plugins/bf0c7cd80abdbf7fe47b634978a7d1b4071f71a7/pstack/skills/why/SKILL.md) at `bf0c7cd80abdbf7fe47b634978a7d1b4071f71a7` was read in full. Its use of decision records and attributable history is adapted to distinguish current mechanism, recorded motive, and present interpretation. This does not require history research for every explanation or import pstack invocation settings. Local cache/queue examples are illustrative, not copied upstream cases or observed incidents.
+
+The [source license](https://raw.githubusercontent.com/cursor/plugins/bf0c7cd80abdbf7fe47b634978a7d1b4071f71a7/pstack/LICENSE) is MIT, copyright (c) 2026 Lauren Tan. The pstack MIT terms already retained in this file also apply to this source.
+
+## Prototype decision fragments — 2026-11-17
+
+The already-pinned Matt Pocock to-spec (`c55ee46073ed923f86ce59a5eb3b6d895095d1b7`) also informs preserving a prototype fragment when it expresses a decision more precisely than prose. Existing Matt Pocock MIT terms apply. Local guidance keeps the source, assumptions and decision status explicit, without importing the issue-tracker workflow, mandatory testing-seam approval, or treating a runnable demo as production acceptance.

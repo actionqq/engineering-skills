@@ -15,6 +15,22 @@ Classify claims by what supports them:
 
 An absence is different from a guarantee. Not finding an advisory does not prove safety. Not finding a documented limit does not prove there is no limit. Several derivative articles do not provide independent confirmation of their shared origin.
 
+## Distinguish mechanism, recorded motive, and present judgment
+
+Identify what the question asks before selecting evidence. A question phrased as "why" can concern a mechanism, an original decision, or whether that decision still makes sense today.
+
+| Claim | Evidence that can support it |
+|---|---|
+| How the system behaves at a revision | The relevant code and configuration, plus execution when the claim needs it |
+| Why a design or threshold was chosen | The introducing decision record, commit or PR discussion, issue, or other attributable account of the choice |
+| Whether the choice is appropriate now | Current requirements, alternatives, constraints, and observed behavior, with the assessment identified as present judgment |
+
+For a historical-motive question, locate the change that introduced the behavior and read its rationale in context. Inspect later changes when they affect the explanation. A line's most recent editor may only have formatted or moved it; a comment may describe a later interpretation. Connect the record to the actual decision, and distinguish a proposed rationale from the accepted choice. One adequate record can settle a bounded question; an exhaustive repository history is not required.
+
+State separately what the implementation shows, what the record attributes to the authors, and what you infer. Code can support or contradict a proposed mechanism without establishing an author's motive. A missing record leaves that motive unknown; a plausible engineering benefit remains an inference. Conflicting accounts should retain their dates and scope instead of being merged into a tidy retrospective story.
+
+Illustrative example: current code caches a provider response for ten minutes. That establishes a reuse mechanism, and measurement could establish fewer provider calls. If the introducing PR explicitly chose ten minutes to remain within a provider quota, that record supports the original reason. It does not establish that ten minutes remains appropriate under today's quota and freshness requirements. If the rationale is unavailable, explain the mechanism and label quota reduction as a possible reason rather than writing that it was the reason.
+
 ## Search to challenge the provisional answer
 
 Use terminology from different communities, older and current versions where relevant, and failure-oriented queries. Look for the strongest plausible objection, such as an unsupported deployment mode, a migration incident, or an unrepresentative benchmark. Do not insist on locating a dissenting source if none is available; state the search limit.

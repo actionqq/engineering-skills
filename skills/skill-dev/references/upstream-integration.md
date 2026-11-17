@@ -1,6 +1,6 @@
 # Upstream Integration
 
-Use for an explicit upstream synchronization request or when a material gap suggests an external method may help. This is a capability review, not a popularity contest or a requirement to browse on every small Skill edit.
+Use for an explicit upstream study or synchronization request, or when improving a method calls for external comparison. Study both missing capability and better ways to perform already-covered work. This is a capability review, not a popularity contest or a requirement to browse on every small Skill edit.
 
 ## Discover beyond the current shortlist
 
@@ -25,6 +25,8 @@ A repository tree or README is discovery evidence, not a full review. Mark what 
 ## Compare capability, not names
 
 Map upstream behavior to user tasks and local responsibilities. Similar names do not prove equivalent behavior; a local Skill's existence is not a reason to reject a better upstream method. Conversely, importing a second entrypoint for an already-owned task may create routing ambiguity without adding capability.
+
+Look beyond changed lines and known weaknesses when the request calls for useful methods. A decision model can distinguish options the current checklist treats alike; an explanation can reveal why a step matters; a worked success example can make an abstract rule usable. Compare the relevant method and its supporting context, including unchanged material. Retain an addition or replacement when you can explain its task value and boundaries, even if the current instructions are not demonstrably wrong. Material already expressed adequately needs no duplicate paragraph.
 
 For every candidate, choose one explicit disposition:
 - **Adopt:** use the upstream package substantially as-is, with provenance and compatibility checks.

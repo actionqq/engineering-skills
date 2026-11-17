@@ -21,6 +21,8 @@ Add architecture, data model, API/event, concurrency, security, performance, obs
 
 Keep implementation decomposition separate. A design can name prerequisites, rollout constraints, and what must be proven; detailed task ordering and ticket breakdown belong in the plan.
 
+If a prototype expressed a consequential decision more precisely as a state transition, type, schema, or small pseudocode fragment, carry that fragment into the relevant design section with its source and assumptions. Preserve its proposed or accepted status. For example, a chosen retry flow may retain an editable draft after failure; keeping the transition and retained-data rule avoids losing that decision in a vague instruction to "support retry." Mark simulated behavior and unverified effects separately. Keep the decision-bearing part, not the entire demo or its incidental architecture; no prototype or new document is required when the existing design already settles the behavior.
+
 ## Use the right artifact role
 
 An ADR preserves durable rationale, not delivery bookkeeping. When the repository has no ADR convention, a compact Context / Decision / Consequences record with visible decision status is enough; add options only when their rejection is worth preserving.

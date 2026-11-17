@@ -4,8 +4,8 @@ This file is the human-readable companion to `method-map.2026-10-08.json`. The J
 
 | Method | Destination | Primary source | Decision |
 |---|---|---|---|
-| technical-writing-style | `tech-writing` core + `style.md` | Cursor pstack `technical-writing` + existing writing-for-agents source | Keep reader-first, direct, project-exact prose; add task-specific guidance for tutorials, how-to pages, references, and explanations without rigid templates or sentence rules. |
-| technical-document-format | `tech-writing/design-doc.md`, `tech-design/documentation.md` | pstack writing + existing to-spec | Existing repository format wins; otherwise use a small stable core and conditional risk sections. Do not embed a second work plan. |
+| technical-writing-style | `tech-writing` core + `style.md` | Cursor pstack `technical-writing`, `why` + writing-for-agents | Keep reader-first, project-exact prose and reader-job methods; distinguish mechanism, recorded motive and present interpretation without inventing history or adding a research ceremony. |
+| technical-document-format | `tech-writing/design-doc.md`, `tech-design/documentation.md` | pstack writing + existing to-spec | Existing repository format wins; keep decision-complete content and precise prototype fragments with source, assumptions and decision status. Preserve informative examples; no mandatory prototype, new document or production promotion. |
 | adr-context-writing | `tech-writing/adr.md`, `tech-writing/context.md` | existing Matt ADR/context + writing source | Prefer lean ADRs and repository-defined context roles. Do not impose a universal `CONTEXT.md`/`GLOSSARY.md` convention. |
 | review-report-writing | `tech-writing/review-report.md`, `tech-review/reporting.md` | pstack writing + existing code-review source | Preserve evidence-bearing finding fields and review limits without forcing a visible template or re-running the review. |
 | blast-radius-proof | `tech-review/code.md` | Cursor pstack `blast-radius` | Follow non-symbol boundaries and prove safety-critical facts proportionately; unproved applicable claims stay unverified. |

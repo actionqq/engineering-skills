@@ -24,6 +24,16 @@ Start from a concrete difficulty in the requested scope: a rule that must be cha
 
 Choose the candidate whose benefit survives comparison of the whole affected path. A clearer direct implementation can be preferable to a reusable abstraction. Leave code alone when the proposed change only trades one equally understandable form for another or costs more than the current friction justifies. Support performance claims with comparable measurements rather than assuming a cleaner expression is faster.
 
+### Worked example: give a shared import rule one owner
+
+Illustrative situation: a CLI command and an HTTP endpoint import the same records under the same rules. Both parse input, validate the entire batch, save it in one transaction only if valid, and produce the same domain result. Each caller currently reconstructs that sequence. A validation-rule change requires coordinated edits, and either caller can accidentally save before validation finishes.
+
+A useful refactor gives an import operation ownership of parsing, batch validation, and transactional persistence. The callers provide input and receive the domain result. Authentication and mapping the result to an HTTP response or CLI output remain at their respective boundaries; existing validation errors and persistence failures retain their meanings.
+
+The benefit is one owner for the rule and its ordering, with fewer decisions for each caller to reconstruct. It is not established by replacing several lines with one call. Check the same valid batch and invalid batch through both entrypoints: results remain equivalent, invalid batches still leave no writes, and persistence failures preserve the original rollback and reporting behavior. Inspect that the callers no longer carry their own copy of the import policy.
+
+If the CLI intentionally permits partial imports while the endpoint promises all-or-nothing behavior, that assumption changes the decision. Shared parsing may still help, but combining their persistence policies would change the contract. Keep the differing policies explicit rather than adding flags solely to make the code look shared.
+
 ## Change one kind of thing at a time
 
 Keep behavior changes, responsibility moves, provider inversion, and mechanical file movement distinguishable. After each useful slice, verify the preserved behavior and the new structural property. A mass move combined with changed errors and a new persistence model is difficult to diagnose even if it initially compiles.

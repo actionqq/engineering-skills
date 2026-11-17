@@ -594,5 +594,48 @@
     "original_upstream_text_copied": false,
     "exception": "Addy Osmani MIT license text is retained as a license notice.",
     "limits": "Selected files only. Trail of Bits PBT and variant entrypoints plus the named method references were read; code-review-and-quality was sampled at lines 1-179. Upstream runtime packages, commands, query templates and model evaluations were not executed or imported."
+  },
+  "followup_2026_11_17_explanations": {
+    "date": "2026-11-17",
+    "base_commit": "8552f731efa93f69686f01a23e81f04ecd7970e1",
+    "basis": "Apply the authorized positive-method additions at inspected pins; no new latest-HEAD survey.",
+    "sources": [
+      {
+        "id": "anthropics/skills:skills/skill-creator/SKILL.md",
+        "sha256": "dcd4803e61e913e6fc27294184cd3a71f09f5e924ff20c8a9a20173e7b3c2bcf",
+        "matches_git_blob": true,
+        "review_scope_this_followup": "selected-lines: 115-139,296-304"
+      },
+      {
+        "id": "cursor/plugins:pstack/skills/why/SKILL.md@bf0c7cd",
+        "sha256": "6b65b3180f1f1bd3b696d7933daf900747410c82931d220a3f57a98addb1c0fd",
+        "matches_git_blob": true,
+        "review_scope_this_followup": "full-text"
+      },
+      {
+        "id": "cursor/plugins:pstack/LICENSE@bf0c7cd",
+        "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e",
+        "matches_git_blob": true,
+        "review_scope_this_followup": "full-text"
+      },
+      {
+        "id": "mattpocock/skills:skills/engineering/to-spec/SKILL.md",
+        "sha256": "43ad9cf318e5e7d3d1fa360253a37021796dc87a0c2e595ad262661a10f85088",
+        "matches_git_blob": true,
+        "review_scope_this_followup": "full-text"
+      }
+    ],
+    "new_source_ids": [
+      "cursor/plugins:pstack/skills/why/SKILL.md@bf0c7cd",
+      "cursor/plugins:pstack/LICENSE@bf0c7cd"
+    ],
+    "disposition": "Explain consequential rules and worked success examples; distinguish mechanism, recorded motive and current judgment; preserve decision-bearing prototype fragments. Keep existing design-comparison methods unchanged.",
+    "local_examples": [
+      "shared import ownership with partial-import counterexample",
+      "ten-minute cache mechanism, historical quota rationale and present requirements",
+      "queue mechanism versus inferred race-prevention motive",
+      "retry transition retaining an editable draft"
+    ],
+    "limits": "Original illustrative examples, not repository observations or model execution. No source package installation, copied scripts, automatic publication, fixed example count, mandatory prototype, or new evaluation workflow."
   }
 }

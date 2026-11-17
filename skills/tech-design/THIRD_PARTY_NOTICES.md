@@ -479,3 +479,6 @@ This notice applies to portions of this directory adapted from Addy Osmani's
 recorded in local history. For the pinned audit baseline, immutable source file,
 license source, and local-change record, see `resources/source-notes.md`.
 
+## Prototype decision fragments — 2026-11-17
+
+The already-pinned Matt Pocock to-spec (`c55ee46073ed923f86ce59a5eb3b6d895095d1b7`) also informs preserving a prototype fragment when it expresses a decision more precisely than prose. Existing Matt Pocock MIT terms apply. Local guidance keeps the source, assumptions and decision status explicit, without importing the issue-tracker workflow, mandatory testing-seam approval, or treating a runnable demo as production acceptance.

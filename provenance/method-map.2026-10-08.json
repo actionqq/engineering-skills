@@ -10,10 +10,11 @@
       ],
       "sources": [
         "cursor/plugins:pstack/skills/technical-writing/SKILL.md@ccb5507",
-        "mattpocock/skills:skills/productivity/writing-for-agents/SKILL.md"
+        "mattpocock/skills:skills/productivity/writing-for-agents/SKILL.md",
+        "cursor/plugins:pstack/skills/why/SKILL.md@bf0c7cd"
       ],
-      "retained": "Write for the actual reader, keep project terminology exact, cut filler, and prefer direct concrete language. Choose structure and completion by the reader job: observable tutorial progress, task-oriented how-to branches, reference contract completeness, or explanation of mechanisms and trade-offs.",
-      "adaptation_or_rejection": "The collection does not require pstack's unslop dependency, a single Diataxis mode for every mixed engineering artifact, Cursor-specific invocation, or fixed sentence-length rules. Existing project style and explicit user format take precedence.",
+      "retained": "Write for the actual reader, keep project terminology exact, cut filler, and prefer direct concrete language. Choose structure and completion by the reader job: observable tutorial progress, task-oriented how-to branches, reference contract completeness, or explanation of mechanisms and trade-offs. Keep current mechanism, recorded motive and present interpretation distinct when explaining a design.",
+      "adaptation_or_rejection": "The collection does not require pstack's unslop dependency, a single Diataxis mode for every mixed engineering artifact, Cursor-specific invocation, or fixed sentence-length rules. Existing project style and explicit user format take precedence. History claims need attributable records; editing prose does not authorize an unbounded historical investigation. The queue example is local and illustrative.",
       "eval_cases": ["writing-existing-readme"]
     },
     {
@@ -26,8 +27,8 @@
         "cursor/plugins:pstack/skills/technical-writing/SKILL.md@ccb5507",
         "mattpocock/skills:skills/engineering/to-spec/SKILL.md"
       ],
-      "retained": "Use the repository's maintained format first. Without one, keep a stable design core around context, scope, the chosen approach, consequential contracts and failure semantics, verification path, risks, and unresolved blockers; load specialized sections only when the design needs them.",
-      "adaptation_or_rejection": "Do not force a large RFC/TDD template, duplicate detailed work-plan tasks inside design documents, or treat document length as a reason to split. Settled design writing must not silently reopen approved choices.",
+      "retained": "Use the repository's maintained format first. Without one, keep a stable design core around context, scope, the chosen approach, consequential contracts and failure semantics, verification path, risks, and unresolved blockers; load specialized sections only when the design needs them. Preserve prototype fragments that express consequential decisions precisely, with their source, assumptions and proposed or adopted status.",
+      "adaptation_or_rejection": "Do not force a large RFC/TDD template, duplicate detailed work-plan tasks inside design documents, or treat document length as a reason to split. Settled design writing must not silently reopen approved choices. Carry decision meaning and informative examples without promoting arbitrary sample data, demo architecture or simulated behavior to an approved production contract. No prototype phase or new document is required.",
       "eval_cases": ["writing-settled-design"]
     },
     {

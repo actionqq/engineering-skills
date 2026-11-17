@@ -443,3 +443,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
+
+## Explanations and examples — 2026-11-17
+
+The already-pinned Anthropic skill-creator (`34040c9c568585f6929bedeaad110ad08f079624`, this follow-up reads lines 115-139 and 296-304) informs explaining consequential choices and using transferable examples. The existing Apache-2.0 notice remains applicable. Local synthesis adds applicability, useful outcomes, and preservation checks without requiring an example count or a model run; it makes no general reliability claim about rationale-based prompting. Positive-value upstream selection is a local integration rule.

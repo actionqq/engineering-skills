@@ -60,10 +60,10 @@
 
 ## research
 
-- 保留：拆解问题、优先一手来源、寻找反证、比较矛盾资料、区分观察与推断。
-- 调整或拒绝：不强制来源数量和统一长报告；同源转述不算独立证据；离线结论明确版本范围。
+- 保留：拆解问题、优先一手来源、寻找反证、比较矛盾资料、区分观察与推断。 区分实现机制、可归属的历史动机和当前判断；沿引入及相关后续变更核对记录，保留提议与采纳、观察与推断的区别。
+- 调整或拒绝：不强制来源数量和统一长报告；同源转述不算独立证据；离线结论明确版本范围。 将 pstack why 的历史查证方法限定到历史动机问题，不把所有 why 问题强制变成全仓考古；缓存例为本地说明，缺少动机证据不编造历史。
 - 落点：[skills/research/references/evidence.md](../skills/research/references/evidence.md)
-- 来源：[arjunprabhulal/agent-skills:skills/research/deep-research/SKILL.md](https://raw.githubusercontent.com/arjunprabhulal/agent-skills/42dd24080fce6d731d00e2a1134f398c3da4171b/skills/research/deep-research/SKILL.md), [citypaul/.dotfiles:claude/.claude/skills/evaluate-existing-solutions/references/evidence-and-currentness.md](https://raw.githubusercontent.com/citypaul/.dotfiles/a109f9972bb46671c624fc05752031523e1cf6fc/claude/.claude/skills/evaluate-existing-solutions/references/evidence-and-currentness.md)
+- 来源：[arjunprabhulal/agent-skills:skills/research/deep-research/SKILL.md](https://raw.githubusercontent.com/arjunprabhulal/agent-skills/42dd24080fce6d731d00e2a1134f398c3da4171b/skills/research/deep-research/SKILL.md), [citypaul/.dotfiles:claude/.claude/skills/evaluate-existing-solutions/references/evidence-and-currentness.md](https://raw.githubusercontent.com/citypaul/.dotfiles/a109f9972bb46671c624fc05752031523e1cf6fc/claude/.claude/skills/evaluate-existing-solutions/references/evidence-and-currentness.md), [cursor/plugins:pstack/skills/why/SKILL.md@bf0c7cd](https://raw.githubusercontent.com/cursor/plugins/bf0c7cd80abdbf7fe47b634978a7d1b4071f71a7/pstack/skills/why/SKILL.md)
 - 判别用例：`research-conflict`, `research-unavailable`
 
 ## faithful-experiment
@@ -92,8 +92,8 @@
 
 ## refactor
 
-- 保留：相关行为有保护时整理结构；将机械迁移与行为变更分开，逐步验证真实依赖。 授权迁移后同步反映当前结构的文档，保留历史决策理由。 从具体修改或理解成本选择控制流、规则归属、类型边界、转发层或计算与编排的调整，并核对每种调整的保留条件。
-- 调整或拒绝：补充失败语义等价、用户脏工作区保护、源码根路径和基线区分，不把全部重构推迟到仪式性末尾。 上游简化候选作为条件方法；不采用固定行数、第三次使用才抽象、每次完整测试或所有重构必须拆 PR 的要求。
+- 保留：相关行为有保护时整理结构；将机械迁移与行为变更分开，逐步验证真实依赖。 授权迁移后同步反映当前结构的文档，保留历史决策理由。 从具体修改或理解成本选择控制流、规则归属、类型边界、转发层或计算与编排的调整，并核对每种调整的保留条件。 用共享导入规则的完整示例说明调用方决策如何集中、协议边界为何保留，以及行为等价和职责改进如何分别验证。
+- 调整或拒绝：补充失败语义等价、用户脏工作区保护、源码根路径和基线区分，不把全部重构推迟到仪式性末尾。 上游简化候选作为条件方法；不采用固定行数、第三次使用才抽象、每次完整测试或所有重构必须拆 PR 的要求。 导入例为本地假设场景，不是仓库实测结果；允许部分导入与全有或全无导入的差异用于检验合并前提。
 - 落点：[skills/implement/references/refactoring.md](../skills/implement/references/refactoring.md)
 - 来源：[mattpocock/skills:skills/engineering/tdd/SKILL.md](https://raw.githubusercontent.com/mattpocock/skills/c55ee46073ed923f86ce59a5eb3b6d895095d1b7/skills/engineering/tdd/SKILL.md), [citypaul/.dotfiles:claude/.claude/skills/structure-codebase/references/enforcement-and-migration.md](https://raw.githubusercontent.com/citypaul/.dotfiles/a109f9972bb46671c624fc05752031523e1cf6fc/claude/.claude/skills/structure-codebase/references/enforcement-and-migration.md), [addyosmani/agent-skills:skills/code-review-and-quality/SKILL.md](https://raw.githubusercontent.com/addyosmani/agent-skills/39b723ceebf81474d0557c1fecd01eddab585563/skills/code-review-and-quality/SKILL.md)
 - 判别用例：`review-code-regression`, `design-deep-path`, `implement-baseline`
@@ -140,8 +140,8 @@
 
 ## authoring
 
-- 保留：围绕用途、触发边界和交付定义入口；按分支组织可达资源；新建交付实际文件，修改定位原因并保留无关有效行为。
-- 调整或拒绝：主流程聚焦创建与修改，研究只服务于明确的来源融合或方法缺口；保留必要来源与许可，不强制每次建研究档案或评估用例。独立运行不依赖作者私有路径或另一 Skill。
+- 保留：围绕用途、触发边界和交付定义入口；按分支组织可达资源；新建交付实际文件，修改定位原因并保留无关有效行为。 解释关键判断的作用机制和适用假设，用起点、选择依据及结果构成完整示例，保留影响理解的边界。
+- 调整或拒绝：主流程聚焦创建与修改；上游对照可用于补缺，也可改善已覆盖任务的判断、解释或例子。保留必要来源与许可，不强制每次建研究档案或评估用例。独立运行不依赖作者私有路径或另一 Skill。解释不替代真实约束；不要求每条指令配例子，不从一次成功归因模型收益，不以字数压缩有效方法。
 - 落点：[skills/skill-dev/references/authoring.md](../skills/skill-dev/references/authoring.md)
 - 来源：[anthropics/skills:skills/skill-creator/SKILL.md](https://raw.githubusercontent.com/anthropics/skills/34040c9c568585f6929bedeaad110ad08f079624/skills/skill-creator/SKILL.md), [mattpocock/skills:skills/productivity/writing-for-agents/SKILL.md](https://raw.githubusercontent.com/mattpocock/skills/c55ee46073ed923f86ce59a5eb3b6d895095d1b7/skills/productivity/writing-for-agents/SKILL.md), [mattpocock/skills:skills/productivity/writing-for-agents/SKILL-MECHANICS.md](https://raw.githubusercontent.com/mattpocock/skills/c55ee46073ed923f86ce59a5eb3b6d895095d1b7/skills/productivity/writing-for-agents/SKILL-MECHANICS.md)
 - 判别用例：`skill-dev-create`, `skill-dev-collision`
@@ -300,8 +300,8 @@
 
 ## v03-local-upstream-integration-method
 
-- 保留：Local v0.3 capability-package discovery and adopt/adapt/reject evaluation method.
-- 调整或拒绝：This bookkeeping group records a previously unmapped reference. It already covers breadth of upstream discovery; earlier suggestion that this capability was absent is withdrawn.
+- 保留：Local v0.3 capability-package discovery and disposition method; inspect useful unchanged methods as well as deltas and gaps, including decision models, explanations and worked success examples for already-covered tasks.
+- 调整或拒绝：Positive method value is a valid reason for adaptation or replacement without first demonstrating a defect. Keep task value and applicability explicit; no duplicate material, mandatory broad sweep, or unsupported effectiveness claim. This is local integration guidance, not a claim that the earlier breadth of discovery was absent.
 - 落点：[skills/skill-dev/references/upstream-integration.md](../skills/skill-dev/references/upstream-integration.md)
-- 来源：本地 v0.3 原创方法；此项仅补登记，不追溯虚构上游。
+- 来源：本地 v0.3 原创方法，不追溯虚构上游。
 - 行为评估：未执行；静态编辑与来源核实不代表模型输出已验证。

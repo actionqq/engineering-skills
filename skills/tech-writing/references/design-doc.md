@@ -36,7 +36,9 @@ A small, self-contained mechanism does not need a system-design table of content
 
 ## Keep the design implementable without prewriting the implementation
 
-Name complete caller or user-visible contracts, ownership, states, invariants, failures, and compatibility rules. Use diagrams, signatures, payloads, schemas, or pseudocode where prose would leave an important ambiguity. Keep examples minimal and consistent with the terminology in the surrounding text.
+Name complete caller or user-visible contracts, ownership, states, invariants, failures, and compatibility rules. Use diagrams, signatures, payloads, schemas, or pseudocode where prose would leave an important ambiguity. Focus examples on the contract while retaining the conditions and outcomes needed to interpret them; keep terminology consistent with the surrounding text.
+
+When a prototype already captures a decision accurately, retain its relevant transition, schema, type, or fragment beside the decision instead of replacing it with less precise prose. Identify the source, assumptions, and whether the decision was adopted or remains a proposal. Distinguish selected defaults and informative examples from incidental mock responses, arbitrary sample values, and demo scaffolding. A runnable prototype alone proves neither approval nor production behavior; discrepancies with the governing design remain explicit until resolved within the task's authority.
 
 Do not fill the document with production classes, complete tests, or file-by-file tasks that will immediately drift. A testing or verification section states what must be proven and the appropriate boundary; the detailed scenario matrix or execution plan lives with its maintained owner when the project has one.
 

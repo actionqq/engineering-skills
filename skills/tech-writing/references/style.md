@@ -47,6 +47,8 @@ Put code, commands, paths, configuration keys, and exact UI labels in their esta
 
 A maintained document must describe the current truth at the scope it claims. Check material behavior, command, option, configuration, compatibility, version, and quantitative claims against source or another authoritative artifact. Date or otherwise scope facts that can age.
 
+When explaining a design, distinguish how it works, the recorded reason it was chosen, and your assessment of why it is useful now. Code can establish the mechanism; attribute historical motives to a relevant decision record or discussion. For example, a queue's current serialization behavior does not by itself show that the authors introduced it to prevent races. If the original rationale is unknown, say so and label a useful present-day interpretation as an interpretation. Preserve that distinction when editing supplied material; resolve a material evidence gap within scope rather than inventing a more convincing history.
+
 Do not claim exhaustive coverage from a partial check. If a command was not run, do not write its expected result as observed evidence. If a document describes a planned design rather than implemented behavior, make that status clear where a reader could confuse the two.
 
 Machine-check what is cheap and deterministic, such as local links, generated anchors, examples, or documented commands, when the task and environment allow it. Manual review remains appropriate for meaning, trade-offs, and audience fit.
