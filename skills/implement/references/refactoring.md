@@ -10,6 +10,20 @@ Use trustworthy existing tests. Where behavior is unprotected, characterize repr
 
 If a hard-coded dependency prevents meaningful observation, introduce the smallest useful selection point while preserving behavior. Prefer a real local dependency where practical; consult [Dependency fidelity](fidelity.md) when a substitute is needed.
 
+## Choose a change that removes actual burden
+
+Start from a concrete difficulty in the requested scope: a rule that must be changed in several places, a call path that hides its effects, or branching that makes valid states hard to follow. Use nearby conventions and callers to decide whether a candidate helps; size, repetition, and indirection alone do not establish a problem.
+
+| Observed difficulty | Candidate change | Check before choosing it |
+|---|---|---|
+| Nested decisions obscure the normal path | Introduce guard clauses or name a coherent decision | Preserve evaluation order, side effects, cleanup, and error precedence; moving a condition can change behavior |
+| The same business rule is maintained in several places | Put the rule with its existing owner and reuse it | The sites must share the same contract and reason to change; similar expressions in independent domains may need to stay separate |
+| Callers repeatedly reconstruct valid states or dispatch on the same variants | Clarify the type/interface boundary or consolidate dispatch | Preserve supported states, runtime validation at external boundaries, and fallback behavior; a new model should eliminate caller work rather than require another translation layer |
+| A forwarding chain makes behavior harder to locate | Inline a layer that contributes no useful contract | Keep boundaries that own authorization, recovery, compatibility, observability, or an independently useful interface |
+| Calculation is tangled with I/O or sequencing | Separate the calculation from orchestration at a useful seam | Preserve resource lifetime, transaction scope, ordering, and the meaning of failures; do not split merely to shorten a function |
+
+Choose the candidate whose benefit survives comparison of the whole affected path. A clearer direct implementation can be preferable to a reusable abstraction. Leave code alone when the proposed change only trades one equally understandable form for another or costs more than the current friction justifies. Support performance claims with comparable measurements rather than assuming a cleaner expression is faster.
+
 ## Change one kind of thing at a time
 
 Keep behavior changes, responsibility moves, provider inversion, and mechanical file movement distinguishable. After each useful slice, verify the preserved behavior and the new structural property. A mass move combined with changed errors and a new persistence model is difficult to diagnose even if it initially compiles.

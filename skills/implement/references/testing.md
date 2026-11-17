@@ -28,6 +28,21 @@ Example: for a rounding requirement, use worked monetary examples that distingui
 
 Ask what plausible incorrect implementation this test would reject. A test that still passes after removing the important operation is weak evidence. Mutation testing can help where it is proportionate or required, but a mutation score is not a substitute for relevant scenarios.
 
+## Use properties when examples leave an input-space gap
+
+Use generated inputs when an important contract applies across many values or operation sequences and can be checked meaningfully. Establish the input domain and promised behavior first; a function's name alone does not justify an algebraic law. Keep example tests when no useful general property exists. Reuse the project's test tools where practical; the expected coverage benefit must justify any added dependency or production seam.
+
+| Contract | Useful property | What else must remain checked |
+|---|---|---|
+| A lossless format preserves supported values | Encoding and then decoding recovers the value under the contract's equality rules | Two implementations can share a mistake; retain independently checked format examples |
+| A canonicalizer produces a stable representation | Applying it again leaves the result unchanged | An identity function also passes; check examples that require actual normalization |
+| Sorting preserves the collection while ordering it | The output is ordered and has the same elements with the same multiplicities | Ordering alone accepts an empty result; check stability only when promised |
+| A replacement preserves a trusted implementation's behavior | Both agree on supported inputs and relevant errors or effects | Establish the reference's applicable domain; known legacy defects are not automatically requirements |
+
+Generate meaningful inputs directly, including relationships between fields, instead of discarding almost every generated case. Preserve known boundary examples alongside generation. Test invalid inputs separately against their rejection contract; do not silently broaden a valid-input property to undefined behavior. Observe whether the generator actually exercises the intended domain; exhausted filtering or setup failure does not establish that the property holds. Choose execution bounds appropriate to the existing test environment rather than a universal sample count or timeout.
+
+On failure, retain the failing input and available replay information, and reduce it while preserving the failure. Classify the result before changing code: a promised property failed, the generated input violated a real precondition, the asserted property was wrong, the specification leaves the case unresolved, or the harness failed. Do not discard a counterexample merely to obtain a pass. After resolving the cause, keep an appropriate regression example and rerun the property; one repaired example does not cover the remaining domain.
+
 ## Iterate through real behavior
 
 For test-first implementation:

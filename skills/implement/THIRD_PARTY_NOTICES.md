@@ -742,3 +742,17 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
+
+## 2026-11-17 code simplification method comparison
+
+[Addy Osmani's code-review-and-quality](https://github.com/addyosmani/agent-skills/blob/39b723ceebf81474d0557c1fecd01eddab585563/skills/code-review-and-quality/SKILL.md), lines 1-179, informed the candidate simplifications and their local judgment conditions. The guidance is rewritten for this Skill's scope; fixed size thresholds, mandatory mutation during review, and universal PR splitting are not adopted. No upstream runtime or cross-Skill dependency is imported.
+
+Source revision: `39b723ceebf81474d0557c1fecd01eddab585563`. [Source license](https://github.com/addyosmani/agent-skills/blob/39b723ceebf81474d0557c1fecd01eddab585563/LICENSE): MIT, copyright (c) 2025 Addy Osmani.
+
+The Addy Osmani MIT terms retained above also apply to this direct source.
+
+## 2026-11-17 Trail of Bits method comparison
+
+[Trail of Bits property-based-testing](https://github.com/trailofbits/skills/tree/149d7b21f4067765b82e67029730b42d228ef4b4/plugins/property-based-testing/skills/property-based-testing) was compared at `149d7b21f4067765b82e67029730b42d228ef4b4`. Full-text method reading: SKILL.md and references/generating.md, references/reviewing.md, references/interpreting-failures.md.
+
+The source repository declares [CC BY-SA 4.0](https://github.com/trailofbits/skills/blob/149d7b21f4067765b82e67029730b42d228ef4b4/LICENSE). This folder's additions are original engineering guidance informed by that comparison; upstream prose, examples, scripts, query templates, assets, and orchestration are not distributed here. The local conditions and counterexamples are stated in this Skill's own references; no upstream endorsement or tested performance equivalence is implied.

@@ -34,7 +34,9 @@ Use the provided requirement and existing project standards. Without a formal sp
 
 A reported defect should have a reachable scenario and evidence of its consequence. Check for guards, invariants, callers, framework behavior, or tests that invalidate the suspicion. Style tooling and code-smell catalogs can supply leads, not automatic findings.
 
-For a required-standard deviation, cite the actual rule and why this code violates it. For maintainability, explain concrete change or comprehension cost. Avoid reporting harmless thin adapters merely because they delegate.
+For a required-standard deviation, cite the actual rule and why this code violates it. For maintainability, explain concrete change or comprehension cost and propose the responsibility or control-flow change that would reduce it. Repeated policy may belong with one owner; repeated state checks may indicate an unclear type boundary; nesting may obscure a decision; a forwarding chain may add navigation without a useful contract. These are candidates to investigate, not automatic defects.
+
+Check the strongest reason to keep the current form. Similar code can serve independently evolving rules, and a thin adapter can own recovery, authorization, or compatibility. Compare caller work and the whole affected path before recommending consolidation or removal. A useful simplification removes burden without relocating it into configuration, adapters, or new state; fixed line counts and a preference for fewer files do not establish that benefit.
 
 Tests can confirm or refute a finding but do not replace source review. Run suitable checks when allowed and worthwhile; honor an explicit static-only request. Report the command and observed result when making an execution claim.
 

@@ -6,10 +6,10 @@ Use the repository's established style before a generic writing convention. The 
 
 Decide what the page primarily helps a reader do:
 
-- **Tutorial:** learn by completing a controlled path.
-- **How-to:** accomplish a real task with enough branching for the situation.
-- **Reference:** look up exact facts, options, contracts, states, or commands.
-- **Explanation:** understand why a bounded concept or design works as it does.
+- **Tutorial:** learn by completing a controlled path. State the starting conditions and intended result; order steps to produce observable progress and a recognizable final result.
+- **How-to:** accomplish a real task. Lead from its prerequisites to completion, including consequential branches and recovery rather than a tour of every available operation.
+- **Reference:** look up exact facts, options, contracts, states, or commands. Organize around the described interface; include defaults, units, valid combinations, limits, and errors where they affect correct use.
+- **Explanation:** understand why a bounded concept or design works as it does. Anchor it in a real question and explain the mechanism, constraints, and consequential trade-offs; use an example when it clarifies the mechanism.
 
 A page can contain supporting material from another mode. Split only when mixed purposes make the audience, next action, or completeness contract unclear. A technical design, ADR, review report, runbook, troubleshooting page, or release note has its own artifact convention and should not be forced into one of these four labels.
 

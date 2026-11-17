@@ -15,7 +15,7 @@ Code reading may help build the reproduction. Prefer a failing test, minimal inv
 
 ## Test a causal explanation
 
-Read [Tracing and hypothesis tests](references/tracing.md) for failures spanning call chains, components, environments, or test order, and for failures that persist after repeated fixes.
+Read [Tracing and hypothesis tests](references/tracing.md) for failures spanning call chains, components, environments, or test order, failures that persist after repeated fixes, or a search for other instances of a confirmed defect.
 
 For each plausible explanation, state the supporting observation and a prediction that could distinguish it from competitors. Choose the smallest informative probe. Change one causal variable at a time where possible; avoid stacking patches whose effects cannot be separated.
 

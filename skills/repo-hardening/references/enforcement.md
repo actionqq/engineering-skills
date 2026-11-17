@@ -8,6 +8,8 @@ Collect concrete examples from available repository history: reverts, review com
 
 Cluster by the violated contract. Similar wording is not evidence of a shared cause. Verify the class against the current repository before changing anything; architecture, tooling, or ownership may already have made an old failure impossible.
 
+Use the confirmed examples to calibrate the search for the rest of the class. Check that a query or candidate rule detects a faithful known mistake, then vary one relevant identifier, operation, or dependency path at a time and inspect the new matches. Follow the actual propagation mechanism within scope, such as copied code or callers of a misused API. Verify each candidate's guards and valid uses before including it; a harmless lookalike helps define what enforcement must allow. Refine a noisy query rather than turning all its matches into violations. Record the search boundary so the resulting guardrail is not mistaken for coverage of unexamined paths.
+
 ## Choose the owning surface
 
 Ask which surface could have prevented the failure without requiring every contributor to remember a warning.
@@ -29,14 +31,14 @@ When enforcement requires a test, API cleanup, architecture change, or migration
 
 ## Prove the guardrail on the historical mistake
 
-For a proposal, identify a historical mistake the guardrail should catch and a supported path it should allow. For an implemented guardrail, verify both where feasible.
+For a proposal, identify a historical mistake, plausible variants or bypasses of the same contract, and supported paths the guardrail should allow. For an implemented guardrail, verify these where feasible, choosing cases by the mechanism rather than a fixed count.
 
 1. reproduce or construct a faithful form of a real past mistake;
-2. show the new guardrail rejects or detects it for the intended reason;
-3. show the supported path still works;
+2. show the new guardrail rejects or detects the mistake and relevant variants or bypasses for the intended reason;
+3. show supported paths still work, including valid cases near the boundary being enforced;
 4. exercise the mechanism where future contributors will encounter it, such as CI when CI is the enforcement point.
 
-The proof concerns this failure class. A synthetic toy case that misses the historical mechanism, a source-text check with no real policy contract, or a warning that nobody executed is insufficient evidence of prevention. If faithful replay is unavailable, state the limit.
+The proof concerns this failure class. For an import boundary, changing the provider package or import path may expose a bypass; blocking one known SDK does not establish dependency direction. A synthetic toy case that misses the historical mechanism, a source-text check with no real policy contract, or a warning that nobody executed is insufficient evidence of prevention. If faithful replay is unavailable, state the limit.
 
 ## Remove obsolete compensating prose
 

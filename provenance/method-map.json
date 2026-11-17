@@ -188,10 +188,14 @@
       "sources": [
         "mattpocock/skills:skills/engineering/implement/SKILL.md",
         "mattpocock/skills:skills/engineering/tdd/SKILL.md",
-        "mattpocock/skills:skills/engineering/tdd/tests.md"
+        "mattpocock/skills:skills/engineering/tdd/tests.md",
+        "trailofbits/skills:plugins/property-based-testing/skills/property-based-testing/SKILL.md",
+        "trailofbits/skills:plugins/property-based-testing/skills/property-based-testing/references/generating.md",
+        "trailofbits/skills:plugins/property-based-testing/skills/property-based-testing/references/reviewing.md",
+        "trailofbits/skills:plugins/property-based-testing/skills/property-based-testing/references/interpreting-failures.md"
       ],
-      "retained": "有意义的 red/green、逐个行为切片、通过稳定行为边界验证、成功与失败路径、独立期望值。 完成前对照验收追踪实际成功与失败行为，不以测试成功替代自审。",
-      "adaptation_or_rejection": "不要求为机械小改制造测试，不排斥确有价值的内部算法测试，不自动提交；测试设计可独立交付。",
+      "retained": "有意义的 red/green、逐个行为切片、通过稳定行为边界验证、成功与失败路径、独立期望值。 完成前对照验收追踪实际成功与失败行为，不以测试成功替代自审。 按契约选择属性，生成有效输入并保留边界例，解释缩减后的反例及其归因。",
+      "adaptation_or_rejection": "不要求为机械小改制造测试，不排斥确有价值的内部算法测试，不自动提交；测试设计可独立交付。 属性测试仅用于有实质输入空间缺口的任务；不照搬统一性质强弱排序、固定样本数或截止时间，不为测试凭空增加生产接口。幂等恒等实现、空排序结果、共同错误的编解码器是本地补充的性质不足反例。",
       "eval_cases": [
         "implement-feature",
         "implement-test-plan",
@@ -206,10 +210,11 @@
       ],
       "sources": [
         "mattpocock/skills:skills/engineering/tdd/SKILL.md",
-        "citypaul/.dotfiles:claude/.claude/skills/structure-codebase/references/enforcement-and-migration.md"
+        "citypaul/.dotfiles:claude/.claude/skills/structure-codebase/references/enforcement-and-migration.md",
+        "addyosmani/agent-skills:skills/code-review-and-quality/SKILL.md"
       ],
-      "retained": "相关行为有保护时整理结构；将机械迁移与行为变更分开，逐步验证真实依赖。 授权迁移后同步反映当前结构的文档，保留历史决策理由。",
-      "adaptation_or_rejection": "补充失败语义等价、用户脏工作区保护、源码根路径和基线区分，不把全部重构推迟到仪式性末尾。",
+      "retained": "相关行为有保护时整理结构；将机械迁移与行为变更分开，逐步验证真实依赖。 授权迁移后同步反映当前结构的文档，保留历史决策理由。 从具体修改或理解成本选择控制流、规则归属、类型边界、转发层或计算与编排的调整，并核对每种调整的保留条件。",
+      "adaptation_or_rejection": "补充失败语义等价、用户脏工作区保护、源码根路径和基线区分，不把全部重构推迟到仪式性末尾。 上游简化候选作为条件方法；不采用固定行数、第三次使用才抽象、每次完整测试或所有重构必须拆 PR 的要求。",
       "eval_cases": [
         "review-code-regression",
         "design-deep-path",
@@ -243,10 +248,14 @@
       "sources": [
         "obra/superpowers:skills/systematic-debugging/root-cause-tracing.md",
         "obra/superpowers:skills/systematic-debugging/defense-in-depth.md",
-        "mattpocock/skills:skills/engineering/diagnosing-bugs/SKILL.md"
+        "mattpocock/skills:skills/engineering/diagnosing-bugs/SKILL.md",
+        "trailofbits/skills:plugins/variant-analysis/skills/variant-analysis/SKILL.md",
+        "trailofbits/skills:plugins/variant-analysis/skills/variant-analysis/references/root-cause.md",
+        "trailofbits/skills:plugins/variant-analysis/skills/variant-analysis/references/searching.md",
+        "trailofbits/skills:plugins/variant-analysis/skills/variant-analysis/references/triage.md"
       ],
-      "retained": "从坏值向来源回溯，比较正常路径，对可证伪预测逐次探测，根因修复后重跑原场景并清理探针。",
-      "adaptation_or_rejection": "不把三次失败等同架构错误；校验放在实际责任边界，不要求每层重复；区分紧急缓解和根因证明。",
+      "retained": "从坏值向来源回溯，比较正常路径，对可证伪预测逐次探测，根因修复后重跑原场景并清理探针。 在确认缺陷且任务或扩散证据支持时，校准已知实例、逐维扩大搜索，并用调用条件和保护机制排除误报。",
+      "adaptation_or_rejection": "不把三次失败等同架构错误；校验放在实际责任边界，不要求每层重复；区分紧急缓解和根因证明。 仅在授权范围内沿真实传播机制搜索；不强制全仓扫描、多代理、误报百分比、CI 规则或固定报告模板。不可达隐患与已证实缺陷分开；相同读写形状但受有效事务约束的反例为本地说明。",
       "eval_cases": [
         "debug-wrong-theory",
         "debug-intermittent",
@@ -260,10 +269,11 @@
       ],
       "sources": [
         "warpdotdev/oz-for-oss:.agents/skills/review-spec/SKILL.md",
-        "vercel/ai:skills/adr-skill/SKILL.md"
+        "vercel/ai:skills/adr-skill/SKILL.md",
+        "mattpocock/skills:skills/engineering/to-tickets/SKILL.md"
       ],
-      "retained": "检查需求、接口、依赖、缺项、矛盾与可实施性，以具体位置和场景提出建议。",
-      "adaptation_or_rejection": "完整复审重读全文及治理材料；默认只读，已有修订授权则落实；不借评审擅自重写治理文件。",
+      "retained": "检查需求、接口、依赖、缺项、矛盾与可实施性，以具体位置和场景提出建议。对实施计划检查任务产物、依赖释放条件、循环或多余阻塞、并行写入冲突及整体集成验收归属。",
+      "adaptation_or_rejection": "完整复审重读全文及治理材料；默认只读，已有修订授权则落实；不借评审擅自重写治理文件。将任务规划方法适配为计划审查问题，不要求重新规划、绘制依赖图、发布票据或调用另一 Skill。",
       "eval_cases": [
         "review-design-full"
       ]
@@ -276,10 +286,11 @@
       ],
       "sources": [
         "mattpocock/skills:skills/engineering/code-review/SKILL.md",
-        "citypaul/.dotfiles:claude/.claude/skills/improve-codebase-architecture/SKILL.md"
+        "citypaul/.dotfiles:claude/.claude/skills/improve-codebase-architecture/SKILL.md",
+        "addyosmani/agent-skills:skills/code-review-and-quality/SKILL.md"
       ],
-      "retained": "规范与需求双维度；审查真实变更及上下文；独立上下文可以减轻作者锚定。",
-      "adaptation_or_rejection": "修正 HEAD diff 无法覆盖 WIP 的问题；不强制 tracker/两个代理/代码坏味道清单；保留双维度并合并去重、按影响排序。",
+      "retained": "规范与需求双维度；审查真实变更及上下文；独立上下文可以减轻作者锚定。 将可维护性问题对应到具体责任或控制流调整，并核对保留现状的理由与全路径成本。",
+      "adaptation_or_rejection": "修正 HEAD diff 无法覆盖 WIP 的问题；不强制 tracker/两个代理/代码坏味道清单；保留双维度并合并去重、按影响排序。 简化候选不是自动缺陷；不以行数和文件数判定收益，不为只读评审强制修改源码进行变异实验。",
       "eval_cases": [
         "review-code-regression",
         "review-mixed-wip",
@@ -333,8 +344,8 @@
         "anthropics/skills:skills/skill-creator/agents/grader.md",
         "anthropics/skills:skills/skill-creator/agents/comparator.md"
       ],
-      "retained": "需要新执行证据时，使用真实请求、轨迹和产物检验行为；修改以旧版检查回归，效果比较采用公平基线；可按请求独立设计评估。已有执行证据的归因和方法推演由默认内容审查承接。",
-      "adaptation_or_rejection": "新模型实验先确认问题、机制和授权；缺少条件时继续内容审查与已有证据分析，不生成待运行材料，也不用作者推演冒充独立运行。不要求 Claude Code、固定代理或跨宿主评测，不把结构检查作为实质审查的替代。",
+      "retained": "需要新执行证据时，使用真实请求、轨迹和产物检验行为；修改以旧版检查相关回归，效果比较采用公平基线；可按请求独立设计评估。任务是否完成与失败原因分别记录，原因不足时保留未知。已有执行证据的归因和方法推演由默认内容审查承接。",
+      "adaptation_or_rejection": "新模型实验先确认问题、机制和授权，按当前问题、受影响模式及可信回归选择范围；完整能力评估才覆盖全部模式。缺少条件时继续内容审查与已有证据分析，不生成待运行材料，也不用作者推演冒充独立运行。未知原因的超时不默认归为环境故障；结果与归因的分离是本地综合修正，不是上游固定状态协议。不要求 Claude Code、固定代理或跨宿主评测。",
       "eval_cases": [
         "skill-dev-create",
         "skill-dev-collision",

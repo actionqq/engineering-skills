@@ -1,6 +1,6 @@
 # Third-party notices
 
-This Skill is an English synthesis, rewritten and adapted for engineering-skills v0.1, updated for v0.2. It is not an unmodified upstream Skill. Changes include conditional workflows, tool-neutral execution, scope controls, and explicit evidence limits. No upstream endorsement is implied.
+This Skill is an English synthesis, rewritten and adapted for engineering-skills v0.1, updated through v0.3. It is not an unmodified upstream Skill. Changes include conditional workflows, tool-neutral execution, scope controls, and explicit evidence limits. No upstream endorsement is implied.
 
 Method and source scope applicable to this standalone folder:
 
@@ -10,6 +10,7 @@ Method and source scope applicable to this standalone folder:
 - [warpdotdev/oz-for-oss:.agents/skills/review-spec/SKILL.md](https://raw.githubusercontent.com/warpdotdev/oz-for-oss/a2bb45f231fd56ea28c1b381999d11b277a0b0e2/.agents/skills/review-spec/SKILL.md) — full-text
 - [vercel/ai:skills/adr-skill/SKILL.md](https://raw.githubusercontent.com/vercel/ai/20dd00abba618d5a516e0fee40ccd3e18a2bd1fb/skills/adr-skill/SKILL.md) — full-text
 - [mattpocock/skills:skills/engineering/code-review/SKILL.md](https://raw.githubusercontent.com/mattpocock/skills/c55ee46073ed923f86ce59a5eb3b6d895095d1b7/skills/engineering/code-review/SKILL.md) — full-text
+- [mattpocock/skills:skills/engineering/to-tickets/SKILL.md](https://raw.githubusercontent.com/mattpocock/skills/c55ee46073ed923f86ce59a5eb3b6d895095d1b7/skills/engineering/to-tickets/SKILL.md) — full-text; task dependencies and shared integration adapted into conditional plan-review checks, without ticket publication or a required planning workflow
 - [citypaul/.dotfiles:claude/.claude/skills/expectations/SKILL.md](https://raw.githubusercontent.com/citypaul/.dotfiles/a109f9972bb46671c624fc05752031523e1cf6fc/claude/.claude/skills/expectations/SKILL.md) — full-text
 - [mattpocock/skills:skills/engineering/domain-modeling/SKILL.md](https://raw.githubusercontent.com/mattpocock/skills/c55ee46073ed923f86ce59a5eb3b6d895095d1b7/skills/engineering/domain-modeling/SKILL.md) — full-text
 - [citypaul/.dotfiles:claude/.claude/skills/ubiquitous-language/SKILL.md](https://raw.githubusercontent.com/citypaul/.dotfiles/a109f9972bb46671c624fc05752031523e1cf6fc/claude/.claude/skills/ubiquitous-language/SKILL.md) — full-text
@@ -708,6 +709,36 @@ Pinned revision: `e3d624baaf29dc1fc645aff3e38f03e564d2d6b1`. [License source](ht
 MIT License
 
 Copyright (c) 2025 Vercel Labs
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
+
+## 2026-11-17 code simplification method comparison
+
+[Addy Osmani's code-review-and-quality](https://github.com/addyosmani/agent-skills/blob/39b723ceebf81474d0557c1fecd01eddab585563/skills/code-review-and-quality/SKILL.md), lines 1-179, informed the candidate simplifications and their local judgment conditions. The guidance is rewritten for this Skill's scope; fixed size thresholds, mandatory mutation during review, and universal PR splitting are not adopted. No upstream runtime or cross-Skill dependency is imported.
+
+Source revision: `39b723ceebf81474d0557c1fecd01eddab585563`. [Source license](https://github.com/addyosmani/agent-skills/blob/39b723ceebf81474d0557c1fecd01eddab585563/LICENSE): MIT, copyright (c) 2025 Addy Osmani.
+
+```text
+MIT License
+
+Copyright (c) 2025 Addy Osmani
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

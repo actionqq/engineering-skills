@@ -84,18 +84,18 @@
 
 ## implementation
 
-- 保留：有意义的 red/green、逐个行为切片、通过稳定行为边界验证、成功与失败路径、独立期望值。 完成前对照验收追踪实际成功与失败行为，不以测试成功替代自审。
-- 调整或拒绝：不要求为机械小改制造测试，不排斥确有价值的内部算法测试，不自动提交；测试设计可独立交付。
+- 保留：有意义的 red/green、逐个行为切片、通过稳定行为边界验证、成功与失败路径、独立期望值。 完成前对照验收追踪实际成功与失败行为，不以测试成功替代自审。 按契约选择属性，生成有效输入并保留边界例，解释缩减后的反例及其归因。
+- 调整或拒绝：不要求为机械小改制造测试，不排斥确有价值的内部算法测试，不自动提交；测试设计可独立交付。 属性测试仅用于有实质输入空间缺口的任务；不照搬统一性质强弱排序、固定样本数或截止时间，不为测试凭空增加生产接口。幂等恒等实现、空排序结果、共同错误的编解码器是本地补充的性质不足反例。
 - 落点：[skills/implement/SKILL.md](../skills/implement/SKILL.md), [skills/implement/references/testing.md](../skills/implement/references/testing.md)
-- 来源：[mattpocock/skills:skills/engineering/implement/SKILL.md](https://raw.githubusercontent.com/mattpocock/skills/c55ee46073ed923f86ce59a5eb3b6d895095d1b7/skills/engineering/implement/SKILL.md), [mattpocock/skills:skills/engineering/tdd/SKILL.md](https://raw.githubusercontent.com/mattpocock/skills/c55ee46073ed923f86ce59a5eb3b6d895095d1b7/skills/engineering/tdd/SKILL.md), [mattpocock/skills:skills/engineering/tdd/tests.md](https://raw.githubusercontent.com/mattpocock/skills/c55ee46073ed923f86ce59a5eb3b6d895095d1b7/skills/engineering/tdd/tests.md)
+- 来源：[mattpocock/skills:skills/engineering/implement/SKILL.md](https://raw.githubusercontent.com/mattpocock/skills/c55ee46073ed923f86ce59a5eb3b6d895095d1b7/skills/engineering/implement/SKILL.md), [mattpocock/skills:skills/engineering/tdd/SKILL.md](https://raw.githubusercontent.com/mattpocock/skills/c55ee46073ed923f86ce59a5eb3b6d895095d1b7/skills/engineering/tdd/SKILL.md), [mattpocock/skills:skills/engineering/tdd/tests.md](https://raw.githubusercontent.com/mattpocock/skills/c55ee46073ed923f86ce59a5eb3b6d895095d1b7/skills/engineering/tdd/tests.md), [trailofbits/skills:plugins/property-based-testing/skills/property-based-testing/SKILL.md](https://raw.githubusercontent.com/trailofbits/skills/149d7b21f4067765b82e67029730b42d228ef4b4/plugins/property-based-testing/skills/property-based-testing/SKILL.md), [trailofbits/skills:plugins/property-based-testing/skills/property-based-testing/references/generating.md](https://raw.githubusercontent.com/trailofbits/skills/149d7b21f4067765b82e67029730b42d228ef4b4/plugins/property-based-testing/skills/property-based-testing/references/generating.md), [trailofbits/skills:plugins/property-based-testing/skills/property-based-testing/references/reviewing.md](https://raw.githubusercontent.com/trailofbits/skills/149d7b21f4067765b82e67029730b42d228ef4b4/plugins/property-based-testing/skills/property-based-testing/references/reviewing.md), [trailofbits/skills:plugins/property-based-testing/skills/property-based-testing/references/interpreting-failures.md](https://raw.githubusercontent.com/trailofbits/skills/149d7b21f4067765b82e67029730b42d228ef4b4/plugins/property-based-testing/skills/property-based-testing/references/interpreting-failures.md)
 - 判别用例：`implement-feature`, `implement-test-plan`, `implement-test-code`, `implement-baseline`
 
 ## refactor
 
-- 保留：相关行为有保护时整理结构；将机械迁移与行为变更分开，逐步验证真实依赖。 授权迁移后同步反映当前结构的文档，保留历史决策理由。
-- 调整或拒绝：补充失败语义等价、用户脏工作区保护、源码根路径和基线区分，不把全部重构推迟到仪式性末尾。
+- 保留：相关行为有保护时整理结构；将机械迁移与行为变更分开，逐步验证真实依赖。 授权迁移后同步反映当前结构的文档，保留历史决策理由。 从具体修改或理解成本选择控制流、规则归属、类型边界、转发层或计算与编排的调整，并核对每种调整的保留条件。
+- 调整或拒绝：补充失败语义等价、用户脏工作区保护、源码根路径和基线区分，不把全部重构推迟到仪式性末尾。 上游简化候选作为条件方法；不采用固定行数、第三次使用才抽象、每次完整测试或所有重构必须拆 PR 的要求。
 - 落点：[skills/implement/references/refactoring.md](../skills/implement/references/refactoring.md)
-- 来源：[mattpocock/skills:skills/engineering/tdd/SKILL.md](https://raw.githubusercontent.com/mattpocock/skills/c55ee46073ed923f86ce59a5eb3b6d895095d1b7/skills/engineering/tdd/SKILL.md), [citypaul/.dotfiles:claude/.claude/skills/structure-codebase/references/enforcement-and-migration.md](https://raw.githubusercontent.com/citypaul/.dotfiles/a109f9972bb46671c624fc05752031523e1cf6fc/claude/.claude/skills/structure-codebase/references/enforcement-and-migration.md)
+- 来源：[mattpocock/skills:skills/engineering/tdd/SKILL.md](https://raw.githubusercontent.com/mattpocock/skills/c55ee46073ed923f86ce59a5eb3b6d895095d1b7/skills/engineering/tdd/SKILL.md), [citypaul/.dotfiles:claude/.claude/skills/structure-codebase/references/enforcement-and-migration.md](https://raw.githubusercontent.com/citypaul/.dotfiles/a109f9972bb46671c624fc05752031523e1cf6fc/claude/.claude/skills/structure-codebase/references/enforcement-and-migration.md), [addyosmani/agent-skills:skills/code-review-and-quality/SKILL.md](https://raw.githubusercontent.com/addyosmani/agent-skills/39b723ceebf81474d0557c1fecd01eddab585563/skills/code-review-and-quality/SKILL.md)
 - 判别用例：`review-code-regression`, `design-deep-path`, `implement-baseline`
 
 ## reproduce
@@ -108,26 +108,26 @@
 
 ## causal-tracing
 
-- 保留：从坏值向来源回溯，比较正常路径，对可证伪预测逐次探测，根因修复后重跑原场景并清理探针。
-- 调整或拒绝：不把三次失败等同架构错误；校验放在实际责任边界，不要求每层重复；区分紧急缓解和根因证明。
+- 保留：从坏值向来源回溯，比较正常路径，对可证伪预测逐次探测，根因修复后重跑原场景并清理探针。 在确认缺陷且任务或扩散证据支持时，校准已知实例、逐维扩大搜索，并用调用条件和保护机制排除误报。
+- 调整或拒绝：不把三次失败等同架构错误；校验放在实际责任边界，不要求每层重复；区分紧急缓解和根因证明。 仅在授权范围内沿真实传播机制搜索；不强制全仓扫描、多代理、误报百分比、CI 规则或固定报告模板。不可达隐患与已证实缺陷分开；相同读写形状但受有效事务约束的反例为本地说明。
 - 落点：[skills/diagnose/references/tracing.md](../skills/diagnose/references/tracing.md)
-- 来源：[obra/superpowers:skills/systematic-debugging/root-cause-tracing.md](https://raw.githubusercontent.com/obra/superpowers/5bf4e78011075bcfc0dc295f0724994cd123ee71/skills/systematic-debugging/root-cause-tracing.md), [obra/superpowers:skills/systematic-debugging/defense-in-depth.md](https://raw.githubusercontent.com/obra/superpowers/5bf4e78011075bcfc0dc295f0724994cd123ee71/skills/systematic-debugging/defense-in-depth.md), [mattpocock/skills:skills/engineering/diagnosing-bugs/SKILL.md](https://raw.githubusercontent.com/mattpocock/skills/c55ee46073ed923f86ce59a5eb3b6d895095d1b7/skills/engineering/diagnosing-bugs/SKILL.md)
+- 来源：[obra/superpowers:skills/systematic-debugging/root-cause-tracing.md](https://raw.githubusercontent.com/obra/superpowers/5bf4e78011075bcfc0dc295f0724994cd123ee71/skills/systematic-debugging/root-cause-tracing.md), [obra/superpowers:skills/systematic-debugging/defense-in-depth.md](https://raw.githubusercontent.com/obra/superpowers/5bf4e78011075bcfc0dc295f0724994cd123ee71/skills/systematic-debugging/defense-in-depth.md), [mattpocock/skills:skills/engineering/diagnosing-bugs/SKILL.md](https://raw.githubusercontent.com/mattpocock/skills/c55ee46073ed923f86ce59a5eb3b6d895095d1b7/skills/engineering/diagnosing-bugs/SKILL.md), [trailofbits/skills:plugins/variant-analysis/skills/variant-analysis/SKILL.md](https://raw.githubusercontent.com/trailofbits/skills/149d7b21f4067765b82e67029730b42d228ef4b4/plugins/variant-analysis/skills/variant-analysis/SKILL.md), [trailofbits/skills:plugins/variant-analysis/skills/variant-analysis/references/root-cause.md](https://raw.githubusercontent.com/trailofbits/skills/149d7b21f4067765b82e67029730b42d228ef4b4/plugins/variant-analysis/skills/variant-analysis/references/root-cause.md), [trailofbits/skills:plugins/variant-analysis/skills/variant-analysis/references/searching.md](https://raw.githubusercontent.com/trailofbits/skills/149d7b21f4067765b82e67029730b42d228ef4b4/plugins/variant-analysis/skills/variant-analysis/references/searching.md), [trailofbits/skills:plugins/variant-analysis/skills/variant-analysis/references/triage.md](https://raw.githubusercontent.com/trailofbits/skills/149d7b21f4067765b82e67029730b42d228ef4b4/plugins/variant-analysis/skills/variant-analysis/references/triage.md)
 - 判别用例：`debug-wrong-theory`, `debug-intermittent`, `debug-no-repro`
 
 ## design-review
 
-- 保留：检查需求、接口、依赖、缺项、矛盾与可实施性，以具体位置和场景提出建议。
-- 调整或拒绝：完整复审重读全文及治理材料；默认只读，已有修订授权则落实；不借评审擅自重写治理文件。
+- 保留：检查需求、接口、依赖、缺项、矛盾与可实施性，以具体位置和场景提出建议。对实施计划检查任务产物、依赖释放条件、循环或多余阻塞、并行写入冲突及整体集成验收归属。
+- 调整或拒绝：完整复审重读全文及治理材料；默认只读，已有修订授权则落实；不借评审擅自重写治理文件。将任务规划方法适配为计划审查问题，不要求重新规划、绘制依赖图、发布票据或调用另一 Skill。
 - 落点：[skills/tech-review/references/design.md](../skills/tech-review/references/design.md)
-- 来源：[warpdotdev/oz-for-oss:.agents/skills/review-spec/SKILL.md](https://raw.githubusercontent.com/warpdotdev/oz-for-oss/a2bb45f231fd56ea28c1b381999d11b277a0b0e2/.agents/skills/review-spec/SKILL.md), [vercel/ai:skills/adr-skill/SKILL.md](https://raw.githubusercontent.com/vercel/ai/20dd00abba618d5a516e0fee40ccd3e18a2bd1fb/skills/adr-skill/SKILL.md)
+- 来源：[warpdotdev/oz-for-oss:.agents/skills/review-spec/SKILL.md](https://raw.githubusercontent.com/warpdotdev/oz-for-oss/a2bb45f231fd56ea28c1b381999d11b277a0b0e2/.agents/skills/review-spec/SKILL.md), [vercel/ai:skills/adr-skill/SKILL.md](https://raw.githubusercontent.com/vercel/ai/20dd00abba618d5a516e0fee40ccd3e18a2bd1fb/skills/adr-skill/SKILL.md), [mattpocock/skills:skills/engineering/to-tickets/SKILL.md](https://raw.githubusercontent.com/mattpocock/skills/c55ee46073ed923f86ce59a5eb3b6d895095d1b7/skills/engineering/to-tickets/SKILL.md)
 - 判别用例：`review-design-full`
 
 ## code-review
 
-- 保留：规范与需求双维度；审查真实变更及上下文；独立上下文可以减轻作者锚定。
-- 调整或拒绝：修正 HEAD diff 无法覆盖 WIP 的问题；不强制 tracker/两个代理/代码坏味道清单；保留双维度并合并去重、按影响排序。
+- 保留：规范与需求双维度；审查真实变更及上下文；独立上下文可以减轻作者锚定。 将可维护性问题对应到具体责任或控制流调整，并核对保留现状的理由与全路径成本。
+- 调整或拒绝：修正 HEAD diff 无法覆盖 WIP 的问题；不强制 tracker/两个代理/代码坏味道清单；保留双维度并合并去重、按影响排序。 简化候选不是自动缺陷；不以行数和文件数判定收益，不为只读评审强制修改源码进行变异实验。
 - 落点：[skills/tech-review/references/code.md](../skills/tech-review/references/code.md), [skills/tech-review/references/independence.md](../skills/tech-review/references/independence.md)
-- 来源：[mattpocock/skills:skills/engineering/code-review/SKILL.md](https://raw.githubusercontent.com/mattpocock/skills/c55ee46073ed923f86ce59a5eb3b6d895095d1b7/skills/engineering/code-review/SKILL.md), [citypaul/.dotfiles:claude/.claude/skills/improve-codebase-architecture/SKILL.md](https://raw.githubusercontent.com/citypaul/.dotfiles/a109f9972bb46671c624fc05752031523e1cf6fc/claude/.claude/skills/improve-codebase-architecture/SKILL.md)
+- 来源：[mattpocock/skills:skills/engineering/code-review/SKILL.md](https://raw.githubusercontent.com/mattpocock/skills/c55ee46073ed923f86ce59a5eb3b6d895095d1b7/skills/engineering/code-review/SKILL.md), [citypaul/.dotfiles:claude/.claude/skills/improve-codebase-architecture/SKILL.md](https://raw.githubusercontent.com/citypaul/.dotfiles/a109f9972bb46671c624fc05752031523e1cf6fc/claude/.claude/skills/improve-codebase-architecture/SKILL.md), [addyosmani/agent-skills:skills/code-review-and-quality/SKILL.md](https://raw.githubusercontent.com/addyosmani/agent-skills/39b723ceebf81474d0557c1fecd01eddab585563/skills/code-review-and-quality/SKILL.md)
 - 判别用例：`review-code-regression`, `review-mixed-wip`, `review-independence`
 
 ## handoff
@@ -148,8 +148,8 @@
 
 ## evaluation
 
-- 保留：需要新执行证据时，使用真实请求、轨迹和产物检验行为；修改以旧版检查回归，效果比较采用公平基线；可按请求独立设计评估。已有执行证据的归因和方法推演由默认内容审查承接。
-- 调整或拒绝：新模型实验先确认问题、机制和授权；缺少条件时继续内容审查与已有证据分析，不生成待运行材料，也不用作者推演冒充独立运行。不要求 Claude Code、固定代理或跨宿主评测，不把结构检查作为实质审查的替代。
+- 保留：需要新执行证据时，使用真实请求、轨迹和产物检验行为；修改以旧版检查相关回归，效果比较采用公平基线；可按请求独立设计评估。任务是否完成与失败原因分别记录，原因不足时保留未知。已有执行证据的归因和方法推演由默认内容审查承接。
+- 调整或拒绝：新模型实验先确认问题、机制和授权，按当前问题、受影响模式及可信回归选择范围；完整能力评估才覆盖全部模式。缺少条件时继续内容审查与已有证据分析，不生成待运行材料，也不用作者推演冒充独立运行。未知原因的超时不默认归为环境故障；结果与归因的分离是本地综合修正，不是上游固定状态协议。不要求 Claude Code、固定代理或跨宿主评测。
 - 落点：[skills/skill-dev/references/evaluation.md](../skills/skill-dev/references/evaluation.md), [skills/skill-dev/references/discovery.md](../skills/skill-dev/references/discovery.md)
 - 来源：[anthropics/skills:skills/skill-creator/SKILL.md](https://raw.githubusercontent.com/anthropics/skills/34040c9c568585f6929bedeaad110ad08f079624/skills/skill-creator/SKILL.md), [anthropics/skills:skills/skill-creator/agents/grader.md](https://raw.githubusercontent.com/anthropics/skills/34040c9c568585f6929bedeaad110ad08f079624/skills/skill-creator/agents/grader.md), [anthropics/skills:skills/skill-creator/agents/comparator.md](https://raw.githubusercontent.com/anthropics/skills/34040c9c568585f6929bedeaad110ad08f079624/skills/skill-creator/agents/comparator.md)
 - 判别用例：`skill-dev-create`, `skill-dev-collision`, `skill-dev-eval-leak`

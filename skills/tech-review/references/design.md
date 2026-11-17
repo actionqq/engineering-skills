@@ -1,6 +1,6 @@
 # Design and Plan Review
 
-Use for readiness and consistency of a proposed or revised design. Judge the proposal at its level: it needs sufficiently defined behavior and feasible decisions, not every implementation detail.
+Use for readiness and consistency of a proposed or revised design or implementation plan. Judge the proposal at its level: it needs sufficiently defined behavior and feasible decisions, not every implementation detail.
 
 ## Read the current whole
 
@@ -23,6 +23,8 @@ Follow important behavior through preconditions, action, state change, side effe
 
 Do not require a distributed-systems mechanism for a local function that does not need one. Conversely, “handle errors” is not sufficient when partial success determines whether the design can work.
 
+For an implementation plan, trace tasks to their deliverables, the prerequisite results that release them, and the final integrated acceptance. Check for dependency cycles, missing or unnecessary blockers, shared-write conflicts in proposed parallel work, and integration checks with no responsible task. Verify prerequisites claimed to be ready against current artifacts rather than a `done` label. Report the smallest correction without redoing a sound plan.
+
 ## Classify issues accurately
 
 Assess the status model itself, not only compliance with the existing template. A design or ADR needs a distinguishable decision state; delivery progress and per-criterion verification need their own evidence or links. A legacy `done` field that conflates these can mislead a concrete release or implementation decision and warrants correction. Equivalent labels with clear meanings are not defects. Recommend a bounded clarification, preserving decision history and tooling compatibility; do not rewrite templates or subjects during a read-only review.
@@ -35,4 +37,4 @@ For PR inline feedback, obtain locations from the actual reviewed diff and corre
 
 ## Conclude at the right level
 
-State whether the current design can enter implementation, can do so after named conditions are resolved, or contains blockers. Close previous issues as resolved, still present, or superseded with current evidence. Do not equate design approval with implementation or runtime acceptance. An unresolved conflict with an effective requirement precludes an unconditional readiness conclusion.
+State whether the current design or plan can enter implementation, can do so after named conditions are resolved, or contains blockers. Close previous issues as resolved, still present, or superseded with current evidence. Do not equate design approval with implementation or runtime acceptance. An unresolved conflict with an effective requirement precludes an unconditional readiness conclusion.

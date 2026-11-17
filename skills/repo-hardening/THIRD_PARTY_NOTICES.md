@@ -63,3 +63,9 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 ```
+
+## 2026-11-17 Trail of Bits method comparison
+
+[Trail of Bits variant-analysis](https://github.com/trailofbits/skills/tree/149d7b21f4067765b82e67029730b42d228ef4b4/plugins/variant-analysis/skills/variant-analysis) was compared at `149d7b21f4067765b82e67029730b42d228ef4b4`. Full-text method reading: SKILL.md and references/root-cause.md, references/searching.md, references/triage.md.
+
+The source repository declares [CC BY-SA 4.0](https://github.com/trailofbits/skills/blob/149d7b21f4067765b82e67029730b42d228ef4b4/LICENSE). This folder's additions are original engineering guidance informed by that comparison; upstream prose, examples, scripts, query templates, assets, and orchestration are not distributed here. The local conditions and counterexamples are stated in this Skill's own references; no upstream endorsement or tested performance equivalence is implied.

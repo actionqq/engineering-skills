@@ -16,6 +16,8 @@ Pin the runtime/dependency versions and relevant configuration. Exercise the act
 
 Record the baseline, data scale and distribution, request mix, concurrency, hardware/runtime, warm-up, cache state, repeated runs, and measurement method. Distinguish throughput, latency distribution, resource cost, and failure rate. Prevent the generator, logging, or unrelated environment contention from becoming the hidden bottleneck.
 
+Run extra diagnostic profiling or tracing separately from the runs used for reported timings. If it must remain enabled, assess and report its effect; identical instrumentation can impose different overhead on the compared implementations.
+
 Before acting on a performance number, prove that the measured work actually happened inside the timed region and produced correct output. Count failures, retries, rejected work, and incomplete output when they can change the apparent speed. A fast no-op, timeout, cached shortcut, or overloaded load generator is not evidence that the target path improved.
 
 Run compared sides under production-relevant and equivalent settings. When environment drift, warm-up, or cache state can bias the result, interleave A/B runs rather than measuring one side in a block and the other later. Report enough repetitions and variability to show whether the claimed gap is larger than run-to-run noise.

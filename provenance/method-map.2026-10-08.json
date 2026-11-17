@@ -12,7 +12,7 @@
         "cursor/plugins:pstack/skills/technical-writing/SKILL.md@ccb5507",
         "mattpocock/skills:skills/productivity/writing-for-agents/SKILL.md"
       ],
-      "retained": "Write for the actual reader, keep project terminology exact, cut filler, prefer direct concrete language, and choose structure by the document's purpose rather than one universal template.",
+      "retained": "Write for the actual reader, keep project terminology exact, cut filler, and prefer direct concrete language. Choose structure and completion by the reader job: observable tutorial progress, task-oriented how-to branches, reference contract completeness, or explanation of mechanisms and trade-offs.",
       "adaptation_or_rejection": "The collection does not require pstack's unslop dependency, a single Diataxis mode for every mixed engineering artifact, Cursor-specific invocation, or fixed sentence-length rules. Existing project style and explicit user format take precedence.",
       "eval_cases": ["writing-existing-readme"]
     },
@@ -77,7 +77,7 @@
         "cursor/plugins:pstack/skills/benchmark-checklist/SKILL.md",
         "mattpocock/skills:skills/engineering/prototype/LOGIC.md"
       ],
-      "retained": "Before acting on a performance result, verify that the measured work happened and produced correct output, count failures and retries, compare equivalent configurations, interleave sides when drift matters, show relevant variability, identify the limiter, and sanity-check physical or algorithmic bounds.",
+      "retained": "Before acting on a performance result, verify that the measured work happened and produced correct output, count failures and retries, compare equivalent configurations, interleave sides when drift matters, show relevant variability, identify the limiter, and sanity-check physical or algorithmic bounds. Separate extra diagnostic profiling from reported timing runs; assess and disclose its effect if it must remain.",
       "adaptation_or_rejection": "No universal five-run minimum or fixed operating-system commands are imposed. A user-requested ballpark can remain lightweight when labelled; adoption or design decisions require proportionate repeatability and relevance. Untuned or unexplained comparisons produce a narrowed or inconclusive conclusion, not an automatic winner.",
       "eval_cases": ["research-benchmark-validity"]
     },
@@ -89,10 +89,14 @@
       ],
       "sources": [
         "warpdotdev/common-skills:.agents/skills/skill-doctor/references/skill-improvements.md",
-        "citypaul/.dotfiles:claude/.claude/skills/structure-codebase/references/enforcement-and-migration.md"
+        "citypaul/.dotfiles:claude/.claude/skills/structure-codebase/references/enforcement-and-migration.md",
+        "trailofbits/skills:plugins/variant-analysis/skills/variant-analysis/SKILL.md",
+        "trailofbits/skills:plugins/variant-analysis/skills/variant-analysis/references/root-cause.md",
+        "trailofbits/skills:plugins/variant-analysis/skills/variant-analysis/references/searching.md",
+        "trailofbits/skills:plugins/variant-analysis/skills/variant-analysis/references/triage.md"
       ],
-      "retained": "Repeated failures are first attributed to a current owning surface, then prevented at the strongest proportionate layer: architecture or public boundaries, types, deterministic checks, tooling, behavior tests, and finally instructions for irreducible judgment. Historical mistakes provide the best proof that the new guardrail catches the intended class.",
-      "adaptation_or_rejection": "The collection does not auto-edit Skills after every agent correction, require a fixed recurrence count, mandate multi-agent transcript scoring, or treat documentation as enforcement when a mechanical mechanism can own the rule. One-off defects stay in diagnosis and security hardening is outside this entry's meaning.",
+      "retained": "Repeated failures are first attributed to a current owning surface, then prevented at the strongest proportionate layer: architecture or public boundaries, types, deterministic checks, tooling, behavior tests, and finally instructions for irreducible judgment. Verify the historical mistake, mechanism-relevant variants or bypasses, and valid paths near the enforced boundary. Calibrate class discovery against known mistakes, generalize one relevant dimension at a time, and verify guards and legitimate lookalikes before deriving enforcement.",
+      "adaptation_or_rejection": "The collection does not auto-edit Skills after every agent correction, require a fixed recurrence or test-case count, mandate multi-agent transcript scoring, or treat documentation as enforcement when a mechanical mechanism can own the rule. Variant selection generalizes the upstream dependency-direction method; it is not an exhaustive adversarial test mandate. One-off defects stay in diagnosis and security hardening is outside this entry's meaning. The new search guidance is an original synthesis after comparison with Trail of Bits variant analysis; no upstream workflow, query templates, code, or report format is imported, and search scope is not automatically repository-wide.",
       "eval_cases": ["hardening-repeated-import", "hardening-existing-instruction"]
     },
     {

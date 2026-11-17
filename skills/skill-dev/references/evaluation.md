@@ -12,7 +12,7 @@ Use the task walkthrough or attributed failure to identify the question this exp
 
 ## Construct discriminating tasks
 
-Cover every substantive mode with realistic requests and raw materials. Include difficult valid cases, harmless lookalikes, missing inputs, unavailable tools, and scope constraints. Expected behavior should concern meaningful outcomes, not matching headings or repeating the Skill's wording.
+Select realistic requests and raw materials for the evaluation question, affected modes, and credible regressions. Cover all substantive modes only for a full-capability evaluation. Include difficult valid cases, harmless lookalikes, missing inputs, unavailable tools, and scope constraints where relevant. Expected behavior should concern meaningful outcomes, not matching headings or repeating the Skill's wording.
 
 Think of an executable evaluation as three separable parts: inputs, the runner or environment, and the grader. Check each part before blaming the candidate Skill. Ground-truth labels need a traceable source. Avoid leaking expected answers through filenames, setup text, grader wording, or examples the executor can see. Old cases can become stale as the repository or harness changes.
 
@@ -20,7 +20,7 @@ Keep grading expectations and seeded-defect answers out of the execution packet.
 
 Check the artifacts and actions as well as the final reply. A test-plan request fails if it edits product code; a review may be wrong despite a polished report; a declared test pass needs execution evidence. An assertion should reject a plausible bad output, not just confirm that a file exists.
 
-Treat runner crashes, unavailable tools, timeouts, and malformed fixtures as harness or environment failures unless evidence shows the model caused them. Distinguish a model that explicitly concludes "no issue" from a run that never produced an answer; they are different outcomes.
+Record whether the task completed separately from why it failed. Attribute a timeout, crash, unavailable tool, or malformed fixture from the available trace and tool results; leave the cause unknown when evidence is insufficient. An unfinished run is neither a successful "no issue" result nor automatically an environment failure.
 
 ## Compare like with like
 
@@ -32,7 +32,7 @@ Record actual model and harness identity, Skill and input fingerprints, outcome 
 
 ## Judge substance
 
-Grade each requirement with supporting artifact or transcript evidence. Include incorrect extra claims and unauthorized side effects that the initial rubric missed. Distinguish passed, failed, environment-blocked, and not-run; missing evidence cannot silently become a pass.
+Grade each requirement with supporting artifact or transcript evidence. Include incorrect extra claims and unauthorized side effects that the initial rubric missed. Distinguish passed, failed, unfinished, and not-run; record supported environment blockers separately. Missing evidence cannot silently become a pass.
 
 For a blinded comparison, hide condition labels and source identity from the evaluator, compare outputs against the same task, and inspect significant correctness before cosmetic quality. Ties are legitimate. Do not force a winner or let a high presentation score outweigh a functional failure.
 
